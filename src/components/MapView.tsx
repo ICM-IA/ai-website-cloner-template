@@ -140,17 +140,17 @@ export default function MapView({ projects, selectedProject, onSelect, mapCenter
     });
 
     // Fit map bounds to show all current markers if we have valid coords
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const mapAny = map as any;
     if (projects.length > 1) {
       try {
         const bounds = L.latLngBounds(projects.map((p: Project) => [p.lat, p.lng]));
-        (map as { fitBounds: (b: unknown, opts: unknown) => void }).fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
+        mapAny.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
       } catch {
         // ignore invalid bounds
       }
     } else if (projects.length === 1) {
-      (map as { setView: (latlng: [number, number], zoom: number) => void }).setView(
-        [projects[0].lat, projects[0].lng], 13
-      );
+      mapAny.setView([projects[0].lat, projects[0].lng], 13);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projects]);
