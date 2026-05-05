@@ -786,7 +786,8 @@ export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps
         <div className="proj-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: 28, alignItems: 'start' }}>
 
           {/* ── Cards (scrollable column) ── */}
-          <div className="cards-scroll" style={{ height: 660, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 20, paddingRight: 6 }}>
+          <div className="cards-scroll" style={{ height: 660, overflowY: 'auto', paddingRight: 6 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             {filtered.length === 0 && (
               <div style={{ padding: '60px 24px', textAlign: 'center', background: '#131326', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 14 }}>
                 <p style={{ fontSize: 14, color: 'rgba(239,239,239,0.35)', margin: 0 }}>No se encontraron proyectos con esos filtros</p>
@@ -856,7 +857,8 @@ export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps
                 </div>
               </div>
             ))}
-          </div>
+          </div>{/* end flex column */}
+          </div>{/* end scroll container */}
 
           {/* ── Map — sticky ── */}
           <div style={{ position: 'sticky', top: 80 }}>
