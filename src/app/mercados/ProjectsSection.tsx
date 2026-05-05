@@ -785,8 +785,8 @@ export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps
         {/* Content: cards left + map right */}
         <div className="proj-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: 28, alignItems: 'start' }}>
 
-          {/* ── Cards ── */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+          {/* ── Cards (scrollable column) ── */}
+          <div className="cards-scroll" style={{ height: 660, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 20, paddingRight: 6 }}>
             {filtered.length === 0 && (
               <div style={{ padding: '60px 24px', textAlign: 'center', background: '#131326', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 14 }}>
                 <p style={{ fontSize: 14, color: 'rgba(239,239,239,0.35)', margin: 0 }}>No se encontraron proyectos con esos filtros</p>
@@ -860,7 +860,7 @@ export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps
 
           {/* ── Map — sticky ── */}
           <div style={{ position: 'sticky', top: 80 }}>
-            <div style={{ borderRadius: 14, overflow: 'visible', border: '1px solid rgba(201,146,42,0.25)', height: 600, position: 'relative' }}>
+            <div style={{ borderRadius: 14, overflow: 'visible', border: '1px solid rgba(201,146,42,0.25)', height: 660, position: 'relative' }}>
               {/* Floating card */}
               <div style={{ position: 'absolute', bottom: 16, left: 12, right: 12, zIndex: 1000, background: 'rgba(10,10,20,0.95)', border: '1px solid rgba(201,146,42,0.4)', borderRadius: 12, padding: '14px 16px', backdropFilter: 'blur(10px)', boxShadow: '0 8px 32px rgba(0,0,0,0.6)' }}>
                 <p style={{ fontSize: 14, fontWeight: 800, color: '#efefef', margin: '0 0 2px' }}>{selected.name}</p>
@@ -901,8 +901,14 @@ export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps
       <style>{`
         @media (max-width: 1024px) {
           .proj-grid { grid-template-columns: 1fr !important; }
+          .cards-scroll { height: auto !important; overflow-y: visible !important; }
         }
         select option { background: #1a1a2e; }
+        .cards-scroll::-webkit-scrollbar { width: 5px; }
+        .cards-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 4px; }
+        .cards-scroll::-webkit-scrollbar-thumb { background: rgba(201,146,42,0.4); border-radius: 4px; }
+        .cards-scroll::-webkit-scrollbar-thumb:hover { background: rgba(201,146,42,0.7); }
+        .cards-scroll { scrollbar-width: thin; scrollbar-color: rgba(201,146,42,0.4) rgba(255,255,255,0.04); }
       `}</style>
     </section>
   );
