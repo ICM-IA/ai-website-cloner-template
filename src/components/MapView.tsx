@@ -29,6 +29,9 @@ export default function MapView({ projects, selectedProject, onSelect, mapCenter
   const mapInstanceRef = useRef<unknown>(null);
   const markersRef = useRef<{ marker: unknown; id: number }[]>([]);
   const leafletRef = useRef<unknown>(null);
+  // Keep latest onSelect in a ref so marker click handlers don't stale-close
+  const onSelectRef = useRef(onSelect);
+  useEffect(() => { onSelectRef.current = onSelect; });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const createIcon = (L: any, isSelected: boolean) =>
@@ -48,6 +51,7 @@ export default function MapView({ projects, selectedProject, onSelect, mapCenter
       iconAnchor: [isSelected ? 19 : 13, isSelected ? 38 : 26],
     });
 
+  // ── Init map once ──────────────────────────────────────────────────────────
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -66,46 +70,10 @@ export default function MapView({ projects, selectedProject, onSelect, mapCenter
         attributionControl: false,
       });
 
-      // Carto Voyager — English labels, clean and modern
       L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         maxZoom: 19,
         subdomains: 'abcd',
       }).addTo(map);
-
-      // Add markers
-      projects.forEach((p) => {
-        const isSelected = p.id === selectedProject.id;
-        const tooltipHtml = `
-          <div class="lion-card">
-            <p class="lion-card-name">${p.name}</p>
-            <p class="lion-card-loc">📍 ${p.city}, ${p.country}</p>
-            <hr class="lion-card-divider" />
-            <div class="lion-card-row">
-              <span class="lion-card-label">Precio desde</span>
-              <span class="lion-card-value">${p.price}</span>
-            </div>
-            <div class="lion-card-row">
-              <span class="lion-card-label">Estado</span>
-              <span class="lion-card-status" style="font-size:11px;font-weight:700;color:${p.statusColor}">${p.status}</span>
-            </div>
-            <div class="lion-card-cta">Click para ver detalles →</div>
-          </div>
-        `;
-
-        const marker = L.marker([p.lat, p.lng], {
-          icon: createIcon(L, isSelected),
-        })
-          .addTo(map)
-          .bindTooltip(tooltipHtml, {
-            className: 'lion-tooltip',
-            direction: 'top',
-            offset: [0, -10],
-            opacity: 1,
-          });
-
-        marker.on('click', () => onSelect(p));
-        markersRef.current.push({ marker, id: p.id });
-      });
 
       mapInstanceRef.current = map;
     };
@@ -123,25 +91,92 @@ export default function MapView({ projects, selectedProject, onSelect, mapCenter
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Pan to selected project and update marker colors
+  // ── Rebuild markers whenever projects list changes ─────────────────────────
+  useEffect(() => {
+    if (!mapInstanceRef.current || !leafletRef.current) return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const L = leafletRef.current as any;
+    const map = mapInstanceRef.current as { addLayer: (l: unknown) => void };
+
+    // Remove old markers
+    markersRef.current.forEach(({ marker }) => {
+      (marker as { remove: () => void }).remove();
+    });
+    markersRef.current = [];
+
+    // Add new markers
+    projects.forEach((p) => {
+      const isSelected = p.id === selectedProject.id;
+      const tooltipHtml = `
+        <div class="lion-card">
+          <p class="lion-card-name">${p.name}</p>
+          <p class="lion-card-loc">📍 ${p.city}, ${p.country}</p>
+          <hr class="lion-card-divider" />
+          <div class="lion-card-row">
+            <span class="lion-card-label">Precio desde</span>
+            <span class="lion-card-value">${p.price}</span>
+          </div>
+          <div class="lion-card-row">
+            <span class="lion-card-label">Estado</span>
+            <span class="lion-card-status" style="font-size:11px;font-weight:700;color:${p.statusColor}">${p.status}</span>
+          </div>
+          <div class="lion-card-cta">Click para ver detalles →</div>
+        </div>
+      `;
+
+      const marker = L.marker([p.lat, p.lng], {
+        icon: createIcon(L, isSelected),
+      })
+        .addTo(map)
+        .bindTooltip(tooltipHtml, {
+          className: 'lion-tooltip',
+          direction: 'top',
+          offset: [0, -10],
+          opacity: 1,
+        });
+
+      marker.on('click', () => onSelectRef.current(p));
+      markersRef.current.push({ marker, id: p.id });
+    });
+
+    // Fit map bounds to show all current markers if we have valid coords
+    if (projects.length > 1) {
+      try {
+        const bounds = L.latLngBounds(projects.map((p: Project) => [p.lat, p.lng]));
+        (map as { fitBounds: (b: unknown, opts: unknown) => void }).fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
+      } catch {
+        // ignore invalid bounds
+      }
+    } else if (projects.length === 1) {
+      (map as { setView: (latlng: [number, number], zoom: number) => void }).setView(
+        [projects[0].lat, projects[0].lng], 13
+      );
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [projects]);
+
+  // ── Pan + highlight when selected project changes ──────────────────────────
   useEffect(() => {
     if (!mapInstanceRef.current || !leafletRef.current) return;
     const map = mapInstanceRef.current as { flyTo: (latlng: [number, number], zoom: number) => void };
-    const L = leafletRef.current as { divIcon: (opts: unknown) => unknown };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const L = leafletRef.current as any;
+
     map.flyTo([selectedProject.lat, selectedProject.lng], 14);
 
-    // Update all marker icons
     markersRef.current.forEach(({ marker, id }) => {
       const m = marker as { setIcon: (icon: unknown) => void };
       m.setIcon(createIcon(L, id === selectedProject.id));
     });
-  }, [selectedProject]); // eslint-disable-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedProject]);
 
+  // ── Fly to mapCenter when market changes ───────────────────────────────────
   useEffect(() => {
     if (!mapInstanceRef.current || !mapCenter) return;
     const map = mapInstanceRef.current as { flyTo: (latlng: [number, number], zoom: number) => void };
     map.flyTo([mapCenter.lat, mapCenter.lng], mapCenter.zoom);
-  }, [mapCenter]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [mapCenter]);
 
   return (
     <div ref={mapRef} style={{ width: '100%', height: '100%', background: '#0d0d1a' }} />
