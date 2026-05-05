@@ -47,3 +47,8 @@ next-env.d.ts
 
 # Local temp files
 temp/
+
+# Large video files (served via CDN / local only)
+public/videos/*.mp4
+public/videos/*.mov
+public/videos/*.webm

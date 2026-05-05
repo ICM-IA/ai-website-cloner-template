@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0d0d1a"/>
+  <rect x="1" y="1" width="798" height="498" fill="none" stroke="rgba(201,146,42,0.2)" stroke-width="2"/>
+
+  <!-- Camera icon -->
+  <g transform="translate(400, 200)">
+    <rect x="-40" y="-28" width="80" height="56" rx="8" fill="none" stroke="rgba(201,146,42,0.4)" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="16" fill="none" stroke="rgba(201,146,42,0.4)" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="7" fill="rgba(201,146,42,0.3)"/>
+    <rect x="-12" y="-36" width="24" height="10" rx="3" fill="none" stroke="rgba(201,146,42,0.4)" stroke-width="2.5"/>
+    <circle cx="28" cy="-18" r="4" fill="rgba(201,146,42,0.4)"/>
+  </g>
+
+  <!-- Text -->
+  <text x="400" y="295" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="rgba(239,239,239,0.6)" text-anchor="middle" letter-spacing="3">FOTOS PRÓXIMAMENTE</text>
+  <text x="400" y="325" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="rgba(239,239,239,0.25)" text-anchor="middle" letter-spacing="1">Imágenes en proceso de carga</text>
+
+  <!-- Decorative lines -->
+  <line x1="300" y1="345" x2="360" y2="345" stroke="rgba(201,146,42,0.3)" stroke-width="1"/>
+  <line x1="440" y1="345" x2="500" y2="345" stroke="rgba(201,146,42,0.3)" stroke-width="1"/>
+  <circle cx="400" cy="345" r="3" fill="rgba(201,146,42,0.5)"/>
+</svg>

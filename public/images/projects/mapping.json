@@ -1,0 +1,366 @@
+{
+  "beach House": {
+    "slug": "beach_house",
+    "photos": [
+      "/images/projects/beach_house/photo1.jpeg",
+      "/images/projects/beach_house/photo2.jpeg"
+    ],
+    "sheet": "Porto de Galinhas",
+    "zona": "",
+    "dev": "House In",
+    "precio": 273000,
+    "entrega": 2026,
+    "estado": "terminado",
+    "ubicacion": "https://maps.app.goo.gl/Ma4GBdcCBzp8Eq7z7"
+  },
+  "Nixxus II": {
+    "slug": "nixxus_ii",
+    "photos": [
+      "/images/projects/nixxus_ii/photo1.jpeg"
+    ],
+    "sheet": "Porto de Galinhas",
+    "zona": "",
+    "dev": "bl2",
+    "precio": 480000,
+    "entrega": 2025,
+    "estado": "terminado",
+    "ubicacion": "https://maps.app.goo.gl/UNKgJqZGhLjANooDA"
+  },
+  "Cais": {
+    "slug": "cais",
+    "photos": [
+      "/images/projects/cais/photo1.jpg"
+    ],
+    "sheet": "Porto de Galinhas",
+    "zona": "Muro alto",
+    "dev": "Due inc",
+    "precio": 844000,
+    "entrega": 2024,
+    "estado": "terminado",
+    "ubicacion": "https://maps.app.goo.gl/zNEQCHWSh4ozcBgg6"
+  },
+  "Nature": {
+    "slug": "nature",
+    "photos": [
+      "/images/projects/nature/photo1.jpg"
+    ],
+    "sheet": "Porto de Galinhas",
+    "zona": "1era linea (Muro alto)",
+    "dev": "due inc",
+    "precio": 715000,
+    "entrega": 46204,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/JsVEqDsqfWeQQa9E6"
+  },
+  "Tropi": {
+    "slug": "tropi",
+    "photos": [
+      "/images/projects/tropi/photo1.jpg"
+    ],
+    "sheet": "Porto de Galinhas",
+    "zona": "1era linea (Muro alto)",
+    "dev": "due inc",
+    "precio": 2155000,
+    "entrega": 46204,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/doQfB5TcudvgPmMx5"
+  },
+  "La proa": {
+    "slug": "la_proa",
+    "photos": [
+      "/images/projects/la_proa/photo1.png"
+    ],
+    "sheet": "Porto de Galinhas",
+    "zona": "1era linea de mar",
+    "dev": "W engenharia",
+    "precio": 372000,
+    "entrega": 46447,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/jNWs4kDTvvcZxFgt9"
+  },
+  "Dolphin smarts flats": {
+    "slug": "dolphin_smarts_flats",
+    "photos": [
+      "/images/projects/dolphin_smarts_flats/photo1.png",
+      "/images/projects/dolphin_smarts_flats/photo2.png"
+    ],
+    "sheet": "Porto de Galinhas",
+    "zona": "50 mts del mar",
+    "dev": "Hasa emprendimientos",
+    "precio": 284000,
+    "entrega": 46661,
+    "estado": "en obra",
+    "ubicacion": "R. Paineira, 126 - Porto de Galinhas"
+  },
+  "Wiki beach": {
+    "slug": "wiki_beach",
+    "photos": [
+      "/images/projects/wiki_beach/photo1.jpg"
+    ],
+    "sheet": "Porto de Galinhas",
+    "zona": "",
+    "dev": "Jairo Rocha",
+    "precio": 360000,
+    "entrega": 46661,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/Axq33ygvAZrymTaG9"
+  },
+  "Nixxus BP II": {
+    "slug": "nixxus_bp_ii",
+    "photos": [
+      "/images/projects/nixxus_bp_ii/photo1.jpg"
+    ],
+    "sheet": "Porto de Galinhas",
+    "zona": "1era linea de mar",
+    "dev": "bl2",
+    "precio": 495000,
+    "entrega": 46813,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/owkQHazv7jRC9ogo7"
+  },
+  "Habita": {
+    "slug": "habita",
+    "photos": [
+      "/images/projects/habita/photo1.jpg"
+    ],
+    "sheet": "Porto de Galinhas",
+    "zona": "1era linea (cupe)",
+    "dev": "due inc",
+    "precio": 1252000,
+    "entrega": 2029,
+    "estado": "lanzamiento",
+    "ubicacion": "https://maps.app.goo.gl/Zw29LLRmnPbihgcE9"
+  },
+  "Argo smarts flats": {
+    "slug": "argo_smarts_flats",
+    "photos": [
+      "/images/projects/argo_smarts_flats/photo1.png",
+      "/images/projects/argo_smarts_flats/photo2.png"
+    ],
+    "sheet": "Porto de Galinhas",
+    "zona": "",
+    "dev": "Hasa emprendimientos",
+    "precio": 377000,
+    "entrega": 46419,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/qpMR7iPwoNojyc2V8"
+  },
+  "Privilege Maragogi": {
+    "slug": "privilege_maragogi",
+    "photos": [
+      "/images/projects/privilege_maragogi/photo1.jpg"
+    ],
+    "sheet": "Maragogi",
+    "zona": "Peroba",
+    "dev": "Bay/Lma",
+    "precio": 344000,
+    "entrega": 47453,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/T4HRSvVfuU3zPSb67"
+  },
+  "WTA maragogi": {
+    "slug": "wta_maragogi",
+    "photos": [
+      "/images/projects/wta_maragogi/photo1.jpeg"
+    ],
+    "sheet": "Maragogi",
+    "zona": "Peroba",
+    "dev": "W incorporadora",
+    "precio": 275000,
+    "entrega": 2029,
+    "estado": "lanzamiento",
+    "ubicacion": "https://maps.app.goo.gl/mfs3fGMzWPLTr5BP7"
+  },
+  "Orama beach": {
+    "slug": "orama_beach",
+    "photos": [
+      "/images/projects/orama_beach/photo1.png",
+      "/images/projects/orama_beach/photo2.png",
+      "/images/projects/orama_beach/photo3.png",
+      "/images/projects/orama_beach/photo4.png"
+    ],
+    "sheet": "Maragogi",
+    "zona": "Camino de Moises",
+    "dev": "Fox construtora",
+    "precio": 480000,
+    "entrega": 47574,
+    "estado": "lanzamiento",
+    "ubicacion": "https://maps.app.goo.gl/3UnPd7Xy1dfRVgy19"
+  },
+  "caminho dos corais": {
+    "slug": "caminho_dos_corais",
+    "photos": [
+      "/images/projects/caminho_dos_corais/photo1.jpg"
+    ],
+    "sheet": "Maragogi",
+    "zona": "Camino de Moises",
+    "dev": "Queiroz Almeida",
+    "precio": "",
+    "entrega": 47484,
+    "estado": "lanzamiento",
+    "ubicacion": "https://maps.app.goo.gl/JoXvBvErcFpu8BEh8"
+  },
+  "Caminho do mar": {
+    "slug": "caminho_do_mar",
+    "photos": [
+      "/images/projects/caminho_do_mar/photo1.jpeg",
+      "/images/projects/caminho_do_mar/photo2.jpeg",
+      "/images/projects/caminho_do_mar/photo3.jpeg",
+      "/images/projects/caminho_do_mar/photo4.jpeg"
+    ],
+    "sheet": "Maragogi",
+    "zona": "Camino de Moises",
+    "dev": "Queiroz Almeida",
+    "precio": 466000,
+    "entrega": 46600,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/cEAXCLKsoz5WwwCy9?g_st=ipc"
+  },
+  "Praia residences": {
+    "slug": "praia_residences",
+    "photos": [
+      "/images/projects/praia_residences/photo1.jpeg",
+      "/images/projects/praia_residences/photo2.jpeg"
+    ],
+    "sheet": "Maragogi",
+    "zona": "Barra Grande",
+    "dev": "Menelau Almeida",
+    "precio": 486000,
+    "entrega": 46447,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/8waA3cViyL8oRSnt9"
+  },
+  "Nomar": {
+    "slug": "nomar",
+    "photos": [
+      "/images/projects/nomar/photo1.jpg"
+    ],
+    "sheet": "Tamandare",
+    "zona": "Carneiros",
+    "dev": "due inc.",
+    "precio": 911000,
+    "entrega": 2025,
+    "estado": "terminado",
+    "ubicacion": "https://maps.app.goo.gl/fNwvNy1mGtHNz2Hu7"
+  },
+  "Costa do Mar": {
+    "slug": "costa_do_mar",
+    "photos": [
+      "/images/projects/costa_do_mar/photo1.jpg"
+    ],
+    "sheet": "Tamandare",
+    "zona": "carneiros",
+    "dev": "Due inc.",
+    "precio": 655000,
+    "entrega": 2026,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/TURScseFpRNaxL9x7"
+  },
+  "reserva Pirambu": {
+    "slug": "reserva_pirambu",
+    "photos": [
+      "/images/projects/reserva_pirambu/photo1.jpeg"
+    ],
+    "sheet": "Tamandare",
+    "zona": "",
+    "dev": "Soter construçoe",
+    "precio": 316000,
+    "entrega": 46508,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/ZMuNR1DQbvsPJh529"
+  },
+  "Boulevar": {
+    "slug": "boulevar",
+    "photos": [
+      "/images/projects/boulevar/photo1.jpg"
+    ],
+    "sheet": "Tamandare",
+    "zona": "Carneiros",
+    "dev": "due inc.",
+    "precio": 484000,
+    "entrega": 2027,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/6dcZEPAwKtASJNSh9"
+  },
+  "Orla": {
+    "slug": "orla",
+    "photos": [
+      "/images/projects/orla/photo1.jpg"
+    ],
+    "sheet": "Tamandare",
+    "zona": "Carneiros",
+    "dev": "due inc.",
+    "precio": 1467000,
+    "entrega": 2028,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/sf69i8qwFqSaoMTk7"
+  },
+  "Tours de Carneiros": {
+    "slug": "tours_de_carneiros",
+    "photos": [
+      "/images/projects/tours_de_carneiros/photo1.jpeg"
+    ],
+    "sheet": "Tamandare",
+    "zona": "carneiros",
+    "dev": "snb engenharia",
+    "precio": 232000,
+    "entrega": 47088,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/JuurdLFw1fW5VLNZ6"
+  },
+  "Beach Campas": {
+    "slug": "beach_campas",
+    "photos": [
+      "/images/projects/beach_campas/photo1.png"
+    ],
+    "sheet": "Tamandare",
+    "zona": "80 mts del mar",
+    "dev": "House in",
+    "precio": 259000,
+    "entrega": 2029,
+    "estado": "lanzamiento",
+    "ubicacion": "https://maps.app.goo.gl/fFWvtZNMF3HhGfsj8"
+  },
+  "Costa dos Coqueiros": {
+    "slug": "costa_dos_coqueiros",
+    "photos": [
+      "/images/projects/costa_dos_coqueiros/photo1.jpg"
+    ],
+    "sheet": "Tamandare",
+    "zona": "Carneiros",
+    "dev": "due inc.",
+    "precio": 335000,
+    "entrega": 2029,
+    "estado": "lanzamiento",
+    "ubicacion": "https://maps.app.goo.gl/4Nzz5mjAQCa5AFR59"
+  },
+  "Poco da Panela": {
+    "slug": "poco_da_panela",
+    "photos": [
+      "/images/projects/poco_da_panela/photo1.jpg"
+    ],
+    "sheet": "Recife",
+    "zona": "",
+    "dev": "due inc",
+    "precio": 1249000,
+    "entrega": 2028,
+    "estado": "en obra",
+    "ubicacion": "https://maps.app.goo.gl/H1sCogZEZvT7ovvU9"
+  },
+  "Horizont": {
+    "slug": "horizont",
+    "photos": [
+      "/images/projects/horizont/photo1.png",
+      "/images/projects/horizont/photo2.jpeg",
+      "/images/projects/horizont/photo3.png",
+      "/images/projects/horizont/photo4.jpg"
+    ],
+    "sheet": "San Jose de Coroa grande",
+    "zona": "Beira mar",
+    "dev": "Hasa emprendimiento",
+    "precio": 228000,
+    "entrega": 46661,
+    "estado": "lanzamiento",
+    "ubicacion": "https://maps.app.goo.gl/GrKc3EpHrWfZmRws8"
+  }
+}

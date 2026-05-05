@@ -13,18 +13,40 @@ interface Project {
   statusColor: string;
   lat: number;
   lng: number;
+  photos?: string[];
+  desc?: string;
 }
 
 interface MapViewProps {
   projects: Project[];
   selectedProject: Project;
   onSelect: (project: Project) => void;
+  mapCenter?: { lat: number; lng: number; zoom: number };
 }
 
-export default function MapView({ projects, selectedProject, onSelect }: MapViewProps) {
+export default function MapView({ projects, selectedProject, onSelect, mapCenter }: MapViewProps) {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<unknown>(null);
-  const markersRef = useRef<unknown[]>([]);
+  const markersRef = useRef<{ marker: unknown; id: number }[]>([]);
+  const leafletRef = useRef<unknown>(null);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const createIcon = (L: any, isSelected: boolean) =>
+    L.divIcon({
+      className: '',
+      html: `<div style="
+        width: ${isSelected ? 38 : 26}px;
+        height: ${isSelected ? 38 : 26}px;
+        background: ${isSelected ? '#FFD700' : 'rgba(201,146,42,0.75)'};
+        border: 3px solid ${isSelected ? '#fff' : 'rgba(255,255,255,0.4)'};
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        box-shadow: ${isSelected ? '0 0 14px 4px rgba(255,215,0,0.55)' : '0 2px 8px rgba(0,0,0,0.5)'};
+        transition: all 0.25s;
+      "></div>`,
+      iconSize: [isSelected ? 38 : 26, isSelected ? 38 : 26],
+      iconAnchor: [isSelected ? 19 : 13, isSelected ? 38 : 26],
+    });
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -35,23 +57,7 @@ export default function MapView({ projects, selectedProject, onSelect }: MapView
 
       if (!mapRef.current || mapInstanceRef.current) return;
 
-      // Custom marker icon
-      const createIcon = (color: string, isSelected: boolean) =>
-        L.divIcon({
-          className: '',
-          html: `<div style="
-            width: ${isSelected ? 36 : 28}px;
-            height: ${isSelected ? 36 : 28}px;
-            background: ${color};
-            border: 3px solid ${isSelected ? '#fff' : 'rgba(255,255,255,0.5)'};
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-            transition: all 0.2s;
-          "></div>`,
-          iconSize: [isSelected ? 36 : 28, isSelected ? 36 : 28],
-          iconAnchor: [isSelected ? 18 : 14, isSelected ? 36 : 28],
-        });
+      leafletRef.current = L;
 
       const map = L.map(mapRef.current, {
         center: [selectedProject.lat, selectedProject.lng],
@@ -60,28 +66,45 @@ export default function MapView({ projects, selectedProject, onSelect }: MapView
         attributionControl: false,
       });
 
-      // Dark tile layer
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      // Carto Voyager — English labels, clean and modern
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         maxZoom: 19,
+        subdomains: 'abcd',
       }).addTo(map);
 
       // Add markers
       projects.forEach((p) => {
         const isSelected = p.id === selectedProject.id;
+        const tooltipHtml = `
+          <div class="lion-card">
+            <p class="lion-card-name">${p.name}</p>
+            <p class="lion-card-loc">📍 ${p.city}, ${p.country}</p>
+            <hr class="lion-card-divider" />
+            <div class="lion-card-row">
+              <span class="lion-card-label">Precio desde</span>
+              <span class="lion-card-value">${p.price}</span>
+            </div>
+            <div class="lion-card-row">
+              <span class="lion-card-label">Estado</span>
+              <span class="lion-card-status" style="font-size:11px;font-weight:700;color:${p.statusColor}">${p.status}</span>
+            </div>
+            <div class="lion-card-cta">Click para ver detalles →</div>
+          </div>
+        `;
+
         const marker = L.marker([p.lat, p.lng], {
-          icon: createIcon(isSelected ? '#024ffd' : 'rgba(2,79,253,0.6)', isSelected),
+          icon: createIcon(L, isSelected),
         })
           .addTo(map)
-          .bindPopup(`
-            <div style="font-family: Helvetica, sans-serif; min-width: 160px;">
-              <div style="font-weight: 700; font-size: 14px; margin-bottom: 4px;">${p.name}</div>
-              <div style="font-size: 12px; color: #666; margin-bottom: 6px;">📍 ${p.city}, ${p.country}</div>
-              <div style="font-size: 12px; font-weight: 700; color: #024ffd;">${p.price}</div>
-            </div>
-          `, { closeButton: false });
+          .bindTooltip(tooltipHtml, {
+            className: 'lion-tooltip',
+            direction: 'top',
+            offset: [0, -10],
+            opacity: 1,
+          });
 
         marker.on('click', () => onSelect(p));
-        markersRef.current.push(marker);
+        markersRef.current.push({ marker, id: p.id });
       });
 
       mapInstanceRef.current = map;
@@ -94,17 +117,31 @@ export default function MapView({ projects, selectedProject, onSelect }: MapView
         (mapInstanceRef.current as { remove: () => void }).remove();
         mapInstanceRef.current = null;
         markersRef.current = [];
+        leafletRef.current = null;
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Pan to selected project when it changes
+  // Pan to selected project and update marker colors
   useEffect(() => {
-    if (!mapInstanceRef.current) return;
+    if (!mapInstanceRef.current || !leafletRef.current) return;
     const map = mapInstanceRef.current as { flyTo: (latlng: [number, number], zoom: number) => void };
-    map.flyTo([selectedProject.lat, selectedProject.lng], 8);
-  }, [selectedProject]);
+    const L = leafletRef.current as { divIcon: (opts: unknown) => unknown };
+    map.flyTo([selectedProject.lat, selectedProject.lng], 14);
+
+    // Update all marker icons
+    markersRef.current.forEach(({ marker, id }) => {
+      const m = marker as { setIcon: (icon: unknown) => void };
+      m.setIcon(createIcon(L, id === selectedProject.id));
+    });
+  }, [selectedProject]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (!mapInstanceRef.current || !mapCenter) return;
+    const map = mapInstanceRef.current as { flyTo: (latlng: [number, number], zoom: number) => void };
+    map.flyTo([mapCenter.lat, mapCenter.lng], mapCenter.zoom);
+  }, [mapCenter]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div ref={mapRef} style={{ width: '100%', height: '100%', background: '#0d0d1a' }} />
