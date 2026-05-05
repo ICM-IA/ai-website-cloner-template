@@ -468,8 +468,8 @@ function ProjectDetailModal({ project, onClose }: { project: Project; onClose: (
             <img src={photos[currentPhoto]} alt={project.name}
               onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0.15'; }}
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-            {/* Gradient overlay */}
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 40%, rgba(13,13,13,0.97) 100%)' }} />
+            {/* Gradient overlay — covers promo text on marketing images + cinematic fade */}
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(8,8,20,0.78) 0%, rgba(8,8,20,0.12) 40%, rgba(8,8,20,0.0) 55%, rgba(8,8,20,0.0) 70%, rgba(13,13,13,0.97) 100%)' }} />
 
             {/* Close button */}
             <button onClick={onClose}
@@ -807,12 +807,16 @@ export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps
                 </div>
 
                 {/* Image */}
-                <div style={{ position: 'relative', height: 200, margin: '14px 18px 0', background: '#0d0d0d', borderRadius: 10, overflow: 'hidden' }}>
+                <div style={{ position: 'relative', height: 200, margin: '14px 18px 0', background: '#0d0d0d', borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.06)' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={p.photos[0]} alt={p.name}
                     onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0.3'; }}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  <span style={{ position: 'absolute', bottom: 12, left: 12, fontSize: 11, fontWeight: 700, color: '#efefef', background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(6px)', borderRadius: 20, padding: '4px 12px' }}>
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block', transform: 'scale(1.04)' }} />
+                  {/* Gradient overlay — hides promo text embedded in marketing images */}
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(10,10,28,0.72) 0%, rgba(10,10,28,0.18) 45%, rgba(10,10,28,0.0) 60%, rgba(10,10,28,0.55) 100%)' }} />
+                  {/* Bottom fade */}
+                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 60, background: 'linear-gradient(to top, rgba(19,19,38,0.9), transparent)' }} />
+                  <span style={{ position: 'absolute', bottom: 12, left: 12, fontSize: 11, fontWeight: 700, color: '#efefef', background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(8px)', borderRadius: 20, padding: '4px 12px', border: '1px solid rgba(255,255,255,0.1)' }}>
                     📍 {p.city}
                   </span>
                 </div>
