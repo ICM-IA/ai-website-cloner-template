@@ -785,79 +785,86 @@ export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps
         {/* Content: cards left + map right */}
         <div className="proj-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 400px', gap: 28, alignItems: 'start' }}>
 
-          {/* ── Cards (scrollable column) ── */}
-          <div className="cards-scroll" style={{ height: 660, overflowY: 'auto', paddingRight: 6 }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+          {/* ── Cards (scrollable 2-col grid) ── */}
+          <div className="cards-scroll" style={{ height: 660, overflowY: 'auto', paddingRight: 4 }}>
             {filtered.length === 0 && (
               <div style={{ padding: '60px 24px', textAlign: 'center', background: '#131326', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 14 }}>
                 <p style={{ fontSize: 14, color: 'rgba(239,239,239,0.35)', margin: 0 }}>No se encontraron proyectos con esos filtros</p>
               </div>
             )}
-            {filtered.map((p) => (
-              <div key={p.id}
-                style={{ background: '#131326', border: `1px solid ${selected.id === p.id ? 'rgba(201,146,42,0.5)' : 'rgba(255,255,255,0.07)'}`, borderRadius: 16, overflow: 'hidden', cursor: 'pointer', transition: 'border-color 0.2s' }}
-                onClick={() => setSelected(p)}
-              >
-                {/* Badge row */}
-                <div style={{ padding: '14px 18px 0', display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                  {p.airbnb
-                    ? <span style={{ fontSize: 11, fontWeight: 700, color: '#22c55e', background: 'rgba(34,197,94,0.12)', border: '1px solid rgba(34,197,94,0.3)', borderRadius: 20, padding: '4px 12px' }}>✓ Airbnb permitido</span>
-                    : <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(239,239,239,0.4)', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 20, padding: '4px 12px' }}>✗ Sin Airbnb</span>
-                  }
-                  <span style={{ fontSize: 11, fontWeight: 700, color: p.statusColor, background: `${p.statusColor}15`, border: `1px solid ${p.statusColor}40`, borderRadius: 20, padding: '4px 12px' }}>{p.estado}</span>
-                </div>
+            <div className="cards-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              {filtered.map((p) => (
+                <div key={p.id}
+                  onClick={() => setSelected(p)}
+                  style={{
+                    background: '#131326',
+                    border: `1px solid ${selected.id === p.id ? 'rgba(201,146,42,0.55)' : 'rgba(255,255,255,0.07)'}`,
+                    borderRadius: 14, overflow: 'hidden', cursor: 'pointer',
+                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                    boxShadow: selected.id === p.id ? '0 0 0 1px rgba(201,146,42,0.2)' : 'none',
+                    display: 'flex', flexDirection: 'column',
+                  }}
+                >
+                  {/* Image */}
+                  <div style={{ position: 'relative', height: 190, background: '#0a0a18', flexShrink: 0 }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.photos[0]} alt={p.name}
+                      onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0.2'; }}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%', display: 'block' }} />
+                    {/* Overlay — hides embedded promo text in marketing images */}
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(150deg, rgba(8,8,22,0.7) 0%, rgba(8,8,22,0.1) 40%, rgba(8,8,22,0) 55%, rgba(8,8,22,0.55) 100%)' }} />
+                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 56, background: 'linear-gradient(to top, rgba(19,19,38,1), transparent)' }} />
 
-                {/* Image */}
-                <div style={{ position: 'relative', height: 200, margin: '14px 18px 0', background: '#0d0d0d', borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.06)' }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.photos[0]} alt={p.name}
-                    onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0.3'; }}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block', transform: 'scale(1.04)' }} />
-                  {/* Gradient overlay — hides promo text embedded in marketing images */}
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(10,10,28,0.72) 0%, rgba(10,10,28,0.18) 45%, rgba(10,10,28,0.0) 60%, rgba(10,10,28,0.55) 100%)' }} />
-                  {/* Bottom fade */}
-                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 60, background: 'linear-gradient(to top, rgba(19,19,38,0.9), transparent)' }} />
-                  <span style={{ position: 'absolute', bottom: 12, left: 12, fontSize: 11, fontWeight: 700, color: '#efefef', background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(8px)', borderRadius: 20, padding: '4px 12px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                    📍 {p.city}
-                  </span>
-                </div>
+                    {/* Airbnb badge — top right */}
+                    {p.airbnb && (
+                      <span style={{ position: 'absolute', top: 10, right: 10, fontSize: 10, fontWeight: 700, color: '#22c55e', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(6px)', border: '1px solid rgba(34,197,94,0.45)', borderRadius: 20, padding: '3px 9px' }}>✓ Airbnb</span>
+                    )}
 
-                {/* Content */}
-                <div style={{ padding: '18px 18px 20px' }}>
-                  <h3 style={{ fontSize: 20, fontWeight: 800, color: '#efefef', margin: '0 0 4px' }}>{p.name}</h3>
-                  <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px' }}>{p.desc.slice(0, 80)}{p.desc.length > 80 ? '…' : ''}</p>
-
-                  {/* Stats 2×2 */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 18 }}>
-                    {[
-                      { label: 'ENTREGA',      value: p.entrega },
-                      { label: 'ESTADO',       value: p.estado  },
-                      { label: 'TIPO',         value: p.unitType },
-                      { label: 'FINANCIACIÓN', value: p.financiacion },
-                    ].map((s, i) => (
-                      <div key={i} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 8, padding: '10px 14px' }}>
-                        <p style={{ fontSize: 9, color: 'rgba(239,239,239,0.3)', fontWeight: 700, letterSpacing: '0.1em', margin: '0 0 3px' }}>{s.label}</p>
-                        <p style={{ fontSize: 13, fontWeight: 700, color: '#efefef', margin: 0 }}>{s.value}</p>
-                      </div>
-                    ))}
+                    {/* City — bottom left */}
+                    <div style={{ position: 'absolute', bottom: 10, left: 12, display: 'flex', alignItems: 'center', gap: 5 }}>
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="rgba(201,146,42,0.9)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                      <span style={{ fontSize: 11, fontWeight: 600, color: 'rgba(239,239,239,0.85)' }}>{p.city}</span>
+                    </div>
                   </div>
 
-                  {/* Price + CTA */}
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
-                    <div>
-                      <p style={{ fontSize: 22, fontWeight: 900, color: '#C9922A', margin: 0, lineHeight: 1 }}>{p.price}</p>
-                      {p.entry && <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)', margin: '4px 0 0' }}>Ingreso desde {p.entry}</p>}
+                  {/* Content */}
+                  <div style={{ padding: '14px 16px 16px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                    {/* Status badge */}
+                    <span style={{ fontSize: 10, fontWeight: 700, color: p.statusColor, background: `${p.statusColor}15`, border: `1px solid ${p.statusColor}35`, borderRadius: 20, padding: '2px 8px', alignSelf: 'flex-start', marginBottom: 8 }}>{p.estado}</span>
+
+                    <h3 style={{ fontSize: 15, fontWeight: 800, color: '#efefef', margin: '0 0 12px', lineHeight: 1.3 }}>{p.name}</h3>
+
+                    {/* Key facts */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 14, flex: 1 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Tiempo de entrega:</span>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: '#efefef' }}>{p.entrega}</span>
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span>
+                        <span style={{ fontSize: 13, fontWeight: 800, color: '#C9922A' }}>{p.price}</span>
+                      </div>
+                      {p.entry && (
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                          <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span>
+                          <span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>{p.entry}</span>
+                        </div>
+                      )}
                     </div>
+
+                    {/* CTA */}
                     <button
                       onClick={(e) => { e.stopPropagation(); setModalProject(p); }}
-                      style={{ background: '#C9922A', color: '#101010', border: 'none', borderRadius: 8, padding: '11px 22px', fontSize: 13, fontWeight: 800, cursor: 'pointer', whiteSpace: 'nowrap', letterSpacing: '0.04em', flexShrink: 0 }}>
+                      style={{ width: '100%', background: 'rgba(201,146,42,0.1)', color: '#C9922A', border: '1px solid rgba(201,146,42,0.35)', borderRadius: 8, padding: '9px 0', fontSize: 12, fontWeight: 800, cursor: 'pointer', letterSpacing: '0.05em', transition: 'background 0.18s' }}
+                      onMouseEnter={e => (e.currentTarget.style.background = '#C9922A', e.currentTarget.style.color = '#101010')}
+                      onMouseLeave={e => (e.currentTarget.style.background = 'rgba(201,146,42,0.1)', e.currentTarget.style.color = '#C9922A')}
+                    >
                       Ver proyecto →
                     </button>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>{/* end flex column */}
+              ))}
+            </div>
           </div>{/* end scroll container */}
 
           {/* ── Map — sticky ── */}
@@ -904,6 +911,10 @@ export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps
         @media (max-width: 1024px) {
           .proj-grid { grid-template-columns: 1fr !important; }
           .cards-scroll { height: auto !important; overflow-y: visible !important; }
+          .cards-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 600px) {
+          .cards-grid { grid-template-columns: 1fr !important; }
         }
         select option { background: #1a1a2e; }
         .cards-scroll::-webkit-scrollbar { width: 5px; }
