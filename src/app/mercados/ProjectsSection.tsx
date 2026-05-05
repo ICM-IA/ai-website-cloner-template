@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -682,101 +682,131 @@ const now = new Date();
 const monthNames = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 const currentMonth = `${monthNames[now.getMonth()]} ${now.getFullYear()}`;
 
+// ── Filter config ────────────────────────────────────────────────────────────
+const ZONA_OPTIONS = [
+  { value: 'all',          label: 'Todos los mercados' },
+  { value: 'usa',          label: 'EEUU — Florida' },
+  { value: 'brasil-nord',  label: 'Brasil — Nordeste' },
+  { value: 'brasil-sur',   label: 'Brasil — Sur SC' },
+  { value: 'argentina',    label: 'Argentina' },
+  { value: 'dubai',        label: 'Emiratos Árabes' },
+  { value: 'espana',       label: 'España' },
+  { value: 'uruguay',      label: 'Uruguay' },
+  { value: 'paraguay',     label: 'Paraguay' },
+];
+
+const TIPO_OPTIONS = [
+  { value: 'all',           label: 'Todos' },
+  { value: 'en-obra',       label: 'En obra / Pozo' },
+  { value: 'pre-const',     label: 'Pre-construcción' },
+  { value: 'terminado',     label: 'Terminado' },
+];
+
+const MARKET_TO_ZONA: Record<string, string> = {
+  'Estados Unidos': 'usa',
+  'Brasil':         'all',   // Brasil tiene dos zonas → mostrar todas
+  'Argentina':      'argentina',
+  'Emiratos Árabes':'dubai',
+  'España':         'espana',
+  'Uruguay':        'uruguay',
+  'Paraguay':       'paraguay',
+  'México':         'all',
+  'Rep. Dominicana':'all',
+  'Italia':         'all',
+};
+
+const ZONA_MAP_CENTER: Record<string, { lat: number; lng: number; zoom: number }> = {
+  usa:         { lat: 25.9, lng: -80.2, zoom: 9  },
+  'brasil-nord':{ lat: -9,  lng: -35.5, zoom: 7  },
+  'brasil-sur': { lat: -27.3,lng:-48.5, zoom: 9  },
+  argentina:   { lat: -34.6,lng: -58.5, zoom: 9  },
+  dubai:       { lat: 25.2, lng:  55.3, zoom: 10 },
+  espana:      { lat: 41.4, lng:   2.2, zoom: 11 },
+  uruguay:     { lat: -34.9,lng: -54.9, zoom: 11 },
+  paraguay:    { lat: -25.3,lng: -57.5, zoom: 11 },
+};
+
+function applyZona(p: Project, zona: string): boolean {
+  switch (zona) {
+    case 'usa':          return p.country === 'USA';
+    case 'brasil-nord':  return p.country === 'Brasil' && p.zone === 'Nordeste';
+    case 'brasil-sur':   return p.country === 'Brasil' && p.zone === 'Sur SC';
+    case 'argentina':    return p.country === 'Argentina';
+    case 'dubai':        return p.country === 'Dubái';
+    case 'espana':       return p.country === 'España';
+    case 'uruguay':      return p.country === 'Uruguay';
+    case 'paraguay':     return p.country === 'Paraguay';
+    default:             return true; // 'all'
+  }
+}
+
+function applyTipo(p: Project, tipo: string): boolean {
+  switch (tipo) {
+    case 'en-obra':   return p.estado === 'En obra';
+    case 'pre-const': return p.estado === 'Pre-construcción';
+    case 'terminado': return p.estado === 'Terminado' || p.estado === 'Completado';
+    default:          return true;
+  }
+}
+
 export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps) {
-  const mappedCountry = COUNTRY_MAP[selectedMarket] ?? null;
-  const regionLabel   = REGION_LABELS[selectedMarket] ?? selectedMarket;
-
-  const [filterAirbnb, setFilterAirbnb] = useState<'Todos' | 'Sí' | 'No'>('Todos');
-  const [filterZone,   setFilterZone]   = useState('Todas las zonas');
-  const [filterType,   setFilterType]   = useState('Todos los tipos');
-  const [activeCountry, setActiveCountry] = useState<string | null>(mappedCountry);
-  const [selected, setSelected]         = useState<Project>(projects[0]);
+  const [zona,   setZona]   = useState('all');
+  const [tipo,   setTipo]   = useState('all');
+  const [selected, setSelected]     = useState<Project>(projects[0]);
   const [modalProject, setModalProject] = useState<Project | null>(null);
+  const isFirstRender = useRef(true);
 
-  // Sync when parent changes market
+  // When user clicks a market in the two-panel, sync zona (skip first mount so default = all)
   useEffect(() => {
-    setActiveCountry(mappedCountry);
-    setFilterZone('Todas las zonas');
-    setFilterType('Todos los tipos');
-    setFilterAirbnb('Todos');
-  }, [mappedCountry]);
+    if (isFirstRender.current) { isFirstRender.current = false; return; }
+    setZona(MARKET_TO_ZONA[selectedMarket] ?? 'all');
+    setTipo('all');
+  }, [selectedMarket]);
 
   // Build filtered list
-  let base = [...projects];
-  if (activeCountry) base = base.filter(p => p.country === activeCountry);
-  if (filterAirbnb === 'Sí') base = base.filter(p => p.airbnb);
-  if (filterAirbnb === 'No') base = base.filter(p => !p.airbnb);
-  const zones = ['Todas las zonas', ...Array.from(new Set(base.map(p => p.zone)))];
-  const types = ['Todos los tipos', ...Array.from(new Set(base.map(p => p.type)))];
-  if (filterZone !== 'Todas las zonas') base = base.filter(p => p.zone === filterZone);
-  if (filterType !== 'Todos los tipos') base = base.filter(p => p.type === filterType);
-  const filtered = base;
+  const filtered = projects.filter(p => applyZona(p, zona) && applyTipo(p, tipo));
 
-  const mapCenter = activeCountry ? (MARKET_CENTERS[activeCountry] ?? undefined) : undefined;
+  // Derive map center from zona
+  const mapCenter = zona !== 'all' ? (ZONA_MAP_CENTER[zona] ?? undefined) : undefined;
+
+  // Zona label for title
+  const zonaLabel = ZONA_OPTIONS.find(o => o.value === zona)?.label ?? 'Todos los mercados';
 
   const selectStyle: React.CSSProperties = {
     background: '#1a1a2e', border: '1px solid rgba(255,255,255,0.12)',
-    borderRadius: 6, padding: '7px 10px', color: '#efefef', fontSize: 12,
-    cursor: 'pointer', outline: 'none',
+    borderRadius: 6, padding: '7px 12px', color: '#efefef', fontSize: 12,
+    cursor: 'pointer', outline: 'none', minWidth: 160,
   };
 
   return (
     <section id="proyectos" style={{ background: '#0d0d0d', borderTop: '1px solid rgba(201,146,42,0.1)', padding: '0 40px 80px' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
 
-        {/* Breadcrumb + Title */}
+        {/* Title */}
         <div style={{ paddingTop: 52, marginBottom: 28 }}>
-          <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.35)', marginBottom: 12, letterSpacing: '0.04em' }}>
-            Mercados ›{' '}
-            <span style={{ color: '#C9922A', fontWeight: 700 }}>{selectedMarket}</span>
-            {' '}› <span style={{ color: 'rgba(239,239,239,0.5)' }}>Proyectos</span>
-          </p>
           <h2 style={{ fontSize: 34, fontWeight: 800, color: '#efefef', marginBottom: 6, lineHeight: 1.1 }}>
             Proyectos activos —{' '}
-            <span style={{ color: '#C9922A' }}>{regionLabel}</span>
+            <span style={{ color: '#C9922A' }}>{zonaLabel}</span>
           </h2>
           <p style={{ fontSize: 13, color: 'rgba(239,239,239,0.35)', margin: 0 }}>
-            {activeCountry === 'USA' ? 'Miami · Hallandale · Wynwood · ' : ''}
             {currentMonth} · {filtered.length} {filtered.length === 1 ? 'proyecto' : 'proyectos'} disponibles
           </p>
         </div>
 
         {/* Filter bar */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 28, flexWrap: 'wrap' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'rgba(239,239,239,0.5)' }}>
-            <span>Zona:</span>
-            <select value={filterZone} onChange={e => setFilterZone(e.target.value)} style={selectStyle}>
-              {zones.map(z => <option key={z} value={z}>{z}</option>)}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: 'rgba(239,239,239,0.5)' }}>
+            <span style={{ fontWeight: 600 }}>Zona:</span>
+            <select value={zona} onChange={e => setZona(e.target.value)} style={selectStyle}>
+              {ZONA_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
             </select>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'rgba(239,239,239,0.5)' }}>
-            <span>Tipo:</span>
-            <select value={filterType} onChange={e => setFilterType(e.target.value)} style={selectStyle}>
-              {types.map(t => <option key={t} value={t}>{t}</option>)}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: 'rgba(239,239,239,0.5)' }}>
+            <span style={{ fontWeight: 600 }}>Tipo:</span>
+            <select value={tipo} onChange={e => setTipo(e.target.value)} style={selectStyle}>
+              {TIPO_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
             </select>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: 'rgba(239,239,239,0.5)' }}>
-            <span>Airbnb:</span>
-            <select value={filterAirbnb} onChange={e => setFilterAirbnb(e.target.value as 'Todos'|'Sí'|'No')} style={selectStyle}>
-              {(['Todos','Sí','No'] as const).map(o => <option key={o} value={o}>{o}</option>)}
-            </select>
-          </div>
-
-          <div style={{ display: 'flex', gap: 8, marginLeft: 8 }}>
-            {['USA','Brasil'].map(c => (
-              <button key={c} onClick={() => setActiveCountry(activeCountry === c ? null : c)}
-                style={{ display: 'flex', alignItems: 'center', gap: 6, background: activeCountry === c ? 'rgba(201,146,42,0.15)' : '#1a1a2e', border: `1.5px solid ${activeCountry === c ? '#C9922A' : 'rgba(255,255,255,0.1)'}`, borderRadius: 20, padding: '6px 14px', color: '#efefef', fontSize: 12, fontWeight: 700, cursor: 'pointer', WebkitTapHighlightColor: 'transparent' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`https://flagcdn.com/w40/${c === 'USA' ? 'us' : 'br'}.png`} alt={c} style={{ width: 20, height: 14, objectFit: 'cover', borderRadius: 2 }} />
-                {c}
-              </button>
-            ))}
-            <button onClick={() => setActiveCountry(null)}
-              style={{ background: !activeCountry ? 'rgba(201,146,42,0.15)' : '#1a1a2e', border: `1.5px solid ${!activeCountry ? '#C9922A' : 'rgba(255,255,255,0.1)'}`, borderRadius: 20, padding: '6px 14px', color: '#efefef', fontSize: 12, fontWeight: 700, cursor: 'pointer', WebkitTapHighlightColor: 'transparent' }}>
-              Todos los mercados
-            </button>
-          </div>
-
           <span style={{ marginLeft: 'auto', fontSize: 12, color: 'rgba(239,239,239,0.35)', fontWeight: 600 }}>
             {filtered.length} proyectos encontrados
           </span>
