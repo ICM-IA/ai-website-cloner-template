@@ -6,8 +6,9 @@ import ProjectsSection from './ProjectsSection';
 
 type Zone    = { icon: string; name: string; desc: string };
 type Project = { icon: string; name: string; tags: string[]; price: string; sub: string };
-type Model   = { label: string; sub: string };
+type Model   = { label: string; sub: string; badge?: string; fullDesc?: string };
 type Faq     = { q: string; a: string; bold?: string };
+type Step    = { title: string; desc: string };
 
 type Market = {
   name: string;
@@ -24,9 +25,12 @@ type Market = {
   whyInvest: string;
   zones: Zone[];
   models: Model[];
+  steps?: Step[];
   note: string;
   projects: Project[];
   faqs?: Faq[];
+  ctaTitle?: string;
+  ctaDesc?: string;
 };
 
 const markets: Market[] = [
@@ -60,31 +64,52 @@ const markets: Market[] = [
   },
   {
     name: 'Brasil',
-    subtitle: 'Mayor crecimiento inmobiliario de Latinoamérica',
+    subtitle: 'El mercado que más crece en América del Sur',
     regionFilter: 'América', code: 'br',
-    detail: 'SC · Floripa · Nordeste',
+    detail: 'Santa Catarina · Nordeste · Río de Janeiro',
     foco: true,
     badge: { label: '⭐ Foco', color: '#C9922A' },
-    tags: ['Florianópolis · Nordeste · São Paulo', 'Financiación desde 7%', 'Alta demanda turística', 'Precios en USD'],
-    stat1: { value: '+15%', label: 'Rentabilidad anual estimada' },
-    stat2: { value: 'USD 36K', label: 'Ticket mínimo de entrada' },
-    stat3: { value: '7%', label: 'Financiación desde' },
-    whyInvest: 'Brasil es el mercado de mayor crecimiento de Latinoamérica con precios en dólares y alta demanda turística. El Nordeste y Florianópolis registran récords de ocupación y proyectos con planes de pago accesibles desde solo el 7% de entrada. Inversores de Argentina, Europa y Medio Oriente lideran las operaciones.',
+    tags: ['Financiación 10 años', 'Sin banco ni historial', 'Desde USD 7.000', 'Proceso 100% remoto', 'Aeropuerto Maragogi 2026'],
+    stat1: { value: 'R$14.906', label: 'M² Balneário Camboriú — #1 Brasil' },
+    stat2: { value: 'USD 7K', label: 'Ticket mínimo de entrada' },
+    stat3: { value: '+86%', label: 'Plusvalía Porto Belo — 3 años' },
+    whyInvest: 'Brasil combina lo que pocos mercados ofrecen al mismo tiempo: ciudades con el metro cuadrado más caro del país (Balneário Camboriú e Itapema superan São Paulo, Río y todas las capitales brasileñas), destinos turísticos de clase mundial en el Nordeste, y financiación directa del desarrollador de hasta 10 años sin banco ni historial local. Para el inversor latinoamericano, la ventaja cambiaria es estructural: el real históricamente debilitado frente al dólar genera una ventana de entrada favorable. Un extranjero puede comprar con su pasaporte y CPF (número fiscal gratuito que se tramita online), sin visa especial ni cuenta bancaria local.',
     zones: [
-      { icon: '🌴', name: 'Nordeste — Maceió · Fortaleza', desc: 'Las playas más buscadas por inversores internacionales. Proyectos en pozo con hasta 18% anual y financiación directa con la desarrolladora.' },
-      { icon: '🏝️', name: 'Florianópolis', desc: 'La Ibiza de Sudamérica. Alta demanda de alquiler premium todo el año, turismo consolidado y proyectos de lujo en primera línea de playa.' },
+      { icon: '🏖️', name: 'Santa Catarina — La costa de oro', desc: 'Balneário Camboriú (#1 m² Brasil), Itapema (#2), Porto Belo (+86% plusvalía 3 años), Bombinhas y Florianópolis. El litoral norte concentra la mayor valorización del país con financiación directa hasta 10 años.' },
+      { icon: '🌴', name: 'Nordeste — Alagoas · Pernambuco', desc: 'Maragogi, São Miguel dos Milagres, Japaratinga, Tamandaré y Porto de Galinhas. Ingreso desde USD 7K. El aeropuerto de Maragogi abre en diciembre 2026 — el catalizador que acelera la plusvalía.' },
+      { icon: '🏙️', name: 'Río de Janeiro — Zona Sur', desc: 'El destino turístico más icónico de Brasil. Alta demanda de alquiler premium todo el año. Proyectos en zonas consolidadas con rentabilidad de corto y largo plazo.' },
     ],
     models: [
-      { label: 'Compra en pozo', sub: 'Mayor plusvalía' },
-      { label: 'Financiación directa', sub: 'Desde 7% entrada' },
-      { label: 'Alquiler turístico', sub: 'Renta inmediata' },
-      { label: 'Reventa anticipada', sub: 'Retorno rápido' },
+      { label: 'Financiación directa del desarrollador', sub: 'Más popular', badge: 'Más popular', fullDesc: 'Ingresás con el 10-25% del valor, pagás cuotas mensuales durante y post obra y saldo a la entrega. Sin banco, sin historial local. Hasta 10 años de financiación.' },
+      { label: 'Compra en pozo anticipado', sub: 'Mayor plusvalía', badge: 'Mayor plusvalía', fullDesc: 'Ingresás en los primeros lanzamientos al precio más bajo del ciclo. Proyectos en Porto Belo registraron 86% de plusvalía en 3 años.' },
+      { label: 'Ticket bajo Nordeste', sub: 'Desde USD 7K', badge: 'Desde USD 7K', fullDesc: 'Studios en Maragogi y Tamandaré desde USD 43.999 con ingresos de USD 7.000-8.000. Plan de cuotas desde USD 335/mes.' },
+      { label: 'Renta turística anual', sub: 'Renta inmediata', badge: 'Renta inmediata', fullDesc: 'Propiedades terminadas para alquiler por temporada en destinos con alta demanda. Operadoras locales gestionan todo sin que debas estar presente.' },
     ],
-    note: 'Los contratos se realizan en reales brasileños pero el valor de referencia es en dólares. Contamos con socios jurídicos locales en todos los estados donde operamos.',
+    steps: [
+      { title: 'Definimos tu objetivo y zona', desc: '¿Buscás plusvalía, renta o ticket mínimo? ¿Preferís el litoral de Santa Catarina o el Nordeste? Eso determina el proyecto ideal.' },
+      { title: 'Tramitás el CPF', desc: 'El número fiscal brasileño (gratuito, se obtiene online o en el consulado en 1-5 días). Te acompañamos en el proceso.' },
+      { title: 'Reserva de la unidad', desc: 'Con el ingreso inicial la unidad queda a tu nombre. Firma digital del contrato en español desde tu país.' },
+      { title: 'Cuotas mensuales', desc: 'Pagos mensuales vía transferencia internacional. Refuerzos semestrales según el plan del proyecto elegido.' },
+      { title: 'Escritura y entrega', desc: 'Al completarse la obra firmás escritura ante notario. La propiedad queda inscripta en el Registro de Imóveis a tu nombre.' },
+      { title: 'Renta o reventa', desc: 'Te conectamos con operadoras de alquiler turístico locales. Tu propiedad empieza a generar ingresos sin que tengas que estar presente.' },
+    ],
+    note: 'Las operaciones se realizan en reales brasileños pero el valor de referencia es en dólares. Un extranjero puede comprar con pasaporte y CPF (se tramita online en 1-5 días, gratuito). Sin necesidad de cuenta bancaria local. Contamos con socios jurídicos en Santa Catarina, Alagoas y Pernambuco.',
     projects: [
-      { icon: '🌅', name: 'Reserva do Atlântico', tags: ['Maceió', 'En pozo', 'Alquiler turístico', 'Entrega 2026'], price: 'USD 36.000', sub: 'Ingreso desde 7% · Financiación directa' },
-      { icon: '🏖️', name: 'Beira Mar Floripa', tags: ['Florianópolis', 'En construcción', 'Primera línea', 'Entrega 2027'], price: 'USD 85.000', sub: 'Rentabilidad estimada 14% anual' },
+      { icon: '🌅', name: 'Riviera Home Club', tags: ['Itapema · SC', '2 dorm', 'Entrega 2030', 'Foco principal'], price: 'USD 163.761', sub: 'Ingreso USD 16.376 · 100 cuotas USD 573' },
+      { icon: '🌊', name: 'Horizon — Maragogi', tags: ['Maragogi · AL', 'Studio', 'Entrega sep 2027', 'Nordeste'], price: 'USD 43.999', sub: 'Ingreso USD 8.800 · 26 cuotas USD 339' },
+      { icon: '🏗️', name: 'Catalunya Porto Belo', tags: ['Porto Belo · SC', '2 dorm', 'Entrega dic 2029', '+86% plusvalía'], price: 'USD 250.368', sub: 'Ingreso USD 37.500 · 84 cuotas USD 1.500' },
+      { icon: '🏖️', name: 'Beach Square 12', tags: ['Porto de Galinhas · PE', 'Studio', 'Entrega ene 2028', 'Nordeste'], price: 'USD 75.347', sub: 'Ingreso USD 15.070' },
+      { icon: '🌊', name: 'Summer Dreams — Bombinhas', tags: ['Bombinhas · SC', '50m de la playa', 'Entrega 2030', 'Premium'], price: 'USD 403.012', sub: 'Ingreso USD 40.300' },
     ],
+    faqs: [
+      { q: '¿Qué es el CPF y cómo lo obtengo?', a: 'El CPF (Cadastro de Pessoas Físicas) es el número fiscal brasileño, equivalente al CUIL. Es obligatorio para firmar contratos inmobiliarios en Brasil. Se tramita gratis online o en el Consulado de Brasil — tarda entre 1 y 5 días hábiles. Te guiamos en cada paso.', bold: 'gratis online' },
+      { q: '¿Qué pasa si el real se devalúa frente al dólar?', a: 'Cuando el real se devalúa, tus cuotas en reales se vuelven más baratas en dólares — es una ventaja para quien paga desde Argentina o Uruguay. El riesgo real es el inverso: si el real se fortalece, tus cuotas aumentan en dólares. Por eso siempre analizamos el timing de entrada.', bold: 'timing' },
+      { q: '¿Puedo alquilar por Airbnb en Santa Catarina?', a: 'Sí, en la mayoría de los proyectos costeros de Santa Catarina el alquiler turístico es libre y sin restricciones. Algunos desarrollos incluso tienen operadora de alquiler propia que gestiona todo por vos. Siempre verificamos las condiciones del proyecto antes de recomendarlo.', bold: 'libre y sin restricciones' },
+      { q: '¿Cómo cobro los ingresos del alquiler desde Argentina?', a: 'Los ingresos se depositan en una cuenta bancaria local en Brasil. Podés abrir cuenta de no-residente en Nubank o Banco do Brasil. Las transferencias internacionales desde Brasil son legales — te asesoramos sobre el método más eficiente según tu situación.' },
+      { q: '¿Por qué el Nordeste ahora y no después?', a: 'Porque el aeropuerto de Maragogi abre en diciembre 2026. Quien invierte antes de la apertura entra al precio de mercado emergente y captura la mayor parte de la plusvalía cuando la demanda turística se acelere. Es el mismo patrón que siguió Balneário Camboriú hace 15 años.', bold: 'aeropuerto de Maragogi abre en diciembre 2026' },
+    ],
+    ctaTitle: '¿Listo para dar el primer paso en Brasil?',
+    ctaDesc: 'Agendá una reunión de 30 minutos con nuestro asesor especializado en el mercado brasileño. Te presentamos las zonas y proyectos más adecuados para tu objetivo y presupuesto.',
   },
   {
     name: 'Argentina',
@@ -509,16 +534,49 @@ export default function MercadosPage() {
 
                 {/* Modelos de inversión */}
                 <div>
-                  <p style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.12em', marginBottom: 12 }}>MODELOS DE INVERSIÓN</p>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                  <p style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.12em', marginBottom: 4 }}>MODELOS DE INVERSIÓN</p>
+                  {mkt.models[0]?.fullDesc && (
+                    <p style={{ fontSize: 14, fontWeight: 800, color: '#efefef', marginBottom: 12, marginTop: 6 }}>
+                      Cómo invertir en {mkt.name} desde Argentina
+                    </p>
+                  )}
+                  <div style={{ display: 'grid', gridTemplateColumns: mkt.models[0]?.fullDesc ? '1fr 1fr' : 'repeat(auto-fit, minmax(110px, 1fr))', gap: 10 }}>
                     {mkt.models.map((model, i) => (
-                      <div key={i} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, padding: '10px 16px', textAlign: 'center', minWidth: 110 }}>
-                        <p style={{ fontSize: 12, fontWeight: 700, color: '#efefef', margin: '0 0 2px' }}>{model.label}</p>
-                        <p style={{ fontSize: 10, color: 'rgba(239,239,239,0.35)', margin: 0 }}>{model.sub}</p>
+                      <div key={i} style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.15)', borderRadius: 10, padding: '14px 16px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: model.fullDesc ? 8 : 0 }}>
+                          <p style={{ fontSize: 13, fontWeight: 800, color: '#efefef', margin: 0, flexGrow: 1 }}>{model.label}</p>
+                          {model.badge && (
+                            <span style={{ fontSize: 9, fontWeight: 700, color: '#C9922A', background: 'rgba(201,146,42,0.12)', border: '1px solid rgba(201,146,42,0.3)', borderRadius: 8, padding: '2px 7px', whiteSpace: 'nowrap', flexShrink: 0 }}>{model.badge}</span>
+                          )}
+                        </div>
+                        {model.fullDesc ? (
+                          <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.45)', lineHeight: 1.65, margin: 0 }}>{model.fullDesc}</p>
+                        ) : (
+                          <p style={{ fontSize: 10, color: 'rgba(239,239,239,0.35)', margin: '4px 0 0' }}>{model.sub}</p>
+                        )}
                       </div>
                     ))}
                   </div>
                 </div>
+
+                {/* Proceso paso a paso — solo si el mercado tiene steps */}
+                {mkt.steps && mkt.steps.length > 0 && (
+                  <div>
+                    <p style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.12em', marginBottom: 4 }}>CÓMO EMPEZAR</p>
+                    <p style={{ fontSize: 14, fontWeight: 800, color: '#efefef', marginBottom: 14, marginTop: 6 }}>El proceso paso a paso</p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                      {mkt.steps.map((step, i) => (
+                        <div key={i} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 10, padding: '14px 18px', display: 'flex', alignItems: 'flex-start', gap: 14 }}>
+                          <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'rgba(201,146,42,0.15)', border: '1px solid rgba(201,146,42,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, color: '#C9922A', flexShrink: 0 }}>{i + 1}</div>
+                          <div>
+                            <p style={{ fontSize: 13, fontWeight: 700, color: '#efefef', margin: '0 0 4px' }}>{step.title}</p>
+                            <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.45)', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Nota importante */}
                 <div style={{ background: 'rgba(201,146,42,0.05)', border: '1px solid rgba(201,146,42,0.2)', borderLeft: '3px solid #C9922A', borderRadius: 8, padding: '14px 16px' }}>
@@ -585,12 +643,12 @@ export default function MercadosPage() {
                       })}
                     </div>
 
-                    {/* CTA especial Argentina */}
+                    {/* CTA especial por mercado */}
                     <div style={{ marginTop: 24, background: 'linear-gradient(135deg, #0d1a2e 0%, #131326 100%)', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 14, padding: '32px 28px', textAlign: 'center' }}>
                       <div style={{ fontSize: 36, marginBottom: 12 }}>📅</div>
-                      <p style={{ fontSize: 20, fontWeight: 800, color: '#efefef', margin: '0 0 10px' }}>¿Querés invertir en {mkt.name}?</p>
+                      <p style={{ fontSize: 20, fontWeight: 800, color: '#efefef', margin: '0 0 10px' }}>{mkt.ctaTitle ?? `¿Querés invertir en ${mkt.name}?`}</p>
                       <p style={{ fontSize: 13, color: 'rgba(239,239,239,0.5)', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 400, marginLeft: 'auto', marginRight: 'auto' }}>
-                        Agendá una reunión con nuestro asesor especializado. Te presentamos las opciones disponibles en Buenos Aires, Mar del Plata y Vaca Muerta según tu presupuesto y objetivo.
+                        {mkt.ctaDesc ?? `Agendá una reunión con nuestro asesor especializado en el mercado de ${mkt.name}. Te presentamos las opciones más adecuadas según tu presupuesto y objetivo.`}
                       </p>
                       <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
                         <a
