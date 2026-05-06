@@ -31,6 +31,7 @@ type Market = {
   faqs?: Faq[];
   ctaTitle?: string;
   ctaDesc?: string;
+  ctaHideMap?: boolean;
 };
 
 const markets: Market[] = [
@@ -38,29 +39,47 @@ const markets: Market[] = [
     name: 'Estados Unidos',
     subtitle: 'El mercado inmobiliario más sólido y transparente del mundo',
     regionFilter: 'América', code: 'us',
-    detail: 'Miami · Orlando · Florida',
+    detail: 'Florida — Miami y Orlando',
     foco: true,
     badge: { label: '⭐ Foco', color: '#C9922A' },
-    tags: ['Miami · Orlando · Florida', 'Hipoteca 30 años', 'Airbnb permitido', 'Sin impuesto estadual'],
+    tags: ['Hipoteca 30 años', 'Airbnb permitido', 'Sin impuesto estadual', 'Retornos en dólares', 'Proceso 100% remoto'],
     stat1: { value: '+8%', label: 'Rentabilidad anual estimada' },
     stat2: { value: 'USD 200K', label: 'Ticket mínimo de entrada' },
-    stat3: { value: '30 años', label: 'Financiación disponible' },
-    whyInvest: 'Florida ofrece algo que pocos mercados pueden garantizar: estabilidad jurídica, demanda sostenida y retornos en dólares. El 79% de los inversores latinos que salen al exterior eligen Florida como primer destino. Sin impuesto estadual a los ingresos, con acceso a crédito hipotecario para extranjeros y una demanda de alquiler sostenida todo el año.',
+    stat3: { value: '79%', label: 'Inversores latinos eligen Florida' },
+    whyInvest: 'Florida ofrece algo que pocos mercados pueden garantizar: estabilidad jurídica, demanda sostenida y retornos en dólares. El 79% de los inversores latinoamericanos que salen al exterior eligen Florida como primer destino. Sistema legal transparente, sin impuesto estadual a los ingresos, acceso a financiamiento hipotecario para extranjeros a 30 años y demanda de alquiler sostenida por turismo, migración interna y crecimiento corporativo. Entre agosto 2024 y julio 2025, las compras internacionales en Florida crecieron un 51% interanual, alcanzando USD 10.4 mil millones. El 64% de los compradores extranjeros en el sur de Florida provienen de América Latina.',
     zones: [
-      { icon: '🏢', name: 'Miami — Brickell', desc: 'Hub financiero de América Latina. Alta demanda de alquiler ejecutivo, proyectos premium con rentabilidad del 7.3% anual y fuerte apreciación histórica.' },
-      { icon: '🏙️', name: 'Orlando', desc: '#1 en crecimiento de empleo y población en EE.UU. (2025). Alta demanda de alquiler turístico. Ticket más accesible que Miami con fuerte plusvalía proyectada.' },
+      { icon: '🏢', name: 'Miami — Brickell', desc: 'Hub financiero de América Latina. Más de 70 fondos de cobertura y empresas Fortune 500 se trasladaron aquí desde 2020. Precio mediano de condominios Q1 2026: USD 620.000 con rentabilidades brutas del 7.3% anual. El FIFA World Cup 2026 generará demanda de alquiler sin precedentes.' },
+      { icon: '🏙️', name: 'Orlando — Triple Crown 2025', desc: '#1 en creación de empleo, #1 en crecimiento poblacional y #1 en PIB nominal entre los 30 mayores metros de EE.UU. Con USD 50.000M en proyectos activos y Epic Universe inaugurado en mayo 2025, la demanda turística sigue en expansión. +3.8% apreciación interanual · USD 427K precio mediano hogar.' },
     ],
     models: [
-      { label: 'Compra en pozo', sub: 'Mayor plusvalía' },
-      { label: 'Crédito 30 años', sub: 'Renta inmediata' },
-      { label: 'Construcción', sub: 'Control total' },
-      { label: 'Flipping', sub: 'Retorno rápido' },
+      { label: 'Compra en pozo', sub: 'Mayor plusvalía', badge: 'Mayor plusvalía', fullDesc: 'Ingresás en preventa al precio más bajo del ciclo. El desarrollador financia la obra en cuotas escalonadas. Ideal para maximizar la apreciación entre la compra y la entrega.' },
+      { label: 'Crédito hipotecario 30 años', sub: 'Renta inmediata', badge: 'Renta inmediata', fullDesc: 'Comprás una propiedad terminada financiando hasta el 70% con hipoteca local. Generás renta desde el primer mes. Tasas actuales: 6.0% - 6.5% anual. Disponible para extranjeros.' },
+      { label: 'Construcción de casas', sub: 'Control total', badge: 'Control total', fullDesc: 'Desarrollamos la propiedad desde cero en lotes seleccionados de Florida. Mayor control del proceso, especificaciones a medida y margen de ganancia superior sobre el valor final.' },
+      { label: 'Flipping', sub: 'Retorno rápido', badge: 'Retorno rápido', fullDesc: 'Compramos, remodelamos y revendemos en ciclos cortos de 6 a 18 meses. Retornos históricos del 15-25% sobre la inversión. Ideal para quien busca liquidez en plazos cortos.' },
     ],
-    note: 'Importante: cada desarrollo tiene sus propias restricciones de uso. Algunos permiten Airbnb y otros solo alquiler a largo plazo. Definimos juntos tu objetivo antes de elegir el proyecto correcto.',
+    steps: [
+      { title: 'Definimos tu objetivo', desc: 'Renta, plusvalía, flipping o residencia. Cada objetivo tiene su mercado y su proyecto ideal dentro de Florida.' },
+      { title: 'Te presentamos los proyectos del mes', desc: 'Proyectos activos en Miami y Orlando con análisis de retorno, condiciones de pago y restricciones de uso.' },
+      { title: 'Apertura de LLC (si aplica)', desc: 'Te guiamos en la constitución de la empresa en Florida — proceso remoto, desde USD 400, listo en 3-5 días hábiles.' },
+      { title: 'Firma del contrato y primer pago', desc: 'Firma digital desde tu país. El ingreso queda reservado en fideicomiso hasta que recibís el título de propiedad.' },
+      { title: 'Acompañamiento durante la obra', desc: 'Te informamos del avance, coordinamos con el desarrollador y gestionamos cualquier novedad hasta la entrega.' },
+      { title: 'Entrega y gestión post-compra', desc: 'Te conectamos con administradoras de alquiler locales para que tu propiedad genere ingresos desde el primer día.' },
+    ],
+    note: 'Cada desarrollo tiene sus propias regulaciones. Algunos proyectos permiten alquiler por Airbnb y otros solo alquiler a largo plazo. Antes de elegir un proyecto, definimos juntos tu objetivo para asegurarnos de que el desarrollo sea compatible con tu estrategia de renta.',
     projects: [
-      { icon: '🏗️', name: 'GZ Tower', tags: ['Orlando', 'En obra', 'Amueblado', 'Sin restricción Airbnb', 'Entrega 2027'], price: 'USD 200.000', sub: 'Ingreso desde USD 100K' },
-      { icon: '🏛️', name: 'Parkside Brickell', tags: ['Miami', 'Pre-construcción', 'Amueblado', 'Entrega Q2 2028'], price: 'USD 450.000', sub: '20% entrada · Crédito disponible' },
+      { icon: '🏗️', name: 'GZ Tower', tags: ['Orlando', 'En obra', '✓ Airbnb', 'International Drive', 'Entrega 2027'], price: 'USD 200.000', sub: 'Ingreso desde USD 100.000 · Entrega 2027' },
+      { icon: '🏛️', name: 'Parkside Brickell', tags: ['Miami', 'Pre-construcción', 'Brickell Key', 'Entrega Q2 2028'], price: 'USD 450.000', sub: '20% entrada · Amueblado · Crédito disponible' },
     ],
+    faqs: [
+      { q: '¿Necesito visa para comprar en USA?', a: 'No necesitás visa especial para comprar. Sí necesitás visa de turista B-1/B-2 vigente si querés acceder a financiamiento hipotecario local. Para la compra directa al desarrollador alcanza con el pasaporte.' },
+      { q: '¿Qué es el FIRPTA y cómo me afecta?', a: 'El FIRPTA es una retención del 10-15% sobre el precio de venta que se aplica cuando un extranjero vende una propiedad en USA. No es un impuesto final — se descuenta al cierre y se regulariza con la declaración impositiva. La estructura de compra (LLC vs. personal) influye directamente en su aplicación.', bold: '10-15% sobre el precio de venta' },
+      { q: '¿Puedo alquilar por Airbnb desde el primer día de entrega?', a: 'Depende del desarrollo. GZ Tower en Orlando sí permite Airbnb sin restricciones. Parkside en Brickell permite alquiler sin restricciones de plazo mínimo. Siempre verificamos las restricciones del HOA antes de recomendarte un proyecto.', bold: 'GZ Tower en Orlando sí permite Airbnb' },
+      { q: '¿Cómo cobro los ingresos del alquiler desde Argentina?', a: 'Los ingresos se acreditan en la cuenta bancaria de tu LLC o cuenta personal en USA. Desde ahí podés transferir al exterior. Con cuenta en Wise o similar el proceso es simple y económico. Te asesoramos sobre el método más eficiente.' },
+      { q: '¿Qué pasa si el desarrollador no entrega la obra?', a: 'Los contratos de pre-construcción en Florida tienen cláusulas de protección al comprador: si el desarrollador incumple, tiene 7 días para notificar y los compradores tienen derecho a reclamar el depósito con intereses. Solo trabajamos con desarrolladores con trayectoria comprobada.', bold: 'protección al comprador' },
+    ],
+    ctaTitle: '¿Listo para dar el primer paso en USA?',
+    ctaDesc: 'Agendá una reunión de 30 minutos con nuestro asesor especializado en el mercado de Florida. Te presentamos los proyectos disponibles este mes y resolvemos todas tus dudas.',
+    ctaHideMap: true,
   },
   {
     name: 'Brasil',
@@ -665,12 +684,14 @@ export default function MercadosPage() {
                         >
                           💬 WhatsApp
                         </a>
-                        <a
-                          href="#proyectos"
-                          style={{ background: 'rgba(99,102,241,0.1)', color: 'rgba(239,239,239,0.8)', border: '1.5px solid rgba(99,102,241,0.25)', padding: '12px 22px', fontSize: 13, fontWeight: 700, borderRadius: 8, textDecoration: 'none', display: 'inline-block' }}
-                        >
-                          🗺️ Ver proyectos en el mapa
-                        </a>
+                        {!mkt.ctaHideMap && (
+                          <a
+                            href="#proyectos"
+                            style={{ background: 'rgba(99,102,241,0.1)', color: 'rgba(239,239,239,0.8)', border: '1.5px solid rgba(99,102,241,0.25)', padding: '12px 22px', fontSize: 13, fontWeight: 700, borderRadius: 8, textDecoration: 'none', display: 'inline-block' }}
+                          >
+                            🗺️ Ver proyectos en el mapa
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
