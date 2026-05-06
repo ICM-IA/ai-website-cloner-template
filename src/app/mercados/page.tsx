@@ -7,6 +7,7 @@ import ProjectsSection from './ProjectsSection';
 type Zone    = { icon: string; name: string; desc: string };
 type Project = { icon: string; name: string; tags: string[]; price: string; sub: string };
 type Model   = { label: string; sub: string };
+type Faq     = { q: string; a: string; bold?: string };
 
 type Market = {
   name: string;
@@ -25,6 +26,7 @@ type Market = {
   models: Model[];
   note: string;
   projects: Project[];
+  faqs?: Faq[];
 };
 
 const markets: Market[] = [
@@ -112,6 +114,31 @@ const markets: Market[] = [
       { icon: '🏛️', name: 'Palermo / Belgrano — En pozo', tags: ['CABA', 'En pozo', 'Alta demanda', 'Entrega 2026'], price: 'Desde USD 2.600/m²', sub: 'Financiación en pesos ajustado CAC' },
       { icon: '🌊', name: 'Mar del Plata — Zona Güemes', tags: ['MdP', 'En pozo', 'Uso personal + renta', 'Entrega 2026'], price: 'Desde USD 1.800/m²', sub: 'Uso en temporada · renta resto del año' },
       { icon: '⛽', name: 'Añelo — Vaca Muerta', tags: ['Neuquén', 'Inversión pura', 'Renta garantizada', 'En obra'], price: 'Desde USD 1.500/m²', sub: 'Ocupación 100% · demanda laboral sostenida' },
+    ],
+    faqs: [
+      {
+        q: '¿Qué ventaja tiene comprar en pozo frente a un usado?',
+        a: 'Al comprar en pozo entrás al precio más bajo del ciclo — antes de que la propiedad exista. Al momento de la escritura, el valor de mercado suele ser 20% a 40% superior al precio de lanzamiento dependiendo del proyecto y la zona. Además pagás en cuotas durante la obra, lo que facilita el acceso sin necesitar el capital total disponible desde el inicio.',
+        bold: '20% a 40% superior al precio de lanzamiento',
+      },
+      {
+        q: '¿Qué pasa si el desarrollador no termina la obra?',
+        a: 'Trabajamos exclusivamente con desarrolladores con trayectoria verificada y proyectos que cuentan con fideicomiso al costo o garantías bancarias. Además te acompañamos con asesoramiento jurídico local en todo el proceso. Los contratos en Argentina contemplan penalidades para el desarrollador en caso de incumplimiento de plazos.',
+      },
+      {
+        q: '¿Puedo comprar siendo extranjero o uruguayo?',
+        a: 'Sí. Un extranjero puede comprar propiedades en Argentina con su pasaporte y CUIT/CDI (que se tramita en AFIP). No necesitás residencia ni cuenta bancaria local para iniciar el proceso. Te acompañamos en todos los trámites necesarios.',
+      },
+      {
+        q: '¿Por qué invertir en Mar del Plata y no solo en Buenos Aires?',
+        a: 'Mar del Plata ofrece algo que CABA no tiene: la posibilidad de uso personal en temporada. Comprás en pozo, usás la propiedad en enero/febrero y la alquilás el resto del año. Además los precios por m² son generalmente más accesibles que en los mejores barrios porteños.',
+        bold: 'uso personal en temporada',
+      },
+      {
+        q: '¿Por qué Vaca Muerta es una oportunidad de inversión?',
+        a: 'Añelo tiene un déficit habitacional estructural: miles de trabajadores del sector energético (YPF, Chevron, Shell, Total) necesitan alojamiento y la oferta es crónicamente insuficiente. Esto genera alquileres elevados y ocupación del 100% durante todo el año — sin depender del turismo ni de la estacionalidad.',
+        bold: 'déficit habitacional estructural',
+      },
     ],
   },
   {
@@ -532,6 +559,62 @@ export default function MercadosPage() {
                 {mkt.projects.length === 0 && (
                   <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 10, padding: '24px', textAlign: 'center' }}>
                     <p style={{ fontSize: 13, color: 'rgba(239,239,239,0.35)', margin: 0 }}>Próximas oportunidades en camino. Consultanos para registrarte en lista de espera.</p>
+                  </div>
+                )}
+
+                {/* FAQs — solo si el mercado tiene preguntas frecuentes */}
+                {mkt.faqs && mkt.faqs.length > 0 && (
+                  <div>
+                    <p style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.12em', marginBottom: 4 }}>
+                      PREGUNTAS FRECUENTES — {mkt.name.toUpperCase()}
+                    </p>
+                    <p style={{ fontSize: 20, fontWeight: 800, color: '#efefef', marginBottom: 20, marginTop: 6 }}>Lo que más nos preguntan</p>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      {mkt.faqs.map((faq, i) => {
+                        const parts = faq.bold ? faq.a.split(faq.bold) : null;
+                        return (
+                          <div key={i} style={{ borderTop: '1px solid rgba(255,255,255,0.07)', padding: '18px 0' }}>
+                            <p style={{ fontSize: 13, fontWeight: 700, color: '#efefef', margin: '0 0 8px' }}>{faq.q}</p>
+                            <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.55)', lineHeight: 1.8, margin: 0 }}>
+                              {parts ? (
+                                <>{parts[0]}<strong style={{ color: 'rgba(239,239,239,0.85)', fontWeight: 700 }}>{faq.bold}</strong>{parts[1]}</>
+                              ) : faq.a}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* CTA especial Argentina */}
+                    <div style={{ marginTop: 24, background: 'linear-gradient(135deg, #0d1a2e 0%, #131326 100%)', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 14, padding: '32px 28px', textAlign: 'center' }}>
+                      <div style={{ fontSize: 36, marginBottom: 12 }}>📅</div>
+                      <p style={{ fontSize: 20, fontWeight: 800, color: '#efefef', margin: '0 0 10px' }}>¿Querés invertir en {mkt.name}?</p>
+                      <p style={{ fontSize: 13, color: 'rgba(239,239,239,0.5)', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 400, marginLeft: 'auto', marginRight: 'auto' }}>
+                        Agendá una reunión con nuestro asesor especializado. Te presentamos las opciones disponibles en Buenos Aires, Mar del Plata y Vaca Muerta según tu presupuesto y objetivo.
+                      </p>
+                      <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
+                        <a
+                          href="/contacto"
+                          style={{ background: '#C9922A', color: '#101010', padding: '12px 22px', fontSize: 13, fontWeight: 800, borderRadius: 8, textDecoration: 'none', letterSpacing: '0.04em', display: 'inline-block' }}
+                        >
+                          Agendar reunión por Zoom →
+                        </a>
+                        <a
+                          href="https://wa.me/14075551234"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ background: 'rgba(37,211,102,0.12)', color: '#25d366', border: '1.5px solid rgba(37,211,102,0.3)', padding: '12px 22px', fontSize: 13, fontWeight: 700, borderRadius: 8, textDecoration: 'none', display: 'inline-block' }}
+                        >
+                          💬 WhatsApp
+                        </a>
+                        <a
+                          href="#proyectos"
+                          style={{ background: 'rgba(99,102,241,0.1)', color: 'rgba(239,239,239,0.8)', border: '1.5px solid rgba(99,102,241,0.25)', padding: '12px 22px', fontSize: 13, fontWeight: 700, borderRadius: 8, textDecoration: 'none', display: 'inline-block' }}
+                        >
+                          🗺️ Ver proyectos en el mapa
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
