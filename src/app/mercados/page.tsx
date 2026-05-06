@@ -32,6 +32,7 @@ type Market = {
   ctaTitle?: string;
   ctaDesc?: string;
   ctaHideMap?: boolean;
+  ctaMapLabel?: string;
 };
 
 const markets: Market[] = [
@@ -385,30 +386,47 @@ const markets: Market[] = [
   },
   {
     name: 'Italia',
-    subtitle: 'Rentabilidad, historia y calidad de vida en Europa',
+    subtitle: 'Flipping para renta vacacional — el modelo Italia de Lion GSC',
     regionFilter: 'Europa', code: 'it',
-    detail: 'Ragusa, Sicilia',
+    detail: 'Costa Amalfitana · Ragusa · Flipping para renta',
     foco: false,
-    badge: { label: 'En expansión', color: '#eab308' },
-    tags: ['Milán · Roma · Florencia', 'Visa por inversión', 'Alta demanda turística'],
-    stat1: { value: '+6%', label: 'Rentabilidad anual estimada' },
-    stat2: { value: 'USD 3.000', label: 'Precio mínimo por m²' },
-    stat3: { value: 'EU', label: 'Visa por inversión' },
-    whyInvest: 'Italia ofrece una combinación única de rentabilidad, historia y calidad de vida. Los mercados de Milán y las zonas turísticas del sur registran crecimiento constante en la demanda internacional. Sicilia y la Costa Amalfitana son los destinos con mayor crecimiento de alquiler vacacional premium.',
+    badge: { label: 'Flipping + Airbnb', color: '#eab308' },
+    tags: ['Flipping + Airbnb', 'Patrimonio UNESCO', 'Tarifa EUR 300-600/noche', 'Propiedades históricas desde EUR 30K', 'Temporada alta 8 meses'],
+    stat1: { value: 'EUR 30K', label: 'Propiedades históricas para reformar desde' },
+    stat2: { value: 'EUR 400', label: 'Tarifa promedio por noche Airbnb Costa Amalfitana' },
+    stat3: { value: '+150%', label: 'Plusvalía estimada post-reforma en zonas históricas' },
+    whyInvest: 'Italia tiene algo único: propiedades históricas en dos de los destinos más fotografiados y visitados del mundo, a precios que no reflejan en absoluto su potencial turístico. Una casa antigua en el centro de Ragusa Ibla o en las colinas sobre la Costa Amalfitana puede comprarse por EUR 30.000-80.000 en estado de reforma, reformarse por EUR 40.000-80.000 más, y generar EUR 300-600 por noche en Airbnb durante 8 meses al año. El modelo no es vender propiedades: es acompañar la operación completa — identificación, compra, reforma con arquitectos locales, habilitación turística (CIR) y puesta en marcha del alquiler vacacional. Un negocio diferente al resto de la cartera, con mayor complejidad operativa pero también mayor potencial de retorno.',
     zones: [
-      { icon: '🏙️', name: 'Milán — Porta Nuova', desc: 'El distrito financiero más moderno de Italia. Alta demanda de alquiler ejecutivo y proyectos de nueva construcción con apreciación constante.' },
-      { icon: '🌄', name: 'Sicilia — Ragusa / Taormina', desc: 'El destino turístico premium del Mediterráneo. Villas y apartamentos con alta ocupación y rentabilidad vacacional superior al 8%.' },
+      { icon: '🌊', name: 'Costa Amalfitana — Campania', desc: 'Zona activa · Patrimonio UNESCO. Positano, Amalfi, Ravello y Praiano. Temporada alta (mayo-octubre) + media. EUR 300-600/noche · 85%+ ocupación · Inversión total EUR 90-220K · Plusvalía 150-300%.' },
+      { icon: '🏛️', name: 'Ragusa Ibla — Sicilia', desc: 'Patrimonio UNESCO · Valle del Noto. Inspector Montalbano. Precios todavía bajos vs. potencial turístico. EUR 150-350/noche · Compra EUR 30-80K · Reforma EUR 40-70K · Plusvalía 150-200%.' },
     ],
     models: [
-      { label: 'Compra directa', sub: 'Visa Investidore' },
-      { label: 'Alquiler turístico', sub: 'Renta en euros' },
-      { label: 'Reforma de palazzo', sub: 'Patrimonio histórico' },
-      { label: 'Reventa', sub: 'Mercado en alza' },
+      { label: '1. Identificamos', sub: 'EUR 30K-120K compra', badge: 'Paso 1', fullDesc: 'Propiedad histórica en zona turística premium con potencial de reforma. Precio de compra: EUR 30K-80K en Ragusa, EUR 40K-120K en Costa Amalfitana.' },
+      { label: '2. Reformamos', sub: 'EUR 40K-100K · 6-12 meses', badge: 'Paso 2', fullDesc: 'Reforma integral con arquitectos y constructores locales. Presupuesto EUR 40K-80K en Ragusa, EUR 50K-100K en Costa Amalfitana. Plazo: 6-12 meses.' },
+      { label: '3. Habilitamos', sub: 'CIR + Airbnb + registro', badge: 'Paso 3', fullDesc: 'Licencia turística italiana (CIR — Codice Identificativo di Riferimento), apertura Airbnb y registro fiscal. Obligatorio desde 2024. Gestión 100% local.' },
+      { label: '4. Rentamos', sub: 'EUR 300-600/noche · 8 meses', badge: 'Paso 4', fullDesc: 'EUR 300-600 por noche en temporada alta. 8 meses de temporada activa al año. Operadora local gestiona sin que estés presente.' },
     ],
-    note: 'Italia ofrece beneficios fiscales especiales para extranjeros que establezcan residencia fiscal, incluyendo una flat tax de €100.000 anuales sobre ingresos de fuente extranjera.',
+    steps: [
+      { title: 'Identificamos la propiedad', desc: 'Seleccionamos propiedades históricas en zona turística premium con potencial de reforma. Precio de compra objetivo: EUR 30K-120K según zona.' },
+      { title: 'Reformamos', desc: 'Reforma integral con arquitectos y constructores locales. EUR 40K-100K · Plazo 6-12 meses. Arquitectos locales, artesanos de la región.' },
+      { title: 'Habilitamos el CIR', desc: 'Tramitamos la licencia turística italiana (CIR) — obligatoria para publicar en Airbnb desde 2024. Apertura del listado y registro fiscal.' },
+      { title: 'Rentamos por Airbnb', desc: 'EUR 150-600/noche según zona · 8 meses de temporada activa · Gestión local sin que tengas que estar presente.' },
+    ],
+    note: 'Impuesto: 21% de cedolare secca sobre ingresos brutos de alquiler turístico (régimen simplificado, no se declara en IRPEF). Argentina e Italia tienen convenio de doble imposición. El CIR (Codice Identificativo di Riferimento) es obligatorio para publicar en Airbnb desde 2024 — lo tramitamos nosotros. Inversión total (compra + reforma): EUR 70K-220K según propiedad y zona.',
     projects: [
-      { icon: '🏛️', name: 'Villa Mediterranea Taormina', tags: ['Sicilia', 'A estrenar', 'Alquiler vacacional', 'Entrega inmediata'], price: 'USD 280.000', sub: 'Rentabilidad estimada 8% anual' },
+      { icon: '🌊', name: 'Positano — Casa histórica para reforma', tags: ['Costa Amalfitana', 'Flipping', 'Airbnb', 'UNESCO'], price: 'EUR 80.000', sub: 'Reforma EUR 70K · Renta EUR 300-600/noche' },
+      { icon: '🏛️', name: 'Ragusa Ibla — Palazzo barroco', tags: ['Ragusa · Sicilia', 'Flipping', 'Airbnb', 'UNESCO'], price: 'EUR 45.000', sub: 'Reforma EUR 55K · Renta EUR 150-350/noche' },
     ],
+    faqs: [
+      { q: '¿Cuánto tarda y cuánto cuesta una reforma completa en Italia?', a: 'Una reforma integral de una propiedad histórica de 60-80 m² en Ragusa tarda entre 8 y 14 meses y cuesta entre EUR 50.000 y EUR 90.000 dependiendo del estado original y las terminaciones elegidas. En la Costa Amalfitana los costos son entre un 20% y un 40% más altos por la complejidad logística del terreno.' },
+      { q: '¿Qué rentabilidad se puede esperar en Airbnb en la Costa Amalfitana?', a: 'Una propiedad de 2 habitaciones bien reformada en Positano o Praiano puede generar entre EUR 80.000 y EUR 130.000 al año en ingresos brutos de Airbnb con una ocupación del 75-85% en temporada alta (mayo-octubre) a EUR 400-600 por noche. Los costos de gestión (property manager, limpieza, servicios) representan el 25-35% del ingreso bruto.', bold: 'EUR 80.000 y EUR 130.000 al año' },
+      { q: '¿Qué impuestos paga un argentino sobre la renta del alquiler en Italia?', a: 'Un no residente tributa el 21% de cedolare secca (impuesto especial para alquileres turísticos) sobre los ingresos brutos del alquiler. Es un régimen simplificado — pagás el 21% y no tenés que declarar esos ingresos en el IRPEF (impuesto a la renta ordinario). Argentina e Italia tienen convenio de doble imposición.', bold: '21% de cedolare secca' },
+      { q: '¿Qué es el CIR y por qué es obligatorio para Airbnb en Italia?', a: 'El CIR (Codice Identificativo di Riferimento) es el código de registro turístico obligatorio para publicar en Airbnb en Italia desde 2024. Cada propiedad en alquiler turístico debe tenerlo y mostrarlo en todos los anuncios. Se obtiene en el municipio local y requiere que la propiedad cumpla con los requisitos mínimos de habitabilidad y seguridad. Sin CIR, Airbnb bloquea o elimina el listado.', bold: 'CIR (Codice Identificativo di Riferimento)' },
+      { q: '¿Las casas a 1 euro en Sicilia son una oportunidad real?', a: 'Son reales pero requieren compromiso: hay que presentar un plan de reforma y ejecutarlo en 3 años, depositar una garantía de EUR 5.000-10.000 y encargarse de todos los trámites municipales. La propiedad en sí es casi gratuita — el costo real es la reforma (EUR 40.000-80.000) y la gestión del proceso. Para quien tiene el capital y la paciencia, el retorno puede ser excepcional.', bold: 'capital y la paciencia' },
+    ],
+    ctaTitle: '¿Italia es tu próxima operación de flipping?',
+    ctaDesc: 'Agendá una reunión con nuestro asesor. Te presentamos las propiedades identificadas en Costa Amalfitana y Ragusa, los costos de reforma estimados y la proyección de ingresos Airbnb.',
+    ctaMapLabel: '🏠 Ver propiedades disponibles',
   },
 ];
 
@@ -727,7 +745,7 @@ export default function MercadosPage() {
                             href="#proyectos"
                             style={{ background: 'rgba(99,102,241,0.1)', color: 'rgba(239,239,239,0.8)', border: '1.5px solid rgba(99,102,241,0.25)', padding: '12px 22px', fontSize: 13, fontWeight: 700, borderRadius: 8, textDecoration: 'none', display: 'inline-block' }}
                           >
-                            🗺️ Ver proyectos en el mapa
+                            {mkt.ctaMapLabel ?? '🗺️ Ver proyectos en el mapa'}
                           </a>
                         )}
                       </div>
