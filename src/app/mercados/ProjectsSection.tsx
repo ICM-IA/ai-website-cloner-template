@@ -807,6 +807,27 @@ export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps
               {TIPO_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
             </select>
           </div>
+          {/* Quick country buttons */}
+          <div style={{ display: 'flex', gap: 8 }}>
+            {[
+              { label: 'USA',    value: 'usa',  flag: 'us' },
+              { label: 'Brasil', value: 'brasil-nord', flag: 'br' },
+            ].map(c => (
+              <button key={c.value}
+                onClick={() => setZona(zona === c.value ? 'all' : c.value)}
+                style={{ display: 'flex', alignItems: 'center', gap: 6, background: zona === c.value ? 'rgba(201,146,42,0.15)' : '#1a1a2e', border: `1.5px solid ${zona === c.value ? '#C9922A' : 'rgba(255,255,255,0.1)'}`, borderRadius: 20, padding: '6px 14px', color: '#efefef', fontSize: 12, fontWeight: 700, cursor: 'pointer', WebkitTapHighlightColor: 'transparent' }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`https://flagcdn.com/w40/${c.flag}.png`} alt={c.label} style={{ width: 20, height: 14, objectFit: 'cover', borderRadius: 2 }} />
+                {c.label}
+              </button>
+            ))}
+            <button
+              onClick={() => setZona('all')}
+              style={{ background: zona === 'all' ? 'rgba(201,146,42,0.15)' : '#1a1a2e', border: `1.5px solid ${zona === 'all' ? '#C9922A' : 'rgba(255,255,255,0.1)'}`, borderRadius: 20, padding: '6px 14px', color: '#efefef', fontSize: 12, fontWeight: 700, cursor: 'pointer', WebkitTapHighlightColor: 'transparent' }}>
+              Todos los mercados
+            </button>
+          </div>
+
           <span style={{ marginLeft: 'auto', fontSize: 12, color: 'rgba(239,239,239,0.35)', fontWeight: 600 }}>
             {filtered.length} proyectos encontrados
           </span>
