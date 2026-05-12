@@ -3,6 +3,8 @@
 import { useState, useRef, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import React from 'react';
+import dynamic from 'next/dynamic';
+const FinancialBg = dynamic(() => import('@/components/FinancialBg'), { ssr: false });
 
 const BOOKING_SRC = 'https://api.icm-ia.com/widget/booking/eUHMDjB5oFxtYa1y7Bbd';
 const WA_URL = 'https://wa.me/5492233559834';
@@ -235,13 +237,8 @@ export default function FaqPage() {
 
       {/* ── Header ── */}
       <section style={{ position: 'relative', padding: '72px 32px 56px', overflow: 'hidden' }}>
-        {/* Video background */}
-        <video
-          autoPlay muted loop playsInline
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-        >
-          <source src="/videos/faq-hero-bg.mp4" type="video/mp4" />
-        </video>
+        {/* Financial data animation background */}
+        <FinancialBg />
         {/* Dark overlay so text stays readable */}
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(8,14,32,0.88) 0%, rgba(10,10,20,0.82) 60%, rgba(5,5,15,0.90) 100%)', zIndex: 1 }} />
         <div style={{ maxWidth: 680, position: 'relative', zIndex: 2 }}>
