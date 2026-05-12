@@ -385,16 +385,16 @@ export default function NosotrosPage() {
           </p>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
             <a
-              href="https://wa.me/5491112345678"
+              href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ background: '#25D366', color: '#fff', borderRadius: 6, padding: '13px 28px', fontSize: 13, fontWeight: 800, textDecoration: 'none', letterSpacing: '0.04em' }}
+              style={{ background: '#25D366', color: '#fff', borderRadius: 6, padding: '13px 28px', fontSize: 13, fontWeight: 800, textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}
             >
               💬 WhatsApp
             </a>
             <button
               onClick={() => setShowCalendar(true)}
-              style={{ background: 'transparent', color: '#C9922A', border: '2px solid rgba(201,146,42,0.6)', borderRadius: 6, padding: '13px 28px', fontSize: 13, fontWeight: 800, cursor: 'pointer', letterSpacing: '0.04em' }}
+              style={{ background: 'transparent', color: '#C9922A', border: '2px solid rgba(201,146,42,0.6)', borderRadius: 6, padding: '13px 28px', fontSize: 13, fontWeight: 800, cursor: 'pointer', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}
             >
               📅 Agendar reunión por Zoom
             </button>
