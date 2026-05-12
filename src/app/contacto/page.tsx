@@ -41,7 +41,7 @@ export default function ContactoPage() {
             ].map((c, i) => (
               <a key={i} href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
                 className="quick-card"
-                style={{ background: '#151515', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: '18px 20px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 14 }}
+                style={{ background: '#1a1a2e', border: '1px solid rgba(201,146,42,0.15)', borderRadius: 12, padding: '18px 20px', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 14 }}
               >
                 <span style={{ fontSize: 26, flexShrink: 0 }}>{c.icon}</span>
                 <div>
@@ -90,7 +90,7 @@ export default function ContactoPage() {
             </p>
 
             {/* Buenos Aires */}
-            <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, overflow: 'hidden', marginBottom: 20 }}>
+            <div style={{ background: '#1a1a2e', border: '1px solid rgba(201,146,42,0.15)', borderRadius: 14, overflow: 'hidden', marginBottom: 20 }}>
               <div style={{ height: 140, overflow: 'hidden' }}>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7!2d-58.4672604!3d-34.5369255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584ddae84cff001%3A0x54fb515e4900f951!2sPico%201671%2C%20C1425%20CABA!5e0!3m2!1ses!2sar!4v1"
@@ -123,7 +123,7 @@ export default function ContactoPage() {
             </div>
 
             {/* Mar del Plata */}
-            <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, overflow: 'hidden' }}>
+            <div style={{ background: '#1a1a2e', border: '1px solid rgba(201,146,42,0.15)', borderRadius: 14, overflow: 'hidden' }}>
               <div style={{ height: 140, overflow: 'hidden' }}>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.0!2d-57.5442!3d-38.0055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dc7b7b7b7b7b%3A0x7b7b7b7b7b7b7b7b!2sAv.+Constituci%C3%B3n+4569%2C+Mar+del+Plata!5e0!3m2!1ses!2sar!4v1"
@@ -160,7 +160,7 @@ export default function ContactoPage() {
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 380px', gap: 52, alignItems: 'stretch' }}>
 
           {/* Card izquierda: contacto directo */}
-          <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.18)', borderRadius: 14, padding: '28px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div style={{ background: '#1a1a2e', border: '1px solid rgba(201,146,42,0.25)', borderRadius: 14, padding: '28px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <p style={{ fontSize: 15, fontWeight: 800, color: '#efefef', marginBottom: 8 }}>
                 ¿Preferís contactarnos directamente?
@@ -182,7 +182,7 @@ export default function ContactoPage() {
           </div>
 
           {/* Card derecha: contacto directo info */}
-          <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, padding: '24px 22px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div style={{ background: '#1a1a2e', border: '1px solid rgba(201,146,42,0.15)', borderRadius: 14, padding: '24px 22px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <p style={{ fontSize: 13, fontWeight: 800, color: '#efefef', marginBottom: 16 }}>Contacto directo</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
