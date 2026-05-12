@@ -82,7 +82,7 @@ export const articles: Article[] = [
     readTime: 5,
     coverEmoji: '🏙️',
     coverBg: '#0a1225',
-    coverImage: 'https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?w=800&q=80&auto=format&fit=crop',
+    coverImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
     body: [
       { type: 'lead', text: 'Brickell y Wynwood registran mínimos históricos de vacancia. Las rentabilidades de alquiler superan el 8% anual en propiedades de nueva construcción y la inversión extranjera en el sur de Florida creció un 42% respecto al año anterior.' },
       { type: 'stats', items: [
@@ -213,7 +213,7 @@ export const articles: Article[] = [
     readTime: 3,
     coverEmoji: '⚽',
     coverBg: '#0a2318',
-    coverImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&auto=format&fit=crop',
+    coverImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80&auto=format&fit=crop',
     body: [
       { type: 'lead', text: 'Neymar Sports, el fondo inmobiliario liderado por el futbolista, anunció una inversión de R$ 7.5 mil millones en el desarrollo de un complejo turístico-residencial en la franja costera entre Maragogi (Alagoas) y el litoral norte de Pernambuco.' },
       { type: 'h2', text: 'El proyecto en detalle' },
