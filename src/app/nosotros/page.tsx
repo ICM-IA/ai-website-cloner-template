@@ -167,7 +167,7 @@ export default function NosotrosPage() {
                 Con el tiempo, expandió su red hacia mercados internacionales — Brasil, USA, España y Dubai — hasta fundar Lion GSC, una consultora especializada en conectar inversores argentinos y latinoamericanos con las mejores oportunidades del mundo.
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14, marginBottom: 24 }}>
                 {[
                   { value: 'Martillero y CP', label: 'Matriculado' },
                   { value: '10 mercados', label: 'Internacionales' },
@@ -179,6 +179,23 @@ export default function NosotrosPage() {
                     <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)', margin: 0 }}>{s.label}</p>
                   </div>
                 ))}
+              </div>
+
+              {/* CTA contacto directo */}
+              <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.18)', borderRadius: 12, padding: '20px 22px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>
+                <div>
+                  <p style={{ fontSize: 13, fontWeight: 700, color: '#efefef', margin: '0 0 3px' }}>¿Querés hablar directamente con Alan?</p>
+                  <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)', margin: 0 }}>Respondé en menos de 24 hs.</p>
+                </div>
+                <div style={{ display: 'flex', gap: 10, flexShrink: 0 }}>
+                  <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer"
+                    style={{ background: '#25D366', color: '#fff', borderRadius: 6, padding: '9px 18px', fontSize: 12, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
+                    💬 WhatsApp
+                  </a>
+                  <a href="#" style={{ background: 'transparent', color: '#C9922A', border: '1px solid rgba(201,146,42,0.4)', borderRadius: 6, padding: '9px 18px', fontSize: 12, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
+                    in LinkedIn
+                  </a>
+                </div>
               </div>
             </div>
           </div>
