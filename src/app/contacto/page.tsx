@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 const WA_URL = 'https://wa.me/5492233559834';
 const MAPS_BUE = 'https://www.google.com/maps/search/?api=1&query=Pico+1671+4D+Buenos+Aires+Argentina';
 const MAPS_MDQ = 'https://www.google.com/maps/search/?api=1&query=Av+Constitucion+4569+Piso+3+Mar+del+Plata';
-
 const BOOKING_SRC = 'https://api.icm-ia.com/widget/booking/eUHMDjB5oFxtYa1y7Bbd';
 
 export default function ContactoPage() {
@@ -33,7 +32,6 @@ export default function ContactoPage() {
             Estamos en Buenos Aires y Mar del Plata, pero atendemos inversores de toda América Latina. Escribinos por el canal que prefieras — respondemos en menos de 24 horas.
           </p>
 
-          {/* Quick contact cards */}
           <div className="quick-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
             {[
               { icon: '💬', label: 'WhatsApp', sub: 'Respuesta inmediata', href: WA_URL },
@@ -57,16 +55,14 @@ export default function ContactoPage() {
       </section>
 
       {/* ── FORM + SIDEBAR ── */}
-      <section id="form" style={{ padding: '56px 32px 80px' }}>
+      <section id="form" style={{ padding: '56px 32px 32px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 380px', gap: 52, alignItems: 'start' }}>
 
-          {/* ── LEFT: FORM EMBED ── */}
+          {/* LEFT: FORM EMBED */}
           <div>
             <p style={{ fontSize: 11, fontWeight: 700, color: '#C9922A', letterSpacing: '0.15em', marginBottom: 8 }}>● ESCRIBINOS</p>
             <h2 style={{ fontSize: 32, fontWeight: 800, color: '#efefef', marginBottom: 6 }}>Envianos tu consulta</h2>
             <div style={{ height: 3, width: 40, background: '#C9922A', marginBottom: 32 }} />
-
-            {/* ICM-IA embed original */}
             <iframe
               src="https://api.icm-ia.com/widget/form/ObdWKp9erbfZyX8AmG2X"
               style={{ width: '100%', height: 900, border: 'none', borderRadius: 8, display: 'block' }}
@@ -84,37 +80,9 @@ export default function ContactoPage() {
               data-form-id="ObdWKp9erbfZyX8AmG2X"
               title="Form pagina contactos - web"
             />
-
-            {/* ── Contacto directo bajo el form — mismo alto que card sidebar ── */}
-            <div style={{ marginTop: 28, background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.18)', borderRadius: 14, padding: '28px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: 186 }}>
-              <div>
-                <p style={{ fontSize: 15, fontWeight: 800, color: '#efefef', marginBottom: 8 }}>
-                  ¿Preferís contactarnos directamente?
-                </p>
-                <p style={{ fontSize: 13, color: 'rgba(239,239,239,0.5)', lineHeight: 1.75, marginBottom: 0 }}>
-                  Dejanos tu consulta por WhatsApp y te respondemos en minutos, o agendá una reunión con uno de nuestros asesores en el horario que más te convenga.
-                </p>
-              </div>
-              <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 24 }}>
-                <a
-                  href={WA_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ flex: 1, minWidth: 180, background: '#25D366', color: '#fff', borderRadius: 8, padding: '13px 20px', fontSize: 13, fontWeight: 800, textDecoration: 'none', textAlign: 'center', letterSpacing: '0.03em' }}
-                >
-                  💬 Escribir por WhatsApp
-                </a>
-                <button
-                  onClick={() => setShowCalModal(true)}
-                  style={{ flex: 1, minWidth: 180, background: 'transparent', color: '#C9922A', border: '2px solid rgba(201,146,42,0.5)', borderRadius: 8, padding: '13px 20px', fontSize: 13, fontWeight: 800, cursor: 'pointer', letterSpacing: '0.03em' }}
-                >
-                  📅 Agendar una reunión
-                </button>
-              </div>
-            </div>
           </div>
 
-          {/* ── RIGHT: SIDEBAR ── */}
+          {/* RIGHT: SIDEBAR — solo mapas */}
           <aside>
             <h3 style={{ fontSize: 20, fontWeight: 800, color: '#efefef', marginBottom: 8 }}>Nuestras oficinas</h3>
             <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', lineHeight: 1.7, marginBottom: 24 }}>
@@ -127,7 +95,7 @@ export default function ContactoPage() {
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7!2d-58.4672604!3d-34.5369255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584ddae84cff001%3A0x54fb515e4900f951!2sPico%201671%2C%20C1425%20CABA!5e0!3m2!1ses!2sar!4v1"
                   width="100%" height="140"
-                  style={{ border: 0, display: 'block', filter: 'none' }}
+                  style={{ border: 0, display: 'block' }}
                   allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
                   title="Buenos Aires"
                 />
@@ -155,12 +123,12 @@ export default function ContactoPage() {
             </div>
 
             {/* Mar del Plata */}
-            <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, overflow: 'hidden', marginBottom: 20 }}>
+            <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, overflow: 'hidden' }}>
               <div style={{ height: 140, overflow: 'hidden' }}>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.0!2d-57.5442!3d-38.0055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dc7b7b7b7b7b%3A0x7b7b7b7b7b7b7b7b!2sAv.+Constituci%C3%B3n+4569%2C+Mar+del+Plata!5e0!3m2!1ses!2sar!4v1"
                   width="100%" height="140"
-                  style={{ border: 0, display: 'block', filter: 'none' }}
+                  style={{ border: 0, display: 'block' }}
                   allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
                   title="Mar del Plata"
                 />
@@ -183,11 +151,41 @@ export default function ContactoPage() {
                 </a>
               </div>
             </div>
+          </aside>
+        </div>
+      </section>
 
-            {/* Contacto directo */}
-            <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, padding: '18px 18px 20px' }}>
-              <p style={{ fontSize: 13, fontWeight: 800, color: '#efefef', marginBottom: 14 }}>Contacto directo</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 16 }}>
+      {/* ── FILA INFERIOR: las dos cards al mismo nivel y mismo tamaño ── */}
+      <section style={{ padding: '0 32px 80px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 380px', gap: 52, alignItems: 'stretch' }}>
+
+          {/* Card izquierda: contacto directo */}
+          <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.18)', borderRadius: 14, padding: '28px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div>
+              <p style={{ fontSize: 15, fontWeight: 800, color: '#efefef', marginBottom: 8 }}>
+                ¿Preferís contactarnos directamente?
+              </p>
+              <p style={{ fontSize: 13, color: 'rgba(239,239,239,0.5)', lineHeight: 1.75 }}>
+                Dejanos tu consulta por WhatsApp y te respondemos en minutos, o agendá una reunión con uno de nuestros asesores en el horario que más te convenga.
+              </p>
+            </div>
+            <div style={{ display: 'flex', gap: 14, marginTop: 24, flexWrap: 'wrap' }}>
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+                style={{ flex: 1, minWidth: 160, background: '#25D366', color: '#fff', borderRadius: 8, padding: '13px 20px', fontSize: 13, fontWeight: 800, textDecoration: 'none', textAlign: 'center', letterSpacing: '0.03em' }}>
+                💬 Escribir por WhatsApp
+              </a>
+              <button onClick={() => setShowCalModal(true)}
+                style={{ flex: 1, minWidth: 160, background: 'transparent', color: '#C9922A', border: '2px solid rgba(201,146,42,0.5)', borderRadius: 8, padding: '13px 20px', fontSize: 13, fontWeight: 800, cursor: 'pointer', letterSpacing: '0.03em' }}>
+                📅 Agendar una reunión
+              </button>
+            </div>
+          </div>
+
+          {/* Card derecha: contacto directo info */}
+          <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, padding: '24px 22px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div>
+              <p style={{ fontSize: 13, fontWeight: 800, color: '#efefef', marginBottom: 16 }}>Contacto directo</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
                 {[
                   { icon: '✉️', label: 'Email', value: 'info@liongsc.com', href: 'mailto:info@liongsc.com' },
                   { icon: '🌐', label: 'Web', value: 'www.liongsc.com', href: 'https://www.liongsc.com' },
@@ -201,48 +199,46 @@ export default function ContactoPage() {
                   </div>
                 ))}
               </div>
-              <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 14, display: 'flex', alignItems: 'center', gap: 10 }}>
-                <span style={{ fontSize: 14 }}>🕐</span>
-                <div>
-                  <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.45)' }}>Horario de atención</span>
-                  <span style={{ fontSize: 11, color: '#C9922A', fontWeight: 700, marginLeft: 8 }}>Lun–Vie · 9:00 a 19:00 hs (ARG)</span>
-                </div>
+            </div>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 14, marginTop: 16, display: 'flex', alignItems: 'center', gap: 10 }}>
+              <span style={{ fontSize: 14 }}>🕐</span>
+              <div>
+                <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.45)' }}>Horario de atención</span>
+                <span style={{ fontSize: 11, color: '#C9922A', fontWeight: 700, marginLeft: 8 }}>Lun–Vie · 9:00 a 19:00 hs (ARG)</span>
               </div>
             </div>
-          </aside>
+          </div>
+
         </div>
       </section>
 
-      {/* ── Modal calendario ── */}
+      {/* ── Modal calendario — con scroll ── */}
       {showCalModal && (
         <div
           onClick={() => setShowCalModal(false)}
-          style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.8)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.82)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}
         >
           <div
             onClick={e => e.stopPropagation()}
-            style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.25)', borderRadius: 16, width: '100%', maxWidth: 780, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+            style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.25)', borderRadius: 16, width: '100%', maxWidth: 820, maxHeight: '92vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
           >
-            {/* Header del modal */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 24px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+            {/* Header */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 24px', borderBottom: '1px solid rgba(255,255,255,0.07)', flexShrink: 0 }}>
               <div>
                 <p style={{ fontSize: 16, fontWeight: 800, color: '#efefef', margin: '0 0 2px' }}>📅 Agendar reunión con un asesor</p>
                 <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: 0 }}>Elegí el día y horario que mejor te quede</p>
               </div>
-              <button
-                onClick={() => setShowCalModal(false)}
-                style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 8, color: 'rgba(239,239,239,0.5)', fontSize: 18, width: 36, height: 36, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              >
+              <button onClick={() => setShowCalModal(false)}
+                style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 8, color: 'rgba(239,239,239,0.5)', fontSize: 20, width: 38, height: 38, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 ×
               </button>
             </div>
-            {/* Embed del calendario — mismo que página de inicio */}
-            <div style={{ borderRadius: '0 0 16px 16px', overflow: 'hidden', height: 560, background: '#1a1a2e' }}>
+            {/* Calendario con scroll */}
+            <div style={{ overflowY: 'auto', flexGrow: 1, background: '#1a1a2e' }}>
               <iframe
                 src={BOOKING_SRC}
-                style={{ width: '100%', border: 'none', display: 'block', height: 700, marginTop: -80 }}
-                scrolling="no"
-                id="eUHMDjB5oFxtYa1y7Bbd_contact"
+                style={{ width: '100%', border: 'none', display: 'block', height: 800 }}
+                id="eUHMDjB5oFxtYa1y7Bbd_modal"
                 title="Agendar reunión"
               />
             </div>
