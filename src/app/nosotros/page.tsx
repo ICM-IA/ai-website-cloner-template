@@ -110,30 +110,43 @@ export default function NosotrosPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/images/alan-yorno.png" alt="Alan Yorno" style={{ width: '100%', height: 'auto', display: 'block' }} />
                 </div>
-                <div style={{ padding: '22px 26px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-                    <div>
-                      <h3 style={{ fontSize: 20, fontWeight: 800, color: '#efefef', margin: '0 0 3px' }}>Alan Yorno</h3>
-                      <p style={{ fontSize: 10, color: '#C9922A', fontWeight: 700, letterSpacing: '0.12em', margin: 0 }}>FUNDADOR & CEO</p>
-                    </div>
-                    <span style={{ fontSize: 10, fontWeight: 700, color: '#101010', background: '#C9922A', borderRadius: 20, padding: '4px 12px', whiteSpace: 'nowrap' }}>
-                      Fundador & CEO
+                {/* Info del fundador */}
+                <div style={{ padding: '24px 26px 26px' }}>
+
+                  {/* Nombre + cargo */}
+                  <div style={{ marginBottom: 18 }}>
+                    <h3 style={{ fontSize: 22, fontWeight: 800, color: '#efefef', margin: '0 0 4px' }}>Alan Yorno</h3>
+                    <span style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, color: '#101010', background: '#C9922A', borderRadius: 20, padding: '3px 12px', letterSpacing: '0.08em' }}>
+                      FUNDADOR & CEO
                     </span>
                   </div>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 7, marginBottom: 18 }}>
-                    {['Martillero Público', 'Corredor Público', '+10 años de experiencia', 'Especialista América + Europa'].map((c, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <span style={{ color: '#C9922A', fontSize: 13, fontWeight: 700 }}>✓</span>
-                        <span style={{ fontSize: 12, color: 'rgba(239,239,239,0.65)' }}>{c}</span>
+                  {/* Separador */}
+                  <div style={{ height: 1, background: 'rgba(201,146,42,0.15)', marginBottom: 16 }} />
+
+                  {/* Credenciales 2×2 */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 12px', marginBottom: 20 }}>
+                    {['Martillero Público', 'Corredor Público', '+10 años exp.', 'América + Europa'].map((c, i) => (
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                        <span style={{ color: '#C9922A', fontSize: 12, fontWeight: 800, flexShrink: 0 }}>✓</span>
+                        <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.6)', lineHeight: 1.3 }}>{c}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                    {['LinkedIn', 'Instagram', 'WhatsApp'].map(s => (
-                      <a key={s} href="#" style={{ fontSize: 11, color: 'rgba(239,239,239,0.5)', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 20, padding: '5px 12px', textDecoration: 'none' }}>
-                        {s}
+                  {/* Separador */}
+                  <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', marginBottom: 16 }} />
+
+                  {/* Social */}
+                  <div style={{ display: 'flex', gap: 8 }}>
+                    {[
+                      { label: 'LinkedIn', icon: '💼' },
+                      { label: 'Instagram', icon: '📸' },
+                      { label: 'WhatsApp', icon: '💬' },
+                    ].map(s => (
+                      <a key={s.label} href="#" style={{ flex: 1, textAlign: 'center', fontSize: 11, fontWeight: 600, color: 'rgba(239,239,239,0.6)', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.09)', borderRadius: 8, padding: '8px 4px', textDecoration: 'none', transition: 'all 0.15s' }}>
+                        <span style={{ display: 'block', fontSize: 14, marginBottom: 2 }}>{s.icon}</span>
+                        {s.label}
                       </a>
                     ))}
                   </div>
