@@ -6,8 +6,7 @@ const WA_URL = 'https://wa.me/5492233559834';
 const MAPS_BUE = 'https://www.google.com/maps/search/?api=1&query=Pico+1671+4D+Buenos+Aires+Argentina';
 const MAPS_MDQ = 'https://www.google.com/maps/search/?api=1&query=Av+Constitucion+4569+Piso+3+Mar+del+Plata';
 
-// Reemplazá esta URL con tu link real de Calendly / TidyCal / Cal.com
-const CALENDLY_URL = 'https://calendly.com/liongsc';
+const BOOKING_SRC = 'https://api.icm-ia.com/widget/booking/eUHMDjB5oFxtYa1y7Bbd';
 
 export default function ContactoPage() {
   const [showCalModal, setShowCalModal] = useState(false);
@@ -86,15 +85,17 @@ export default function ContactoPage() {
               title="Form pagina contactos - web"
             />
 
-            {/* ── Contacto directo bajo el form ── */}
-            <div style={{ marginTop: 28, background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.18)', borderRadius: 14, padding: '28px 28px 28px' }}>
-              <p style={{ fontSize: 14, fontWeight: 800, color: '#efefef', marginBottom: 6 }}>
-                ¿Preferís contactarnos directamente?
-              </p>
-              <p style={{ fontSize: 13, color: 'rgba(239,239,239,0.5)', lineHeight: 1.75, marginBottom: 24 }}>
-                Podés dejarnos tu consulta por WhatsApp y te respondemos en minutos, o agendá una reunión con uno de nuestros asesores en el horario que más te convenga.
-              </p>
-              <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+            {/* ── Contacto directo bajo el form — mismo alto que card sidebar ── */}
+            <div style={{ marginTop: 28, background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.18)', borderRadius: 14, padding: '28px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: 186 }}>
+              <div>
+                <p style={{ fontSize: 15, fontWeight: 800, color: '#efefef', marginBottom: 8 }}>
+                  ¿Preferís contactarnos directamente?
+                </p>
+                <p style={{ fontSize: 13, color: 'rgba(239,239,239,0.5)', lineHeight: 1.75, marginBottom: 0 }}>
+                  Dejanos tu consulta por WhatsApp y te respondemos en minutos, o agendá una reunión con uno de nuestros asesores en el horario que más te convenga.
+                </p>
+              </div>
+              <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginTop: 24 }}>
                 <a
                   href={WA_URL}
                   target="_blank"
@@ -235,14 +236,16 @@ export default function ContactoPage() {
                 ×
               </button>
             </div>
-            {/* Embed del calendario */}
-            <iframe
-              src={CALENDLY_URL}
-              width="100%"
-              height="580"
-              style={{ border: 'none', display: 'block' }}
-              title="Agendar reunión"
-            />
+            {/* Embed del calendario — mismo que página de inicio */}
+            <div style={{ borderRadius: '0 0 16px 16px', overflow: 'hidden', height: 560, background: '#1a1a2e' }}>
+              <iframe
+                src={BOOKING_SRC}
+                style={{ width: '100%', border: 'none', display: 'block', height: 700, marginTop: -80 }}
+                scrolling="no"
+                id="eUHMDjB5oFxtYa1y7Bbd_contact"
+                title="Agendar reunión"
+              />
+            </div>
           </div>
         </div>
       )}
