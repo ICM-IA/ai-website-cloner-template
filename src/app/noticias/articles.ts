@@ -164,7 +164,7 @@ export const articles: Article[] = [
     readTime: 3,
     coverEmoji: '✈️',
     coverBg: '#0a2318',
-    coverImage: 'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80&auto=format&fit=crop',
+    coverImage: '/images/maragogi-aeropuerto.jpg',
     body: [
       { type: 'lead', text: 'El aeropuerto internacional de Maragogi se proyecta como la obra de infraestructura más transformadora del litoral norte de Alagoas. La conectividad directa con los principales hub de Brasil y el exterior cambiará la ecuación de demanda turística de toda la región.' },
       { type: 'h2', text: 'El efecto aeropuerto en el litoral nordestino' },
