@@ -34,7 +34,7 @@ export default function ContactoPage() {
             {[
               { icon: '💬', label: 'WhatsApp', sub: 'Respuesta inmediata', href: WA_URL },
               { icon: '📅', label: 'Zoom', sub: 'Agendar reunión', href: '#form' },
-              { icon: '✉️', label: 'Email', sub: 'alan@liongsc.com', href: 'mailto:alan@liongsc.com' },
+              { icon: '✉️', label: 'Email', sub: 'info@liongsc.com', href: 'mailto:info@liongsc.com' },
               { icon: '📍', label: 'Oficinas', sub: 'Buenos Aires · Mar del Plata', href: MAPS_BUE },
             ].map((c, i) => (
               <a key={i} href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
@@ -95,7 +95,7 @@ export default function ContactoPage() {
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7!2d-58.4672604!3d-34.5369255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584ddae84cff001%3A0x54fb515e4900f951!2sPico%201671%2C%20C1425%20CABA!5e0!3m2!1ses!2sar!4v1"
                   width="100%" height="140"
-                  style={{ border: 0, display: 'block', filter: 'grayscale(1) invert(1) brightness(0.85)' }}
+                  style={{ border: 0, display: 'block', filter: 'none' }}
                   allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
                   title="Buenos Aires"
                 />
@@ -128,7 +128,7 @@ export default function ContactoPage() {
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.0!2d-57.5442!3d-38.0055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dc7b7b7b7b7b%3A0x7b7b7b7b7b7b7b7b!2sAv.+Constituci%C3%B3n+4569%2C+Mar+del+Plata!5e0!3m2!1ses!2sar!4v1"
                   width="100%" height="140"
-                  style={{ border: 0, display: 'block', filter: 'grayscale(1) invert(1) brightness(0.85)' }}
+                  style={{ border: 0, display: 'block', filter: 'none' }}
                   allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
                   title="Mar del Plata"
                 />
@@ -157,7 +157,7 @@ export default function ContactoPage() {
               <p style={{ fontSize: 13, fontWeight: 800, color: '#efefef', marginBottom: 14 }}>Contacto directo</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 16 }}>
                 {[
-                  { icon: '✉️', label: 'Email', value: 'alan@liongsc.com', href: 'mailto:alan@liongsc.com' },
+                  { icon: '✉️', label: 'Email', value: 'info@liongsc.com', href: 'mailto:info@liongsc.com' },
                   { icon: '🌐', label: 'Web', value: 'www.liongsc.com', href: 'https://www.liongsc.com' },
                   { icon: '📸', label: 'Instagram', value: '@lion.gsc', href: 'https://instagram.com/lion.gsc' },
                   { icon: '💼', label: 'LinkedIn', value: '/liongsc', href: 'https://linkedin.com/company/liongsc' },
