@@ -234,8 +234,17 @@ export default function FaqPage() {
     <main style={{ fontFamily: 'Helvetica Now Display, Helvetica, Arial, sans-serif', color: '#efefef', background: '#101010', minHeight: '100vh', paddingBottom: 80 }}>
 
       {/* ── Header ── */}
-      <section style={{ background: 'linear-gradient(160deg, #0a1428 0%, #0d0d0d 100%)', padding: '72px 32px 56px' }}>
-        <div style={{ maxWidth: 680 }}>
+      <section style={{ position: 'relative', padding: '72px 32px 56px', overflow: 'hidden' }}>
+        {/* Video background */}
+        <video
+          autoPlay muted loop playsInline
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
+        >
+          <source src="/videos/faq-hero-bg.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay so text stays readable */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, rgba(8,14,32,0.88) 0%, rgba(10,10,20,0.82) 60%, rgba(5,5,15,0.90) 100%)', zIndex: 1 }} />
+        <div style={{ maxWidth: 680, position: 'relative', zIndex: 2 }}>
           <p style={{ fontSize: 11, fontWeight: 700, color: '#C9922A', letterSpacing: '0.15em', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 8 }}>
             <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#C9922A', display: 'inline-block' }} />
             PREGUNTAS FRECUENTES
