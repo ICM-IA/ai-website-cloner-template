@@ -220,7 +220,7 @@ export default function ContactoPage() {
         >
           <div
             onClick={e => e.stopPropagation()}
-            style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.25)', borderRadius: 16, width: '100%', maxWidth: 820, maxHeight: '92vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
+            style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.25)', borderRadius: 16, width: '100%', maxWidth: 1100, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
           >
             {/* Header */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 24px', borderBottom: '1px solid rgba(255,255,255,0.07)', flexShrink: 0 }}>
@@ -233,11 +233,11 @@ export default function ContactoPage() {
                 ×
               </button>
             </div>
-            {/* Calendario con scroll */}
-            <div style={{ overflowY: 'auto', flexGrow: 1, background: '#1a1a2e' }}>
+            {/* Calendario — clip del header del widget con overflow hidden */}
+            <div style={{ overflow: 'hidden', height: 630, background: '#1a1a2e', flexShrink: 0 }}>
               <iframe
                 src={BOOKING_SRC}
-                style={{ width: '100%', border: 'none', display: 'block', height: 800 }}
+                style={{ width: '100%', border: 'none', display: 'block', height: 780, marginTop: -80 }}
                 id="eUHMDjB5oFxtYa1y7Bbd_modal"
                 title="Agendar reunión"
               />
