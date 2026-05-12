@@ -279,7 +279,10 @@ export default function Page() {
             <Link href="/mercados" style={{ background: '#C9922A', color: '#101010', padding: '14px 36px', fontSize: 13, fontWeight: 800, borderRadius: 4, textDecoration: 'none', letterSpacing: '0.08em' }}>
               VER PROYECTOS DEL MES ↗
             </Link>
-            <button onClick={() => setShowCalendar(true)} style={{ background: 'transparent', color: '#C9922A', padding: '14px 36px', fontSize: 13, fontWeight: 800, border: '2px solid #C9922A', borderRadius: 4, letterSpacing: '0.08em', cursor: 'pointer' }}>
+            <button
+              onClick={() => document.getElementById('agendar')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+              style={{ background: 'transparent', color: '#C9922A', padding: '14px 36px', fontSize: 13, fontWeight: 800, border: '2px solid #C9922A', borderRadius: 4, letterSpacing: '0.08em', cursor: 'pointer' }}
+            >
               AGENDAR REUNIÓN →
             </button>
           </div>
@@ -381,7 +384,7 @@ export default function Page() {
       </section>
 
       {/* Calendario — Agendar reunión */}
-      <section style={{ padding: '80px 32px', background: '#101010', borderTop: '1px solid rgba(201,146,42,0.1)' }}>
+      <section id="agendar" style={{ padding: '80px 32px', background: '#101010', borderTop: '1px solid rgba(201,146,42,0.1)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ marginBottom: 48, textAlign: 'center' }}>
             <p style={{ fontSize: 11, fontWeight: 700, color: '#C9922A', letterSpacing: '0.15em', marginBottom: 14 }}>PRIMER PASO</p>
