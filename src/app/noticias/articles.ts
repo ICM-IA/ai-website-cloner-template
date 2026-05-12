@@ -82,7 +82,7 @@ export const articles: Article[] = [
     readTime: 5,
     coverEmoji: '🏙️',
     coverBg: '#0a1225',
-    coverImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop',
+    coverImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop',
     body: [
       { type: 'lead', text: 'Brickell y Wynwood registran mínimos históricos de vacancia. Las rentabilidades de alquiler superan el 8% anual en propiedades de nueva construcción y la inversión extranjera en el sur de Florida creció un 42% respecto al año anterior.' },
       { type: 'stats', items: [
