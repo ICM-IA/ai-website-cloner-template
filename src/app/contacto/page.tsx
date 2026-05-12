@@ -1,12 +1,17 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const WA_URL = 'https://wa.me/5492233559834';
 const MAPS_BUE = 'https://www.google.com/maps/search/?api=1&query=Pico+1671+4D+Buenos+Aires+Argentina';
 const MAPS_MDQ = 'https://www.google.com/maps/search/?api=1&query=Av+Constitucion+4569+Piso+3+Mar+del+Plata';
 
+// Reemplazá esta URL con tu link real de Calendly / TidyCal / Cal.com
+const CALENDLY_URL = 'https://calendly.com/liongsc';
+
 export default function ContactoPage() {
+  const [showCalModal, setShowCalModal] = useState(false);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://api.icm-ia.com/js/form_embed.js';
@@ -80,6 +85,32 @@ export default function ContactoPage() {
               data-form-id="ObdWKp9erbfZyX8AmG2X"
               title="Form pagina contactos - web"
             />
+
+            {/* ── Contacto directo bajo el form ── */}
+            <div style={{ marginTop: 28, background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.18)', borderRadius: 14, padding: '28px 28px 28px' }}>
+              <p style={{ fontSize: 14, fontWeight: 800, color: '#efefef', marginBottom: 6 }}>
+                ¿Preferís contactarnos directamente?
+              </p>
+              <p style={{ fontSize: 13, color: 'rgba(239,239,239,0.5)', lineHeight: 1.75, marginBottom: 24 }}>
+                Podés dejarnos tu consulta por WhatsApp y te respondemos en minutos, o agendá una reunión con uno de nuestros asesores en el horario que más te convenga.
+              </p>
+              <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+                <a
+                  href={WA_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ flex: 1, minWidth: 180, background: '#25D366', color: '#fff', borderRadius: 8, padding: '13px 20px', fontSize: 13, fontWeight: 800, textDecoration: 'none', textAlign: 'center', letterSpacing: '0.03em' }}
+                >
+                  💬 Escribir por WhatsApp
+                </a>
+                <button
+                  onClick={() => setShowCalModal(true)}
+                  style={{ flex: 1, minWidth: 180, background: 'transparent', color: '#C9922A', border: '2px solid rgba(201,146,42,0.5)', borderRadius: 8, padding: '13px 20px', fontSize: 13, fontWeight: 800, cursor: 'pointer', letterSpacing: '0.03em' }}
+                >
+                  📅 Agendar una reunión
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* ── RIGHT: SIDEBAR ── */}
@@ -180,6 +211,41 @@ export default function ContactoPage() {
           </aside>
         </div>
       </section>
+
+      {/* ── Modal calendario ── */}
+      {showCalModal && (
+        <div
+          onClick={() => setShowCalModal(false)}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.8)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}
+        >
+          <div
+            onClick={e => e.stopPropagation()}
+            style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.25)', borderRadius: 16, width: '100%', maxWidth: 780, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+          >
+            {/* Header del modal */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 24px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+              <div>
+                <p style={{ fontSize: 16, fontWeight: 800, color: '#efefef', margin: '0 0 2px' }}>📅 Agendar reunión con un asesor</p>
+                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: 0 }}>Elegí el día y horario que mejor te quede</p>
+              </div>
+              <button
+                onClick={() => setShowCalModal(false)}
+                style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 8, color: 'rgba(239,239,239,0.5)', fontSize: 18, width: 36, height: 36, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              >
+                ×
+              </button>
+            </div>
+            {/* Embed del calendario */}
+            <iframe
+              src={CALENDLY_URL}
+              width="100%"
+              height="580"
+              style={{ border: 'none', display: 'block' }}
+              title="Agendar reunión"
+            />
+          </div>
+        </div>
+      )}
 
       <style>{`
         .quick-card:hover { border-color: rgba(201,146,42,0.35) !important; transition: border-color 0.15s; }
