@@ -867,22 +867,19 @@ export default function MercadosPage() {
         >
           <div
             onClick={e => e.stopPropagation()}
-            style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.3)', borderRadius: 16, maxWidth: 860, width: '100%', maxHeight: '92vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
+            style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.3)', borderRadius: 16, maxWidth: 1100, width: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 28px', borderBottom: '1px solid rgba(201,146,42,0.15)', flexShrink: 0 }}>
-              <div>
-                <p style={{ fontSize: 17, fontWeight: 800, color: '#efefef', margin: 0 }}>📅 Agendá tu reunión</p>
-                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '3px 0 0' }}>Una charla de 15 min por Zoom. Sin compromiso.</p>
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 24px', borderBottom: '1px solid rgba(201,146,42,0.15)', flexShrink: 0 }}>
+              <p style={{ fontSize: 15, fontWeight: 800, color: '#efefef', margin: 0 }}>📅 Agendá tu reunión — 15 min por Zoom</p>
               <button
                 onClick={() => setShowCalendar(false)}
-                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '50%', width: 36, height: 36, cursor: 'pointer', color: 'rgba(239,239,239,0.7)', fontSize: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '50%', width: 34, height: 34, cursor: 'pointer', color: 'rgba(239,239,239,0.7)', fontSize: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}
               >×</button>
             </div>
-            <div style={{ overflowY: 'auto', flexGrow: 1, background: '#1a1a2e' }}>
+            <div style={{ overflow: 'hidden', height: 630, background: '#1a1a2e', borderRadius: '0 0 16px 16px' }}>
               <iframe
                 src={BOOKING_SRC}
-                style={{ width: '100%', height: 800, border: 'none', display: 'block', marginTop: -80 }}
+                style={{ width: '100%', height: 780, border: 'none', display: 'block', marginTop: -80 }}
                 scrolling="no"
               />
             </div>
