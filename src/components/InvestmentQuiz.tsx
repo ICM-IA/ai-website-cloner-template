@@ -129,13 +129,14 @@ export default function InvestmentQuiz() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(0);
-
-  if (pathname === '/faq') return null;
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
   const [showLead, setShowLead] = useState(false);
   const [lead, setLead] = useState({ name: '', phone: '', email: '' });
   const [submitting, setSubmitting] = useState(false);
+
+  // All hooks must be called before any conditional return
+  if (pathname === '/faq') return null;
 
   const handleOption = (value: string) => {
     const stepId = steps[step].id;
