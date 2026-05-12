@@ -3,6 +3,23 @@
 import { useState } from 'react';
 
 const MAPS_URL = 'https://www.google.com/maps/place/Lion+Global+Sales+Consulting/@-34.5369211,-58.4698353,17z/data=!4m8!3m7!1s0x9584ddae84cff001:0x54fb515e4900f951!8m2!3d-34.5369255!4d-58.4672604!9m1!1b1!16s%2Fg%2F11y43zrwcm?hl=es-419&entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D';
+const WA_URL = 'https://wa.me/5492233559834';
+const BOOKING_SRC = 'https://api.icm-ia.com/widget/booking/eUHMDjB5oFxtYa1y7Bbd';
+
+const flagCountries = [
+  { name: 'Argentina',       flag: 'https://flagcdn.com/w80/ar.png' },
+  { name: 'Brasil',          flag: 'https://flagcdn.com/w80/br.png' },
+  { name: 'USA',             flag: 'https://flagcdn.com/w80/us.png' },
+  { name: 'Emiratos Árabes', flag: 'https://flagcdn.com/w80/ae.png' },
+  { name: 'España',          flag: 'https://flagcdn.com/w80/es.png' },
+  { name: 'Italia',          flag: 'https://flagcdn.com/w80/it.png' },
+  { name: 'Paraguay',        flag: 'https://flagcdn.com/w80/py.png' },
+  { name: 'Uruguay',         flag: 'https://flagcdn.com/w80/uy.png' },
+  { name: 'México',          flag: 'https://flagcdn.com/w80/mx.png' },
+  { name: 'Colombia',        flag: 'https://flagcdn.com/w80/co.png' },
+  { name: 'Panamá',          flag: 'https://flagcdn.com/w80/pa.png' },
+  { name: 'Georgia',         flag: 'https://flagcdn.com/w80/ge.png' },
+];
 
 const heroStats = [
   { value: '500+', label: 'Inversores asesorados' },
@@ -49,6 +66,7 @@ const reviews = [
 export default function NosotrosPage() {
   const [reviewPage, setReviewPage] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
 
   const totalPages = Math.ceil(reviews.length / 3);
   const visible = reviews.slice(reviewPage * 3, reviewPage * 3 + 3);
@@ -82,10 +100,15 @@ export default function NosotrosPage() {
             </div>
             <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '0 0 6px' }}>Lion GSC</p>
             <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.45)', marginBottom: 24 }}>Desde Argentina al mundo</p>
-            <div style={{ paddingTop: 20, borderTop: '1px solid rgba(201,146,42,0.15)' }}>
-              <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
-                {['🇦🇷', '🇧🇷', '🇺🇸', '🇦🇪', '🇪🇸', '🇮🇹', '🇵🇾', '🇺🇾'].map((f, i) => (
-                  <span key={i} style={{ fontSize: 22 }}>{f}</span>
+            {/* Animated flags marquee */}
+            <div style={{ paddingTop: 20, borderTop: '1px solid rgba(201,146,42,0.15)', overflow: 'hidden', maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
+              <div className="nosotros-marquee">
+                {[...flagCountries, ...flagCountries].map((c, i) => (
+                  <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, flexShrink: 0 }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={c.flag} alt={c.name} style={{ width: 32, height: 21, objectFit: 'cover', borderRadius: 3, display: 'block' }} />
+                    <span style={{ fontSize: 8, color: 'rgba(239,239,239,0.35)', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>{c.name}</span>
+                  </div>
                 ))}
               </div>
             </div>
@@ -174,7 +197,7 @@ export default function NosotrosPage() {
                   { value: '500+', label: 'Inversores asesorados' },
                   { value: '5.0 ⭐', label: 'Google Reviews' },
                 ].map((s, i) => (
-                  <div key={i} style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.15)', borderRadius: 10, padding: '16px 20px' }}>
+                  <div key={i} style={{ background: '#1a1a2e', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 10, padding: '16px 20px' }}>
                     <p style={{ fontSize: 15, fontWeight: 800, color: '#C9922A', margin: '0 0 4px' }}>{s.value}</p>
                     <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)', margin: 0 }}>{s.label}</p>
                   </div>
@@ -188,7 +211,7 @@ export default function NosotrosPage() {
                   <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)', margin: 0 }}>Respondé en menos de 24 hs.</p>
                 </div>
                 <div style={{ display: 'flex', gap: 10, flexShrink: 0 }}>
-                  <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer"
+                  <a href={WA_URL} target="_blank" rel="noopener noreferrer"
                     style={{ background: '#25D366', color: '#fff', borderRadius: 6, padding: '9px 18px', fontSize: 12, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>
                     💬 WhatsApp
                   </a>
@@ -209,7 +232,7 @@ export default function NosotrosPage() {
           <h2 style={{ fontSize: 32, fontWeight: 800, color: '#efefef', marginBottom: 40 }}>Especialistas en cada mercado</h2>
           <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
             {team.map((m, i) => (
-              <div key={i} style={{ background: '#151515', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, overflow: 'hidden' }}>
+              <div key={i} className="lion-hover-card card-appear" style={{ background: '#1a1a2e', border: '1px solid rgba(201,146,42,0.15)', borderRadius: 14, overflow: 'hidden', animationDelay: `${i * 0.1}s` }}>
                 <div style={{ background: 'rgba(201,146,42,0.05)', height: 180, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                   <span style={{ fontSize: 44, marginBottom: 10 }}>👤</span>
                   <p style={{ fontSize: 10, color: 'rgba(239,239,239,0.2)', margin: 0, textAlign: 'center', padding: '0 16px' }}>Foto del equipo próximamente</p>
@@ -232,7 +255,7 @@ export default function NosotrosPage() {
           <h2 style={{ fontSize: 32, fontWeight: 800, color: '#efefef', marginBottom: 40 }}>Lo que nos diferencia</h2>
           <div className="diffs-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {diffs.map((d, i) => (
-              <div key={i} className="diff-card" style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 14, padding: '28px 24px' }}>
+              <div key={i} className="lion-hover-card card-appear diff-card" style={{ background: '#1a1a2e', border: '1px solid rgba(201,146,42,0.15)', borderRadius: 14, padding: '28px 24px', animationDelay: `${i * 0.08}s` }}>
                 <div style={{ fontSize: 36, marginBottom: 16 }}>{d.icon}</div>
                 <p style={{ fontSize: 14, fontWeight: 800, color: '#efefef', margin: '0 0 8px' }}>{d.title}</p>
                 <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.5)', lineHeight: 1.7, margin: 0 }}>{d.desc}</p>
@@ -369,15 +392,46 @@ export default function NosotrosPage() {
             >
               💬 WhatsApp
             </a>
-            <a
-              href="#"
-              style={{ background: 'transparent', color: '#efefef', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 6, padding: '13px 28px', fontSize: 13, fontWeight: 800, textDecoration: 'none', letterSpacing: '0.04em' }}
+            <button
+              onClick={() => setShowCalendar(true)}
+              style={{ background: 'transparent', color: '#C9922A', border: '2px solid rgba(201,146,42,0.6)', borderRadius: 6, padding: '13px 28px', fontSize: 13, fontWeight: 800, cursor: 'pointer', letterSpacing: '0.04em' }}
             >
-              📅 Zoom — Agendar reunión
-            </a>
+              📅 Agendar reunión por Zoom
+            </button>
           </div>
         </div>
       </section>
+
+      {/* ── Calendar modal ── */}
+      {showCalendar && (
+        <div
+          onClick={() => setShowCalendar(false)}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.82)', zIndex: 2000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}
+        >
+          <div
+            onClick={e => e.stopPropagation()}
+            style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.3)', borderRadius: 16, maxWidth: 860, width: '100%', maxHeight: '92vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 28px', borderBottom: '1px solid rgba(201,146,42,0.15)', flexShrink: 0 }}>
+              <div>
+                <p style={{ fontSize: 17, fontWeight: 800, color: '#efefef', margin: 0 }}>📅 Agendá tu reunión</p>
+                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '3px 0 0' }}>Una charla de 15 min por Zoom. Sin compromiso.</p>
+              </div>
+              <button
+                onClick={() => setShowCalendar(false)}
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '50%', width: 36, height: 36, cursor: 'pointer', color: 'rgba(239,239,239,0.7)', fontSize: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}
+              >×</button>
+            </div>
+            <div style={{ overflowY: 'auto', flexGrow: 1, background: '#1a1a2e' }}>
+              <iframe
+                src={BOOKING_SRC}
+                style={{ width: '100%', height: 800, border: 'none', display: 'block', marginTop: -80 }}
+                scrolling="no"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── Modal Google Maps ── */}
       {showModal && (
@@ -415,6 +469,20 @@ export default function NosotrosPage() {
           from { opacity: 0; transform: translateY(12px); }
           to   { opacity: 1; transform: translateY(0); }
         }
+        @keyframes nosotrosMarquee {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+        .nosotros-marquee {
+          display: flex;
+          gap: 20px;
+          width: max-content;
+          animation: nosotrosMarquee 22s linear infinite;
+          padding: 4px 0 8px;
+        }
+        .lion-hover-card { transition: transform 0.26s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.26s ease !important; }
+        .lion-hover-card:hover { transform: translateY(-6px) !important; box-shadow: 0 24px 48px rgba(0,0,0,0.45), 0 0 0 1px rgba(201,146,42,0.28) !important; }
+        .card-appear { animation: fadeInUp 0.45s ease both; }
         @media (max-width: 1024px) {
           .team-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
@@ -429,7 +497,6 @@ export default function NosotrosPage() {
           .team-grid { grid-template-columns: 1fr !important; }
           .diffs-grid { grid-template-columns: 1fr !important; }
         }
-        .diff-card:hover { border-color: rgba(201,146,42,0.3) !important; transition: border-color 0.2s; }
       `}</style>
 
     </main>
