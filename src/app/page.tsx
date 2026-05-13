@@ -1,9 +1,17 @@
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import StatsSection from "@/components/StatsSection";
+import WhyICMSection from "@/components/WhyICMSection";
+import BenefitsSection from "@/components/BenefitsSection";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
+    <main className="min-h-screen bg-black">
+      <Navbar />
+      <HeroSection />
+      <StatsSection />
+      <WhyICMSection />
+      <BenefitsSection />
     </main>
   );
 }
