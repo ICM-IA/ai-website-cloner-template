@@ -1,17 +1,27 @@
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import HeroFunnel from "@/components/funnel/HeroFunnel";
+import ClientLogoBar from "@/components/funnel/ClientLogoBar";
+import ProblemSection from "@/components/funnel/ProblemSection";
+import ServicesSection from "@/components/funnel/ServicesSection";
+import HowItWorksSection from "@/components/funnel/HowItWorksSection";
 import StatsSection from "@/components/StatsSection";
-import WhyICMSection from "@/components/WhyICMSection";
-import BenefitsSection from "@/components/BenefitsSection";
+import CTASection from "@/components/funnel/CTASection";
+import FAQSection from "@/components/funnel/FAQSection";
+import Footer from "@/components/funnel/Footer";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black">
       <Navbar />
-      <HeroSection />
+      <HeroFunnel />
+      <ClientLogoBar />
+      <ProblemSection />
+      <ServicesSection />
+      <HowItWorksSection />
       <StatsSection />
-      <WhyICMSection />
-      <BenefitsSection />
+      <CTASection />
+      <FAQSection />
+      <Footer />
     </main>
   );
 }

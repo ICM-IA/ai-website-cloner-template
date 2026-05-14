@@ -72,6 +72,35 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
+          <a
+            href="https://cal.com/icm-ia/reconocimiento"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#FF1414",
+              color: "white",
+              padding: "10px 24px",
+              borderRadius: "8px",
+              fontSize: "15px",
+              fontWeight: 700,
+              fontFamily: "Poppins, sans-serif",
+              textDecoration: "none",
+              transition: "all 0.2s ease",
+              boxShadow: "0 0 20px rgba(255,20,20,0.25)",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#e00000";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 20px rgba(255,20,20,0.5)";
+              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#FF1414";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 20px rgba(255,20,20,0.25)";
+              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+            }}
+          >
+            Agendar Llamada
+          </a>
         </nav>
 
         {/* Hamburger button — visible on mobile */}

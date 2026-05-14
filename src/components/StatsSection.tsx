@@ -14,13 +14,13 @@ const STATS: StatConfig[] = [
   {
     icon: <TrendingUp size={32} color="white" />,
     prefix: "+",
-    target: 599,
+    target: 890,
     label: "Automatizaciones realizadas",
   },
   {
     icon: <Building2 size={32} color="white" />,
     prefix: "",
-    target: 56,
+    target: 31,
     label: "Clientes satisfechos",
   },
   {
