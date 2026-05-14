@@ -85,7 +85,7 @@ export default function Footer() {
           {/* Left: logo + tagline + social */}
           <div style={{ maxWidth: "320px" }}>
             <Image
-              src="/images/logo.webp"
+              src="/images/logo.png"
               width={150}
               height={50}
               alt="ICM-IA"

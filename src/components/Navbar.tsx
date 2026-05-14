@@ -52,7 +52,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" aria-label="ICM-IA Home">
           <Image
-            src="/images/logo.webp"
+            src="/images/logo.png"
             alt="ICM-IA"
             width={150}
             height={50}
