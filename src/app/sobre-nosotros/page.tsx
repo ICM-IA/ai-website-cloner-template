@@ -555,7 +555,7 @@ const values: Value[] = [
   },
   {
     title: "Velocidad de implementación",
-    body: "De la llamada al sistema activo en 7 días.",
+    body: "De la llamada al sistema activo, sin meses de espera.",
   },
   {
     title: "Transparencia total",

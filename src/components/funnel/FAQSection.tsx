@@ -17,7 +17,7 @@ const FAQ_ITEMS: FAQItem[] = [
   {
     question: "¿Cuánto tiempo tarda la implementación?",
     answer:
-      "El sistema base está operativo en 7 días hábiles. Empezamos con una llamada de reconocimiento donde entendemos tu operación actual, y de ahí arrancamos la configuración. A los 7 días ya tenés el sistema activo recibiendo y calificando consultas.",
+      "Empezamos con una llamada de reconocimiento donde entendemos tu operación actual, y de ahí arrancamos la configuración. El sistema queda activo recibiendo y calificando consultas en el menor tiempo posible.",
   },
   {
     question: "¿Se integra con los portales inmobiliarios que ya uso?",

@@ -64,7 +64,7 @@ const steps: Step[] = [
   {
     paso: "PASO 02",
     icon: <Settings color="#FF1414" size={32} />,
-    title: "Implementación en 7 días",
+    title: "Configuración a medida",
     body: "Instalamos y configuramos el sistema completo a medida de tu inmobiliaria. Integración con tus canales y CRM existente.",
     delay: 200,
   },
@@ -168,7 +168,7 @@ export default function HowItWorksSection() {
                 marginTop: "16px",
               }}
             >
-              Implementamos el sistema completo en 7 días.
+              Implementamos el sistema completo adaptado a tu operación.
             </p>
           </div>
 

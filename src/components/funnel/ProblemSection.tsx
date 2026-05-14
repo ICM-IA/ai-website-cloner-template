@@ -278,7 +278,7 @@ export default function ProblemSection() {
               margin: 0,
             }}
           >
-            Y la implementamos en 7 días.
+            Y nosotros tenemos la solución.
           </p>
         </div>
       </div>

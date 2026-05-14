@@ -114,9 +114,9 @@ const WHY_REASONS: WhyReasonData[] = [
       "No adaptamos tecnología genérica. Cada flujo fue diseñado para el ciclo de venta inmobiliario.",
   },
   {
-    title: "Implementación en 7 días",
+    title: "Implementación rápida",
     description:
-      "Sin meses de desarrollo. Sistema activo y generando resultados en la primera semana.",
+      "Sin meses de desarrollo. Sistema activo y generando resultados desde el primer momento.",
   },
   {
     title: "Soporte continuo",
@@ -428,8 +428,7 @@ export default function ServicioPage() {
           }}
         >
           Cada servicio fue diseñado específicamente para el sector inmobiliario.
-          Se implementan en 7 días y trabajan juntos para automatizar, captar y
-          convertir.
+          Trabajan juntos para automatizar, captar y convertir.
         </p>
 
         {/* Decorative divider */}
@@ -596,8 +595,8 @@ export default function ServicioPage() {
             fontFamily: "var(--font-poppins), Poppins, sans-serif",
           }}
         >
-          Implementamos tu sistema en{" "}
-          <span style={{ color: "#FF1414" }}>7 días</span>
+          Tu sistema listo para{" "}
+          <span style={{ color: "#FF1414" }}>escalar</span>
         </h2>
 
         <a
