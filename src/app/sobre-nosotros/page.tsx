@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/funnel/Footer";
 
@@ -262,22 +263,23 @@ function FounderSection() {
           {/* Avatar */}
           <div
             style={{
-              width: "80px",
-              height: "80px",
+              width: "140px",
+              height: "140px",
               borderRadius: "50%",
-              background: "linear-gradient(135deg, #FF1414, #8B0000)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
               margin: "0 auto 24px",
-              fontFamily: FONT,
-              fontSize: "28px",
-              fontWeight: 800,
-              color: "white",
+              overflow: "hidden",
+              border: "3px solid rgba(255,20,20,0.4)",
+              boxShadow: "0 0 32px rgba(255,20,20,0.2)",
               flexShrink: 0,
+              position: "relative",
             }}
           >
-            SD
+            <Image
+              src="/images/santiago.png"
+              alt="Santiago De La Canal"
+              fill
+              style={{ objectFit: "cover", objectPosition: "center top" }}
+            />
           </div>
 
           {/* Name */}
