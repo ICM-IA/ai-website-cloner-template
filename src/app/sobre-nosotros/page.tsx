@@ -254,24 +254,20 @@ function FounderSection() {
             backgroundColor: CARD_BG,
             border: CARD_BORDER,
             borderRadius: "20px",
-            padding: "56px 64px",
-            textAlign: "center",
-            maxWidth: "540px",
+            overflow: "hidden",
+            maxWidth: "760px",
             width: "100%",
+            display: "flex",
+            alignItems: "stretch",
           }}
+          className="founder-card"
         >
-          {/* Avatar */}
+          {/* Photo */}
           <div
             style={{
-              width: "140px",
-              height: "140px",
-              borderRadius: "50%",
-              margin: "0 auto 24px",
-              overflow: "hidden",
-              border: "3px solid rgba(255,20,20,0.4)",
-              boxShadow: "0 0 32px rgba(255,20,20,0.2)",
-              flexShrink: 0,
               position: "relative",
+              width: "280px",
+              flexShrink: 0,
             }}
           >
             <Image
@@ -280,7 +276,18 @@ function FounderSection() {
               fill
               style={{ objectFit: "cover", objectPosition: "center top" }}
             />
+            {/* Red glow overlay on right edge */}
+            <div style={{
+              position: "absolute",
+              top: 0, right: 0,
+              width: "60px",
+              height: "100%",
+              background: "linear-gradient(to right, transparent, rgba(0,0,0,0.7))",
+            }} />
           </div>
+
+          {/* Text */}
+          <div style={{ padding: "48px 48px", textAlign: "left" }}>
 
           {/* Name */}
           <h3
@@ -322,8 +329,15 @@ function FounderSection() {
             sector inmobiliario. Lideró más de 890 implementaciones de IA en
             agencias de Argentina y Latinoamérica.
           </p>
+          </div>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 640px) {
+          .founder-card { flex-direction: column !important; }
+          .founder-card > div:first-child { width: 100% !important; height: 320px !important; position: relative !important; }
+        }
+      `}</style>
     </section>
   );
 }
