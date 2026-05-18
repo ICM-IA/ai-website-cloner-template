@@ -1,13 +1,17 @@
 "use client";
-import { MapPin, Phone, MessageCircle, Clock } from "lucide-react";
+import { Phone, MessageCircle, Clock } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const ContactMap = dynamic(() => import("@/app/contacto/ContactMap"), {
+  ssr: false,
+  loading: () => (
+    <div style={{ width: "100%", height: "220px", borderRadius: "12px", background: "rgb(241,245,249)", display: "flex", alignItems: "center", justifyContent: "center", color: "rgb(100,116,139)", fontSize: "14px", fontWeight: 600 }}>
+      Cargando mapa...
+    </div>
+  ),
+});
 
 const infoCards = [
-  {
-    icon: MapPin,
-    title: "Ubicación",
-    value: "Ituzaingó 1572, Coronel Brandsen, Buenos Aires",
-    href: "https://www.google.com/maps/search/?api=1&query=Ituzaingó+1572,+Coronel+Brandsen",
-  },
   {
     icon: Phone,
     title: "Teléfono",
@@ -297,7 +301,7 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Right: info cards — 40% */}
+        {/* Right: map + info cards — 40% */}
         <div
           style={{
             flex: "2 1 260px",
@@ -307,6 +311,33 @@ export default function ContactSection() {
             gap: 16,
           }}
         >
+          {/* Mapa */}
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossOrigin=""
+          />
+          <div style={{ borderRadius: 12, overflow: "hidden", border: "1px solid rgb(226,232,240)" }}>
+            <ContactMap height={220} />
+          </div>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Ituzaingó+1572+Coronel+Brandsen+Buenos+Aires"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "block",
+              textAlign: "center",
+              fontSize: 13,
+              fontWeight: 700,
+              color: "#f59e0b",
+              textDecoration: "none",
+              marginTop: -8,
+            }}
+          >
+            📍 Ituzaingó 1572, Coronel Brandsen — Ver en Google Maps →
+          </a>
+
           {infoCards.map(({ icon: Icon, title, value, href }) => (
             <div
               key={title}

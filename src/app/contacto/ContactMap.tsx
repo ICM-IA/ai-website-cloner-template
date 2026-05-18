@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export default function ContactMap() {
+export default function ContactMap({ height = 400 }: { height?: number }) {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<unknown>(null);
 
@@ -77,7 +77,7 @@ export default function ContactMap() {
       ref={mapRef}
       style={{
         width: "100%",
-        height: "400px",
+        height: `${height}px`,
         borderRadius: "16px",
         overflow: "hidden",
         boxShadow: "0 8px 32px rgba(13,27,62,0.15)",

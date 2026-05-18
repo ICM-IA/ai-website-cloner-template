@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ContactSection from "@/components/ContactSection";
-import ContactMapWrapper from "./ContactMapWrapper";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -242,30 +241,6 @@ export default function ContactoPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Mapa */}
-        <section style={{ background: "rgb(248,250,252)", padding: "80px 24px" }}>
-          <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-            <div style={{ textAlign: "center", marginBottom: "40px" }}>
-              <p style={{ color: "#f59e0b", fontSize: "13px", fontWeight: 700, letterSpacing: "3px", textTransform: "uppercase", marginBottom: "12px" }}>
-                DÓNDE ESTAMOS
-              </p>
-              <h2 style={{ color: "rgb(13,27,62)", fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 800, marginBottom: "8px" }}>
-                Ituzaingó 1572, Coronel Brandsen
-              </h2>
-              <p style={{ color: "rgb(100,116,139)", fontSize: "15px" }}>Buenos Aires, Argentina</p>
-              <div style={{ width: "60px", height: "4px", background: "linear-gradient(90deg, #f59e0b, #fde68a)", borderRadius: "2px", margin: "16px auto 0" }} />
-            </div>
-
-            <link
-              rel="stylesheet"
-              href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-              integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-              crossOrigin=""
-            />
-            <ContactMapWrapper />
           </div>
         </section>
 
