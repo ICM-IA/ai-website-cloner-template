@@ -183,10 +183,10 @@ export default function TestimoniosPage() {
         <section style={{ background: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)", padding: "80px 24px", textAlign: "center" }}>
           <div style={{ maxWidth: "700px", margin: "0 auto" }}>
             <h2 style={{ color: "rgb(13,27,62)", fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 900, marginBottom: "16px" }}>
-              ¿Querés ser el próximo caso de éxito?
+              ¿Querés ser el próximo en ahorrar hasta un 85% en tu factura de luz?
             </h2>
             <p style={{ color: "rgba(13,27,62,0.8)", fontSize: "17px", marginBottom: "32px" }}>
-              Pedí tu visita técnica gratuita y empezá a ahorrar este mes.
+              Pedí tu visita técnica gratuita y te armamos el presupuesto sin cargo.
             </p>
             <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/contacto" style={{ background: "rgb(13,27,62)", color: "white", fontWeight: 800, fontSize: "16px", padding: "14px 36px", borderRadius: "8px", textDecoration: "none", display: "inline-block" }}>
