@@ -13,11 +13,11 @@ const serviceLinks = [
 ];
 
 const navLinks = [
-  { text: "Inicio", href: "/#inicio" },
-  { text: "Acerca de", href: "/#acerca-de" },
-  { text: "Calculadora", href: "/#calculadora" },
-  { text: "Testimonios", href: "/#testimonios" },
-  { text: "Contacto", href: "/#contacto" },
+  { text: "Inicio", href: "/" },
+  { text: "Nosotros", href: "/nosotros" },
+  { text: "Calculadora", href: "/calculadora" },
+  { text: "Testimonios", href: "/testimonios" },
+  { text: "Contacto", href: "/contacto" },
 ];
 
 export function Navbar() {
@@ -67,38 +67,6 @@ export function Navbar() {
 
         {/* Desktop nav links */}
         <ul className="hidden md:flex items-center list-none m-0 p-0 gap-1">
-          {/* Inicio */}
-          <li>
-            <Link
-              href="/#inicio"
-              className="block px-3 py-2 no-underline transition-colors duration-200 hover:text-white hover:underline underline-offset-4"
-              style={{
-                fontSize: "14px",
-                fontWeight: 600,
-                color: "rgba(255,255,255,0.85)",
-                letterSpacing: "0.3px",
-              }}
-            >
-              Inicio
-            </Link>
-          </li>
-
-          {/* Acerca de */}
-          <li>
-            <Link
-              href="/#acerca-de"
-              className="block px-3 py-2 no-underline transition-colors duration-200 hover:text-white hover:underline underline-offset-4"
-              style={{
-                fontSize: "14px",
-                fontWeight: 600,
-                color: "rgba(255,255,255,0.85)",
-                letterSpacing: "0.3px",
-              }}
-            >
-              Acerca de
-            </Link>
-          </li>
-
           {/* Servicios with dropdown */}
           <li
             style={{ position: "relative" }}
@@ -199,7 +167,7 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center">
           <Link
-            href="/#contacto"
+            href="/contacto"
             className="no-underline transition-all duration-200"
             style={{
               border: "2px solid #f59e0b",
@@ -254,40 +222,6 @@ export function Navbar() {
           style={{ background: "rgb(22, 24, 83)" }}
         >
           <ul className="list-none m-0 py-3 px-0">
-            {/* Inicio */}
-            <li>
-              <Link
-                href="/#inicio"
-                onClick={() => setMobileOpen(false)}
-                className="block w-full px-6 py-3 no-underline transition-colors duration-200 hover:text-white hover:underline underline-offset-4"
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                  color: "rgba(255,255,255,0.85)",
-                  letterSpacing: "0.3px",
-                }}
-              >
-                Inicio
-              </Link>
-            </li>
-
-            {/* Acerca de */}
-            <li>
-              <Link
-                href="/#acerca-de"
-                onClick={() => setMobileOpen(false)}
-                className="block w-full px-6 py-3 no-underline transition-colors duration-200 hover:text-white hover:underline underline-offset-4"
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                  color: "rgba(255,255,255,0.85)",
-                  letterSpacing: "0.3px",
-                }}
-              >
-                Acerca de
-              </Link>
-            </li>
-
             {/* Servicios expandable */}
             <li>
               <button
@@ -365,7 +299,7 @@ export function Navbar() {
           </ul>
           <div className="px-6 pb-5">
             <Link
-              href="/#contacto"
+              href="/contacto"
               onClick={() => setMobileOpen(false)}
               className="block w-full text-center no-underline transition-all duration-200 hover:bg-[#f59e0b] hover:text-[#0d1b3e]"
               style={{

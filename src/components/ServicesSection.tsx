@@ -75,8 +75,9 @@ function Card({ service }: { service: ServiceCard }) {
   const { featured } = service;
 
   return (
-    <div
-      className={cn("card-hover flex flex-col")}
+    <Link
+      href={service.href}
+      className={cn("card-hover flex flex-col no-underline")}
       style={
         featured
           ? {
@@ -86,12 +87,14 @@ function Card({ service }: { service: ServiceCard }) {
               boxShadow: "0 20px 60px rgba(13,27,62,0.3)",
               borderRadius: "16px",
               padding: "40px 32px",
+              cursor: "pointer",
             }
           : {
               background: "white",
               border: "1px solid rgb(226,232,240)",
               borderRadius: "16px",
               padding: "40px 32px",
+              cursor: "pointer",
             }
       }
     >
@@ -158,32 +161,19 @@ function Card({ service }: { service: ServiceCard }) {
       </ul>
 
       {/* CTA */}
-      <Link
-        href={service.href}
+      <span
         style={{
           marginTop: "auto",
           paddingTop: "24px",
           fontSize: "14px",
           fontWeight: 700,
           color: featured ? "#f59e0b" : "rgb(22,24,83)",
-          textDecoration: "none",
           display: "block",
-          transition: "color 0.2s",
-        }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLAnchorElement).style.color = featured
-            ? "#fde68a"
-            : "#f59e0b";
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLAnchorElement).style.color = featured
-            ? "#f59e0b"
-            : "rgb(22,24,83)";
         }}
       >
         {service.cta}
-      </Link>
-    </div>
+      </span>
+    </Link>
   );
 }
 
