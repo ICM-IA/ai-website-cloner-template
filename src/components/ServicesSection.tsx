@@ -1,5 +1,6 @@
 "use client";
-import { Home, Building2, Sun } from "lucide-react";
+import { Home, Building2, Sun, Factory } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface ServiceCard {
@@ -8,6 +9,7 @@ interface ServiceCard {
   desc: string;
   features: string[];
   cta: string;
+  href: string;
   featured?: boolean;
 }
 
@@ -23,6 +25,7 @@ const services: ServiceCard[] = [
       "Monitoreo en tiempo real",
     ],
     cta: "Ver más →",
+    href: "/servicios/residencial",
   },
   {
     icon: Building2,
@@ -35,6 +38,7 @@ const services: ServiceCard[] = [
       "Garantía extendida",
     ],
     cta: "Ver más →",
+    href: "/servicios/comercial",
     featured: true,
   },
   {
@@ -48,6 +52,21 @@ const services: ServiceCard[] = [
       "Instalación incluida",
     ],
     cta: "Ver más →",
+    href: "/servicios/termotanque-solar",
+  },
+  {
+    icon: Factory,
+    title: "Instalación Industrial",
+    desc: "Sistemas de gran escala para fábricas, plantas industriales y agronegocios. Máxima potencia, máximo ahorro energético.",
+    features: [
+      "Sistemas de 50kW a 1MW+",
+      "Monitoreo SCADA",
+      "Análisis de carga industrial",
+      "Mantenimiento programado",
+    ],
+    cta: "Ver más →",
+    href: "/servicios/industrial",
+    featured: false,
   },
 ];
 
@@ -139,8 +158,8 @@ function Card({ service }: { service: ServiceCard }) {
       </ul>
 
       {/* CTA */}
-      <a
-        href="#contacto"
+      <Link
+        href={service.href}
         style={{
           marginTop: "auto",
           paddingTop: "24px",
@@ -163,7 +182,7 @@ function Card({ service }: { service: ServiceCard }) {
         }}
       >
         {service.cta}
-      </a>
+      </Link>
     </div>
   );
 }
@@ -222,11 +241,10 @@ export function ServicesSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
             gap: "32px",
             alignItems: "stretch",
           }}
-          className="lg:grid-cols-3"
         >
           {services.map((service) => (
             <Card key={service.title} service={service} />
