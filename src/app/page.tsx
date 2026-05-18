@@ -1,7 +1,9 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";
+import { StatsSection } from "@/components/StatsSection";
+import { ServicesSection } from "@/components/ServicesSection";
+import SavingsCalculator from "@/components/SavingsCalculator";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import GallerySection from "@/components/GallerySection";
 import FaqSection from "@/components/FaqSection";
 import ContactSection from "@/components/ContactSection";
@@ -14,8 +16,10 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <AboutSection />
+        <StatsSection />
         <ServicesSection />
+        <SavingsCalculator />
+        <TestimonialsSection />
         <GallerySection />
         <FaqSection />
         <ContactSection />

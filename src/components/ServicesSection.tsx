@@ -1,88 +1,235 @@
-import Image from "next/image";
+"use client";
+import { Home, Building2, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const cards = [
+interface ServiceCard {
+  icon: React.ElementType;
+  title: string;
+  desc: string;
+  features: string[];
+  cta: string;
+  featured?: boolean;
+}
+
+const services: ServiceCard[] = [
   {
-    src: "/images/termotanque-180l.webp",
-    alt: "Termotanque Solar 180L",
-    label: "Termotanque Solar 180L",
+    icon: Home,
+    title: "Instalación Residencial",
+    desc: "Sistemas fotovoltaicos on-grid y off-grid para tu hogar. Dimensionamiento personalizado según tu consumo y mayor ahorro en tu factura.",
+    features: [
+      "Sistema on-grid y off-grid",
+      "Paneles de alta eficiencia",
+      "Inversores certificados",
+      "Monitoreo en tiempo real",
+    ],
+    cta: "Ver más →",
   },
   {
-    src: "/images/product-4.webp",
-    alt: "Panel Solar",
-    label: "Panel Solar Fotovoltaico",
+    icon: Building2,
+    title: "Instalación Comercial",
+    desc: "Reducí los costos energéticos de tu empresa hasta un 90%. Diseñamos sistemas para comercios, pymes e industrias de cualquier escala.",
+    features: [
+      "Auditoría energética gratuita",
+      "Financiación disponible",
+      "Mantenimiento preventivo",
+      "Garantía extendida",
+    ],
+    cta: "Ver más →",
+    featured: true,
   },
   {
-    src: "/images/gallery-1.webp",
-    alt: "Instalación Solar",
-    label: "Instalación Profesional",
-  },
-  {
-    src: "/images/termotanque-300l.webp",
-    alt: "Termotanque Solar 300L",
-    label: "Termotanque Solar 300L",
+    icon: Sun,
+    title: "Termotanque Solar",
+    desc: "Agua caliente todo el año con energía solar. Modelos de 180L y 300L de acero inoxidable con garantía del fabricante.",
+    features: [
+      "Acero inoxidable calidad premium",
+      "Eficiencia 80-85%",
+      "Vida útil +20 años",
+      "Instalación incluida",
+    ],
+    cta: "Ver más →",
   },
 ];
 
-export default function ServicesSection() {
+function Card({ service }: { service: ServiceCard }) {
+  const Icon = service.icon;
+  const { featured } = service;
+
   return (
-    <section id="servicios" className={cn("w-full bg-white")}>
-      {/* Two-column layout: left panel + right grid */}
-      <div className={cn("flex flex-col md:flex-row")}>
-        {/* Left panel — dark navy, 40% width on desktop */}
-        <div
-          className={cn(
-            "flex min-h-[320px] items-center justify-center",
-            "w-full md:w-[40%] md:min-h-[500px]"
-          )}
-          style={{ background: "rgb(22, 24, 83)" }}
-        >
-          <Image
-            src="/images/termotanque-180l.webp"
-            alt="Termotanque Solar 180L"
-            width={320}
-            height={320}
-            className={cn("object-contain")}
-            style={{ maxWidth: "320px", width: "100%", height: "auto" }}
-          />
+    <div
+      className={cn("card-hover flex flex-col")}
+      style={
+        featured
+          ? {
+              background:
+                "linear-gradient(135deg, rgb(13,27,62) 0%, rgb(22,24,83) 100%)",
+              border: "none",
+              boxShadow: "0 20px 60px rgba(13,27,62,0.3)",
+              borderRadius: "16px",
+              padding: "40px 32px",
+            }
+          : {
+              background: "white",
+              border: "1px solid rgb(226,232,240)",
+              borderRadius: "16px",
+              padding: "40px 32px",
+            }
+      }
+    >
+      {/* Icon container */}
+      <div
+        style={{
+          width: "56px",
+          height: "56px",
+          borderRadius: "12px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginBottom: "24px",
+          background: featured ? "rgba(245,158,11,0.2)" : "rgb(239,246,255)",
+          flexShrink: 0,
+        }}
+      >
+        <Icon size={24} style={{ color: featured ? "#f59e0b" : "rgb(22,24,83)" }} />
+      </div>
+
+      {/* Title */}
+      <h3
+        style={{
+          fontSize: "20px",
+          fontWeight: 700,
+          color: featured ? "white" : "rgb(13,27,62)",
+          marginBottom: "12px",
+        }}
+      >
+        {service.title}
+      </h3>
+
+      {/* Description */}
+      <p
+        style={{
+          fontSize: "15px",
+          lineHeight: 1.7,
+          color: featured ? "rgba(255,255,255,0.75)" : "rgb(100,116,139)",
+          marginBottom: "24px",
+        }}
+      >
+        {service.desc}
+      </p>
+
+      {/* Features list */}
+      <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+        {service.features.map((feat) => (
+          <li
+            key={feat}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              fontSize: "14px",
+              fontWeight: 500,
+              color: featured ? "rgba(255,255,255,0.85)" : "rgb(30,41,59)",
+              marginBottom: "8px",
+            }}
+          >
+            <span style={{ color: "#f59e0b", fontWeight: 700 }}>✓</span>
+            {feat}
+          </li>
+        ))}
+      </ul>
+
+      {/* CTA */}
+      <a
+        href="#contacto"
+        style={{
+          marginTop: "auto",
+          paddingTop: "24px",
+          fontSize: "14px",
+          fontWeight: 700,
+          color: featured ? "#f59e0b" : "rgb(22,24,83)",
+          textDecoration: "none",
+          display: "block",
+          transition: "color 0.2s",
+        }}
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLAnchorElement).style.color = featured
+            ? "#fde68a"
+            : "#f59e0b";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLAnchorElement).style.color = featured
+            ? "#f59e0b"
+            : "rgb(22,24,83)";
+        }}
+      >
+        {service.cta}
+      </a>
+    </div>
+  );
+}
+
+export function ServicesSection() {
+  return (
+    <section
+      id="servicios"
+      style={{
+        background: "rgb(248, 250, 252)",
+        padding: "96px 24px",
+      }}
+    >
+      <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+        {/* Section header */}
+        <div style={{ textAlign: "center" }}>
+          <p
+            style={{
+              color: "#f59e0b",
+              fontSize: "13px",
+              fontWeight: 700,
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+            }}
+          >
+            LO QUE HACEMOS
+          </p>
+
+          <h2
+            style={{
+              color: "rgb(13,27,62)",
+              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+              fontWeight: 800,
+              marginTop: "12px",
+            }}
+          >
+            Servicios completos en energía solar
+          </h2>
+
+          <div className="section-divider" style={{ margin: "16px auto 0" }} />
+
+          <p
+            style={{
+              color: "rgb(100,116,139)",
+              fontSize: "16px",
+              maxWidth: "600px",
+              margin: "24px auto 64px",
+            }}
+          >
+            Ofrecemos soluciones integrales para hogares, comercios e industrias.
+            Desde el dimensionamiento hasta la instalación llave en mano.
+          </p>
         </div>
 
-        {/* Right panel — 2×2 grid of product cards */}
+        {/* Cards grid */}
         <div
-          className={cn(
-            "grid grid-cols-2 w-full md:w-[60%]"
-          )}
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "32px",
+            alignItems: "stretch",
+          }}
+          className="lg:grid-cols-3"
         >
-          {cards.map((card) => (
-            <div
-              key={card.label}
-              className={cn(
-                "flex flex-col items-center justify-start p-6 text-center"
-              )}
-              style={{ border: "1px solid rgb(204,204,204)" }}
-            >
-              <Image
-                src={card.src}
-                alt={card.alt}
-                width={200}
-                height={180}
-                className={cn("mb-3 object-contain")}
-                style={{
-                  width: "100%",
-                  maxWidth: "200px",
-                  height: "180px",
-                }}
-              />
-              <span
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                  color: "rgb(33, 37, 41)",
-                }}
-              >
-                {card.label}
-              </span>
-            </div>
+          {services.map((service) => (
+            <Card key={service.title} service={service} />
           ))}
         </div>
       </div>

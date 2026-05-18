@@ -1,32 +1,30 @@
 "use client";
+import { MapPin, Phone, MessageCircle, Clock } from "lucide-react";
 
-import { MapPin, Clock, Phone, MessageCircle, Mail } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-const infoItems = [
+const infoCards = [
   {
     icon: MapPin,
-    label: "Ubicación",
-    value: "Ituzaingó 1572, B1980DTC Coronel Brandsen, Provincia de Buenos Aires",
-    href: undefined,
-  },
-  {
-    icon: Clock,
-    label: "Horarios",
-    value: "Lunes a sábados de 09:00 a 18:00",
-    href: undefined,
+    title: "Ubicación",
+    value: "Ituzaingó 1572, Coronel Brandsen, Buenos Aires",
+    href: "https://www.google.com/maps/search/?api=1&query=Ituzaingó+1572,+Coronel+Brandsen",
   },
   {
     icon: Phone,
-    label: "Reservas",
-    value: "+54 1162297037",
+    title: "Teléfono",
+    value: "+54 11 6229-7037",
     href: "tel:+541162297037",
   },
   {
     icon: MessageCircle,
-    label: "WhatsApp",
-    value: "+54 1152282070",
+    title: "WhatsApp",
+    value: "+54 11 5228-2070",
     href: "https://wa.me/+541152282070",
+  },
+  {
+    icon: Clock,
+    title: "Horarios",
+    value: "Lunes a sábados: 09:00 a 18:00",
+    href: undefined,
   },
 ];
 
@@ -34,63 +32,118 @@ export default function ContactSection() {
   return (
     <section
       id="contacto"
-      style={{ backgroundColor: "rgb(22, 24, 83)" }}
-      className="px-6 py-16"
+      style={{ background: "white", padding: "96px 24px" }}
     >
-      <div className="mx-auto max-w-6xl">
-        {/* Header */}
-        <h2 className="mb-2 text-center text-[32px] font-bold text-white">
-          ¡Contáctanos!
-        </h2>
+      {/* Section header */}
+      <div style={{ textAlign: "center" }}>
         <p
-          className="mb-10 text-center text-base"
-          style={{ color: "rgba(255,255,255,0.8)" }}
+          style={{
+            color: "#f59e0b",
+            fontSize: 13,
+            fontWeight: 700,
+            letterSpacing: 3,
+            textTransform: "uppercase",
+            marginBottom: 12,
+          }}
         >
-          Déjanos tu consulta y te responderemos cuanto antes.
+          CONTACTO
         </p>
+        <h2
+          style={{
+            color: "rgb(13, 27, 62)",
+            fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+            fontWeight: 800,
+            margin: 0,
+          }}
+        >
+          ¿Listo para empezar a ahorrar?
+        </h2>
+        <div className="section-divider" style={{ margin: "16px auto 40px" }} />
+        <p
+          style={{
+            fontSize: 16,
+            color: "rgb(71, 85, 105)",
+            marginBottom: 64,
+          }}
+        >
+          Solicita tu presupuesto gratuito. Nos comunicamos en menos de 24 horas.
+        </p>
+      </div>
 
-        {/* Two-column layout */}
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-8">
-          {/* Left: Contact Form — 60% */}
-          <div className="lg:w-[60%]">
-            <form
-              action="mailto:info@energiasolarbrandsen.com"
-              method="post"
-              encType="text/plain"
-              className="flex flex-col gap-5"
-            >
+      {/* Two-column layout */}
+      <div
+        style={{
+          maxWidth: 1200,
+          margin: "0 auto",
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 40,
+          alignItems: "flex-start",
+        }}
+      >
+        {/* Left: form — 60% */}
+        <div style={{ flex: "3 1 340px", minWidth: 0 }}>
+          <div
+            style={{
+              background: "white",
+              border: "1px solid rgb(226, 232, 240)",
+              borderRadius: 20,
+              padding: 40,
+              boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+            }}
+          >
+            <form>
               {/* Nombre */}
-              <div className="flex flex-col gap-1.5">
+              <div style={{ marginBottom: 20 }}>
                 <label
                   htmlFor="nombre"
-                  className="text-sm font-semibold"
-                  style={{ color: "rgba(255,255,255,0.85)" }}
+                  style={{
+                    display: "block",
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: "rgb(30, 41, 59)",
+                    marginBottom: 6,
+                  }}
                 >
-                  Nombre
+                  Nombre completo
                 </label>
                 <input
                   id="nombre"
                   name="nombre"
                   type="text"
-                  placeholder="Nombre"
-                  className={cn(
-                    "w-full rounded px-4 py-3 text-[15px] text-white placeholder:text-white/50",
-                    "border outline-none transition-all",
-                    "focus:outline-2 focus:outline-white/60"
-                  )}
+                  placeholder="Tu nombre"
                   style={{
-                    border: "1px solid rgba(255,255,255,0.3)",
-                    background: "rgba(255,255,255,0.1)",
+                    width: "100%",
+                    border: "1.5px solid rgb(226, 232, 240)",
+                    borderRadius: 10,
+                    padding: "13px 16px",
+                    fontSize: 15,
+                    fontFamily: "Raleway, sans-serif",
+                    outline: "none",
+                    boxSizing: "border-box",
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = "#f59e0b";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(245,158,11,0.1)";
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor = "rgb(226, 232, 240)";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 />
               </div>
 
-              {/* Correo electrónico */}
-              <div className="flex flex-col gap-1.5">
+              {/* Email */}
+              <div style={{ marginBottom: 20 }}>
                 <label
                   htmlFor="email"
-                  className="text-sm font-semibold"
-                  style={{ color: "rgba(255,255,255,0.85)" }}
+                  style={{
+                    display: "block",
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: "rgb(30, 41, 59)",
+                    marginBottom: 6,
+                  }}
                 >
                   Correo electrónico
                 </label>
@@ -98,25 +151,79 @@ export default function ContactSection() {
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="Correo electrónico"
-                  className={cn(
-                    "w-full rounded px-4 py-3 text-[15px] text-white placeholder:text-white/50",
-                    "border outline-none transition-all",
-                    "focus:outline-2 focus:outline-white/60"
-                  )}
+                  placeholder="tucorreo@email.com"
                   style={{
-                    border: "1px solid rgba(255,255,255,0.3)",
-                    background: "rgba(255,255,255,0.1)",
+                    width: "100%",
+                    border: "1.5px solid rgb(226, 232, 240)",
+                    borderRadius: 10,
+                    padding: "13px 16px",
+                    fontSize: 15,
+                    fontFamily: "Raleway, sans-serif",
+                    outline: "none",
+                    boxSizing: "border-box",
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = "#f59e0b";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(245,158,11,0.1)";
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor = "rgb(226, 232, 240)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                />
+              </div>
+
+              {/* Teléfono */}
+              <div style={{ marginBottom: 20 }}>
+                <label
+                  htmlFor="telefono"
+                  style={{
+                    display: "block",
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: "rgb(30, 41, 59)",
+                    marginBottom: 6,
+                  }}
+                >
+                  Teléfono
+                </label>
+                <input
+                  id="telefono"
+                  name="telefono"
+                  type="tel"
+                  placeholder="+54 11 XXXX-XXXX"
+                  style={{
+                    width: "100%",
+                    border: "1.5px solid rgb(226, 232, 240)",
+                    borderRadius: 10,
+                    padding: "13px 16px",
+                    fontSize: 15,
+                    fontFamily: "Raleway, sans-serif",
+                    outline: "none",
+                    boxSizing: "border-box",
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = "#f59e0b";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(245,158,11,0.1)";
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor = "rgb(226, 232, 240)";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 />
               </div>
 
               {/* Mensaje */}
-              <div className="flex flex-col gap-1.5">
+              <div style={{ marginBottom: 20 }}>
                 <label
                   htmlFor="mensaje"
-                  className="text-sm font-semibold"
-                  style={{ color: "rgba(255,255,255,0.85)" }}
+                  style={{
+                    display: "block",
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: "rgb(30, 41, 59)",
+                    marginBottom: 6,
+                  }}
                 >
                   Mensaje
                 </label>
@@ -124,97 +231,160 @@ export default function ContactSection() {
                   id="mensaje"
                   name="mensaje"
                   rows={4}
-                  placeholder="Mensaje"
-                  className={cn(
-                    "w-full resize-none rounded px-4 py-3 text-[15px] text-white placeholder:text-white/50",
-                    "border outline-none transition-all",
-                    "focus:outline-2 focus:outline-white/60"
-                  )}
+                  placeholder="Contanos sobre tu proyecto (consumo mensual, tipo de instalación, ubicación...)"
                   style={{
-                    border: "1px solid rgba(255,255,255,0.3)",
-                    background: "rgba(255,255,255,0.1)",
+                    width: "100%",
+                    border: "1.5px solid rgb(226, 232, 240)",
+                    borderRadius: 10,
+                    padding: "13px 16px",
+                    fontSize: 15,
+                    fontFamily: "Raleway, sans-serif",
+                    outline: "none",
+                    resize: "vertical",
+                    boxSizing: "border-box",
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = "#f59e0b";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(245,158,11,0.1)";
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor = "rgb(226, 232, 240)";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 />
               </div>
-
-              {/* Checkbox */}
-              <label className="flex cursor-pointer items-start gap-3">
-                <input
-                  type="checkbox"
-                  name="privacidad"
-                  className="mt-0.5 shrink-0 accent-white"
-                  style={{ width: 16, height: 16 }}
-                />
-                <span
-                  className="text-sm leading-snug"
-                  style={{ color: "rgba(255,255,255,0.8)" }}
-                >
-                  Acepto que mis datos serán utilizados con el objetivo de
-                  brindarme servicios, productos y asistencia, conforme a la
-                  política de privacidad.
-                </span>
-              </label>
 
               {/* Submit */}
-              <div>
-                <button
-                  type="submit"
-                  className={cn(
-                    "cursor-pointer rounded px-8 py-3 text-[15px] font-bold transition-colors",
-                    "hover:bg-white/90"
-                  )}
-                  style={{
-                    background: "white",
-                    color: "rgb(22, 24, 83)",
-                    borderRadius: 4,
-                  }}
-                >
-                  Enviar consulta
-                </button>
-              </div>
+              <button
+                type="submit"
+                style={{
+                  width: "100%",
+                  padding: 16,
+                  borderRadius: 10,
+                  fontSize: 16,
+                  fontWeight: 800,
+                  fontFamily: "Raleway, sans-serif",
+                  background: "linear-gradient(135deg, #f59e0b, #fbbf24)",
+                  color: "rgb(13, 27, 62)",
+                  border: "none",
+                  cursor: "pointer",
+                  transition: "opacity 0.2s, box-shadow 0.2s",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.opacity = "0.92";
+                  e.currentTarget.style.boxShadow = "0 6px 24px rgba(245,158,11,0.4)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.opacity = "1";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                Solicitar presupuesto gratis →
+              </button>
+
+              <p
+                style={{
+                  fontSize: 12,
+                  color: "rgb(148, 163, 184)",
+                  textAlign: "center",
+                  marginTop: 12,
+                  marginBottom: 0,
+                }}
+              >
+                Al enviar aceptás nuestra política de privacidad.
+              </p>
             </form>
           </div>
+        </div>
 
-          {/* Right: Contact Info — 40% */}
-          <div className="flex flex-col justify-start lg:w-[40%]">
-            {infoItems.map(({ icon: Icon, label, value, href }) => (
+        {/* Right: info cards — 40% */}
+        <div
+          style={{
+            flex: "2 1 260px",
+            minWidth: 0,
+            display: "flex",
+            flexDirection: "column",
+            gap: 16,
+          }}
+        >
+          {infoCards.map(({ icon: Icon, title, value, href }) => (
+            <div
+              key={title}
+              style={{
+                background: "rgb(248, 250, 252)",
+                borderRadius: 16,
+                padding: 24,
+                display: "flex",
+                gap: 16,
+                alignItems: "flex-start",
+              }}
+            >
+              {/* Icon container */}
               <div
-                key={label}
-                className="mb-6 flex items-start gap-4"
+                style={{
+                  width: 44,
+                  height: 44,
+                  background: "rgb(254, 243, 199)",
+                  borderRadius: 10,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}
               >
-                <Icon
-                  className="mt-0.5 shrink-0 text-white"
-                  size={24}
-                />
-                <div className="flex flex-col gap-0.5">
-                  <span
-                    className="text-xs font-semibold uppercase tracking-wider"
-                    style={{ color: "rgba(255,255,255,0.7)" }}
-                  >
-                    {label}
-                  </span>
-                  {href ? (
-                    <a
-                      href={href}
-                      className="text-[15px] font-medium text-white hover:underline"
-                      target={href.startsWith("http") ? "_blank" : undefined}
-                      rel={
-                        href.startsWith("http")
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
-                    >
-                      {value}
-                    </a>
-                  ) : (
-                    <span className="text-[15px] font-medium text-white">
-                      {value}
-                    </span>
-                  )}
-                </div>
+                <Icon size={24} style={{ color: "#f59e0b" }} />
               </div>
-            ))}
-          </div>
+
+              <div>
+                <p
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 700,
+                    color: "rgb(100, 116, 139)",
+                    textTransform: "uppercase",
+                    letterSpacing: 1,
+                    marginBottom: 4,
+                    margin: "0 0 4px 0",
+                  }}
+                >
+                  {title}
+                </p>
+                {href ? (
+                  <a
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    style={{
+                      fontSize: 15,
+                      fontWeight: 600,
+                      color: "rgb(13, 27, 62)",
+                      textDecoration: "none",
+                      transition: "color 0.2s",
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLAnchorElement).style.color = "#f59e0b";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLAnchorElement).style.color = "rgb(13, 27, 62)";
+                    }}
+                  >
+                    {value}
+                  </a>
+                ) : (
+                  <p
+                    style={{
+                      fontSize: 15,
+                      fontWeight: 600,
+                      color: "rgb(13, 27, 62)",
+                      margin: 0,
+                    }}
+                  >
+                    {value}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
