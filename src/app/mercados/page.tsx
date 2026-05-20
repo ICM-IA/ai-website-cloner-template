@@ -815,8 +815,8 @@ export default function MercadosPage() {
                     )}
                   </div>
 
-                    {/* CTA especial por mercado */}
-                    <div style={{ marginTop: 24, background: 'linear-gradient(135deg, #0d1a2e 0%, #131326 100%)', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 14, padding: '32px 28px', textAlign: 'center' }}>
+                  {/* CTA especial por mercado */}
+                  <div style={{ marginTop: 24, background: 'linear-gradient(135deg, #0d1a2e 0%, #131326 100%)', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 14, padding: '32px 28px', textAlign: 'center' }}>
                       <div style={{ fontSize: 36, marginBottom: 12 }}>📅</div>
                       <p style={{ fontSize: 20, fontWeight: 800, color: '#efefef', margin: '0 0 10px' }}>{mkt.ctaTitle ?? `¿Querés invertir en ${mkt.name}?`}</p>
                       <p style={{ fontSize: 13, color: 'rgba(239,239,239,0.5)', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 400, marginLeft: 'auto', marginRight: 'auto' }}>
