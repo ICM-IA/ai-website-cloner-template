@@ -499,6 +499,7 @@ export default function MercadosPage() {
   const [openStep, setOpenStep] = useState<number | null>(null);
   const [stepsOpen, setStepsOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [faqsOpen, setFaqsOpen] = useState(false);
 
   const filtered =
     region === 'Todos'
@@ -587,7 +588,7 @@ export default function MercadosPage() {
                 return (
                   <div
                     key={m.name}
-                    onClick={() => { setSelected(m.name); setOpenStep(null); setStepsOpen(false); setOpenFaq(null); }}
+                    onClick={() => { setSelected(m.name); setOpenStep(null); setStepsOpen(false); setOpenFaq(null); setFaqsOpen(false); }}
                     style={{ padding: '14px 18px', borderBottom: '1px solid rgba(255,255,255,0.04)', borderLeft: `3px solid ${isActive ? '#C9922A' : 'transparent'}`, background: isActive ? 'rgba(201,146,42,0.07)' : 'transparent', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12, transition: 'all 0.15s' }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -770,36 +771,49 @@ export default function MercadosPage() {
 
                 {/* FAQs — solo si el mercado tiene preguntas frecuentes */}
                 {mkt.faqs && mkt.faqs.length > 0 && (
-                  <div>
-                    <p style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.12em', marginBottom: 4 }}>
-                      PREGUNTAS FRECUENTES — {mkt.name.toUpperCase()}
-                    </p>
-                    <p style={{ fontSize: 20, fontWeight: 800, color: '#efefef', marginBottom: 20, marginTop: 6 }}>Lo que más nos preguntan</p>
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
-                      {mkt.faqs.map((faq, i) => {
-                        const parts = faq.bold ? faq.a.split(faq.bold) : null;
-                        const isOpen = openFaq === i;
-                        return (
-                          <div
-                            key={i}
-                            onClick={() => setOpenFaq(isOpen ? null : i)}
-                            style={{ borderTop: '1px solid rgba(255,255,255,0.07)', padding: '16px 0', cursor: 'pointer' }}
-                          >
-                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
-                              <p style={{ fontSize: 13, fontWeight: 700, color: isOpen ? '#C9922A' : '#efefef', margin: 0 }}>{faq.q}</p>
-                              <span style={{ color: 'rgba(239,239,239,0.4)', fontSize: 18, lineHeight: 1, flexShrink: 0 }}>{isOpen ? '−' : '+'}</span>
-                            </div>
-                            {isOpen && (
-                              <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.55)', lineHeight: 1.8, margin: '10px 0 0' }}>
-                                {parts ? (
-                                  <>{parts[0]}<strong style={{ color: 'rgba(239,239,239,0.85)', fontWeight: 700 }}>{faq.bold}</strong>{parts[1]}</>
-                                ) : faq.a}
-                              </p>
-                            )}
-                          </div>
-                        );
-                      })}
+                  <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 12, overflow: 'hidden' }}>
+                    {/* Header clicable */}
+                    <div
+                      onClick={() => { setFaqsOpen(!faqsOpen); setOpenFaq(null); }}
+                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 18px', cursor: 'pointer' }}
+                    >
+                      <div>
+                        <p style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.12em', margin: '0 0 3px' }}>
+                          PREGUNTAS FRECUENTES — {mkt.name.toUpperCase()}
+                        </p>
+                        <p style={{ fontSize: 14, fontWeight: 800, color: '#efefef', margin: 0 }}>Lo que más nos preguntan</p>
+                      </div>
+                      <span style={{ color: 'rgba(239,239,239,0.4)', fontSize: 20, lineHeight: 1, flexShrink: 0 }}>{faqsOpen ? '−' : '+'}</span>
                     </div>
+                    {/* Preguntas */}
+                    {faqsOpen && (
+                      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', padding: '4px 18px 8px' }}>
+                        {mkt.faqs.map((faq, i) => {
+                          const parts = faq.bold ? faq.a.split(faq.bold) : null;
+                          const isOpen = openFaq === i;
+                          return (
+                            <div
+                              key={i}
+                              onClick={(e) => { e.stopPropagation(); setOpenFaq(isOpen ? null : i); }}
+                              style={{ borderTop: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.06)', padding: '14px 0', cursor: 'pointer' }}
+                            >
+                              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+                                <p style={{ fontSize: 13, fontWeight: 700, color: isOpen ? '#C9922A' : '#efefef', margin: 0 }}>{faq.q}</p>
+                                <span style={{ color: 'rgba(239,239,239,0.35)', fontSize: 16, lineHeight: 1, flexShrink: 0 }}>{isOpen ? '−' : '+'}</span>
+                              </div>
+                              {isOpen && (
+                                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.55)', lineHeight: 1.8, margin: '10px 0 0' }}>
+                                  {parts ? (
+                                    <>{parts[0]}<strong style={{ color: 'rgba(239,239,239,0.85)', fontWeight: 700 }}>{faq.bold}</strong>{parts[1]}</>
+                                  ) : faq.a}
+                                </p>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
 
                     {/* CTA especial por mercado */}
                     <div style={{ marginTop: 24, background: 'linear-gradient(135deg, #0d1a2e 0%, #131326 100%)', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 14, padding: '32px 28px', textAlign: 'center' }}>
