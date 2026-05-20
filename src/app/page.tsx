@@ -201,7 +201,7 @@ const newsItems = [
 
 const faqs = [
   { q: '¿Cuánto capital necesito para empezar?', a: 'Trabajamos con inversores desde USD 30.000. Dependiendo del mercado y tipo de proyecto, el ticket mínimo varía. Te asesoramos para encontrar la opción ideal para tu presupuesto. En algunos proyectos podés ingresar con solo el 7% al 10% del valor total y financiar el resto, lo que te permite acceder a oportunidades de alto valor con una inversión inicial mucho menor.' },
-  { q: '¿En qué países puedo invertir?', a: 'Operamos en 12 países: Argentina, Brasil, Colombia, Paraguay, Uruguay, USA, México, Panamá, España, Italia, Emiratos Árabes y Georgia. Cada mercado tiene sus propias oportunidades y rendimientos.' },
+  { q: '¿En qué países puedo invertir?', a: 'Tenemos oportunidades en 10 países: Argentina, Brasil, Rep. Dominicana, Paraguay, Uruguay, USA, México, España, Italia y Emiratos Árabes. Cada mercado tiene sus propias oportunidades y rendimientos.' },
   { q: '¿Es seguro invertir en EEUU o Brasil?', a: 'Hoy tanto Estados Unidos como Brasil representan dos de los mercados con mayor rentabilidad y solidez para el inversor latinoamericano. Todos los proyectos que ofrecemos pasan por un riguroso proceso de due diligence legal y comercial. Trabajamos exclusivamente con desarrolladoras de primer nivel y garantizamos transparencia en cada etapa de la operación.' },
   { q: '¿Qué tipo de rentabilidad puedo esperar?', a: 'Depende del mercado y del proyecto. En general, nuestros proyectos ofrecen entre un 8% y un 18% anual en dólares, combinando plusvalía y renta. Te presentamos proyecciones reales en cada caso.' },
   { q: '¿Necesito viajar para comprar una propiedad?', a: 'No es necesario. Gestionamos todo el proceso de forma remota: firma digital, transferencias internacionales y acompañamiento legal en el país destino. Muchos de nuestros clientes invierten sin salir de su ciudad.' },
@@ -303,7 +303,7 @@ export default function Page() {
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <p style={{ fontSize: 11, fontWeight: 700, color: '#C9922A', letterSpacing: '0.15em', marginBottom: 8 }}>PRESENCIA INTERNACIONAL</p>
-            <h2 style={{ fontSize: 36, fontWeight: 800, color: '#efefef' }}>Operamos en 12 Países</h2>
+            <h2 style={{ fontSize: 36, fontWeight: 800, color: '#efefef' }}>Oportunidades en 10 Países</h2>
             <div style={{ height: 3, width: 48, background: '#C9922A', margin: '12px auto 0' }} />
           </div>
           <div style={{ overflow: 'hidden', position: 'relative', maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)' }}>
