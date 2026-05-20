@@ -621,14 +621,6 @@ export default function MercadosPage() {
                     <p style={{ fontSize: 13, color: 'rgba(239,239,239,0.4)', margin: 0 }}>{mkt.subtitle}</p>
                   </div>
                 </div>
-                {/* Tags */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                  {mkt.tags.map((tag, i) => (
-                    <span key={i} style={{ fontSize: 11, fontWeight: 600, color: 'rgba(239,239,239,0.65)', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 20, padding: '5px 14px' }}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
 
               {/* Body */}
