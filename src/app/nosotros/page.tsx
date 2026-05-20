@@ -16,9 +16,7 @@ const flagCountries = [
   { name: 'Paraguay',        flag: 'https://flagcdn.com/w80/py.png' },
   { name: 'Uruguay',         flag: 'https://flagcdn.com/w80/uy.png' },
   { name: 'México',          flag: 'https://flagcdn.com/w80/mx.png' },
-  { name: 'Colombia',        flag: 'https://flagcdn.com/w80/co.png' },
-  { name: 'Panamá',          flag: 'https://flagcdn.com/w80/pa.png' },
-  { name: 'Georgia',         flag: 'https://flagcdn.com/w80/ge.png' },
+  { name: 'Rep. Dominicana', flag: 'https://flagcdn.com/w80/do.png' },
 ];
 
 const heroStats = [
