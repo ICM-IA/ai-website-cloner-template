@@ -5,7 +5,7 @@ import { useRef, useEffect, useState } from 'react';
 import { animate, useInView } from 'framer-motion';
 
 const stats = [
-  { value: 10, suffix: '+', label: 'Países' },
+  { value: 10, suffix: '', label: 'Países' },
   { value: 3, suffix: '', label: 'Continentes' },
   { value: 10, suffix: '+', label: 'Años de experiencia' },
   { value: 500, suffix: '+', label: 'Inversores asesorados' },
