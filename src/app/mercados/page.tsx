@@ -89,20 +89,20 @@ const markets: Market[] = [
     detail: 'Santa Catarina · Nordeste · Río de Janeiro',
     foco: true,
     badge: { label: '⭐ Foco', color: '#C9922A' },
-    tags: ['Financiación 10 años', 'Sin banco ni historial', 'Desde USD 7.000', 'Proceso 100% remoto', 'Aeropuerto Maragogi 2026'],
+    tags: ['Financiación 10 años', 'Sin banco ni historial', 'Desde USD 3.000', 'Proceso 100% remoto', 'Aeropuerto Maragogi 2026'],
     stat1: { value: 'R$14.906', label: 'M² Balneário Camboriú — #1 Brasil' },
-    stat2: { value: 'USD 7K', label: 'Ticket mínimo de entrada' },
+    stat2: { value: 'USD 3K', label: 'Ticket mínimo de entrada' },
     stat3: { value: '+86%', label: 'Plusvalía Porto Belo — 3 años' },
     whyInvest: 'Brasil combina lo que pocos mercados ofrecen al mismo tiempo: ciudades con el metro cuadrado más caro del país (Balneário Camboriú e Itapema superan São Paulo, Río y todas las capitales brasileñas), destinos turísticos de clase mundial en el Nordeste, y financiación directa del desarrollador de hasta 10 años sin banco ni historial local. Para el inversor latinoamericano, la ventaja cambiaria es estructural: el real históricamente debilitado frente al dólar genera una ventana de entrada favorable. Un extranjero puede comprar con su pasaporte y CPF (número fiscal gratuito que se tramita online), sin visa especial ni cuenta bancaria local.',
     zones: [
       { icon: '🏖️', name: 'Santa Catarina — La costa de oro', desc: 'Balneário Camboriú (#1 m² Brasil), Itapema (#2), Porto Belo (+86% plusvalía 3 años), Bombinhas y Florianópolis. El litoral norte concentra la mayor valorización del país con financiación directa hasta 10 años.' },
-      { icon: '🌴', name: 'Nordeste — Alagoas · Pernambuco', desc: 'Maragogi, São Miguel dos Milagres, Japaratinga, Tamandaré y Porto de Galinhas. Ingreso desde USD 7K. El aeropuerto de Maragogi abre en diciembre 2026 — el catalizador que acelera la plusvalía.' },
+      { icon: '🌴', name: 'Nordeste — Alagoas · Pernambuco', desc: 'Maragogi, São Miguel dos Milagres, Japaratinga, Tamandaré y Porto de Galinhas. Ingreso desde USD 3K. El aeropuerto de Maragogi abre en diciembre 2026 — el catalizador que acelera la plusvalía.' },
       { icon: '🏙️', name: 'Río de Janeiro — Zona Sur', desc: 'El destino turístico más icónico de Brasil. Alta demanda de alquiler premium todo el año. Proyectos en zonas consolidadas con rentabilidad de corto y largo plazo.' },
     ],
     models: [
       { label: 'Financiación directa del desarrollador', sub: 'Más popular', badge: 'Más popular', fullDesc: 'Ingresás con el 10-25% del valor, pagás cuotas mensuales durante y post obra y saldo a la entrega. Sin banco, sin historial local. Hasta 10 años de financiación.' },
       { label: 'Compra en pozo anticipado', sub: 'Mayor plusvalía', badge: 'Mayor plusvalía', fullDesc: 'Ingresás en los primeros lanzamientos al precio más bajo del ciclo. Proyectos en Porto Belo registraron 86% de plusvalía en 3 años.' },
-      { label: 'Ticket bajo Nordeste', sub: 'Desde USD 7K', badge: 'Desde USD 7K', fullDesc: 'Studios en Maragogi y Tamandaré desde USD 43.999 con ingresos de USD 7.000-8.000. Plan de cuotas desde USD 335/mes.' },
+      { label: 'Ticket bajo Nordeste', sub: 'Desde USD 3K', badge: 'Desde USD 3K', fullDesc: 'Studios en Maragogi y Tamandaré desde USD 43.999 con ingresos de USD 3.000-8.000. Plan de cuotas desde USD 335/mes.' },
       { label: 'Renta turística anual', sub: 'Renta inmediata', badge: 'Renta inmediata', fullDesc: 'Propiedades terminadas para alquiler por temporada en destinos con alta demanda. Operadoras locales gestionan todo sin que debas estar presente.' },
     ],
     steps: [
@@ -540,7 +540,7 @@ export default function MercadosPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               {[
                 { value: '10', label: 'Mercados activos en', sub: '3 continentes' },
-                { value: 'USD 7K', label: 'Ticket mínimo de entrada', sub: '(Nordeste Brasil)' },
+                { value: 'USD 3K', label: 'Ticket mínimo de entrada', sub: '(Nordeste Brasil)' },
                 { value: '500+', label: 'Inversores asesorados', sub: 'en los últimos 10 años' },
               ].map((s, i) => (
                 <div key={i} style={{ background: '#131326', border: '1px solid rgba(201,146,42,0.18)', borderRadius: 12, padding: '22px 24px', flexGrow: 1, display: 'flex', alignItems: 'center', gap: 18 }}>
