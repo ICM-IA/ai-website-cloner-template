@@ -496,6 +496,7 @@ export default function MercadosPage() {
   const [region, setRegion] = useState<string>('Todos');
   const [selected, setSelected] = useState<string>('Estados Unidos');
   const [showCalendar, setShowCalendar] = useState(false);
+  const [openStep, setOpenStep] = useState<number | null>(null);
 
   const filtered =
     region === 'Todos'
@@ -584,7 +585,7 @@ export default function MercadosPage() {
                 return (
                   <div
                     key={m.name}
-                    onClick={() => setSelected(m.name)}
+                    onClick={() => { setSelected(m.name); setOpenStep(null); }}
                     style={{ padding: '14px 18px', borderBottom: '1px solid rgba(255,255,255,0.04)', borderLeft: `3px solid ${isActive ? '#C9922A' : 'transparent'}`, background: isActive ? 'rgba(201,146,42,0.07)' : 'transparent', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12, transition: 'all 0.15s' }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -682,21 +683,31 @@ export default function MercadosPage() {
                   </div>
                 </div>
 
-                {/* Proceso paso a paso — solo si el mercado tiene steps */}
+                {/* Proceso paso a paso — acordeón */}
                 {mkt.steps && mkt.steps.length > 0 && (
                   <div>
                     <p style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.12em', marginBottom: 4 }}>CÓMO EMPEZAR</p>
                     <p style={{ fontSize: 14, fontWeight: 800, color: '#efefef', marginBottom: 14, marginTop: 6 }}>El proceso paso a paso</p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                      {mkt.steps.map((step, i) => (
-                        <div key={i} style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 10, padding: '14px 18px', display: 'flex', alignItems: 'flex-start', gap: 14 }}>
-                          <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'rgba(201,146,42,0.15)', border: '1px solid rgba(201,146,42,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, color: '#C9922A', flexShrink: 0 }}>{i + 1}</div>
-                          <div>
-                            <p style={{ fontSize: 13, fontWeight: 700, color: '#efefef', margin: '0 0 4px' }}>{step.title}</p>
-                            <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.45)', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
+                      {mkt.steps.map((step, i) => {
+                        const isOpen = openStep === i;
+                        return (
+                          <div
+                            key={i}
+                            onClick={() => setOpenStep(isOpen ? null : i)}
+                            style={{ background: '#0d0d0d', border: `1px solid ${isOpen ? 'rgba(201,146,42,0.35)' : 'rgba(255,255,255,0.07)'}`, borderRadius: 10, padding: '14px 18px', cursor: 'pointer', transition: 'border-color 0.2s' }}
+                          >
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                              <div style={{ width: 28, height: 28, borderRadius: '50%', background: isOpen ? 'rgba(201,146,42,0.25)' : 'rgba(201,146,42,0.15)', border: '1px solid rgba(201,146,42,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, color: '#C9922A', flexShrink: 0 }}>{i + 1}</div>
+                              <p style={{ fontSize: 13, fontWeight: 700, color: isOpen ? '#C9922A' : '#efefef', margin: 0, flexGrow: 1 }}>{step.title}</p>
+                              <span style={{ color: 'rgba(239,239,239,0.4)', fontSize: 16, lineHeight: 1 }}>{isOpen ? '−' : '+'}</span>
+                            </div>
+                            {isOpen && (
+                              <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.55)', lineHeight: 1.75, margin: '10px 0 0 42px' }}>{step.desc}</p>
+                            )}
                           </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 )}
