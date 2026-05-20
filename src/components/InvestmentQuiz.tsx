@@ -18,18 +18,6 @@ const steps = [
     ],
   },
   {
-    id: 'budget',
-    question: '¿Con cuánto podés ingresar hoy?',
-    emoji: '💰',
-    options: [
-      { label: 'Menos de U$ 20.000', value: 'low', emoji: '🟢' },
-      { label: 'Entre U$ 20.000 y U$ 50.000', value: 'mid', emoji: '🔵' },
-      { label: 'Entre U$ 50.000 y U$ 100.000', value: 'high', emoji: '💎' },
-      { label: 'Más de U$ 100.000', value: 'premium', emoji: '👑' },
-      { label: 'Todavía estoy evaluando', value: 'unknown', emoji: '🤔' },
-    ],
-  },
-  {
     id: 'goal',
     question: '¿Qué buscás con tu inversión?',
     emoji: '🎯',
@@ -49,6 +37,18 @@ const steps = [
       { label: 'Construcción', value: 'preconstruction', emoji: '🏗️' },
       { label: 'Terminado', value: 'ready', emoji: '🔑' },
       { label: 'Es indistinto', value: 'any', emoji: '✅' },
+    ],
+  },
+  {
+    id: 'budget',
+    question: '¿Con cuánto podés ingresar hoy?',
+    emoji: '💰',
+    options: [
+      { label: 'Menos de U$ 20.000', value: 'low', emoji: '🟢' },
+      { label: 'Entre U$ 20.000 y U$ 50.000', value: 'mid', emoji: '🔵' },
+      { label: 'Entre U$ 50.000 y U$ 100.000', value: 'high', emoji: '💎' },
+      { label: 'Más de U$ 100.000', value: 'premium', emoji: '👑' },
+      { label: 'Todavía estoy evaluando', value: 'unknown', emoji: '🤔' },
     ],
   },
 ];
