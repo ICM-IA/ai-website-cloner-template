@@ -29,16 +29,14 @@ const services = [
 const countries = [
   { name: 'Argentina',       flag: 'https://flagcdn.com/w80/ar.png' },
   { name: 'Brasil',          flag: 'https://flagcdn.com/w80/br.png' },
-  { name: 'Colombia',        flag: 'https://flagcdn.com/w80/co.png' },
+  { name: 'Rep. Dominicana', flag: 'https://flagcdn.com/w80/do.png' },
   { name: 'Paraguay',        flag: 'https://flagcdn.com/w80/py.png' },
   { name: 'Uruguay',         flag: 'https://flagcdn.com/w80/uy.png' },
   { name: 'USA',             flag: 'https://flagcdn.com/w80/us.png' },
   { name: 'México',          flag: 'https://flagcdn.com/w80/mx.png' },
-  { name: 'Panamá',          flag: 'https://flagcdn.com/w80/pa.png' },
   { name: 'España',          flag: 'https://flagcdn.com/w80/es.png' },
   { name: 'Italia',          flag: 'https://flagcdn.com/w80/it.png' },
   { name: 'Emiratos Árabes', flag: 'https://flagcdn.com/w80/ae.png' },
-  { name: 'Georgia',         flag: 'https://flagcdn.com/w80/ge.png' },
 ];
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
