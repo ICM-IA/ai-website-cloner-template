@@ -351,7 +351,7 @@ const markets: Market[] = [
     projects: [],
   },
   {
-    name: 'Emiratos Árabes',
+    name: 'Dubai',
     subtitle: 'Sin impuestos · Golden Visa · Récord histórico de transacciones',
     regionFilter: 'Asia', code: 'ae',
     detail: 'Dubai — Downtown · Marina · Palm · Business Bay',
