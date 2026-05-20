@@ -11,10 +11,11 @@ const steps = [
     question: '¿En qué mercado te interesa invertir?',
     emoji: '🌍',
     options: [
-      { label: 'Brasil', value: 'brasil', emoji: '🌐', flag: 'https://flagcdn.com/w40/br.png' },
       { label: 'Estados Unidos', value: 'usa', emoji: '🌐', flag: 'https://flagcdn.com/w40/us.png' },
+      { label: 'Brasil', value: 'brasil', emoji: '🌐', flag: 'https://flagcdn.com/w40/br.png' },
       { label: 'Argentina', value: 'argentina', emoji: '🌐', flag: 'https://flagcdn.com/w40/ar.png' },
-      { label: 'Otros mercados', value: 'any', emoji: '🌍' },
+      { label: 'Otros mercados', value: 'other', emoji: '🌍' },
+      { label: 'Me da igual, quiero la mejor oportunidad', value: 'any', emoji: '🌐' },
     ],
   },
   {
