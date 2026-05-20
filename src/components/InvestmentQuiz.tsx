@@ -8,13 +8,13 @@ import { usePathname } from 'next/navigation';
 const steps = [
   {
     id: 'region',
-    question: '¿En qué región te interesa invertir?',
+    question: '¿En qué mercado te interesa invertir?',
     emoji: '🌍',
     options: [
       { label: 'Brasil', value: 'brasil', emoji: '🌐', flag: 'https://flagcdn.com/w40/br.png' },
-      { label: 'USA / Miami', value: 'usa', emoji: '🌐', flag: 'https://flagcdn.com/w40/us.png' },
+      { label: 'Estados Unidos', value: 'usa', emoji: '🌐', flag: 'https://flagcdn.com/w40/us.png' },
       { label: 'Argentina', value: 'argentina', emoji: '🌐', flag: 'https://flagcdn.com/w40/ar.png' },
-      { label: 'Me da igual, quiero la mejor oportunidad', value: 'any', emoji: '🌐' },
+      { label: 'Otros mercados', value: 'any', emoji: '🌍' },
     ],
   },
   {
