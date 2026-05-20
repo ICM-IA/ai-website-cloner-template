@@ -544,7 +544,7 @@ export default function Page() {
       <section style={{ padding: '80px 32px' }}>
         <div className="cta-box" style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center', background: 'rgba(201,146,42,0.06)', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, padding: '64px 48px' }}>
           <h2 style={{ fontSize: 36, fontWeight: 800, color: '#efefef', marginBottom: 16, lineHeight: 1.2 }}>
-            ¿Listo para invertir en<br />Real Estate global?
+            Analicemos juntos<br />tu perfil inversor
           </h2>
           <p style={{ fontSize: 15, color: 'rgba(239,239,239,0.5)', marginBottom: 36, lineHeight: 1.7 }}>
             Nuestro equipo de especialistas está disponible para asesorarte sin compromiso sobre las mejores oportunidades del mercado.
