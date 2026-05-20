@@ -301,7 +301,7 @@ export default function Page() {
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <p style={{ fontSize: 11, fontWeight: 700, color: '#C9922A', letterSpacing: '0.15em', marginBottom: 8 }}>PRESENCIA INTERNACIONAL</p>
-            <h2 style={{ fontSize: 36, fontWeight: 800, color: '#efefef' }}>Oportunidades en 10 Países</h2>
+            <h2 style={{ fontSize: 36, fontWeight: 800, color: '#efefef' }}>Alternativas en 10 Países</h2>
             <div style={{ height: 3, width: 48, background: '#C9922A', margin: '12px auto 0' }} />
           </div>
           <div style={{ overflow: 'hidden', position: 'relative', maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)' }}>
