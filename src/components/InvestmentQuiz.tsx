@@ -36,8 +36,8 @@ const steps = [
     options: [
       { label: 'Renta', value: 'rent', emoji: '💵' },
       { label: 'Revalorización', value: 'growth', emoji: '📈' },
-      { label: 'Uso personal / vacacional', value: 'personal', emoji: '🏖️' },
-      { label: 'Incrementar mi patrimonio', value: 'diversify', emoji: '💼' },
+      { label: 'Uso personal', value: 'personal', emoji: '🏖️' },
+      { label: 'Un poco de las 3', value: 'diversify', emoji: '🎯' },
     ],
   },
   {
