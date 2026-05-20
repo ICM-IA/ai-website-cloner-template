@@ -889,7 +889,7 @@ export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps
                     {/* Key facts */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 14, flex: 1 }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Tiempo de entrega:</span>
+                        <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Fecha de entrega:</span>
                         <span style={{ fontSize: 12, fontWeight: 700, color: '#efefef' }}>{p.entrega}</span>
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
