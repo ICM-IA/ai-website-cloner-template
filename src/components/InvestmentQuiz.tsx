@@ -42,13 +42,13 @@ const steps = [
   },
   {
     id: 'type',
-    question: '¿Qué tipo de unidad preferís?',
+    question: '¿En qué etapa preferís entrar?',
     emoji: '🏗️',
     options: [
-      { label: 'Pozo', value: 'pozo', emoji: '🏗️' },
-      { label: 'Pre-construcción', value: 'preconstruction', emoji: '📐' },
+      { label: 'Lanzamiento', value: 'pozo', emoji: '🚀' },
+      { label: 'Construcción', value: 'preconstruction', emoji: '🏗️' },
       { label: 'Terminado', value: 'ready', emoji: '🔑' },
-      { label: 'Cualquiera si el número me cierra', value: 'any', emoji: '✅' },
+      { label: 'Es indistinto', value: 'any', emoji: '✅' },
     ],
   },
 ];
