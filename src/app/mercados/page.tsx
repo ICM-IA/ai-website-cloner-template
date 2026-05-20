@@ -497,6 +497,7 @@ export default function MercadosPage() {
   const [selected, setSelected] = useState<string>('Estados Unidos');
   const [showCalendar, setShowCalendar] = useState(false);
   const [openStep, setOpenStep] = useState<number | null>(null);
+  const [stepsOpen, setStepsOpen] = useState(false);
 
   const filtered =
     region === 'Todos'
@@ -585,7 +586,7 @@ export default function MercadosPage() {
                 return (
                   <div
                     key={m.name}
-                    onClick={() => { setSelected(m.name); setOpenStep(null); }}
+                    onClick={() => { setSelected(m.name); setOpenStep(null); setStepsOpen(false); }}
                     style={{ padding: '14px 18px', borderBottom: '1px solid rgba(255,255,255,0.04)', borderLeft: `3px solid ${isActive ? '#C9922A' : 'transparent'}`, background: isActive ? 'rgba(201,146,42,0.07)' : 'transparent', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12, transition: 'all 0.15s' }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -683,32 +684,44 @@ export default function MercadosPage() {
                   </div>
                 </div>
 
-                {/* Proceso paso a paso — acordeón */}
+                {/* Proceso paso a paso — desplegable */}
                 {mkt.steps && mkt.steps.length > 0 && (
-                  <div>
-                    <p style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.12em', marginBottom: 4 }}>CÓMO EMPEZAR</p>
-                    <p style={{ fontSize: 14, fontWeight: 800, color: '#efefef', marginBottom: 14, marginTop: 6 }}>El proceso paso a paso</p>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                      {mkt.steps.map((step, i) => {
-                        const isOpen = openStep === i;
-                        return (
-                          <div
-                            key={i}
-                            onClick={() => setOpenStep(isOpen ? null : i)}
-                            style={{ background: '#0d0d0d', border: `1px solid ${isOpen ? 'rgba(201,146,42,0.35)' : 'rgba(255,255,255,0.07)'}`, borderRadius: 10, padding: '14px 18px', cursor: 'pointer', transition: 'border-color 0.2s' }}
-                          >
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                              <div style={{ width: 28, height: 28, borderRadius: '50%', background: isOpen ? 'rgba(201,146,42,0.25)' : 'rgba(201,146,42,0.15)', border: '1px solid rgba(201,146,42,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, color: '#C9922A', flexShrink: 0 }}>{i + 1}</div>
-                              <p style={{ fontSize: 13, fontWeight: 700, color: isOpen ? '#C9922A' : '#efefef', margin: 0, flexGrow: 1 }}>{step.title}</p>
-                              <span style={{ color: 'rgba(239,239,239,0.4)', fontSize: 16, lineHeight: 1 }}>{isOpen ? '−' : '+'}</span>
-                            </div>
-                            {isOpen && (
-                              <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.55)', lineHeight: 1.75, margin: '10px 0 0 42px' }}>{step.desc}</p>
-                            )}
-                          </div>
-                        );
-                      })}
+                  <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 12, overflow: 'hidden' }}>
+                    {/* Header clicable */}
+                    <div
+                      onClick={() => setStepsOpen(!stepsOpen)}
+                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 18px', cursor: 'pointer' }}
+                    >
+                      <div>
+                        <p style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.12em', margin: '0 0 3px' }}>CÓMO EMPEZAR</p>
+                        <p style={{ fontSize: 14, fontWeight: 800, color: '#efefef', margin: 0 }}>El proceso paso a paso</p>
+                      </div>
+                      <span style={{ color: 'rgba(239,239,239,0.4)', fontSize: 20, lineHeight: 1, flexShrink: 0 }}>{stepsOpen ? '−' : '+'}</span>
                     </div>
+                    {/* Pasos */}
+                    {stepsOpen && (
+                      <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', padding: '12px 18px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+                        {mkt.steps.map((step, i) => {
+                          const isOpen = openStep === i;
+                          return (
+                            <div
+                              key={i}
+                              onClick={(e) => { e.stopPropagation(); setOpenStep(isOpen ? null : i); }}
+                              style={{ background: 'rgba(255,255,255,0.03)', border: `1px solid ${isOpen ? 'rgba(201,146,42,0.35)' : 'rgba(255,255,255,0.06)'}`, borderRadius: 10, padding: '12px 16px', cursor: 'pointer', transition: 'border-color 0.2s' }}
+                            >
+                              <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                                <div style={{ width: 26, height: 26, borderRadius: '50%', background: isOpen ? 'rgba(201,146,42,0.25)' : 'rgba(201,146,42,0.15)', border: '1px solid rgba(201,146,42,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 800, color: '#C9922A', flexShrink: 0 }}>{i + 1}</div>
+                                <p style={{ fontSize: 13, fontWeight: 700, color: isOpen ? '#C9922A' : '#efefef', margin: 0, flexGrow: 1 }}>{step.title}</p>
+                                <span style={{ color: 'rgba(239,239,239,0.35)', fontSize: 14, lineHeight: 1 }}>{isOpen ? '−' : '+'}</span>
+                              </div>
+                              {isOpen && (
+                                <p style={{ fontSize: 11, color: 'rgba(239,239,239,0.55)', lineHeight: 1.75, margin: '10px 0 0 40px' }}>{step.desc}</p>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                 )}
 
