@@ -771,6 +771,7 @@ export default function MercadosPage() {
 
                 {/* FAQs — solo si el mercado tiene preguntas frecuentes */}
                 {mkt.faqs && mkt.faqs.length > 0 && (
+                  <>
                   <div style={{ background: '#0d0d0d', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 12, overflow: 'hidden' }}>
                     {/* Header clicable */}
                     <div
@@ -848,6 +849,7 @@ export default function MercadosPage() {
                       </div>
                     </div>
                   </div>
+                  </>
                 )}
               </div>
 
