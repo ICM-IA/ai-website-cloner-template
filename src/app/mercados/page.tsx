@@ -593,9 +593,6 @@ export default function MercadosPage() {
                       <p style={{ fontSize: 13, fontWeight: 700, color: isActive ? '#C9922A' : '#efefef', margin: '0 0 2px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{m.name}</p>
                       <p style={{ fontSize: 10, color: 'rgba(239,239,239,0.35)', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{m.detail}</p>
                     </div>
-                    <span style={{ fontSize: 9, fontWeight: 700, color: m.badge.color, background: `${m.badge.color}18`, border: `1px solid ${m.badge.color}44`, borderRadius: 10, padding: '3px 7px', flexShrink: 0, whiteSpace: 'nowrap' }}>
-                      {m.badge.label}
-                    </span>
                   </div>
                 );
               })}
