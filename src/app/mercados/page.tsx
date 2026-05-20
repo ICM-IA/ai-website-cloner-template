@@ -13,7 +13,7 @@ type Step    = { title: string; desc: string };
 type Market = {
   name: string;
   subtitle: string;
-  regionFilter: 'América' | 'Europa' | 'Medio Oriente';
+  regionFilter: 'América' | 'Europa' | 'Asia';
   code: string;
   detail: string;
   foco: boolean;
@@ -353,7 +353,7 @@ const markets: Market[] = [
   {
     name: 'Emiratos Árabes',
     subtitle: 'Sin impuestos · Golden Visa · Récord histórico de transacciones',
-    regionFilter: 'Medio Oriente', code: 'ae',
+    regionFilter: 'Asia', code: 'ae',
     detail: 'Dubai — Downtown · Marina · Palm · Business Bay',
     foco: false,
     badge: { label: 'Sin impuestos', color: '#C9922A' },
@@ -488,7 +488,7 @@ const markets: Market[] = [
   },
 ];
 
-const REGIONS = ['Todos', 'América', 'Europa', 'Medio Oriente', '⭐ Foco principal'] as const;
+const REGIONS = ['Todos', 'América', 'Europa', 'Asia'] as const;
 
 const BOOKING_SRC = 'https://api.icm-ia.com/widget/booking/eUHMDjB5oFxtYa1y7Bbd';
 
@@ -500,8 +500,6 @@ export default function MercadosPage() {
   const filtered =
     region === 'Todos'
       ? markets
-      : region === '⭐ Foco principal'
-      ? markets.filter((m) => m.foco)
       : markets.filter((m) => m.regionFilter === region);
 
   const mkt = markets.find((m) => m.name === selected) || markets[0];
