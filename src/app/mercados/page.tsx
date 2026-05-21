@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import ProjectsSection from './ProjectsSection';
 
 type Zone    = { icon: string; name: string; desc: string };
 type Project = { icon: string; name: string; tags: string[]; price: string; sub: string };
@@ -840,7 +839,7 @@ export default function MercadosPage() {
                         </a>
                         {!mkt.ctaHideMap && (
                           <a
-                            href="#proyectos"
+                            href="/proyectos"
                             style={{ background: 'rgba(99,102,241,0.1)', color: 'rgba(239,239,239,0.8)', border: '1.5px solid rgba(99,102,241,0.25)', padding: '12px 22px', fontSize: 13, fontWeight: 700, borderRadius: 8, textDecoration: 'none', display: 'inline-block' }}
                           >
                             {mkt.ctaMapLabel ?? '🗺️ Ver proyectos en el mapa'}
@@ -855,7 +854,7 @@ export default function MercadosPage() {
               {/* Bottom CTA bar */}
               <div style={{ borderTop: '1px solid rgba(201,146,42,0.12)', padding: '20px 36px', background: 'rgba(0,0,0,0.2)', display: 'flex', gap: 12, flexWrap: 'wrap', flexShrink: 0 }}>
                 <Link
-                  href="/contacto"
+                  href="/proyectos"
                   style={{ flexGrow: 1, background: '#C9922A', color: '#101010', padding: '12px 24px', fontSize: 13, fontWeight: 800, borderRadius: 6, textDecoration: 'none', letterSpacing: '0.06em', textAlign: 'center', display: 'block' }}
                 >
                   Ver todos los proyectos de {mkt.name} →
@@ -892,9 +891,6 @@ export default function MercadosPage() {
           h1 { font-size: 30px !important; }
         }
       `}</style>
-
-      {/* Projects section — auto-filtered by selected market */}
-      <ProjectsSection selectedMarket={selected} />
 
       {/* ── Calendar modal ── */}
       {showCalendar && (
