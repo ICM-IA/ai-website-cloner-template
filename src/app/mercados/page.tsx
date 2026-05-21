@@ -848,7 +848,6 @@ export default function MercadosPage() {
                         )}
                       </div>
                     </div>
-                  </div>
                   </>
                 )}
               </div>
