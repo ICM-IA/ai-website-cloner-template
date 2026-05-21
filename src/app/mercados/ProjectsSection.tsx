@@ -675,7 +675,7 @@ function ProjectDetailModal({ project, onClose }: { project: Project; onClose: (
 
 // ─── Projects Section ────────────────────────────────────────────────────────
 interface ProjectsSectionProps {
-  selectedMarket: string;
+  selectedMarket?: string;
 }
 
 const now = new Date();
@@ -749,7 +749,7 @@ function applyTipo(p: Project, tipo: string): boolean {
   }
 }
 
-export default function ProjectsSection({ selectedMarket }: ProjectsSectionProps) {
+export default function ProjectsSection({ selectedMarket = 'Todos' }: ProjectsSectionProps) {
   const [zona,   setZona]   = useState('all');
   const [tipo,   setTipo]   = useState('all');
   const [selected, setSelected]     = useState<Project | null>(null);
