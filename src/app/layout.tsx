@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import CursorGlow from "@/components/CursorGlow";
+
+// ─── Google Analytics ────────────────────────────────────────────────────────
+// Cuando tengas tu cuenta de Google Analytics, reemplazá G-XXXXXXXXXX
+// con tu ID de medición real (ej: G-ABC123XYZ).
+const GA_ID = "G-XXXXXXXXXX";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -9,10 +17,55 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const siteUrl = "https://icm-ia.com";
+
 export const metadata: Metadata = {
-  title: "Somos una empresa que ofrece soluciones de inteligencia artificial",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "ICM-IA · Tu inmobiliaria en piloto automático con IA",
+    template: "%s · ICM-IA",
+  },
   description:
-    "Automatizamos procesos, reducimos costos operativos y escalamos tu productividad con soluciones de IA integradas a tus sistemas actuales.",
+    "Automatizá tu inmobiliaria con Inteligencia Artificial. Centralizá canales, calificá prospectos automáticamente y escalá sin contratar más personal. +890 automatizaciones. 31 clientes.",
+  keywords: [
+    "IA inmobiliaria",
+    "automatización inmobiliaria",
+    "inteligencia artificial real estate",
+    "CRM automatizado inmobiliaria",
+    "calificación de prospectos IA",
+    "ICM-IA",
+  ],
+  authors: [{ name: "ICM-IA" }],
+  creator: "ICM-IA",
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    url: siteUrl,
+    siteName: "ICM-IA",
+    title: "ICM-IA · Tu inmobiliaria en piloto automático con IA",
+    description:
+      "Centralizá todos tus canales, filtrá y calificá prospectos automáticamente, y escalá sin contratar más personal.",
+    images: [
+      {
+        url: "/seo/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "ICM-IA — IA para inmobiliarias",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ICM-IA · Tu inmobiliaria en piloto automático con IA",
+    description:
+      "Automatizá tu inmobiliaria con IA. +890 automatizaciones implementadas.",
+    images: ["/seo/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
 };
 
 export default function RootLayout({
@@ -22,7 +75,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${poppins.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-black">{children}</body>
+      <head>
+        {/* Google Analytics — reemplazá GA_ID cuando tengas tu cuenta */}
+        {GA_ID !== "G-XXXXXXXXXX" && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
+      </head>
+      <body className="min-h-full flex flex-col bg-black">
+        {children}
+        <WhatsAppButton />
+        <CursorGlow />
+      </body>
     </html>
   );
 }

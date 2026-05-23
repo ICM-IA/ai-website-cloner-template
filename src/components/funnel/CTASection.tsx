@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CalendarDays } from "lucide-react";
+import CalButton from "@/components/CalButton";
 
 const styles = `
   @keyframes dotPulse {
@@ -268,15 +269,10 @@ export default function CTASection() {
           </div>
 
           {/* CTA Button */}
-          <a
-            href="https://cal.com/icm-ia/reconocimiento"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-main-btn"
-          >
+          <CalButton className="cta-main-btn">
             <span>Agendar Llamada Gratuita</span>
             <CalendarDays size={22} />
-          </a>
+          </CalButton>
 
           {/* Trust note */}
           <p

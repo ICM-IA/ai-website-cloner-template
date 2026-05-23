@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Phone, Settings, TrendingUp } from "lucide-react";
+import CalButton from "@/components/CalButton";
 
 const styles = `
   @keyframes fadeInUp {
@@ -194,6 +195,7 @@ export default function HowItWorksSection() {
                 background:
                   "linear-gradient(to right, transparent, rgba(255,20,20,0.3) 20%, rgba(255,20,20,0.3) 80%, transparent)",
                 pointerEvents: "none",
+                zIndex: 0,
               }}
             />
 
@@ -209,6 +211,7 @@ export default function HowItWorksSection() {
                   paddingLeft: "40px",
                   paddingRight: "40px",
                   position: "relative",
+                  zIndex: 1,
                   animationDelay: `${step.delay}ms`,
                 }}
               >
@@ -233,13 +236,13 @@ export default function HowItWorksSection() {
                     height: "80px",
                     borderRadius: "50%",
                     border: "1px solid rgba(255,20,20,0.3)",
-                    backgroundColor: "rgba(255,20,20,0.05)",
+                    backgroundColor: "#000",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     margin: "0 auto 32px",
                     position: "relative",
-                    zIndex: 1,
+                    zIndex: 2,
                   }}
                 >
                   {step.icon}
@@ -282,10 +285,7 @@ export default function HowItWorksSection() {
             >
               ¿Querés ver cómo funciona para tu inmobiliaria?
             </p>
-            <a
-              href="https://cal.com/icm-ia/reconocimiento"
-              target="_blank"
-              rel="noopener noreferrer"
+            <CalButton
               className="how-cta-link"
               style={{
                 display: "inline-flex",
@@ -295,11 +295,12 @@ export default function HowItWorksSection() {
                 fontSize: "16px",
                 fontWeight: 600,
                 paddingBottom: "2px",
-                textDecoration: "none",
+                backgroundColor: "transparent",
+                border: "none",
               }}
             >
               Agendá tu llamada ahora →
-            </a>
+            </CalButton>
           </div>
         </div>
       </section>

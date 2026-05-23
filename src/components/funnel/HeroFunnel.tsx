@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { TrendingUp, Building2, Clock } from "lucide-react";
+import Image from "next/image";
+import CalButton from "@/components/CalButton";
 
 const styles = `
   @keyframes blobFloat1 {
@@ -100,7 +102,7 @@ function StatRow({ value, label, icon }: StatRowProps) {
       <div>
         <p
           style={{
-            fontSize: "42px",
+            fontSize: "34px",
             fontWeight: 800,
             color: "#FF1414",
             margin: 0,
@@ -265,15 +267,10 @@ export default function HeroFunnel() {
                 flexWrap: "wrap",
               }}
             >
-              <a
-                href="https://cal.com/icm-ia/reconocimiento"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hero-cta-btn"
-              >
+              <CalButton className="hero-cta-btn">
                 Agendar Llamada Gratuita
                 <span aria-hidden="true">→</span>
-              </a>
+              </CalButton>
               <p
                 style={{
                   fontSize: "13px",
@@ -286,128 +283,141 @@ export default function HeroFunnel() {
             </div>
           </div>
 
-          {/* Right: stats card */}
+          {/* Right: icon + stats card */}
           <div
             style={{
               position: "relative",
               display: "flex",
-              justifyContent: "center",
+              flexDirection: "column",
               alignItems: "center",
+              gap: "24px",
               opacity: mounted ? 1 : 0,
               animation: mounted ? "fadeInUp 0.8s ease-out 0.4s both" : "none",
             }}
           >
-            {/* Main card */}
+            {/* Large ICM-IA icon */}
+            <Image
+              src="/images/icm-icon.svg"
+              alt="ICM-IA"
+              width={200}
+              height={200}
+              style={{ filter: "drop-shadow(0 8px 32px rgba(0,0,0,0.5)) drop-shadow(0 0 20px rgba(255,20,20,0.2))", borderRadius: "50%" }}
+              priority
+            />
+
+            {/* Stats card — smaller */}
             <div
               style={{
-                backgroundColor: "#0D0D0D",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: "24px",
-                padding: "40px",
+                position: "relative",
                 width: "100%",
-                maxWidth: "440px",
-                boxShadow: "0 40px 80px rgba(0,0,0,0.6)",
               }}
             >
-              <p
-                style={{
-                  fontSize: "12px",
-                  color: "#6B7280",
-                  textTransform: "uppercase",
-                  letterSpacing: "2px",
-                  marginBottom: "32px",
-                  marginTop: 0,
-                }}
-              >
-                Resultados reales de nuestros clientes
-              </p>
-
-              {/* Stats */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-                <StatRow
-                  value="+890"
-                  label="automatizaciones realizadas"
-                  icon={<TrendingUp size={20} color="white" />}
-                />
-                <StatRow
-                  value="31"
-                  label="clientes satisfechos"
-                  icon={<Building2 size={20} color="white" />}
-                />
-                <StatRow
-                  value="%80"
-                  label="tiempo ahorrado"
-                  icon={<Clock size={20} color="white" />}
-                />
-              </div>
-
-              {/* Divider */}
               <div
                 style={{
-                  margin: "32px 0",
-                  height: "1px",
-                  backgroundColor: "rgba(255,255,255,0.06)",
+                  backgroundColor: "#0D0D0D",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: "20px",
+                  padding: "24px 28px",
+                  width: "100%",
+                  maxWidth: "380px",
+                  margin: "0 auto",
+                  boxShadow: "0 24px 60px rgba(0,0,0,0.6)",
                 }}
-              />
-
-              {/* Avatar row */}
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <div style={{ display: "flex" }}>
-                  {avatars.map((avatar, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        width: "32px",
-                        height: "32px",
-                        borderRadius: "50%",
-                        backgroundColor: avatar.bg,
-                        border: "2px solid #000",
-                        marginLeft: i === 0 ? "0" : "-8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "11px",
-                        fontWeight: 700,
-                        color: "white",
-                        flexShrink: 0,
-                        zIndex: avatars.length - i,
-                        position: "relative",
-                      }}
-                    >
-                      {avatar.label}
-                    </div>
-                  ))}
-                </div>
+              >
                 <p
                   style={{
-                    fontSize: "13px",
-                    color: "#9CA3AF",
-                    margin: 0,
+                    fontSize: "11px",
+                    color: "#6B7280",
+                    textTransform: "uppercase",
+                    letterSpacing: "2px",
+                    marginBottom: "20px",
+                    marginTop: 0,
                   }}
                 >
-                  31 inmobiliarias ya operan con ICM-IA
+                  Resultados reales de nuestros clientes
                 </p>
-              </div>
-            </div>
 
-            {/* Floating badge */}
-            <div
-              className="hero-badge-pulse"
-              style={{
-                position: "absolute",
-                top: "-16px",
-                right: "-16px",
-                backgroundColor: "#FF1414",
-                color: "white",
-                padding: "8px 16px",
-                borderRadius: "9999px",
-                fontSize: "12px",
-                fontWeight: 700,
-                boxShadow: "0 4px 20px rgba(255,20,20,0.5)",
-                whiteSpace: "nowrap",
-              }}
-            >
-              ✦ IA Activa 24/7
+                {/* Stats */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                  <StatRow
+                    value="+890"
+                    label="automatizaciones realizadas"
+                    icon={<TrendingUp size={18} color="white" />}
+                  />
+                  <StatRow
+                    value="31"
+                    label="clientes satisfechos"
+                    icon={<Building2 size={18} color="white" />}
+                  />
+                  <StatRow
+                    value="%80"
+                    label="tiempo ahorrado"
+                    icon={<Clock size={18} color="white" />}
+                  />
+                </div>
+
+                {/* Divider */}
+                <div
+                  style={{
+                    margin: "20px 0",
+                    height: "1px",
+                    backgroundColor: "rgba(255,255,255,0.06)",
+                  }}
+                />
+
+                {/* Avatar row */}
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  <div style={{ display: "flex" }}>
+                    {avatars.map((avatar, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          width: "28px",
+                          height: "28px",
+                          borderRadius: "50%",
+                          backgroundColor: avatar.bg,
+                          border: "2px solid #000",
+                          marginLeft: i === 0 ? "0" : "-8px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontSize: "10px",
+                          fontWeight: 700,
+                          color: "white",
+                          flexShrink: 0,
+                          zIndex: avatars.length - i,
+                          position: "relative",
+                        }}
+                      >
+                        {avatar.label}
+                      </div>
+                    ))}
+                  </div>
+                  <p style={{ fontSize: "12px", color: "#9CA3AF", margin: 0 }}>
+                    31 inmobiliarias ya operan con ICM-IA
+                  </p>
+                </div>
+              </div>
+
+              {/* Floating badge */}
+              <div
+                className="hero-badge-pulse"
+                style={{
+                  position: "absolute",
+                  top: "-12px",
+                  right: "0px",
+                  backgroundColor: "#FF1414",
+                  color: "white",
+                  padding: "6px 14px",
+                  borderRadius: "9999px",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  boxShadow: "0 4px 20px rgba(255,20,20,0.5)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                ✦ IA Activa 24/7
+              </div>
             </div>
           </div>
         </div>

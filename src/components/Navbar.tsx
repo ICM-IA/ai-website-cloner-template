@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import CalButton from "@/components/CalButton";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -50,12 +51,12 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link href="/" aria-label="ICM-IA Home">
+        <Link href="/" aria-label="ICM-IA Home" style={{ display: "block", width: "180px", height: "54px", position: "relative", flexShrink: 0 }}>
           <Image
             src="/images/logo.png"
             alt="ICM-IA"
-            width={150}
-            height={50}
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
             priority
           />
         </Link>
@@ -72,10 +73,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
-          <a
-            href="https://cal.com/icm-ia/reconocimiento"
-            target="_blank"
-            rel="noopener noreferrer"
+          <CalButton
             style={{
               backgroundColor: "#FF1414",
               color: "white",
@@ -84,23 +82,23 @@ export default function Navbar() {
               fontSize: "15px",
               fontWeight: 700,
               fontFamily: "Poppins, sans-serif",
-              textDecoration: "none",
+              border: "none",
               transition: "all 0.2s ease",
               boxShadow: "0 0 20px rgba(255,20,20,0.25)",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#e00000";
-              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 20px rgba(255,20,20,0.5)";
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
+              (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#e00000";
+              (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 4px 20px rgba(255,20,20,0.5)";
+              (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-1px)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#FF1414";
-              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 0 20px rgba(255,20,20,0.25)";
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
+              (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#FF1414";
+              (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 0 20px rgba(255,20,20,0.25)";
+              (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)";
             }}
           >
             Agendar Llamada
-          </a>
+          </CalButton>
         </nav>
 
         {/* Hamburger button — visible on mobile */}

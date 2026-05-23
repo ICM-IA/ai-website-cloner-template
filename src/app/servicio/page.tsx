@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/funnel/Footer";
+import CalButton from "@/components/CalButton";
+import TechLogoBar from "@/components/funnel/TechLogoBar";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -104,6 +106,26 @@ const SERVICES: ServiceData[] = [
       "Integración con portales y RRSS",
     ],
     delay: 450,
+  },
+  {
+    number: "05",
+    icon: "🌐",
+    title: "Diseño y Optimización de Sitio Web con IA",
+    description:
+      "Creamos o rediseñamos tu sitio web inmobiliario con IA integrada: interactivo, profesional y pensado para convertir visitantes en prospectos calificados desde el primer clic.",
+    featuresLeft: [
+      "Diseño moderno y pixel-perfect",
+      "Chat con IA integrado al sitio",
+      "Calculadora interactiva de propiedades",
+      "Formularios de contacto automatizados",
+    ],
+    featuresRight: [
+      "Optimización SEO con IA",
+      "Velocidad y performance máximos",
+      "Integración directa con tu CRM",
+      "Adaptado a mobile y desktop",
+    ],
+    delay: 600,
   },
 ];
 
@@ -401,7 +423,7 @@ export default function ServicioPage() {
             marginBottom: "20px",
           }}
         >
-          NUESTROS SERVICIOS
+          ¿QUÉ PODEMOS HACER POR VOS?
         </p>
 
         <h1
@@ -414,8 +436,8 @@ export default function ServicioPage() {
             fontFamily: "var(--font-poppins), Poppins, sans-serif",
           }}
         >
-          Cuatro módulos. Un solo sistema.{" "}
-          <span style={{ color: "#FF1414" }}>Resultados reales.</span>
+          Todo lo que tu negocio necesita,{" "}
+          <span style={{ color: "#FF1414" }}>en un solo equipo.</span>
         </h1>
 
         <p
@@ -427,8 +449,9 @@ export default function ServicioPage() {
             lineHeight: 1.75,
           }}
         >
-          Cada servicio fue diseñado específicamente para el sector inmobiliario.
-          Trabajan juntos para automatizar, captar y convertir.
+          Empezamos con una reunión de diagnóstico para entender tu operación.
+          A partir de ahí, definimos juntos qué áreas activar — no vendemos paquetes fijos,
+          construimos la solución que tu inmobiliaria realmente necesita.
         </p>
 
         {/* Decorative divider */}
@@ -442,6 +465,42 @@ export default function ServicioPage() {
           }}
         />
       </section>
+
+      <TechLogoBar />
+
+      {/* ── Diagnóstico banner ────────────────────────────────────────────── */}
+      <div style={{ maxWidth: "1100px", margin: "0 auto 48px", paddingLeft: "24px", paddingRight: "24px" }}>
+        <div style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "20px",
+          backgroundColor: "#0D0D0D",
+          border: "1px solid rgba(255,20,20,0.15)",
+          borderRadius: "14px",
+          padding: "20px 28px",
+          flexWrap: "wrap",
+        }}>
+          <div style={{ fontSize: "28px", flexShrink: 0 }}>🔍</div>
+          <div style={{ flex: 1, minWidth: "220px" }}>
+            <p style={{ margin: "0 0 3px 0", fontSize: "15px", fontWeight: 700, color: "#ECECEC" }}>
+              Primero, una reunión de diagnóstico gratuita
+            </p>
+            <p style={{ margin: 0, fontSize: "13px", color: "#6B7280", lineHeight: 1.6 }}>
+              Analizamos tu situación actual y definimos qué áreas activar. No todas las inmobiliarias necesitan lo mismo — armamos la solución exacta para vos.
+            </p>
+          </div>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", flexShrink: 0 }}>
+            {["IA", "Marketing", "Diseño", "Contenido", "Ads"].map((tag) => (
+              <span key={tag} style={{
+                fontSize: "11px", fontWeight: 700, color: "#FF1414",
+                backgroundColor: "rgba(255,20,20,0.08)",
+                border: "1px solid rgba(255,20,20,0.15)",
+                borderRadius: "9999px", padding: "4px 12px",
+              }}>{tag}</span>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* ── Service Cards ─────────────────────────────────────────────────── */}
       <section
@@ -466,6 +525,178 @@ export default function ServicioPage() {
         ))}
       </section>
 
+      {/* ── Marketing Department ──────────────────────────────────────────── */}
+      <section
+        style={{
+          backgroundColor: "#050505",
+          paddingTop: "100px",
+          paddingBottom: "100px",
+          paddingLeft: "24px",
+          paddingRight: "24px",
+          borderTop: "1px solid rgba(255,255,255,0.06)",
+        }}
+      >
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+
+          {/* Header */}
+          <div style={{ textAlign: "center", marginBottom: "64px" }}>
+            <p style={{
+              display: "inline-block",
+              fontSize: "12px",
+              fontWeight: 600,
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              color: "#FF1414",
+              backgroundColor: "rgba(255,20,20,0.08)",
+              border: "1px solid rgba(255,20,20,0.2)",
+              borderRadius: "100px",
+              padding: "6px 16px",
+              marginBottom: "20px",
+            }}>
+              DEPARTAMENTO DE MARKETING
+            </p>
+            <h2 style={{
+              fontSize: "clamp(28px, 4vw, 44px)",
+              fontWeight: 800,
+              color: "#ECECEC",
+              lineHeight: 1.15,
+              margin: "0 0 16px 0",
+              fontFamily: "var(--font-poppins), Poppins, sans-serif",
+            }}>
+              Un equipo completo trabajando{" "}
+              <span style={{ color: "#FF1414" }}>para tu marca</span>
+            </h2>
+            <p style={{ fontSize: "17px", color: "#6B7280", maxWidth: "600px", margin: "0 auto", lineHeight: 1.7 }}>
+              No contratás freelancers sueltos ni agencias genéricas. Tenés un departamento entero de marketing integrado con IA, trabajando en todas las áreas de tu negocio.
+            </p>
+          </div>
+
+          {/* Roles grid */}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "20px",
+            marginBottom: "48px",
+          }} className="mkt-roles-grid">
+            {[
+              {
+                icon: "🎨",
+                role: "Diseñador",
+                desc: "Identidad visual, piezas para redes, materiales de propiedades y branding coherente en todos los canales.",
+                tags: ["Branding", "Social Ads", "Flyers"],
+              },
+              {
+                icon: "📱",
+                role: "Community Manager",
+                desc: "Gestión diaria de redes sociales, respuesta a comentarios, crecimiento de comunidad y engagement.",
+                tags: ["Instagram", "Facebook", "LinkedIn"],
+              },
+              {
+                icon: "✍️",
+                role: "Content Creator",
+                desc: "Producción de contenido estratégico: reels, posts, copys y artículos que posicionan tu marca como referente.",
+                tags: ["Reels", "Copywriting", "Blog"],
+              },
+              {
+                icon: "📈",
+                role: "Estratega de Marketing",
+                desc: "Planificación, campañas pagas, análisis de métricas y optimización continua para maximizar resultados.",
+                tags: ["Meta Ads", "Google Ads", "Analytics"],
+              },
+            ].map((item) => (
+              <div
+                key={item.role}
+                style={{
+                  backgroundColor: "#0D0D0D",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  borderRadius: "16px",
+                  padding: "28px 24px",
+                  transition: "border-color 0.3s, box-shadow 0.3s",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,20,20,0.25)";
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(255,20,20,0.07)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.07)";
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
+                }}
+              >
+                <div style={{ fontSize: "32px", marginBottom: "16px" }}>{item.icon}</div>
+                <h3 style={{
+                  fontSize: "17px",
+                  fontWeight: 700,
+                  color: "#ECECEC",
+                  margin: "0 0 10px 0",
+                  fontFamily: "var(--font-poppins), Poppins, sans-serif",
+                }}>
+                  {item.role}
+                </h3>
+                <p style={{ fontSize: "13px", color: "#6B7280", lineHeight: 1.7, margin: "0 0 18px 0" }}>
+                  {item.desc}
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                  {item.tags.map((tag) => (
+                    <span key={tag} style={{
+                      fontSize: "11px",
+                      fontWeight: 600,
+                      color: "#FF1414",
+                      backgroundColor: "rgba(255,20,20,0.08)",
+                      border: "1px solid rgba(255,20,20,0.15)",
+                      borderRadius: "9999px",
+                      padding: "3px 10px",
+                    }}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom highlight */}
+          <div style={{
+            backgroundColor: "#0D0D0D",
+            border: "1px solid rgba(255,20,20,0.12)",
+            borderRadius: "16px",
+            padding: "28px 36px",
+            display: "flex",
+            alignItems: "center",
+            gap: "20px",
+            flexWrap: "wrap",
+          }}>
+            <div style={{
+              width: "48px",
+              height: "48px",
+              borderRadius: "12px",
+              backgroundColor: "rgba(255,20,20,0.1)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "22px",
+              flexShrink: 0,
+            }}>🤝</div>
+            <div style={{ flex: 1, minWidth: "200px" }}>
+              <p style={{ margin: "0 0 4px 0", fontSize: "16px", fontWeight: 700, color: "#ECECEC" }}>
+                Todo coordinado, todo integrado con IA
+              </p>
+              <p style={{ margin: 0, fontSize: "14px", color: "#6B7280", lineHeight: 1.6 }}>
+                Cada área trabaja en sintonía. El contenido que crea el diseñador va al community manager, que lo publica en el momento óptimo, que genera leads, que entran al CRM automatizado. Un ecosistema completo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <style>{`
+          @media (max-width: 900px) {
+            .mkt-roles-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          }
+          @media (max-width: 560px) {
+            .mkt-roles-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
+      </section>
+
       {/* ── Why it works ──────────────────────────────────────────────────── */}
       <section
         ref={whySection.ref}
@@ -478,91 +709,20 @@ export default function ServicioPage() {
         }}
       >
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <p
-            style={{
-              fontSize: "12px",
-              fontWeight: 700,
-              color: "#FF1414",
-              letterSpacing: "4px",
-              textTransform: "uppercase",
-              marginBottom: "16px",
-              textAlign: "center",
-            }}
-          >
+          <p style={{ fontSize: "12px", fontWeight: 700, color: "#FF1414", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "16px", textAlign: "center" }}>
             METODOLOGÍA
           </p>
-          <h2
-            style={{
-              fontSize: "clamp(28px, 4vw, 44px)",
-              fontWeight: 800,
-              color: "#ECECEC",
-              lineHeight: 1.15,
-              marginBottom: "56px",
-              textAlign: "center",
-              fontFamily: "var(--font-poppins), Poppins, sans-serif",
-            }}
-          >
+          <h2 style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 800, color: "#ECECEC", lineHeight: 1.15, marginBottom: "56px", textAlign: "center", fontFamily: "var(--font-poppins), Poppins, sans-serif" }}>
             ¿Por qué funciona?
           </h2>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "24px",
-            }}
-          >
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "24px" }}>
             {WHY_REASONS.map((reason, idx) => (
-              <div
-                key={reason.title}
-                style={{
-                  backgroundColor: "#0a0a0a",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: "16px",
-                  padding: "36px",
-                  opacity: whySection.visible ? 1 : 0,
-                  transform: whySection.visible ? "translateY(0)" : "translateY(24px)",
-                  transition: `opacity 0.6s ease ${idx * 120}ms, transform 0.6s ease ${idx * 120}ms`,
-                }}
-              >
-                <div
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    backgroundColor: "rgba(255,20,20,0.12)",
-                    border: "1px solid rgba(255,20,20,0.2)",
-                    borderRadius: "10px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: "20px",
-                  }}
-                >
-                  <span style={{ color: "#FF1414", fontWeight: 700, fontSize: "16px" }}>
-                    {idx + 1}
-                  </span>
+              <div key={reason.title} style={{ backgroundColor: "#0a0a0a", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px", padding: "36px", opacity: whySection.visible ? 1 : 0, transform: whySection.visible ? "translateY(0)" : "translateY(24px)", transition: `opacity 0.6s ease ${idx * 120}ms, transform 0.6s ease ${idx * 120}ms` }}>
+                <div style={{ width: "40px", height: "40px", backgroundColor: "rgba(255,20,20,0.12)", border: "1px solid rgba(255,20,20,0.2)", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
+                  <span style={{ color: "#FF1414", fontWeight: 700, fontSize: "16px" }}>{idx + 1}</span>
                 </div>
-                <h3
-                  style={{
-                    fontSize: "18px",
-                    fontWeight: 700,
-                    color: "#ECECEC",
-                    marginBottom: "12px",
-                    fontFamily: "var(--font-poppins), Poppins, sans-serif",
-                  }}
-                >
-                  {reason.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: "15px",
-                    color: "#6B7280",
-                    lineHeight: 1.7,
-                    margin: 0,
-                  }}
-                >
-                  {reason.description}
-                </p>
+                <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#ECECEC", marginBottom: "12px", fontFamily: "var(--font-poppins), Poppins, sans-serif" }}>{reason.title}</h3>
+                <p style={{ fontSize: "15px", color: "#6B7280", lineHeight: 1.7, margin: 0 }}>{reason.description}</p>
               </div>
             ))}
           </div>
@@ -599,10 +759,7 @@ export default function ServicioPage() {
           <span style={{ color: "#FF1414" }}>escalar</span>
         </h2>
 
-        <a
-          href="https://cal.com/icm-ia/reconocimiento"
-          target="_blank"
-          rel="noopener noreferrer"
+        <CalButton
           style={{
             display: "inline-block",
             backgroundColor: "#FF1414",
@@ -611,26 +768,26 @@ export default function ServicioPage() {
             fontWeight: 700,
             padding: "16px 40px",
             borderRadius: "10px",
-            textDecoration: "none",
+            border: "none",
             boxShadow: "0 0 30px rgba(255,20,20,0.35)",
             transition: "background-color 0.2s, box-shadow 0.2s, transform 0.2s",
             fontFamily: "var(--font-poppins), Poppins, sans-serif",
           }}
           onMouseEnter={(e) => {
-            const el = e.currentTarget as HTMLAnchorElement;
+            const el = e.currentTarget as HTMLButtonElement;
             el.style.backgroundColor = "#e00000";
             el.style.boxShadow = "0 4px 40px rgba(255,20,20,0.55)";
             el.style.transform = "translateY(-2px)";
           }}
           onMouseLeave={(e) => {
-            const el = e.currentTarget as HTMLAnchorElement;
+            const el = e.currentTarget as HTMLButtonElement;
             el.style.backgroundColor = "#FF1414";
             el.style.boxShadow = "0 0 30px rgba(255,20,20,0.35)";
             el.style.transform = "translateY(0)";
           }}
         >
           Agendar Llamada Gratuita →
-        </a>
+        </CalButton>
 
         <p
           style={{

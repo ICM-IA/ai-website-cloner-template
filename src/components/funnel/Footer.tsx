@@ -84,13 +84,14 @@ export default function Footer() {
         >
           {/* Left: logo + tagline + social */}
           <div style={{ maxWidth: "320px" }}>
-            <Image
-              src="/images/logo.png"
-              width={150}
-              height={50}
-              alt="ICM-IA"
-              style={{ objectFit: "contain" }}
-            />
+            <div style={{ width: "180px", height: "54px", position: "relative" }}>
+              <Image
+                src="/images/logo.png"
+                alt="ICM-IA"
+                fill
+                style={{ objectFit: "cover", objectPosition: "center" }}
+              />
+            </div>
             <p
               style={{
                 fontSize: "14px",
@@ -242,11 +243,15 @@ export default function Footer() {
           }}
         >
           <p style={{ fontSize: "13px", color: "#374151", margin: "0" }}>
-            © 2025 ICM-IA. Todos los derechos reservados.
+            © 2026 ICM-IA. Todos los derechos reservados.
           </p>
-          <p style={{ fontSize: "13px", color: "#374151", margin: "0" }}>
-            Soluciones con IA para Real Estate
-          </p>
+          <Link
+            href="/politica-de-privacidad"
+            style={{ fontSize: "13px", color: "#374151", textDecoration: "none", transition: "color 0.2s" }}
+            className="footer-nav-link"
+          >
+            Política de Privacidad
+          </Link>
         </div>
       </div>
 
