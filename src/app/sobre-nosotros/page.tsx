@@ -569,7 +569,7 @@ interface Stat {
 
 const stats: Stat[] = [
   { value: "+890", label: "Automatizaciones" },
-  { value: "31", label: "Clientes" },
+  { value: "+10k", label: "Consultas gestionadas con IA" },
   { value: "%80", label: "Tiempo ahorrado" },
 ];
 
