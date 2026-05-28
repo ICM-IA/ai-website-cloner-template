@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Phone, Settings, TrendingUp } from "lucide-react";
+import { Phone, Lightbulb, Rocket, TrendingUp } from "lucide-react";
 import CalButton from "@/components/CalButton";
 
 const styles = `
@@ -31,7 +31,7 @@ const styles = `
       padding-right: 24px !important;
     }
     .hiw-steps-grid {
-      grid-template-columns: 1fr !important;
+      grid-template-columns: repeat(2, 1fr) !important;
       gap: 56px !important;
     }
     .hiw-connector-line {
@@ -59,29 +59,36 @@ const steps: Step[] = [
     paso: "PASO 01",
     icon: <Phone color="#FF1414" size={32} />,
     title: "Llamada de Reconocimiento",
-    body: "Analizamos tu operación actual, tus canales de captación y los cuellos de botella que te frenan. Sin compromiso, 30 minutos.",
+    body: "Una charla de 20 minutos para entender tu operación, tus canales y dónde están los cuellos de botella. Sin compromiso.",
     delay: 0,
   },
   {
     paso: "PASO 02",
-    icon: <Settings color="#FF1414" size={32} />,
-    title: "Configuración a medida",
-    body: "Instalamos y configuramos el sistema completo a medida de tu inmobiliaria. Integración con tus canales y CRM existente.",
-    delay: 200,
+    icon: <Lightbulb color="#FF1414" size={32} />,
+    title: "Presentación de Soluciones",
+    body: "Te mostramos exactamente qué vamos a implementar, cómo va a funcionar en tu inmobiliaria y qué resultados podés esperar.",
+    delay: 150,
   },
   {
     paso: "PASO 03",
+    icon: <Rocket color="#FF1414" size={32} />,
+    title: "Onboarding",
+    body: "Instalamos y configuramos el sistema completo a medida. Integración con tus canales, CRM y herramientas existentes.",
+    delay: 300,
+  },
+  {
+    paso: "PASO 04",
     icon: <TrendingUp color="#FF1414" size={32} />,
-    title: "Crecés en piloto automático",
-    body: "Tu equipo se enfoca en cerrar operaciones. La IA hace el resto: filtrar, nutrir, calificar y dar seguimiento 24/7.",
-    delay: 400,
+    title: "Piloto Automático",
+    body: "Tu equipo se enfoca en cerrar operaciones. La IA filtra, nutre, califica y da seguimiento 24/7 sin intervención manual.",
+    delay: 450,
   },
 ];
 
 export default function HowItWorksSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [visible, setVisible] = useState<boolean[]>([false, false, false]);
+  const [visible, setVisible] = useState<boolean[]>([false, false, false, false]);
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
@@ -179,7 +186,7 @@ export default function HowItWorksSection() {
             style={{
               position: "relative",
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
+              gridTemplateColumns: "repeat(4, 1fr)",
               gap: "0",
             }}
           >
@@ -189,8 +196,8 @@ export default function HowItWorksSection() {
               style={{
                 position: "absolute",
                 top: "56px",
-                left: "calc(16.666% + 40px)",
-                right: "calc(16.666% + 40px)",
+                left: "calc(12.5% + 40px)",
+                right: "calc(12.5% + 40px)",
                 height: "1px",
                 background:
                   "linear-gradient(to right, transparent, rgba(255,20,20,0.3) 20%, rgba(255,20,20,0.3) 80%, transparent)",
