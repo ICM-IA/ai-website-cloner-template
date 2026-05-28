@@ -7,6 +7,7 @@ interface StatConfig {
   icon: React.ReactNode;
   prefix: string;
   target: number;
+  suffix?: string;
   label: string;
 }
 
@@ -19,9 +20,10 @@ const STATS: StatConfig[] = [
   },
   {
     icon: <Building2 size={32} color="white" />,
-    prefix: "",
-    target: 31,
-    label: "Clientes satisfechos",
+    prefix: "+",
+    target: 10,
+    suffix: "k",
+    label: "Consultas gestionadas con IA",
   },
   {
     icon: <Clock size={32} color="white" />,
@@ -98,6 +100,7 @@ function StatItem({ stat, active }: StatItemProps) {
       >
         {stat.prefix}
         {count}
+        {stat.suffix ?? ""}
       </span>
       <span
         style={{
