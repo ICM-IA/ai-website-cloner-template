@@ -339,7 +339,7 @@ function FounderSection() {
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "32px" }}>
             {[
               "+890 automatizaciones implementadas",
-              "+2.000 consultas gestionadas con IA",
+              "+10.000 consultas gestionadas con IA",
               "IA aplicada a pequeños y grandes negocios",
             ].map((item) => (
               <div key={item} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
