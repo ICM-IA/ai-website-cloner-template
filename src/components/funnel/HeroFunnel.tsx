@@ -345,8 +345,8 @@ export default function HeroFunnel() {
                     icon={<TrendingUp size={18} color="white" />}
                   />
                   <StatRow
-                    value="31"
-                    label="clientes satisfechos"
+                    value="+10k"
+                    label="consultas gestionadas con IA"
                     icon={<Building2 size={18} color="white" />}
                   />
                   <StatRow
@@ -394,7 +394,7 @@ export default function HeroFunnel() {
                     ))}
                   </div>
                   <p style={{ fontSize: "12px", color: "#9CA3AF", margin: 0 }}>
-                    31 inmobiliarias ya operan con ICM-IA
+                    +10k consultas gestionadas con IA
                   </p>
                 </div>
               </div>
