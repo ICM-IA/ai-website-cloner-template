@@ -326,6 +326,91 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Oportunidades recomendadas del mes */}
+      <section style={{ padding: '80px 32px', background: '#080808', borderTop: '1px solid rgba(201,146,42,0.1)', borderBottom: '1px solid rgba(201,146,42,0.1)' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <p style={{ fontSize: 11, fontWeight: 700, color: '#C9922A', letterSpacing: '0.15em', marginBottom: 10 }}>SELECCIÓN MENSUAL</p>
+            <h2 style={{ fontSize: 36, fontWeight: 800, color: '#efefef', margin: '0 0 12px' }}>Oportunidades recomendadas del mes</h2>
+            <p style={{ fontSize: 14, color: 'rgba(239,239,239,0.45)', maxWidth: 520, margin: '0 auto' }}>Proyectos seleccionados por nuestro equipo según retorno, etapa y mercado. Actualizamos cada mes.</p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24 }}>
+            {/* Proyecto 1 — placeholder */}
+            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden' }}>
+              <div style={{ height: 180, background: 'rgba(201,146,42,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ fontSize: 40 }}>🏗️</span>
+              </div>
+              <div style={{ padding: '20px 22px' }}>
+                <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em' }}>PRÓXIMAMENTE</span>
+                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '6px 0 4px' }}>Proyecto 1</p>
+                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px' }}>Descripción del proyecto</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>—</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>—</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Proyecto 2 — placeholder */}
+            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden' }}>
+              <div style={{ height: 180, background: 'rgba(201,146,42,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ fontSize: 40 }}>🌴</span>
+              </div>
+              <div style={{ padding: '20px 22px' }}>
+                <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em' }}>PRÓXIMAMENTE</span>
+                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '6px 0 4px' }}>Proyecto 2</p>
+                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px' }}>Descripción del proyecto</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>—</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>—</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Proyecto 3 — placeholder */}
+            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden' }}>
+              <div style={{ height: 180, background: 'rgba(201,146,42,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ fontSize: 40 }}>🏙️</span>
+              </div>
+              <div style={{ padding: '20px 22px' }}>
+                <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em' }}>PRÓXIMAMENTE</span>
+                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '6px 0 4px' }}>Proyecto 3</p>
+                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px' }}>Descripción del proyecto</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>—</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>—</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: 40 }}>
+            <a href="/proyectos" style={{ fontSize: 12, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em', textDecoration: 'none' }}>
+              VER TODOS LOS PROYECTOS →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Lo que hacemos + El proceso — sección unificada */}
       <section style={{ padding: '80px 32px', background: '#0d0d0d', borderTop: '1px solid rgba(201,146,42,0.1)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
