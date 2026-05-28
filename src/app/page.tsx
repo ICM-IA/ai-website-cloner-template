@@ -335,70 +335,111 @@ export default function Page() {
             <p style={{ fontSize: 14, color: 'rgba(239,239,239,0.45)', maxWidth: 520, margin: '0 auto' }}>Proyectos seleccionados por nuestro equipo según retorno, etapa y mercado. Actualizamos cada mes.</p>
           </div>
 
+          {/* USA */}
+          <p style={{ fontSize: 11, fontWeight: 700, color: 'rgba(239,239,239,0.3)', letterSpacing: '0.12em', marginBottom: 16 }}>🇺🇸 ESTADOS UNIDOS — FLORIDA</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24, marginBottom: 48 }}>
+
+            {/* GZ Tower */}
+            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ height: 160, background: 'linear-gradient(135deg,#0d1a2e,#131326)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48 }}>🏙️</div>
+              <div style={{ padding: '20px 22px', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em' }}>ORLANDO</span>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: '#22c55e', background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.25)', borderRadius: 20, padding: '2px 8px' }}>✓ Airbnb</span>
+                </div>
+                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '4px 0 4px' }}>GZ Tower</p>
+                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px', lineHeight: 1.6 }}>5 min de Universal Studios · Entrega 3Q 2028 · Amueblado y equipado</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 14, display: 'flex', flexDirection: 'column', gap: 7, flexGrow: 1 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>USD 220.000</span></div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>USD 44.000 (20%)</span></div>
+                </div>
+                <a href="https://drive.google.com/file/d/1v6cjbpkW0uyrAziYL4zRTyVK0TZ1nD8m/view" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', marginTop: 16, padding: '10px', background: 'rgba(201,146,42,0.1)', border: '1px solid rgba(201,146,42,0.3)', borderRadius: 8, fontSize: 12, fontWeight: 700, color: '#C9922A', textDecoration: 'none' }}>Ver brochure →</a>
+              </div>
+            </div>
+
+            {/* Parkside Residence */}
+            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ height: 160, background: 'linear-gradient(135deg,#0d1a2e,#131326)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48 }}>🌆</div>
+              <div style={{ padding: '20px 22px', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em' }}>BRICKELL · MIAMI</span>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: '#22c55e', background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.25)', borderRadius: 20, padding: '2px 8px' }}>✓ Airbnb</span>
+                </div>
+                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '4px 0 4px' }}>Parkside Residence</p>
+                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px', lineHeight: 1.6 }}>Brickell Key · Entrega 2Q 2028 · Amueblado y equipado</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 14, display: 'flex', flexDirection: 'column', gap: 7, flexGrow: 1 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>USD 435.000</span></div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>USD 87.000 (20%)</span></div>
+                </div>
+                <a href="https://drive.google.com/file/d/1hiPBC8dxD0nXGH6cMFS9EUH7NY1Bygxk/view" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', marginTop: 16, padding: '10px', background: 'rgba(201,146,42,0.1)', border: '1px solid rgba(201,146,42,0.3)', borderRadius: 8, fontSize: 12, fontWeight: 700, color: '#C9922A', textDecoration: 'none' }}>Ver brochure →</a>
+              </div>
+            </div>
+
+            {/* Nobe Parc */}
+            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ height: 160, background: 'linear-gradient(135deg,#0d1a2e,#131326)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48 }}>🌊</div>
+              <div style={{ padding: '20px 22px', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em' }}>MIAMI</span>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: '#22c55e', background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.25)', borderRadius: 20, padding: '2px 8px' }}>✓ Airbnb</span>
+                </div>
+                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '4px 0 4px' }}>Nobe Parc Residence</p>
+                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px', lineHeight: 1.6 }}>200 mts del mar · Entrega Q2 2029 · Amueblado y equipado</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 14, display: 'flex', flexDirection: 'column', gap: 7, flexGrow: 1 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>USD 550.000</span></div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>USD 110.000 (20%)</span></div>
+                </div>
+                <a href="https://nobe-parc.com/#gallary" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', marginTop: 16, padding: '10px', background: 'rgba(201,146,42,0.1)', border: '1px solid rgba(201,146,42,0.3)', borderRadius: 8, fontSize: 12, fontWeight: 700, color: '#C9922A', textDecoration: 'none' }}>Ver brochure →</a>
+              </div>
+            </div>
+          </div>
+
+          {/* Brasil */}
+          <p style={{ fontSize: 11, fontWeight: 700, color: 'rgba(239,239,239,0.3)', letterSpacing: '0.12em', marginBottom: 16 }}>🇧🇷 BRASIL</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24 }}>
-            {/* Proyecto 1 — placeholder */}
-            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden' }}>
-              <div style={{ height: 180, background: 'rgba(201,146,42,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontSize: 40 }}>🏗️</span>
-              </div>
-              <div style={{ padding: '20px 22px' }}>
-                <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em' }}>PRÓXIMAMENTE</span>
-                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '6px 0 4px' }}>Proyecto 1</p>
-                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px' }}>Descripción del proyecto</p>
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, display: 'flex', flexDirection: 'column', gap: 6 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>—</span>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>—</span>
-                  </div>
+
+            {/* Orama */}
+            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ height: 160, background: 'linear-gradient(135deg,#0a1a10,#0d1a0d)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48 }}>🏖️</div>
+              <div style={{ padding: '20px 22px', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em', marginBottom: 4, display: 'block' }}>MARAGOGI · ALAGOAS</span>
+                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '4px 0 4px' }}>Orama</p>
+                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px', lineHeight: 1.6 }}>Primera línea de mar · Frente al Camino de Moisés</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 14, display: 'flex', flexDirection: 'column', gap: 7, flexGrow: 1 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>USD 90.000</span></div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>USD 13.500 (15%)</span></div>
                 </div>
+                <a href="https://drive.google.com/drive/folders/1_iIlbH327wY4iwEcgtrbEk2q6D315X9C" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', marginTop: 16, padding: '10px', background: 'rgba(201,146,42,0.1)', border: '1px solid rgba(201,146,42,0.3)', borderRadius: 8, fontSize: 12, fontWeight: 700, color: '#C9922A', textDecoration: 'none' }}>Ver brochure →</a>
               </div>
             </div>
 
-            {/* Proyecto 2 — placeholder */}
-            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden' }}>
-              <div style={{ height: 180, background: 'rgba(201,146,42,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontSize: 40 }}>🌴</span>
-              </div>
-              <div style={{ padding: '20px 22px' }}>
-                <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em' }}>PRÓXIMAMENTE</span>
-                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '6px 0 4px' }}>Proyecto 2</p>
-                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px' }}>Descripción del proyecto</p>
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, display: 'flex', flexDirection: 'column', gap: 6 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>—</span>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>—</span>
-                  </div>
+            {/* Quinta da Mangueiras */}
+            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ height: 160, background: 'linear-gradient(135deg,#0a1a10,#0d1a0d)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48 }}>🌴</div>
+              <div style={{ padding: '20px 22px', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em', marginBottom: 4, display: 'block' }}>MARAGOGI · ALAGOAS</span>
+                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '4px 0 4px' }}>Quinta da Mangueiras</p>
+                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px', lineHeight: 1.6 }}>Primera línea de mar · Amueblado y equipado · 48 cuotas</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 14, display: 'flex', flexDirection: 'column', gap: 7, flexGrow: 1 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>USD 75.000</span></div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>USD 7.500 (10%)</span></div>
                 </div>
+                <a href="https://drive.google.com/drive/folders/1Ud5jzY06dCeXgs8wY_8BC8ZVrseLknR1" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', marginTop: 16, padding: '10px', background: 'rgba(201,146,42,0.1)', border: '1px solid rgba(201,146,42,0.3)', borderRadius: 8, fontSize: 12, fontWeight: 700, color: '#C9922A', textDecoration: 'none' }}>Ver brochure →</a>
               </div>
             </div>
 
-            {/* Proyecto 3 — placeholder */}
-            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden' }}>
-              <div style={{ height: 180, background: 'rgba(201,146,42,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontSize: 40 }}>🏙️</span>
-              </div>
-              <div style={{ padding: '20px 22px' }}>
-                <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em' }}>PRÓXIMAMENTE</span>
-                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '6px 0 4px' }}>Proyecto 3</p>
-                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px' }}>Descripción del proyecto</p>
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 16, display: 'flex', flexDirection: 'column', gap: 6 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>—</span>
-                  </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>—</span>
-                  </div>
+            {/* Essenzia */}
+            <div style={{ background: '#0d0d0d', border: '1px solid rgba(201,146,42,0.2)', borderRadius: 16, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ height: 160, background: 'linear-gradient(135deg,#0a1a10,#0d1a0d)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 48 }}>🌊</div>
+              <div style={{ padding: '20px 22px', flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontSize: 10, fontWeight: 700, color: '#C9922A', letterSpacing: '0.1em', marginBottom: 4, display: 'block' }}>CANASVIEIRAS · FLORIANÓPOLIS</span>
+                <p style={{ fontSize: 18, fontWeight: 800, color: '#efefef', margin: '4px 0 4px' }}>Essenzia</p>
+                <p style={{ fontSize: 12, color: 'rgba(239,239,239,0.4)', margin: '0 0 16px', lineHeight: 1.6 }}>200 mts del mar · Solo cuotas · Sin banco ni historial</p>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 14, display: 'flex', flexDirection: 'column', gap: 7, flexGrow: 1 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Precio desde:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#C9922A' }}>USD 67.000</span></div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: 'rgba(239,239,239,0.4)' }}>Ingresás con:</span><span style={{ fontSize: 12, fontWeight: 700, color: '#22c55e' }}>USD 1.675/mes (40 cuotas)</span></div>
                 </div>
+                <a href="https://drive.google.com/drive/u/1/folders/1ThySG_Zbk6ZfnJKQpC894dZN_cOkKIzL" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', marginTop: 16, padding: '10px', background: 'rgba(201,146,42,0.1)', border: '1px solid rgba(201,146,42,0.3)', borderRadius: 8, fontSize: 12, fontWeight: 700, color: '#C9922A', textDecoration: 'none' }}>Ver brochure →</a>
               </div>
             </div>
           </div>
