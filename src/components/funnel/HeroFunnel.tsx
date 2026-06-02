@@ -173,7 +173,7 @@ export default function HeroFunnel() {
     const interval = setInterval(() => {
       setSpinning(true);
       setTimeout(() => setSpinning(false), 650);
-    }, 15000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
