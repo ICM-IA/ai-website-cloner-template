@@ -135,7 +135,6 @@ export default function Navbar() {
             />
           ))}
           <CalButton
-            onClick={() => setMobileOpen(false)}
             style={{
               marginTop: "8px",
               backgroundColor: "#FF1414",
