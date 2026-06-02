@@ -8,12 +8,27 @@ const styles = `
   .tech-track {
     display: flex;
     align-items: center;
-    gap: 56px;
+    gap: 10px;
     width: max-content;
-    animation: scrollTech 18s linear infinite;
+    animation: scrollTech 24s linear infinite;
   }
   .tech-track:hover {
     animation-play-state: paused;
+  }
+  .tech-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    white-space: nowrap;
+    cursor: default;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+  .tech-pill:hover {
+    background: rgba(255,255,255,0.07);
   }
 `;
 
@@ -25,10 +40,10 @@ interface Tech {
 
 const techs: Tech[] = [
   {
-    name: "Meta",
+    name: "Meta Ads",
     color: "#0866FF",
     icon: (
-      <svg width="22" height="14" viewBox="0 0 36 22" fill="none">
+      <svg width="20" height="20" viewBox="0 0 36 22" fill="none">
         <path d="M4.5 11C4.5 8.8 5.6 6.9 7.2 6.9C8.6 6.9 9.5 7.9 11 10.4L13.1 14C15.2 17.6 17.1 19.5 19.8 19.5C23.8 19.5 26.8 15.8 26.8 11C26.8 8.2 25.5 5.7 23.3 5.7C21.8 5.7 20.6 6.8 19.8 8.3L18 11" stroke="#0866FF" strokeWidth="2.5" strokeLinecap="round"/>
         <path d="M18 11C16.5 8.4 14.8 5.7 12.2 5.7C9 5.7 4.5 8.8 4.5 11C4.5 13.2 5.4 15.2 7.2 15.2C8.8 15.2 9.9 14.1 11.5 11.4" stroke="#0866FF" strokeWidth="2.5" strokeLinecap="round"/>
       </svg>
@@ -38,9 +53,9 @@ const techs: Tech[] = [
     name: "Claude",
     color: "#D4956A",
     icon: (
-      <svg width="18" height="20" viewBox="0 0 28 32" fill="none">
-        <path d="M14 2L24 8V16L14 22L4 16V8L14 2Z" stroke="#D4956A" strokeWidth="2" fill="rgba(212,149,106,0.15)"/>
-        <circle cx="14" cy="14" r="4" fill="#D4956A"/>
+      <svg width="20" height="20" viewBox="0 0 36 36" fill="none">
+        <path d="M18 4L30 11V25L18 32L6 25V11L18 4Z" stroke="#D4956A" strokeWidth="2" fill="rgba(212,149,106,0.1)"/>
+        <circle cx="18" cy="18" r="5" fill="#D4956A"/>
       </svg>
     ),
   },
@@ -57,18 +72,19 @@ const techs: Tech[] = [
     name: "n8n",
     color: "#F85400",
     icon: (
-      <svg width="24" height="16" viewBox="0 0 40 26" fill="none">
-        <text x="0" y="20" fontSize="20" fontWeight="800" fill="#F85400" fontFamily="monospace">n8n</text>
+      <svg width="22" height="22" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="8" fill="rgba(248,84,0,0.15)"/>
+        <text x="4" y="28" fontSize="18" fontWeight="900" fill="#F85400" fontFamily="monospace">n8n</text>
       </svg>
     ),
   },
   {
     name: "GoHighLevel",
-    color: "#5A67D8",
+    color: "#7C86FF",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2L19 6.5V17.5L12 22L5 17.5V6.5L12 2Z" fill="rgba(90,103,216,0.2)" stroke="#5A67D8" strokeWidth="1.5"/>
-        <path d="M9 12L11 14L15 10" stroke="#5A67D8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 2L19 6.5V17.5L12 22L5 17.5V6.5L12 2Z" fill="rgba(124,134,255,0.15)" stroke="#7C86FF" strokeWidth="1.5"/>
+        <path d="M9 12L11 14L15 10" stroke="#7C86FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
@@ -85,10 +101,10 @@ const techs: Tech[] = [
     name: "Gemini",
     color: "#4285F4",
     icon: (
-      <svg width="16" height="20" viewBox="0 0 24 30" fill="none">
-        <path d="M12 0C12 6.627 6.627 12 0 12C6.627 12 12 17.373 12 24C12 17.373 17.373 12 24 12C17.373 12 12 6.627 12 0Z" fill="url(#gemini-grad)"/>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M12 0C12 6.627 6.627 12 0 12C6.627 12 12 17.373 12 24C12 17.373 17.373 12 24 12C17.373 12 12 6.627 12 0Z" fill="url(#g-grad)"/>
         <defs>
-          <linearGradient id="gemini-grad" x1="0" y1="0" x2="24" y2="24">
+          <linearGradient id="g-grad" x1="0" y1="0" x2="24" y2="24">
             <stop offset="0%" stopColor="#4285F4"/>
             <stop offset="100%" stopColor="#8B5CF6"/>
           </linearGradient>
@@ -98,55 +114,65 @@ const techs: Tech[] = [
   },
 ];
 
-function TechItem({ tech }: { tech: Tech }) {
+function TechPill({ tech }: { tech: Tech }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: "10px", whiteSpace: "nowrap", opacity: 0.5, transition: "opacity 0.2s", cursor: "default" }}
-      onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.opacity = "1"; }}
-      onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.opacity = "0.5"; }}
+    <div
+      className="tech-pill"
+      style={{ ["--glow" as string]: tech.color + "33" }}
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 18px 2px ${tech.color}22`;
+        (e.currentTarget as HTMLDivElement).style.borderColor = `${tech.color}44`;
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
+        (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.08)";
+      }}
     >
-      {tech.icon}
-      <span style={{ fontSize: "17px", fontWeight: 700, color: tech.color, letterSpacing: "-0.3px" }}>
+      <span style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>{tech.icon}</span>
+      <span style={{ fontSize: "14px", fontWeight: 600, color: "#D1D5DB", letterSpacing: "-0.2px" }}>
         {tech.name}
       </span>
     </div>
   );
 }
 
-function Dot() {
-  return <div style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: "#374151", flexShrink: 0 }} />;
-}
-
 export default function TechLogoBar() {
-  const items = techs.flatMap((t, i) => i < techs.length - 1 ? [t, null] : [t]);
-
   return (
     <>
       <style>{styles}</style>
-      <section style={{ backgroundColor: "#000", paddingTop: "32px", paddingBottom: "32px" }}>
-        <div style={{ maxWidth: "860px", margin: "0 auto", paddingLeft: "24px", paddingRight: "24px" }}>
-          <div style={{
-            background: "linear-gradient(135deg, #0D0D0D 0%, #111 100%)",
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: "20px",
-            padding: "28px 32px",
-            overflow: "hidden",
-          }}>
-            <p style={{ textAlign: "center", margin: "0 0 20px 0", fontSize: "11px", fontWeight: 700, color: "#374151", letterSpacing: "2px", textTransform: "uppercase" }}>
+      <section style={{ backgroundColor: "#000", paddingTop: "48px", paddingBottom: "48px" }}>
+        <div style={{ maxWidth: "920px", margin: "0 auto", paddingLeft: "24px", paddingRight: "24px" }}>
+
+          {/* Header */}
+          <div style={{ textAlign: "center", marginBottom: "28px" }}>
+            <p style={{
+              fontSize: "11px", fontWeight: 700, color: "#4B5563",
+              letterSpacing: "3px", textTransform: "uppercase", margin: 0,
+            }}>
               TECNOLOGÍAS QUE INTEGRAMOS
             </p>
+          </div>
+
+          {/* Card */}
+          <div style={{
+            background: "linear-gradient(135deg, #0D0D0D 0%, #111 100%)",
+            border: "1px solid rgba(255,255,255,0.07)",
+            borderRadius: "20px",
+            padding: "24px 0",
+            overflow: "hidden",
+            position: "relative",
+          }}>
             <div style={{ position: "relative" }}>
               <div className="tech-track">
-                {items.map((item, i) =>
-                  item ? <TechItem key={`a-${i}`} tech={item} /> : <Dot key={`da-${i}`} />
-                )}
-                {items.map((item, i) =>
-                  item ? <TechItem key={`b-${i}`} tech={item} /> : <Dot key={`db-${i}`} />
-                )}
+                {techs.map((t, i) => <TechPill key={`a-${i}`} tech={t} />)}
+                {techs.map((t, i) => <TechPill key={`b-${i}`} tech={t} />)}
               </div>
-              <div style={{ position: "absolute", top: 0, left: 0, width: "60px", height: "100%", background: "linear-gradient(to right, #0D0D0D, transparent)", pointerEvents: "none" }} />
-              <div style={{ position: "absolute", top: 0, right: 0, width: "60px", height: "100%", background: "linear-gradient(to left, #0D0D0D, transparent)", pointerEvents: "none" }} />
+              {/* Fade edges */}
+              <div style={{ position: "absolute", top: 0, left: 0, width: "80px", height: "100%", background: "linear-gradient(to right, #0D0D0D, transparent)", pointerEvents: "none", zIndex: 1 }} />
+              <div style={{ position: "absolute", top: 0, right: 0, width: "80px", height: "100%", background: "linear-gradient(to left, #0D0D0D, transparent)", pointerEvents: "none", zIndex: 1 }} />
             </div>
           </div>
+
         </div>
       </section>
     </>
