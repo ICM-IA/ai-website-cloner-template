@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const WA_NUMBER = "5492223507821";
 const WA_MESSAGE = encodeURIComponent("Hola! Quiero saber más sobre ICM-IA para mi inmobiliaria.");
@@ -8,6 +8,13 @@ const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 
 export default function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
@@ -33,8 +40,10 @@ export default function WhatsAppButton() {
           boxShadow: hovered
             ? "0 8px 32px rgba(37,211,102,0.5)"
             : "0 4px 20px rgba(37,211,102,0.35)",
-          transition: "box-shadow 0.2s, transform 0.2s",
+          transition: "box-shadow 0.2s, transform 0.2s, opacity 0.3s, bottom 0.3s",
           transform: hovered ? "scale(1.08)" : "scale(1)",
+          opacity: visible ? 1 : 0,
+          pointerEvents: visible ? "auto" : "none",
           textDecoration: "none",
         }}
       >
@@ -69,7 +78,7 @@ export default function WhatsAppButton() {
           pointer-events: none;
         }
       `}</style>
-      <div className="wa-pulse" />
+      {visible && <div className="wa-pulse" />}
     </>
   );
 }

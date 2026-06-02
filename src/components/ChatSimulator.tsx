@@ -144,8 +144,15 @@ export default function ChatSimulator() {
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
   const [hasUnread, setHasUnread] = useState(true);
+  const [visible, setVisible] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (open) {
@@ -347,6 +354,9 @@ export default function ChatSimulator() {
           alignItems: "center",
           justifyContent: "center",
           boxShadow: "0 4px 20px rgba(255,20,20,0.4)",
+          opacity: visible ? 1 : 0,
+          pointerEvents: visible ? "auto" : "none",
+          transition: "opacity 0.3s ease",
         }}
         aria-label="Abrir chat"
       >
