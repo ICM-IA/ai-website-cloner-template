@@ -19,10 +19,10 @@ export default function Home() {
       <Navbar />
       <HeroFunnel />
       <ClientLogoBar />
+      <AIAssistantShowcase />
       <ProblemSection />
       <BeforeAfterSection />
       <ServicesSection />
-      <AIAssistantShowcase />
       <HowItWorksSection />
       <StatsSection />
       <ROICalculator />
