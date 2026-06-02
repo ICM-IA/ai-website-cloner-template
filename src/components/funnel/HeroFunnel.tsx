@@ -22,6 +22,20 @@ const styles = `
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
   }
+  @keyframes iconFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+  @keyframes iconSpin {
+    0%   { transform: translateY(-10px) rotate(0deg); }
+    100% { transform: translateY(-10px) rotate(360deg); }
+  }
+  .icm-icon-float {
+    animation: iconFloat 3s ease-in-out infinite;
+  }
+  .icm-icon-spin {
+    animation: iconSpin 0.6s cubic-bezier(0.4,0,0.2,1) forwards;
+  }
 
   .hero-blob-1 {
     position: absolute;
@@ -149,9 +163,18 @@ const avatars: { bg: string; label: string }[] = [
 
 export default function HeroFunnel() {
   const [mounted, setMounted] = useState(false);
+  const [spinning, setSpinning] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSpinning(true);
+      setTimeout(() => setSpinning(false), 650);
+    }, 15000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -301,6 +324,7 @@ export default function HeroFunnel() {
               alt="ICM-IA"
               width={200}
               height={200}
+              className={spinning ? "icm-icon-spin" : "icm-icon-float"}
               style={{ filter: "drop-shadow(0 8px 32px rgba(0,0,0,0.5)) drop-shadow(0 0 20px rgba(255,20,20,0.2))", borderRadius: "50%" }}
               priority
             />
