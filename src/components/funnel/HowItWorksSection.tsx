@@ -31,8 +31,8 @@ const styles = `
       padding-right: 24px !important;
     }
     .hiw-steps-grid {
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 56px !important;
+      grid-template-columns: 1fr !important;
+      gap: 48px !important;
     }
     .hiw-connector-line {
       display: none !important;
