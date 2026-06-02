@@ -18,7 +18,6 @@ export default function Home() {
     <main className="min-h-screen bg-black">
       <Navbar />
       <HeroFunnel />
-      <ClientLogoBar />
       <AIAssistantShowcase />
       <ProblemSection />
       <BeforeAfterSection />
@@ -27,6 +26,7 @@ export default function Home() {
       <StatsSection />
       <ROICalculator />
       <TestimonialsSection />
+      <ClientLogoBar />
       <CTASection />
       <FAQSection />
       <Footer />

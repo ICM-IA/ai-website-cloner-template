@@ -22,12 +22,11 @@ interface LogoItem {
 }
 
 const logos: LogoItem[] = [
-  { name: "Homein", separator: "🏠" },
-  { name: "Lion GSC", separator: "🏢" },
-  { name: "Grupo RE/MAX", separator: "🏠" },
-  { name: "Inmobiliaria San Carlos", separator: "🏢" },
-  { name: "NyM Proyectos", separator: "🏠" },
-  { name: "ICM-IA Partners", separator: "🏢" },
+  { name: "Homein", separator: "·" },
+  { name: "Lion GSC", separator: "·" },
+  { name: "Carla - RE/MAX", separator: "·" },
+  { name: "Inmobiliaria San Carlos", separator: "·" },
+  { name: "NyM Proyectos", separator: "·" },
 ];
 
 function LogoItem({ name, separator }: LogoItem) {
