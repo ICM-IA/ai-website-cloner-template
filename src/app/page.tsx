@@ -4,6 +4,7 @@ import ClientLogoBar from "@/components/funnel/ClientLogoBar";
 import ProblemSection from "@/components/funnel/ProblemSection";
 import BeforeAfterSection from "@/components/funnel/BeforeAfterSection";
 import ServicesSection from "@/components/funnel/ServicesSection";
+import AIAssistantShowcase from "@/components/funnel/AIAssistantShowcase";
 import HowItWorksSection from "@/components/funnel/HowItWorksSection";
 import StatsSection from "@/components/StatsSection";
 import ROICalculator from "@/components/funnel/ROICalculator";
@@ -21,6 +22,7 @@ export default function Home() {
       <ProblemSection />
       <BeforeAfterSection />
       <ServicesSection />
+      <AIAssistantShowcase />
       <HowItWorksSection />
       <StatsSection />
       <ROICalculator />
