@@ -117,3 +117,28 @@
 .animate-fade-in {
   animation: fadeIn 0.7s ease forwards;
 }
+
+/* Navbar responsive */
+.navbar-desktop {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.navbar-hamburger {
+  display: none;
+}
+@media (max-width: 767px) {
+  .navbar-desktop {
+    display: none !important;
+  }
+  .navbar-hamburger {
+    display: flex !important;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    gap: 40px !important;
+    padding-top: 120px !important;
+  }
+}

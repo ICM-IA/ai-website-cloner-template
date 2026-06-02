@@ -62,14 +62,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav
-          style={{
-            display: "flex",
-            gap: "32px",
-            alignItems: "center",
-          }}
-          className="hidden md:flex"
-        >
+        <nav className="navbar-desktop">
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
@@ -103,42 +96,14 @@ export default function Navbar() {
 
         {/* Hamburger button — visible on mobile */}
         <button
-          className="flex md:hidden flex-col justify-center items-center gap-[5px] w-8 h-8"
+          className="navbar-hamburger"
           aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
           onClick={() => setMobileOpen((prev) => !prev)}
+          style={{ background: "none", border: "none", cursor: "pointer", padding: 4, display: "flex", flexDirection: "column", gap: 5, justifyContent: "center", alignItems: "center" }}
         >
-          <span
-            style={{
-              display: "block",
-              width: "24px",
-              height: "2px",
-              backgroundColor: "white",
-              transition: "transform 0.2s ease, opacity 0.2s ease",
-              transform: mobileOpen ? "translateY(7px) rotate(45deg)" : "none",
-            }}
-          />
-          <span
-            style={{
-              display: "block",
-              width: "24px",
-              height: "2px",
-              backgroundColor: "white",
-              transition: "opacity 0.2s ease",
-              opacity: mobileOpen ? 0 : 1,
-            }}
-          />
-          <span
-            style={{
-              display: "block",
-              width: "24px",
-              height: "2px",
-              backgroundColor: "white",
-              transition: "transform 0.2s ease, opacity 0.2s ease",
-              transform: mobileOpen
-                ? "translateY(-7px) rotate(-45deg)"
-                : "none",
-            }}
-          />
+          <span style={{ display: "block", width: "24px", height: "2px", backgroundColor: "white", transition: "transform 0.2s ease, opacity 0.2s ease", transform: mobileOpen ? "translateY(7px) rotate(45deg)" : "none" }} />
+          <span style={{ display: "block", width: "24px", height: "2px", backgroundColor: "white", transition: "opacity 0.2s ease", opacity: mobileOpen ? 0 : 1 }} />
+          <span style={{ display: "block", width: "24px", height: "2px", backgroundColor: "white", transition: "transform 0.2s ease, opacity 0.2s ease", transform: mobileOpen ? "translateY(-7px) rotate(-45deg)" : "none" }} />
         </button>
       </div>
 
@@ -151,13 +116,13 @@ export default function Navbar() {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "black",
+            backgroundColor: "#000",
             zIndex: 49,
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            gap: "32px",
+            gap: "36px",
           }}
         >
           {navLinks.map((link) => (
@@ -166,9 +131,24 @@ export default function Navbar() {
               href={link.href}
               label={link.label}
               onClick={() => setMobileOpen(false)}
-              fontSize="24px"
+              fontSize="26px"
             />
           ))}
+          <CalButton
+            onClick={() => setMobileOpen(false)}
+            style={{
+              marginTop: "8px",
+              backgroundColor: "#FF1414",
+              color: "white",
+              padding: "14px 36px",
+              borderRadius: "10px",
+              fontSize: "17px",
+              fontWeight: 700,
+              border: "none",
+            }}
+          >
+            Agendar Llamada
+          </CalButton>
         </div>
       )}
     </header>
