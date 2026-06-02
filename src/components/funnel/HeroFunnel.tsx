@@ -173,7 +173,7 @@ export default function HeroFunnel() {
     const interval = setInterval(() => {
       setSpinning(true);
       setTimeout(() => setSpinning(false), 650);
-    }, 5000);
+    }, 7000);
     return () => clearInterval(interval);
   }, []);
 
@@ -319,15 +319,24 @@ export default function HeroFunnel() {
             }}
           >
             {/* Large ICM-IA icon */}
-            <Image
-              src="/images/icm-icon.svg"
-              alt="ICM-IA"
-              width={200}
-              height={200}
+            <div
               className={spinning ? "icm-icon-spin" : "icm-icon-float"}
-              style={{ filter: "drop-shadow(0 8px 32px rgba(0,0,0,0.5)) drop-shadow(0 0 20px rgba(255,20,20,0.2))", borderRadius: "50%" }}
-              priority
-            />
+              style={{
+                borderRadius: "50%",
+                boxShadow: "0 0 40px 16px rgba(255,20,20,0.35), 0 0 80px 32px rgba(255,20,20,0.18), 0 0 120px 48px rgba(255,20,20,0.08)",
+                display: "inline-block",
+                lineHeight: 0,
+              }}
+            >
+              <Image
+                src="/images/icm-icon.svg"
+                alt="ICM-IA"
+                width={200}
+                height={200}
+                style={{ borderRadius: "50%", display: "block" }}
+                priority
+              />
+            </div>
 
             {/* Stats card — smaller */}
             <div
