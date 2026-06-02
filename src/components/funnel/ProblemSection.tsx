@@ -283,24 +283,26 @@ export default function ProblemSection() {
         </div>
 
         {/* Curved arrow pointing to next section */}
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "48px", opacity: 0.7 }}>
-          <svg width="80" height="90" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}>
+          <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Curved path from top-center, sweeps right, comes back down to bottom-center */}
             <path
-              d="M40 4 C40 4, 8 20, 8 50 C8 72, 28 82, 40 86"
+              d="M60 0 C60 0, 110 10, 110 40 C110 62, 80 72, 60 76"
               stroke="#FF1414"
-              strokeWidth="2"
+              strokeWidth="1.8"
               strokeLinecap="round"
               fill="none"
-              strokeDasharray="5 4"
+              opacity="0.6"
             />
             {/* Arrowhead */}
             <path
-              d="M32 80 L40 86 L48 80"
+              d="M50 70 L60 76 L70 70"
               stroke="#FF1414"
-              strokeWidth="2"
+              strokeWidth="1.8"
               strokeLinecap="round"
               strokeLinejoin="round"
               fill="none"
+              opacity="0.6"
             />
           </svg>
         </div>
