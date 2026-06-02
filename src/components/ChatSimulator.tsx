@@ -77,43 +77,65 @@ const INITIAL_MESSAGE: Message = {
   text: "¡Hola! 👋 Soy el asistente de ICM-IA. Estoy acá para mostrarte cómo automatizamos la atención de tu inmobiliaria. ¿Qué querés saber?",
 };
 
-function getResponse(input: string): string {
+const FALLBACKS = [
+  "Eso es algo que te puedo explicar mejor en una llamada. Son solo 20 minutos y te mostramos exactamente cómo aplica a tu negocio. ¿Te interesa?",
+  "Buena pregunta. Cada inmobiliaria es distinta, así que lo ideal es charlar 20 minutos con nuestro equipo para darte una respuesta personalizada. ¿Agendamos?",
+  "Para eso lo mejor es una reunión de diagnóstico — sin costo, sin compromiso. En 20 minutos te mostramos el sistema funcionando en vivo. ¿Querés agendar?",
+  "Entendido. ¿Hay algo más puntual que quieras saber? Preguntas sobre precios, integraciones, cómo funciona el sistema... estoy acá 😊",
+];
+let fallbackIndex = 0;
+
+function getResponse(input: string, lastAiText: string): string {
   const t = input.toLowerCase();
+
+  // Affirmative / short acknowledgements
+  if (/^(dale|ok|sí|si|bueno|claro|obvio|va|vamos|oka|okay|yep|sip|sep)$/.test(t.trim()))
+    return "¡Perfecto! Hacé click en 'Agendar Llamada' en el menú superior y reservás tu turno en segundos. En 20 minutos te mostramos todo en vivo 👆";
 
   if (/hola|buenas|buen[ao]s|ey|hey/.test(t))
     return "¡Hola! Me alegra que estés por acá 😊 ¿Querés ver cómo funciona el asistente de IA para inmobiliarias? Preguntame lo que quieras.";
 
   if (/precio|costo|cuánto|cuanto|valor|tarifa|plan/.test(t))
-    return "Los planes de ICM-IA se definen en una reunión de diagnóstico, ya que cada inmobiliaria tiene necesidades distintas. Lo que sí puedo decirte es que el retorno suele superar la inversión en el primer mes. ¿Agendamos una llamada?";
+    return "Los planes se definen en una reunión de diagnóstico, ya que cada inmobiliaria tiene necesidades distintas. Lo que sí te puedo decir es que el retorno suele superar la inversión desde el primer mes. ¿Agendamos una llamada?";
 
   if (/cómo funciona|como funciona|qué hace|que hace|qué es|que es/.test(t))
-    return "ICM-IA implementa un sistema de IA que responde consultas 24/7, califica prospectos automáticamente, centraliza todos tus canales (WhatsApp, portales, Instagram) y agenda visitas sin intervención humana. ¿Querés verlo en acción?";
+    return "ICM-IA implementa un sistema que responde consultas 24/7, califica prospectos automáticamente, centraliza todos tus canales y agenda visitas sin intervención humana. ¿Querés verlo en acción?";
 
-  if (/whatsapp|mensaje|canal|portal|instagram/.test(t))
+  if (/whatsapp|mensaje|canal|portal|instagram|zonaprop|argenprop/.test(t))
     return "Sí, integramos todos tus canales en un solo sistema: WhatsApp, Zonaprop, Argenprop, Instagram y más. Cada consulta entra, es respondida y calificada automáticamente. Nada se pierde.";
 
-  if (/tiempo|hora|minuto|demor|responde|rápido/.test(t))
-    return "El asistente responde en segundos, a cualquier hora. El tiempo promedio de respuesta es menor a 30 segundos, incluso a las 3 de la mañana 🌙";
+  if (/tiempo|hora|minuto|demor|responde|rápido|velocidad/.test(t))
+    return "El asistente responde en segundos, a cualquier hora. El tiempo promedio es menor a 30 segundos, incluso a las 3 de la mañana 🌙";
 
   if (/lead|prospecto|cliente|contacto|calif/.test(t))
-    return "El sistema califica cada prospecto según su nivel de interés, presupuesto y urgencia. Tu equipo solo recibe los leads que ya están listos para avanzar. Adiós a perder tiempo con consultas frías.";
+    return "El sistema califica cada prospecto según su nivel de interés, presupuesto y urgencia. Tu equipo solo recibe los leads que ya están listos para avanzar.";
 
-  if (/visita|ver|recorrer|agendar|turno|reunión|reunion/.test(t))
-    return "¡Exacto! El asistente puede agendar visitas automáticamente según la disponibilidad de tu equipo. El prospecto elige el horario y recibe confirmación al instante.";
+  if (/visita|recorrer|agendar|turno/.test(t))
+    return "¡Exacto! El asistente agenda visitas automáticamente según la disponibilidad de tu equipo. El prospecto elige horario y recibe confirmación al instante.";
 
-  if (/crm|sistema|integra|herramienta|software/.test(t))
-    return "Nos integramos con los principales CRMs del mercado. Y si no tenés uno, también podemos implementarlo. Todo queda centralizado en un solo lugar.";
+  if (/crm|integra|herramienta|software|sistema/.test(t))
+    return "Nos integramos con los principales CRMs del mercado. Y si no tenés uno, también lo implementamos. Todo centralizado en un solo lugar.";
 
-  if (/gracias|genial|buenísimo|buenisimo|excelente|perfecto/.test(t))
-    return "¡De nada! Me alegra que te haya sido útil 😊 Si querés ver esto funcionando en tu inmobiliaria, podemos arrancar con una llamada de diagnóstico de 20 minutos. ¿Te interesa?";
+  if (/gracias|genial|buenísimo|buenisimo|excelente|perfecto|copado/.test(t))
+    return "¡Me alegra que te haya servido! 😊 Si querés ver esto en tu inmobiliaria, podemos arrancar con una llamada de diagnóstico de 20 minutos. ¿Te interesa?";
 
   if (/llamada|contacto|hablar|reunión|reunion|diagnóstico|diagnostico/.test(t))
-    return "Perfecto. Podés agendar tu llamada de diagnóstico directo desde el sitio — es gratuita, dura 20 minutos y sin compromiso. Hacé click en 'Agendar Llamada' en el menú superior 👆";
+    return "Perfecto. Podés agendar tu llamada directo desde el sitio — es gratuita, dura 20 minutos y sin compromiso. Hacé click en 'Agendar Llamada' en el menú 👆";
 
   if (/no sé|no se|duda|ayuda|explica|info|información|informacion/.test(t))
-    return "Te entiendo. El mundo de la IA puede parecer complejo pero nosotros nos encargamos de todo. ¿Querés que te explique algún tema en particular? Estoy acá para ayudarte.";
+    return "Te entiendo. El mundo de la IA puede parecer complejo pero nosotros nos encargamos de todo. ¿Querés que te explique algún tema en particular?";
 
-  return "Buena pregunta. Para darte una respuesta más completa sobre ese tema, lo mejor es una llamada con nuestro equipo. Son solo 20 minutos y te explicamos todo adaptado a tu negocio. ¿Agendamos?";
+  if (/automatiz|bot|robot|ia|inteligencia/.test(t))
+    return "Exacto, trabajamos con IA de última generación (Claude, OpenAI, n8n) para automatizar todo el proceso de atención y calificación. Nada genérico — todo adaptado a tu operación.";
+
+  if (/equipo|persona|humano|asesor/.test(t))
+    return "El sistema no reemplaza a tu equipo — los potencia. Tu equipo solo interviene cuando el prospecto ya está calificado y listo para cerrar. Menos tiempo en tareas repetitivas, más en lo que importa.";
+
+  // Fallback rotativo — nunca repite el mismo dos veces seguidas
+  const available = FALLBACKS.filter(f => f !== lastAiText);
+  const response = available[fallbackIndex % available.length];
+  fallbackIndex = (fallbackIndex + 1) % available.length;
+  return response;
 }
 
 export default function ChatSimulator() {
@@ -148,7 +170,10 @@ export default function ChatSimulator() {
     await new Promise(r => setTimeout(r, delay));
 
     setTyping(false);
-    setMessages(prev => [...prev, { from: "ai", text: getResponse(text) }]);
+    setMessages(prev => {
+      const lastAi = [...prev].reverse().find(m => m.from === "ai")?.text ?? "";
+      return [...prev, { from: "ai", text: getResponse(text, lastAi) }];
+    });
   };
 
   const handleKey = (e: React.KeyboardEvent) => {
