@@ -308,6 +308,7 @@ export default function HeroFunnel() {
 
           {/* Right: icon + stats card */}
           <div
+            className="hero-right"
             style={{
               position: "relative",
               display: "flex",

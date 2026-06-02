@@ -141,4 +141,8 @@
     gap: 40px !important;
     padding-top: 120px !important;
   }
+  .hero-right {
+    opacity: 1 !important;
+    animation: none !important;
+  }
 }
