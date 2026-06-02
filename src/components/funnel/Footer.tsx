@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 function InstagramIcon() {
@@ -84,14 +83,11 @@ export default function Footer() {
         >
           {/* Left: logo + tagline + social */}
           <div style={{ maxWidth: "320px" }}>
-            <div style={{ width: "180px", height: "54px", position: "relative" }}>
-              <Image
-                src="/images/logo.png"
-                alt="ICM-IA"
-                fill
-                style={{ objectFit: "cover", objectPosition: "center" }}
-              />
-            </div>
+            <svg width="130" height="34" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="28" fontFamily="'Poppins', 'Arial Black', sans-serif" fontSize="30" fontWeight="800" fill="#FFFFFF" letterSpacing="-1">ICM</text>
+              <circle cx="97" cy="22" r="5" fill="#FF1414"/>
+              <text x="106" y="28" fontFamily="'Poppins', 'Arial Black', sans-serif" fontSize="30" fontWeight="800" fill="#FFFFFF" letterSpacing="-1">IA</text>
+            </svg>
             <p
               style={{
                 fontSize: "14px",
