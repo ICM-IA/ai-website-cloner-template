@@ -142,6 +142,7 @@
     padding-top: 120px !important;
   }
   .hero-right {
+    display: flex !important;
     opacity: 1 !important;
     animation: none !important;
   }
