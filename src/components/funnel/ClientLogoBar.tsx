@@ -3,146 +3,113 @@
 const styles = `
   @keyframes scrollLogos {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to   { transform: translateX(-50%); }
   }
   .logo-track {
     display: flex;
-    gap: 64px;
+    align-items: center;
+    gap: 12px;
     width: max-content;
-    animation: scrollLogos 20s linear infinite;
+    animation: scrollLogos 22s linear infinite;
   }
   .logo-track:hover {
     animation-play-state: paused;
   }
+  .logo-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    color: #9CA3AF;
+    transition: color 0.2s, border-color 0.2s;
+    cursor: default;
+  }
+  .logo-pill:hover {
+    color: #ECECEC;
+    border-color: rgba(255,255,255,0.16);
+  }
 `;
 
-interface LogoItem {
-  name: string;
-  separator: string;
-}
-
-const logos: LogoItem[] = [
-  { name: "Homein", separator: "·" },
-  { name: "Lion GSC", separator: "·" },
-  { name: "Carla - RE/MAX", separator: "·" },
-  { name: "Inmobiliaria San Carlos", separator: "·" },
-  { name: "NyM Proyectos", separator: "·" },
+const logos = [
+  { name: "Homein",                 flag: "🇦🇷" },
+  { name: "Lion GSC",               flag: "🇦🇷" },
+  { name: "Carla - RE/MAX",         flag: "🇦🇷" },
+  { name: "Inmobiliaria San Carlos", flag: "🇦🇷" },
+  { name: "NyM Proyectos",          flag: "🇦🇷" },
 ];
-
-function LogoItem({ name, separator }: LogoItem) {
-  return (
-    <>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "8px",
-          whiteSpace: "nowrap",
-          padding: "0 32px",
-          fontSize: "20px",
-          fontWeight: 700,
-          color: "#4B5563",
-          transition: "color 0.2s",
-          cursor: "default",
-        }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLDivElement).style.color = "#9CA3AF";
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLDivElement).style.color = "#4B5563";
-        }}
-      >
-        {name}
-      </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          color: "#374151",
-          fontSize: "16px",
-          flexShrink: 0,
-        }}
-        aria-hidden="true"
-      >
-        {separator}
-      </div>
-    </>
-  );
-}
 
 export default function ClientLogoBar() {
   return (
     <>
       <style>{styles}</style>
-      <div
-        style={{
-          paddingTop: "48px",
-          paddingBottom: "48px",
-          backgroundColor: "#000",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
-          overflow: "hidden",
-        }}
-      >
-        {/* Label */}
-        <p
-          style={{
-            textAlign: "center",
-            marginBottom: "32px",
-            marginTop: 0,
-            fontSize: "13px",
-            fontWeight: 600,
-            color: "#6B7280",
-            letterSpacing: "2px",
-            textTransform: "uppercase",
-          }}
-        >
-          Empresas que confían en ICM-IA
-        </p>
+      <section style={{ backgroundColor: "#000", paddingTop: "80px", paddingBottom: "80px" }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto", paddingLeft: "24px", paddingRight: "24px" }}>
 
-        {/* Scrolling track container */}
-        <div style={{ position: "relative" }}>
-          {/* Logo track — items duplicated for seamless loop */}
-          <div className="logo-track">
-            {logos.map((logo, i) => (
-              <LogoItem key={`a-${i}`} name={logo.name} separator={logo.separator} />
-            ))}
-            {logos.map((logo, i) => (
-              <LogoItem key={`b-${i}`} name={logo.name} separator={logo.separator} />
-            ))}
+          {/* Card container */}
+          <div style={{
+            background: "linear-gradient(135deg, #0D0D0D 0%, #111 100%)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: "20px",
+            padding: "40px 32px",
+            overflow: "hidden",
+          }}>
+            {/* Header */}
+            <p style={{
+              textAlign: "center", margin: "0 0 8px 0",
+              fontSize: "11px", fontWeight: 700,
+              color: "#FF1414", letterSpacing: "3px", textTransform: "uppercase",
+            }}>
+              EMPRESAS QUE CONFÍAN EN ICM-IA
+            </p>
+            <h3 style={{
+              textAlign: "center", margin: "0 0 32px 0",
+              fontSize: "26px", fontWeight: 800,
+              color: "#ECECEC", fontFamily: "Poppins, sans-serif",
+            }}>
+              Resultados reales, clientes reales
+            </h3>
+
+            {/* Scrolling pills */}
+            <div style={{ position: "relative", overflow: "hidden" }}>
+              <div className="logo-track">
+                {/* Set A */}
+                {logos.map((l, i) => (
+                  <div key={`a-${i}`} className="logo-pill">
+                    <span style={{ fontSize: "18px" }}>{l.flag}</span>
+                    {l.name}
+                  </div>
+                ))}
+                {/* Set B — duplicate for seamless loop */}
+                {logos.map((l, i) => (
+                  <div key={`b-${i}`} className="logo-pill">
+                    <span style={{ fontSize: "18px" }}>{l.flag}</span>
+                    {l.name}
+                  </div>
+                ))}
+              </div>
+
+              {/* Fade edges */}
+              <div style={{
+                position: "absolute", top: 0, left: 0, width: "60px", height: "100%",
+                background: "linear-gradient(to right, #0D0D0D, transparent)",
+                pointerEvents: "none",
+              }} />
+              <div style={{
+                position: "absolute", top: 0, right: 0, width: "60px", height: "100%",
+                background: "linear-gradient(to left, #0D0D0D, transparent)",
+                pointerEvents: "none",
+              }} />
+            </div>
           </div>
 
-          {/* Left fade edge */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "120px",
-              height: "100%",
-              background: "linear-gradient(to right, #000, transparent)",
-              pointerEvents: "none",
-              zIndex: 1,
-            }}
-            aria-hidden="true"
-          />
-
-          {/* Right fade edge */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              right: 0,
-              width: "120px",
-              height: "100%",
-              background: "linear-gradient(to left, #000, transparent)",
-              pointerEvents: "none",
-              zIndex: 1,
-            }}
-            aria-hidden="true"
-          />
         </div>
-      </div>
+      </section>
     </>
   );
 }
