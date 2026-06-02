@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CursorGlow from "@/components/CursorGlow";
+import ChatSimulator from "@/components/ChatSimulator";
 
 // ─── Google Analytics ────────────────────────────────────────────────────────
 // Cuando tengas tu cuenta de Google Analytics, reemplazá G-XXXXXXXXXX
@@ -97,6 +98,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-black">
         {children}
         <WhatsAppButton />
+        <ChatSimulator />
         <CursorGlow />
       </body>
     </html>
