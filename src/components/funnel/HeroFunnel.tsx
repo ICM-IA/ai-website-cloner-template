@@ -469,7 +469,8 @@ export default function HeroFunnel() {
               font-size: 40px !important;
             }
             .hero-grid > div:last-child {
-              display: none !important;
+              display: flex !important;
+              justify-content: center;
             }
           }
         `}</style>
