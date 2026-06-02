@@ -278,7 +278,7 @@ export default function ProblemSection() {
               margin: 0,
             }}
           >
-            Y nosotros tenemos la solución.
+            Y nosotros ya la tenemos.
           </p>
         </div>
       </div>
