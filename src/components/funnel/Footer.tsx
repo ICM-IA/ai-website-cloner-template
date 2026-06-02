@@ -84,12 +84,12 @@ export default function Footer() {
         >
           {/* Left: logo + tagline + social */}
           <div style={{ maxWidth: "320px" }}>
-            <div style={{ width: "180px", height: "54px", position: "relative" }}>
+            <div style={{ width: "220px", height: "66px", position: "relative" }}>
               <Image
                 src="/images/logo.png"
                 alt="ICM-IA"
                 fill
-                style={{ objectFit: "contain", objectPosition: "left center" }}
+                style={{ objectFit: "cover", objectPosition: "center" }}
               />
             </div>
             <p
