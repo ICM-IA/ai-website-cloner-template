@@ -51,7 +51,7 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link href="/" aria-label="ICM-IA Home" style={{ display: "block", width: "220px", height: "66px", position: "relative", flexShrink: 0 }}>
+        <Link href="/" aria-label="ICM-IA Home" style={{ display: "block", width: "195px", height: "58px", position: "relative", flexShrink: 0 }}>
           <Image
             src="/images/logo.png"
             alt="ICM-IA"
