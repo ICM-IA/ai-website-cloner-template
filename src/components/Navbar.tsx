@@ -51,12 +51,14 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link href="/" aria-label="ICM-IA Home" style={{ display: "flex", alignItems: "center", flexShrink: 0, textDecoration: "none" }}>
-          <svg width="140" height="36" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="28" fontFamily="'Poppins', 'Arial Black', sans-serif" fontSize="30" fontWeight="800" fill="#FFFFFF" letterSpacing="-1">ICM</text>
-            <circle cx="97" cy="22" r="5" fill="#FF1414"/>
-            <text x="106" y="28" fontFamily="'Poppins', 'Arial Black', sans-serif" fontSize="30" fontWeight="800" fill="#FFFFFF" letterSpacing="-1">IA</text>
-          </svg>
+        <Link href="/" aria-label="ICM-IA Home" style={{ display: "block", width: "180px", height: "54px", position: "relative", flexShrink: 0 }}>
+          <Image
+            src="/images/logo.png"
+            alt="ICM-IA"
+            fill
+            style={{ objectFit: "contain", objectPosition: "left center" }}
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
