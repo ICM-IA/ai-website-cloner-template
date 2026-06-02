@@ -37,11 +37,13 @@ const styles = `
 `;
 
 const logos = [
-  { name: "Homein",                 flag: "🇦🇷" },
-  { name: "Lion GSC",               flag: "🇦🇷" },
-  { name: "Carla - RE/MAX",         flag: "🇦🇷" },
-  { name: "Inmobiliaria San Carlos", flag: "🇦🇷" },
-  { name: "NyM Proyectos",          flag: "🇦🇷" },
+  { name: "NyM Proyectos",           flag: "🇨🇱" },
+  { name: "Homein",                  flag: "🇺🇾" },
+  { name: "Lion GSC",                flag: "🇦🇷" },
+  { name: "Carla - RE/MAX",          flag: "🇨🇴" },
+  { name: "The Box",                 flag: "🇦🇷" },
+  { name: "Inmobiliaria San Carlos", flag: "🇵🇾" },
+  { name: "Tulum Prop",              flag: "🇲🇽" },
 ];
 
 export default function ClientLogoBar() {
