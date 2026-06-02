@@ -146,4 +146,24 @@
     opacity: 1 !important;
     animation: none !important;
   }
+
+  /* Reduce section padding on mobile */
+  section {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+  /* Keep hero padding */
+  .hero-grid {
+    padding-top: 120px !important;
+    padding-bottom: 56px !important;
+  }
+  /* Reduce inner containers with explicit large padding */
+  [style*="paddingTop: 120px"],
+  [style*="padding-top: 120px"] {
+    padding-top: 56px !important;
+  }
+  [style*="paddingBottom: 120px"],
+  [style*="padding-bottom: 120px"] {
+    padding-bottom: 56px !important;
+  }
 }
