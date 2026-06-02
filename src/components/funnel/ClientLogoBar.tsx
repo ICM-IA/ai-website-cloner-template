@@ -37,13 +37,13 @@ const styles = `
 `;
 
 const logos = [
-  { name: "NyM Proyectos",           flag: "🇨🇱" },
-  { name: "Homein",                  flag: "🇺🇾" },
-  { name: "Lion GSC",                flag: "🇦🇷" },
-  { name: "Carla - RE/MAX",          flag: "🇨🇴" },
-  { name: "The Box",                 flag: "🇦🇷" },
-  { name: "Inmobiliaria San Carlos", flag: "🇵🇾" },
-  { name: "Tulum Prop",              flag: "🇲🇽" },
+  { name: "NyM Proyectos",           code: "cl" },
+  { name: "Homein",                  code: "uy" },
+  { name: "Lion GSC",                code: "ar" },
+  { name: "Carla - RE/MAX",          code: "co" },
+  { name: "The Box",                 code: "ar" },
+  { name: "Inmobiliaria San Carlos", code: "py" },
+  { name: "Tulum Prop",              code: "mx" },
 ];
 
 export default function ClientLogoBar() {
@@ -83,14 +83,14 @@ export default function ClientLogoBar() {
                 {/* Set A */}
                 {logos.map((l, i) => (
                   <div key={`a-${i}`} className="logo-pill">
-                    <span style={{ fontSize: "18px" }}>{l.flag}</span>
+                    <img src={`https://flagcdn.com/20x15/${l.code}.png`} width={20} height={15} alt={l.code} style={{ borderRadius: "2px", flexShrink: 0 }} />
                     {l.name}
                   </div>
                 ))}
                 {/* Set B — duplicate for seamless loop */}
                 {logos.map((l, i) => (
                   <div key={`b-${i}`} className="logo-pill">
-                    <span style={{ fontSize: "18px" }}>{l.flag}</span>
+                    <img src={`https://flagcdn.com/20x15/${l.code}.png`} width={20} height={15} alt={l.code} style={{ borderRadius: "2px", flexShrink: 0 }} />
                     {l.name}
                   </div>
                 ))}
