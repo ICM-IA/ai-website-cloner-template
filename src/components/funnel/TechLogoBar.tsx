@@ -122,26 +122,33 @@ export default function TechLogoBar() {
   return (
     <>
       <style>{styles}</style>
-      <div style={{ backgroundColor: "#000", borderBottom: "1px solid rgba(255,255,255,0.06)", paddingTop: "28px", paddingBottom: "28px", overflow: "hidden" }}>
-        <p style={{ textAlign: "center", margin: "0 0 20px 0", fontSize: "11px", fontWeight: 600, color: "#374151", letterSpacing: "2px", textTransform: "uppercase" }}>
-          TECNOLOGÍAS QUE INTEGRAMOS
-        </p>
-        <div style={{ position: "relative" }}>
-          <div className="tech-track">
-            {/* Set A */}
-            {items.map((item, i) =>
-              item ? <TechItem key={`a-${i}`} tech={item} /> : <Dot key={`da-${i}`} />
-            )}
-            {/* Set B — duplicate for seamless loop */}
-            {items.map((item, i) =>
-              item ? <TechItem key={`b-${i}`} tech={item} /> : <Dot key={`db-${i}`} />
-            )}
+      <section style={{ backgroundColor: "#000", paddingTop: "32px", paddingBottom: "32px" }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto", paddingLeft: "24px", paddingRight: "24px" }}>
+          <div style={{
+            background: "linear-gradient(135deg, #0D0D0D 0%, #111 100%)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: "20px",
+            padding: "28px 32px",
+            overflow: "hidden",
+          }}>
+            <p style={{ textAlign: "center", margin: "0 0 20px 0", fontSize: "11px", fontWeight: 700, color: "#374151", letterSpacing: "2px", textTransform: "uppercase" }}>
+              TECNOLOGÍAS QUE INTEGRAMOS
+            </p>
+            <div style={{ position: "relative" }}>
+              <div className="tech-track">
+                {items.map((item, i) =>
+                  item ? <TechItem key={`a-${i}`} tech={item} /> : <Dot key={`da-${i}`} />
+                )}
+                {items.map((item, i) =>
+                  item ? <TechItem key={`b-${i}`} tech={item} /> : <Dot key={`db-${i}`} />
+                )}
+              </div>
+              <div style={{ position: "absolute", top: 0, left: 0, width: "60px", height: "100%", background: "linear-gradient(to right, #0D0D0D, transparent)", pointerEvents: "none" }} />
+              <div style={{ position: "absolute", top: 0, right: 0, width: "60px", height: "100%", background: "linear-gradient(to left, #0D0D0D, transparent)", pointerEvents: "none" }} />
+            </div>
           </div>
-          {/* Fade edges */}
-          <div style={{ position: "absolute", top: 0, left: 0, width: "100px", height: "100%", background: "linear-gradient(to right, #000, transparent)", pointerEvents: "none" }} />
-          <div style={{ position: "absolute", top: 0, right: 0, width: "100px", height: "100%", background: "linear-gradient(to left, #000, transparent)", pointerEvents: "none" }} />
         </div>
-      </div>
+      </section>
     </>
   );
 }
