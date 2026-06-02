@@ -154,6 +154,7 @@ function ServiceCard({ service, visible }: { service: ServiceData; visible: bool
 
   return (
     <div
+      className="service-card"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -268,7 +269,7 @@ function ServiceCard({ service, visible }: { service: ServiceData; visible: bool
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
           gap: "12px 32px",
           marginBottom: "32px",
         }}

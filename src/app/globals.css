@@ -152,6 +152,14 @@
     padding-top: 56px !important;
     padding-bottom: 56px !important;
   }
+
+  /* Servicio page */
+  .service-card {
+    padding: 20px !important;
+  }
+  .service-card h2 {
+    font-size: 18px !important;
+  }
   /* Keep hero padding */
   .hero-grid {
     padding-top: 120px !important;
