@@ -40,7 +40,7 @@ const logos = [
   { name: "NyM Proyectos",           code: "cl" },
   { name: "Homein",                  code: "uy" },
   { name: "Lion GSC",                code: "ar" },
-  { name: "Carla - RE/MAX",          code: "co" },
+  { name: "Carla - RE/MAX",          code: "ar" },
   { name: "The Box",                 code: "ar" },
   { name: "Inmobiliaria San Carlos", code: "py" },
   { name: "Tulum Prop",              code: "mx" },
