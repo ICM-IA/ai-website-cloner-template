@@ -1,7 +1,10 @@
-import Image from "next/image";
-import { cn } from "@/lib/utils";
+"use client";
 
-const galleryItems: Array<{ src: string; alt: string; caption: string; featured?: "large" | "wide" }> = [
+import Image from "next/image";
+import { useState, useCallback } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const galleryItems = [
   { src: "/images/proyectos/1.jpg", alt: "Proyecto solar 1", caption: "Instalación residencial" },
   { src: "/images/proyectos/2.jpg", alt: "Proyecto solar 2", caption: "Sistema fotovoltaico" },
   { src: "/images/proyectos/3.jpg", alt: "Proyecto solar 3", caption: "Paneles solares" },
@@ -31,183 +34,242 @@ const galleryItems: Array<{ src: string; alt: string; caption: string; featured?
   { src: "/images/proyectos/Diseño%20sin%20título%20(15).jpg", alt: "Bomba solar 6", caption: "Bomba de agua solar" },
 ];
 
-interface GalleryItemProps {
-  src: string;
-  alt: string;
-  caption: string;
-  featured?: "large" | "wide";
-}
+export default function GallerySection() {
+  const [current, setCurrent] = useState(0);
+  const itemsPerView = 6;
+  const totalPages = Math.ceil(galleryItems.length / itemsPerView);
 
-function GalleryItem({ src, alt, caption, featured }: GalleryItemProps) {
-  const isLarge = featured === "large";
-  const isWide = featured === "wide";
+  const prev = useCallback(() => {
+    setCurrent((c) => (c - 1 + totalPages) % totalPages);
+  }, [totalPages]);
+
+  const next = useCallback(() => {
+    setCurrent((c) => (c + 1) % totalPages);
+  }, [totalPages]);
+
+  const visibleItems = galleryItems.slice(current * itemsPerView, current * itemsPerView + itemsPerView);
 
   return (
-    <div
-      className={cn(
-        "gallery-item",
-        isLarge && "gallery-item--large",
-        isWide && "gallery-item--wide"
-      )}
+    <section
+      id="galeria"
       style={{
-        position: "relative",
-        overflow: "hidden",
-        borderRadius: "12px",
-        minHeight: isLarge ? "300px" : undefined,
-        height: !isLarge ? "200px" : undefined,
+        background: "white",
+        padding: "96px 24px",
       }}
     >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes={
-          isLarge
-            ? "(max-width: 768px) 50vw, 50vw"
-            : isWide
-            ? "(max-width: 768px) 50vw, 50vw"
-            : "(max-width: 768px) 50vw, 25vw"
-        }
-        className="gallery-img object-cover"
-        style={{ transition: "transform 0.5s ease" }}
-      />
-      {/* Hover overlay */}
-      <div
-        className="gallery-overlay"
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "rgba(13,27,62,0.4)",
-          opacity: 0,
-          transition: "opacity 0.3s ease",
-        }}
-      />
-      {/* Caption */}
-      <div
-        className="gallery-caption"
-        style={{
-          position: "absolute",
-          bottom: "16px",
-          left: "16px",
-          color: "white",
-          fontSize: "14px",
-          fontWeight: 600,
-          opacity: 0,
-          transition: "opacity 0.3s ease",
-          zIndex: 1,
-          textShadow: "0 1px 3px rgba(0,0,0,0.5)",
-        }}
-      >
-        {caption}
-      </div>
-    </div>
-  );
-}
-
-export default function GallerySection() {
-  return (
-    <>
-      {/* Inline styles for hover effects (no JS needed) */}
       <style>{`
+        .gallery-item {
+          position: relative;
+          overflow: hidden;
+          border-radius: 12px;
+          height: 240px;
+        }
+        .gallery-img {
+          transition: transform 0.5s ease;
+        }
         .gallery-item:hover .gallery-img {
           transform: scale(1.08);
+        }
+        .gallery-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(13, 27, 62, 0.4);
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
         .gallery-item:hover .gallery-overlay {
           opacity: 1;
         }
+        .gallery-caption {
+          position: absolute;
+          bottom: 16px;
+          left: 16px;
+          color: white;
+          font-size: 14px;
+          font-weight: 600;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          z-index: 1;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
         .gallery-item:hover .gallery-caption {
           opacity: 1;
         }
-
-        /* Desktop grid layout */
-        @media (min-width: 768px) {
-          .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-          }
-          .gallery-item--large {
-            grid-column: span 2;
-            grid-row: span 2;
-          }
-          .gallery-item--wide {
-            grid-column: span 2;
-          }
-        }
-
-        /* Mobile grid layout */
-        @media (max-width: 767px) {
-          .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-          }
-          .gallery-item--large,
-          .gallery-item--wide {
-            grid-column: span 1;
-            grid-row: span 1;
-          }
+        @media (max-width: 768px) {
           .gallery-item {
-            height: 160px !important;
-            min-height: unset !important;
+            height: 160px;
           }
         }
       `}</style>
 
-      <section
-        id="galeria"
-        style={{
-          background: "white",
-          padding: "96px 24px",
-        }}
-      >
-        {/* Header */}
-        <div style={{ textAlign: "center" }}>
-          <p
-            style={{
-              color: "#f59e0b",
-              fontSize: "13px",
-              fontWeight: 700,
-              letterSpacing: "3px",
-              textTransform: "uppercase",
-              margin: 0,
-            }}
-          >
-            NUESTRO TRABAJO
-          </p>
-          <h2
-            style={{
-              color: "rgb(13,27,62)",
-              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-              fontWeight: 800,
-              marginTop: "12px",
-              marginBottom: 0,
-            }}
-          >
-            Proyectos realizados
-          </h2>
-          <div
-            className="section-divider"
-            style={{ margin: "16px auto 64px" }}
-          />
+      {/* Header */}
+      <div style={{ textAlign: "center", marginBottom: "64px" }}>
+        <p
+          style={{
+            color: "#f59e0b",
+            fontSize: "13px",
+            fontWeight: 700,
+            letterSpacing: "3px",
+            textTransform: "uppercase",
+            margin: 0,
+          }}
+        >
+          NUESTRO TRABAJO
+        </p>
+        <h2
+          style={{
+            color: "rgb(13,27,62)",
+            fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+            fontWeight: 800,
+            marginTop: "12px",
+            marginBottom: 0,
+          }}
+        >
+          Proyectos realizados
+        </h2>
+        <div
+          style={{
+            width: "60px",
+            height: "4px",
+            background: "linear-gradient(90deg, #f59e0b, #fde68a)",
+            borderRadius: "2px",
+            margin: "16px auto 0",
+          }}
+        />
+      </div>
+
+      {/* Carousel container */}
+      <div style={{ maxWidth: "1400px", margin: "0 auto", position: "relative" }}>
+        {/* Gallery grid - 6 columns */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(6, 1fr)",
+            gap: "16px",
+            marginBottom: "32px",
+          }}
+        >
+          {visibleItems.map((item) => (
+            <div key={item.src} className="gallery-item">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                sizes="(max-width: 768px) 50vw, 16vw"
+                className="gallery-img"
+                style={{ objectFit: "cover" }}
+              />
+              <div className="gallery-overlay" />
+              <div className="gallery-caption">{item.caption}</div>
+            </div>
+          ))}
         </div>
 
-        {/* Gallery grid */}
-        <div
-          className="gallery-grid mx-auto"
-          style={{ maxWidth: "1152px" }}
+        {/* Navigation arrows */}
+        <button
+          onClick={prev}
+          style={{
+            position: "absolute",
+            left: "-60px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            background: "rgb(13,27,62)",
+            color: "#f59e0b",
+            border: "none",
+            borderRadius: "50%",
+            width: "48px",
+            height: "48px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            transition: "all 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "#f59e0b";
+            e.currentTarget.style.color = "rgb(13,27,62)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "rgb(13,27,62)";
+            e.currentTarget.style.color = "#f59e0b";
+          }}
+          aria-label="Anterior"
         >
-          {galleryItems.map((item) => (
-            <GalleryItem
-              key={item.src}
-              src={item.src}
-              alt={item.alt}
-              caption={item.caption}
-              featured={item.featured}
+          <ChevronLeft size={24} />
+        </button>
+
+        <button
+          onClick={next}
+          style={{
+            position: "absolute",
+            right: "-60px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            background: "rgb(13,27,62)",
+            color: "#f59e0b",
+            border: "none",
+            borderRadius: "50%",
+            width: "48px",
+            height: "48px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            transition: "all 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "#f59e0b";
+            e.currentTarget.style.color = "rgb(13,27,62)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "rgb(13,27,62)";
+            e.currentTarget.style.color = "#f59e0b";
+          }}
+          aria-label="Siguiente"
+        >
+          <ChevronRight size={24} />
+        </button>
+
+        {/* Dots navigation */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "12px",
+            marginTop: "32px",
+          }}
+        >
+          {Array.from({ length: totalPages }).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrent(idx)}
+              style={{
+                width: current === idx ? "32px" : "12px",
+                height: "12px",
+                borderRadius: "6px",
+                background: current === idx ? "#f59e0b" : "rgb(226,232,240)",
+                border: "none",
+                cursor: "pointer",
+                transition: "all 0.3s",
+              }}
+              aria-label={`Ir a página ${idx + 1}`}
             />
           ))}
         </div>
-      </section>
-    </>
+
+        {/* Counter */}
+        <p
+          style={{
+            textAlign: "center",
+            color: "rgb(100,116,139)",
+            fontSize: "14px",
+            marginTop: "16px",
+            margin: 0,
+          }}
+        >
+          {current + 1} / {totalPages}
+        </p>
+      </div>
+    </section>
   );
 }
