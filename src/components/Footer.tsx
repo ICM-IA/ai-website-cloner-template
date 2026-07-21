@@ -249,7 +249,7 @@ export default function Footer() {
             © 2025 Energia Solar Brandsen. Todos los derechos reservados.
           </span>
           <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 13 }}>
-            Diseñado con ❤️ para el futuro energético
+            Diseñada por ICM-IA
           </span>
         </div>
       </div>
