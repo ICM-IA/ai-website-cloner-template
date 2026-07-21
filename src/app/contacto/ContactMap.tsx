@@ -20,8 +20,8 @@ export default function ContactMap({ height = 400 }: { height?: number }) {
         shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
       });
 
-      const lat = -35.1679518;
-      const lng = -58.2373784;
+      const lat = -35.1750;
+      const lng = -58.2290;
 
       const map = L.map(mapRef.current!).setView([lat, lng], 16);
       mapInstanceRef.current = map;
