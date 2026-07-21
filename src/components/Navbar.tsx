@@ -35,11 +35,12 @@ export function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 w-full"
+      className="fixed top-0 left-0 right-0 w-full"
       style={{
         background: scrolled ? "rgb(22, 24, 83)" : "transparent",
         boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.3)" : "none",
         transition: "background 0.3s ease, box-shadow 0.3s ease",
+        zIndex: 9999,
       }}
     >
       {/* Main bar */}
