@@ -322,7 +322,7 @@ export default function ContactSection() {
             <ContactMap height={220} />
           </div>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Ituzaingó+1572+Coronel+Brandsen+Buenos+Aires"
+            href="https://www.google.com/maps/search/?api=1&query=Ruta+29+1572+Coronel+Brandsen+Buenos+Aires"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -335,7 +335,7 @@ export default function ContactSection() {
               marginTop: -8,
             }}
           >
-            📍 Ituzaingó 1572, Coronel Brandsen — Ver en Google Maps →
+            📍 Ruta 29 N° 1572, Coronel Brandsen — Ver en Google Maps →
           </a>
 
           {infoCards.map(({ icon: Icon, title, value, href }) => (

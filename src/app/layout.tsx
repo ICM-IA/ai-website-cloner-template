@@ -84,7 +84,7 @@ const localBusinessJsonLd = {
   telephone: "+54-11-6229-7037",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Ituzaingó 1572",
+    streetAddress: "Ruta 29 N° 1572",
     addressLocality: "Coronel Brandsen",
     addressRegion: "Buenos Aires",
     addressCountry: "AR",

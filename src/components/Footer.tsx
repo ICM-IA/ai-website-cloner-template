@@ -64,7 +64,7 @@ const empresaLinks = [
 const contactItems = [
   {
     icon: MapPin,
-    text: "Ituzaingó 1572, Brandsen, BA",
+    text: "Ruta 29 N° 1572, Brandsen, BA",
   },
   {
     icon: Phone,
