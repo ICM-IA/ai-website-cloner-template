@@ -1,4 +1,4 @@
-﻿import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import FaqAccordion from "./FaqAccordion";
@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Instalación Solar Industrial | Energia Solar Brandsen",
+  title: "Instalación Solar Industrial",
   description:
     "Sistemas fotovoltaicos de gran escala para industrias, fábricas y agronegocios en Buenos Aires. Desde 50kW hasta 1MW+.",
 };

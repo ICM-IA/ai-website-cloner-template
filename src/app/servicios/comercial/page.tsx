@@ -1,4 +1,4 @@
-﻿import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import FaqAccordion from "./FaqAccordion";
@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Instalación Solar Comercial | Energia Solar Brandsen",
+  title: "Instalación Solar Comercial",
   description:
     "Reducí los costos energéticos de tu empresa hasta un 90% con energía solar. Presupuesto gratuito para comercios y pymes en Brandsen.",
 };

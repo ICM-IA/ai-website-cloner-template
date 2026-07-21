@@ -5,54 +5,54 @@ import ContactSection from "@/components/ContactSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contacto | Energia Solar Brandsen",
+  title: "Contacto",
   description:
-    "Contactanos para una visita técnica gratuita y presupuesto sin cargo. Estamos en Brandsen, Buenos Aires.",
+    "Contactanos para una visita tÃ©cnica gratuita y presupuesto sin cargo. Estamos en Brandsen, Buenos Aires.",
 };
 
 const infoCards = [
   {
-    icon: "📍",
-    title: "Ubicación",
-    lines: ["Brandsen, Buenos Aires", "Atendemos toda la región"],
+    icon: "ðŸ“",
+    title: "UbicaciÃ³n",
+    lines: ["Brandsen, Buenos Aires", "Atendemos toda la regiÃ³n"],
   },
   {
-    icon: "📞",
-    title: "Teléfono / WhatsApp",
-    lines: ["+54 11 5228-2070", "Lun–Sáb 8:00 a 18:00"],
+    icon: "ðŸ“ž",
+    title: "TelÃ©fono / WhatsApp",
+    lines: ["+54 11 5228-2070", "Lunâ€“SÃ¡b 8:00 a 18:00"],
   },
   {
-    icon: "✉️",
+    icon: "âœ‰ï¸",
     title: "Email",
     lines: ["info@energiasolarbrandsen.com", "Respondemos en menos de 24hs"],
   },
   {
-    icon: "🕒",
-    title: "Horario de atención",
-    lines: ["Lunes a Viernes: 8:00 – 18:00", "Sábados: 9:00 – 13:00"],
+    icon: "ðŸ•’",
+    title: "Horario de atenciÃ³n",
+    lines: ["Lunes a Viernes: 8:00 â€“ 18:00", "SÃ¡bados: 9:00 â€“ 13:00"],
   },
 ];
 
 const pasos = [
   {
     num: "01",
-    title: "Nos contactás",
-    desc: "Completás el formulario o nos escribís por WhatsApp con tu consulta.",
+    title: "Nos contactÃ¡s",
+    desc: "CompletÃ¡s el formulario o nos escribÃ­s por WhatsApp con tu consulta.",
   },
   {
     num: "02",
-    title: "Visita técnica gratuita",
-    desc: "Un técnico va a tu domicilio o empresa para evaluar el consumo y las condiciones de instalación.",
+    title: "Visita tÃ©cnica gratuita",
+    desc: "Un tÃ©cnico va a tu domicilio o empresa para evaluar el consumo y las condiciones de instalaciÃ³n.",
   },
   {
     num: "03",
-    title: "Recibís el presupuesto",
-    desc: "Te enviamos una propuesta detallada con el sistema recomendado, el costo y el retorno de inversión.",
+    title: "RecibÃ­s el presupuesto",
+    desc: "Te enviamos una propuesta detallada con el sistema recomendado, el costo y el retorno de inversiÃ³n.",
   },
   {
     num: "04",
     title: "Instalamos y te capacitamos",
-    desc: "Coordinar la instalación lleva entre 1 y 3 días. Al finalizar, te explicamos cómo monitorear tu sistema.",
+    desc: "Coordinar la instalaciÃ³n lleva entre 1 y 3 dÃ­as. Al finalizar, te explicamos cÃ³mo monitorear tu sistema.",
   },
 ];
 
@@ -90,7 +90,7 @@ export default function ContactoPage() {
                 marginBottom: "24px",
               }}
             >
-              Pedí tu{" "}
+              PedÃ­ tu{" "}
               <span
                 style={{
                   background: "linear-gradient(135deg, #f59e0b, #fde68a)",
@@ -98,7 +98,7 @@ export default function ContactoPage() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                visita técnica gratuita
+                visita tÃ©cnica gratuita
               </span>
             </h1>
             <p
@@ -108,7 +108,7 @@ export default function ContactoPage() {
                 lineHeight: 1.7,
               }}
             >
-              Sin compromiso. Un técnico va a tu domicilio, evalúa tu caso y te armamos
+              Sin compromiso. Un tÃ©cnico va a tu domicilio, evalÃºa tu caso y te armamos
               un presupuesto personalizado.
             </p>
           </div>
@@ -187,7 +187,7 @@ export default function ContactoPage() {
                   fontWeight: 800,
                 }}
               >
-                ¿Cómo es el proceso de instalación?
+                Â¿CÃ³mo es el proceso de instalaciÃ³n?
               </h2>
               <div
                 style={{

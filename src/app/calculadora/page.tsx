@@ -6,50 +6,50 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Calculadora de Ahorro Solar | Energia Solar Brandsen",
+  title: "Calculadora de Ahorro Solar",
   description:
-    "Calculá cuánto podés ahorrar instalando paneles solares. Ingresá tu factura mensual y descubrí el retorno de inversión.",
+    "CalculÃ¡ cuÃ¡nto podÃ©s ahorrar instalando paneles solares. IngresÃ¡ tu factura mensual y descubrÃ­ el retorno de inversiÃ³n.",
 };
 
 const pasos = [
   {
     num: "01",
-    title: "Ingresá tu factura",
-    desc: "Indicá el monto promedio de tu factura eléctrica mensual actual.",
+    title: "IngresÃ¡ tu factura",
+    desc: "IndicÃ¡ el monto promedio de tu factura elÃ©ctrica mensual actual.",
   },
   {
     num: "02",
-    title: "Elegí tu tipo de uso",
+    title: "ElegÃ­ tu tipo de uso",
     desc: "Residencial, comercial o industrial: cada perfil tiene un factor de ahorro distinto.",
   },
   {
     num: "03",
-    title: "Conocé tu ahorro",
-    desc: "El sistema calcula el ahorro mensual, anual y a 10 años con un sistema solar.",
+    title: "ConocÃ© tu ahorro",
+    desc: "El sistema calcula el ahorro mensual, anual y a 10 aÃ±os con un sistema solar.",
   },
   {
     num: "04",
-    title: "Pedí tu presupuesto",
-    desc: "Con esos datos te armamos un presupuesto real con el sistema exacto que necesitás.",
+    title: "PedÃ­ tu presupuesto",
+    desc: "Con esos datos te armamos un presupuesto real con el sistema exacto que necesitÃ¡s.",
   },
 ];
 
 const faqs = [
   {
-    q: "¿Cuánto tiempo tarda en pagarse la inversión?",
-    a: "En sistemas residenciales, el retorno de inversión típico es de 4 a 6 años. En sistemas comerciales e industriales puede ser de 3 a 5 años, dependiendo de la tarifa eléctrica y el consumo.",
+    q: "Â¿CuÃ¡nto tiempo tarda en pagarse la inversiÃ³n?",
+    a: "En sistemas residenciales, el retorno de inversiÃ³n tÃ­pico es de 4 a 6 aÃ±os. En sistemas comerciales e industriales puede ser de 3 a 5 aÃ±os, dependiendo de la tarifa elÃ©ctrica y el consumo.",
   },
   {
-    q: "¿El cálculo incluye los paneles y la instalación?",
-    a: "La calculadora estima el ahorro en base a tu consumo actual. Para el presupuesto completo con equipos e instalación, contactanos y te enviamos una cotización personalizada.",
+    q: "Â¿El cÃ¡lculo incluye los paneles y la instalaciÃ³n?",
+    a: "La calculadora estima el ahorro en base a tu consumo actual. Para el presupuesto completo con equipos e instalaciÃ³n, contactanos y te enviamos una cotizaciÃ³n personalizada.",
   },
   {
-    q: "¿Qué pasa en días nublados o de lluvia?",
-    a: "Los paneles generan energía incluso con cielo nublado, aunque con menor eficiencia. El sistema on-grid te permite seguir usando la red eléctrica cuando la generación solar no alcanza.",
+    q: "Â¿QuÃ© pasa en dÃ­as nublados o de lluvia?",
+    a: "Los paneles generan energÃ­a incluso con cielo nublado, aunque con menor eficiencia. El sistema on-grid te permite seguir usando la red elÃ©ctrica cuando la generaciÃ³n solar no alcanza.",
   },
   {
-    q: "¿La factura queda en cero?",
-    a: "Depende del tamaño del sistema. Muchos clientes logran reducir su factura entre un 70% y 100%. En sistemas on-grid con inyección a la red, podrías incluso generar créditos.",
+    q: "Â¿La factura queda en cero?",
+    a: "Depende del tamaÃ±o del sistema. Muchos clientes logran reducir su factura entre un 70% y 100%. En sistemas on-grid con inyecciÃ³n a la red, podrÃ­as incluso generar crÃ©ditos.",
   },
 ];
 
@@ -87,7 +87,7 @@ export default function CalculadoraPage() {
                 marginBottom: "24px",
               }}
             >
-              Calculá tu{" "}
+              CalculÃ¡ tu{" "}
               <span
                 style={{
                   background: "linear-gradient(135deg, #f59e0b, #fde68a)",
@@ -106,8 +106,8 @@ export default function CalculadoraPage() {
                 lineHeight: 1.7,
               }}
             >
-              Ingresá el importe de tu factura de luz y descubrí cuánto podés ahorrar
-              con un sistema de energía solar fotovoltaico.
+              IngresÃ¡ el importe de tu factura de luz y descubrÃ­ cuÃ¡nto podÃ©s ahorrar
+              con un sistema de energÃ­a solar fotovoltaico.
             </p>
           </div>
         </section>
@@ -123,7 +123,7 @@ export default function CalculadoraPage() {
                   fontWeight: 800,
                 }}
               >
-                ¿Cómo funciona?
+                Â¿CÃ³mo funciona?
               </h2>
               <div
                 style={{
@@ -268,10 +268,10 @@ export default function CalculadoraPage() {
                 marginBottom: "16px",
               }}
             >
-              ¿Ya calculaste tu ahorro?
+              Â¿Ya calculaste tu ahorro?
             </h2>
             <p style={{ color: "rgba(13,27,62,0.8)", fontSize: "17px", marginBottom: "32px" }}>
-              Pedí tu visita técnica gratuita y te armamos el presupuesto exacto.
+              PedÃ­ tu visita tÃ©cnica gratuita y te armamos el presupuesto exacto.
             </p>
             <Link
               href="/contacto"

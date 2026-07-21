@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
@@ -7,7 +7,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import FaqAccordion from "./FaqAccordion";
 
 const metadata: Metadata = {
-  title: "Termotanque Solar | Energia Solar Brandsen",
+  title: "Termotanque Solar",
   description:
     "Termotanques solares de acero inoxidable 180L y 300L. Agua caliente todo el año con energía solar. Instalación incluida en Brandsen.",
 };

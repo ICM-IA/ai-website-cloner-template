@@ -6,59 +6,59 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nosotros | Energia Solar Brandsen",
+  title: "Nosotros",
   description:
-    "Conocé nuestra historia, equipo y valores. Más de 4 años instalando energía solar en Brandsen y la región.",
+    "ConocÃ© nuestra historia, equipo y valores. MÃ¡s de 4 aÃ±os instalando energÃ­a solar en Brandsen y la regiÃ³n.",
 };
 
 const valores = [
   {
-    icon: "⚡",
+    icon: "âš¡",
     title: "Calidad garantizada",
-    desc: "Solo trabajamos con equipos certificados de primer nivel: paneles Tier 1, inversores de marcas líderes y estructuras de aluminio marine grade.",
+    desc: "Solo trabajamos con equipos certificados de primer nivel: paneles Tier 1, inversores de marcas lÃ­deres y estructuras de aluminio marine grade.",
   },
   {
-    icon: "🤝",
+    icon: "ðŸ¤",
     title: "Compromiso real",
-    desc: "Acompañamos cada proyecto desde la visita técnica hasta la puesta en marcha y el seguimiento post-instalación.",
+    desc: "AcompaÃ±amos cada proyecto desde la visita tÃ©cnica hasta la puesta en marcha y el seguimiento post-instalaciÃ³n.",
   },
   {
-    icon: "🌿",
+    icon: "ðŸŒ¿",
     title: "Sustentabilidad",
-    desc: "Creemos en un futuro energético limpio. Cada instalación es un paso concreto hacia la independencia energética y el cuidado del medioambiente.",
+    desc: "Creemos en un futuro energÃ©tico limpio. Cada instalaciÃ³n es un paso concreto hacia la independencia energÃ©tica y el cuidado del medioambiente.",
   },
   {
-    icon: "📐",
+    icon: "ðŸ“",
     title: "Dimensionamiento preciso",
-    desc: "Analizamos tu consumo real y diseñamos el sistema exacto que necesitás, sin sobredimensionar ni quedarte corto.",
+    desc: "Analizamos tu consumo real y diseÃ±amos el sistema exacto que necesitÃ¡s, sin sobredimensionar ni quedarte corto.",
   },
   {
-    icon: "🔧",
+    icon: "ðŸ”§",
     title: "Servicio postventa",
-    desc: "Contamos con soporte técnico para todo lo que necesites después de la instalación: mantenimiento, monitoreo y garantías.",
+    desc: "Contamos con soporte tÃ©cnico para todo lo que necesites despuÃ©s de la instalaciÃ³n: mantenimiento, monitoreo y garantÃ­as.",
   },
   {
-    icon: "💡",
+    icon: "ðŸ’¡",
     title: "Transparencia total",
-    desc: "Te explicamos cada paso del proceso, los materiales que usamos y los resultados reales que podés esperar.",
+    desc: "Te explicamos cada paso del proceso, los materiales que usamos y los resultados reales que podÃ©s esperar.",
   },
 ];
 
 const equipo = [
   {
-    nombre: "Equipo de Instalación",
-    rol: "Técnicos certificados",
-    desc: "Instaladores con capacitación en sistemas fotovoltaicos y habilitación eléctrica para trabajos en altura.",
+    nombre: "Equipo de InstalaciÃ³n",
+    rol: "TÃ©cnicos certificados",
+    desc: "Instaladores con capacitaciÃ³n en sistemas fotovoltaicos y habilitaciÃ³n elÃ©ctrica para trabajos en altura.",
   },
   {
-    nombre: "Ingeniería & Diseño",
+    nombre: "IngenierÃ­a & DiseÃ±o",
     rol: "Dimensionamiento y proyectos",
-    desc: "Ingenieros especializados en energías renovables que diseñan cada sistema con simulaciones de producción real.",
+    desc: "Ingenieros especializados en energÃ­as renovables que diseÃ±an cada sistema con simulaciones de producciÃ³n real.",
   },
   {
-    nombre: "Atención al Cliente",
+    nombre: "AtenciÃ³n al Cliente",
     rol: "Asesoramiento y seguimiento",
-    desc: "Te acompañamos desde la primera consulta hasta que el sistema esté funcionando y generando ahorro.",
+    desc: "Te acompaÃ±amos desde la primera consulta hasta que el sistema estÃ© funcionando y generando ahorro.",
   },
 ];
 
@@ -85,7 +85,7 @@ export default function NosotrosPage() {
                 marginBottom: "16px",
               }}
             >
-              QUIÉNES SOMOS
+              QUIÃ‰NES SOMOS
             </p>
             <h1
               style={{
@@ -96,7 +96,7 @@ export default function NosotrosPage() {
                 marginBottom: "24px",
               }}
             >
-              Más de{" "}
+              MÃ¡s de{" "}
               <span
                 style={{
                   background: "linear-gradient(135deg, #f59e0b, #fde68a)",
@@ -104,9 +104,9 @@ export default function NosotrosPage() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                4 años
+                4 aÃ±os
               </span>{" "}
-              transformando hogares y empresas con energía solar
+              transformando hogares y empresas con energÃ­a solar
             </h1>
             <p
               style={{
@@ -118,8 +118,8 @@ export default function NosotrosPage() {
             >
               Somos una empresa de Brandsen, Buenos Aires, especializada en instalaciones
               fotovoltaicas y termotanques solares para el sector residencial, comercial e
-              industrial. Nacimos con la convicción de que la energía solar es el camino
-              hacia una mayor independencia económica y ambiental.
+              industrial. Nacimos con la convicciÃ³n de que la energÃ­a solar es el camino
+              hacia una mayor independencia econÃ³mica y ambiental.
             </p>
             <Link
               href="/contacto"
@@ -175,23 +175,23 @@ export default function NosotrosPage() {
                     lineHeight: 1.2,
                   }}
                 >
-                  Nacimos en Brandsen para servir a la región
+                  Nacimos en Brandsen para servir a la regiÃ³n
                 </h2>
                 <p style={{ color: "rgb(100,116,139)", fontSize: "16px", lineHeight: 1.8, marginBottom: "16px" }}>
-                  Energia Solar Brandsen nació hace más de cuatro años con una misión clara:
-                  llevar soluciones de energía renovable a los hogares y empresas del partido
-                  de Brandsen y la región bonaerense, con la misma calidad que cualquier
+                  Energia Solar Brandsen naciÃ³ hace mÃ¡s de cuatro aÃ±os con una misiÃ³n clara:
+                  llevar soluciones de energÃ­a renovable a los hogares y empresas del partido
+                  de Brandsen y la regiÃ³n bonaerense, con la misma calidad que cualquier
                   empresa de capital federal.
                 </p>
                 <p style={{ color: "rgb(100,116,139)", fontSize: "16px", lineHeight: 1.8, marginBottom: "16px" }}>
-                  Comenzamos instalando sistemas residenciales pequeños y hoy contamos con
-                  más de 50 instalaciones completadas, desde hogares particulares hasta
+                  Comenzamos instalando sistemas residenciales pequeÃ±os y hoy contamos con
+                  mÃ¡s de 50 instalaciones completadas, desde hogares particulares hasta
                   comercios, galpones industriales y emprendimientos agropecuarios.
                 </p>
                 <p style={{ color: "rgb(100,116,139)", fontSize: "16px", lineHeight: 1.8 }}>
-                  También somos distribuidores mayoristas y minoristas de equipos solares,
+                  TambiÃ©n somos distribuidores mayoristas y minoristas de equipos solares,
                   por lo que podemos ofrecerte los mejores precios en paneles, inversores,
-                  baterías y estructuras de montaje.
+                  baterÃ­as y estructuras de montaje.
                 </p>
               </div>
               <div
@@ -203,13 +203,13 @@ export default function NosotrosPage() {
                 }}
               >
                 <h3 style={{ fontSize: "22px", fontWeight: 800, marginBottom: "32px", color: "#f59e0b" }}>
-                  ¿Por qué elegirnos?
+                  Â¿Por quÃ© elegirnos?
                 </h3>
                 {[
                   "Empresa local con conocimiento de la zona",
-                  "Distribuidores directos — precios de mayorista",
-                  "Financiación disponible en cuotas",
-                  "Garantía extendida en equipos e instalación",
+                  "Distribuidores directos â€” precios de mayorista",
+                  "FinanciaciÃ³n disponible en cuotas",
+                  "GarantÃ­a extendida en equipos e instalaciÃ³n",
                   "Monitoreo remoto incluido",
                   "Soporte postventa permanente",
                 ].map((item) => (
@@ -225,7 +225,7 @@ export default function NosotrosPage() {
                       color: "rgba(255,255,255,0.9)",
                     }}
                   >
-                    <span style={{ color: "#f59e0b", fontWeight: 700, fontSize: "18px" }}>✓</span>
+                    <span style={{ color: "#f59e0b", fontWeight: 700, fontSize: "18px" }}>âœ“</span>
                     {item}
                   </div>
                 ))}
@@ -372,7 +372,7 @@ export default function NosotrosPage() {
                       fontSize: "28px",
                     }}
                   >
-                    👷
+                    ðŸ‘·
                   </div>
                   <h3 style={{ color: "white", fontSize: "17px", fontWeight: 700, marginBottom: "6px" }}>
                     {e.nombre}
@@ -406,7 +406,7 @@ export default function NosotrosPage() {
                 marginBottom: "16px",
               }}
             >
-              ¿Listo para dar el paso a la energía solar?
+              Â¿Listo para dar el paso a la energÃ­a solar?
             </h2>
             <p
               style={{
@@ -415,7 +415,7 @@ export default function NosotrosPage() {
                 marginBottom: "32px",
               }}
             >
-              Pedí una visita técnica gratuita y te armamos un presupuesto a medida.
+              PedÃ­ una visita tÃ©cnica gratuita y te armamos un presupuesto a medida.
             </p>
             <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
               <Link

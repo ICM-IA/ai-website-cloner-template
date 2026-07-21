@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
@@ -7,7 +7,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import FaqAccordion from "./FaqAccordion";
 
 const metadata: Metadata = {
-  title: "Instalación Solar Residencial | Energia Solar Brandsen",
+  title: "Instalación Solar Residencial",
   description:
     "Instalación de paneles solares para hogares en Brandsen. Ahorrá hasta un 90% en tu factura de luz. Presupuesto gratuito.",
 };
