@@ -26,8 +26,8 @@ const faqs = [
     a: "Sí. Los paneles tienen garantía de 25 años en producción de energía y 10 años de garantía de producto. Los inversores tienen 5 años. La instalación tiene 1 año de garantía propia de mano de obra.",
   },
   {
-    q: "¿Trabajan en toda la región de Brandsen?",
-    a: "Sí, cubrimos toda la región de Coronel Brandsen y alrededores incluyendo Alejandro Korn, Lavallol, Chascomús y zonas rurales. Consultanos por tu ubicación específica.",
+    q: "¿Trabajan en todo el país?",
+    a: "Sí, realizamos instalaciones en todo el país. Podés consultarnos indicando tu ubicación y nos pondremos en contacto para ayudarte con tu proyecto solar.",
   },
 ];
 
