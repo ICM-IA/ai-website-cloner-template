@@ -1,49 +1,28 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-const galleryItems = [
-  {
-    src: "/images/gallery-1.webp",
-    alt: "Instalación residencial",
-    caption: "Instalación residencial",
-    featured: "large" as const, // span 2 cols × 2 rows
-  },
-  {
-    src: "/images/termotanque-300l.webp",
-    alt: "Termotanque 300L",
-    caption: "Termotanque 300L",
-  },
-  {
-    src: "/images/termotanque-180l.webp",
-    alt: "Termotanque 180L",
-    caption: "Termotanque 180L",
-  },
-  {
-    src: "/images/gallery-2.webp",
-    alt: "Instalación industrial",
-    caption: "Instalación industrial",
-  },
-  {
-    src: "/images/gallery-3.webp",
-    alt: "Panel solar",
-    caption: "Panel solar",
-  },
-  {
-    src: "/images/gallery-4.webp",
-    alt: "Sistema fotovoltaico",
-    caption: "Sistema fotovoltaico",
-  },
-  {
-    src: "/images/product-4.webp",
-    alt: "Equipos",
-    caption: "Equipos",
-    featured: "wide" as const, // span 2 cols
-  },
-  {
-    src: "/images/product-5.webp",
-    alt: "Instalación comercial",
-    caption: "Instalación comercial",
-  },
+const galleryItems: Array<{ src: string; alt: string; caption: string; featured?: "large" | "wide" }> = [
+  { src: "/images/proyectos/1.jpg", alt: "Proyecto solar 1", caption: "Instalación residencial" },
+  { src: "/images/proyectos/2.jpg", alt: "Proyecto solar 2", caption: "Sistema fotovoltaico" },
+  { src: "/images/proyectos/3.jpg", alt: "Proyecto solar 3", caption: "Paneles solares" },
+  { src: "/images/proyectos/4.jpg", alt: "Proyecto solar 4", caption: "Instalación comercial" },
+  { src: "/images/proyectos/5.jpg", alt: "Proyecto solar 5", caption: "Termotanque solar" },
+  { src: "/images/proyectos/6.jpg", alt: "Proyecto solar 6", caption: "Instalación industrial" },
+  { src: "/images/proyectos/7.jpg", alt: "Proyecto solar 7", caption: "Sistema híbrido" },
+  { src: "/images/proyectos/8.jpg", alt: "Proyecto solar 8", caption: "Paneles instalados" },
+  { src: "/images/proyectos/9.jpg", alt: "Proyecto solar 9", caption: "Conexión eléctrica" },
+  { src: "/images/proyectos/10.jpg", alt: "Proyecto solar 10", caption: "Inversor solar" },
+  { src: "/images/proyectos/11.jpg", alt: "Proyecto solar 11", caption: "Estructura de soporte" },
+  { src: "/images/proyectos/12.jpg", alt: "Proyecto solar 12", caption: "Sistema completo" },
+  { src: "/images/proyectos/123.jpg", alt: "Proyecto solar 13", caption: "Instalación residencial" },
+  { src: "/images/proyectos/124325.jpg", alt: "Proyecto solar 14", caption: "Paneles en tejado" },
+  { src: "/images/proyectos/1445.jpg", alt: "Proyecto solar 15", caption: "Sistema de monitoreo" },
+  { src: "/images/proyectos/2134.jpg", alt: "Proyecto solar 16", caption: "Conexión al tablero" },
+  { src: "/images/proyectos/23412345.jpg", alt: "Proyecto solar 17", caption: "Instalación completa" },
+  { src: "/images/proyectos/Diseño sin título (8).jpg", alt: "Proyecto solar 18", caption: "Vista general" },
+  { src: "/images/proyectos/Diseño sin título (9).jpg", alt: "Proyecto solar 19", caption: "Detalle técnico" },
+  { src: "/images/proyectos/edit mono.jpg", alt: "Proyecto solar 20", caption: "Equipo instalado" },
+  { src: "/images/proyectos/edit.jpg", alt: "Proyecto solar 21", caption: "Trabajo finalizado" },
 ];
 
 interface GalleryItemProps {
