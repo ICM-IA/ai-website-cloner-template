@@ -23,6 +23,12 @@ const galleryItems: Array<{ src: string; alt: string; caption: string; featured?
   { src: "/images/proyectos/Diseño%20sin%20título%20(9).jpg", alt: "Proyecto solar 19", caption: "Detalle técnico" },
   { src: "/images/proyectos/edit%20mono.jpg", alt: "Proyecto solar 20", caption: "Equipo instalado" },
   { src: "/images/proyectos/edit.jpg", alt: "Proyecto solar 21", caption: "Trabajo finalizado" },
+  { src: "/images/proyectos/Diseño%20sin%20título%20(10).jpg", alt: "Bomba solar 1", caption: "Bomba solar instalada" },
+  { src: "/images/proyectos/Diseño%20sin%20título%20(11).jpg", alt: "Bomba solar 2", caption: "Sistema de bombeo" },
+  { src: "/images/proyectos/Diseño%20sin%20título%20(12).jpg", alt: "Bomba solar 3", caption: "Bomba en funcionamiento" },
+  { src: "/images/proyectos/Diseño%20sin%20título%20(13).jpg", alt: "Bomba solar 4", caption: "Instalación de bombas" },
+  { src: "/images/proyectos/Diseño%20sin%20título%20(14).jpg", alt: "Bomba solar 5", caption: "Sistema hidráulico" },
+  { src: "/images/proyectos/Diseño%20sin%20título%20(15).jpg", alt: "Bomba solar 6", caption: "Bomba de agua solar" },
 ];
 
 interface GalleryItemProps {
