@@ -19,9 +19,9 @@ const galleryItems: Array<{ src: string; alt: string; caption: string; featured?
   { src: "/images/proyectos/1445.jpg", alt: "Proyecto solar 15", caption: "Sistema de monitoreo" },
   { src: "/images/proyectos/2134.jpg", alt: "Proyecto solar 16", caption: "Conexión al tablero" },
   { src: "/images/proyectos/23412345.jpg", alt: "Proyecto solar 17", caption: "Instalación completa" },
-  { src: "/images/proyectos/Diseño sin título (8).jpg", alt: "Proyecto solar 18", caption: "Vista general" },
-  { src: "/images/proyectos/Diseño sin título (9).jpg", alt: "Proyecto solar 19", caption: "Detalle técnico" },
-  { src: "/images/proyectos/edit mono.jpg", alt: "Proyecto solar 20", caption: "Equipo instalado" },
+  { src: "/images/proyectos/Diseño%20sin%20título%20(8).jpg", alt: "Proyecto solar 18", caption: "Vista general" },
+  { src: "/images/proyectos/Diseño%20sin%20título%20(9).jpg", alt: "Proyecto solar 19", caption: "Detalle técnico" },
+  { src: "/images/proyectos/edit%20mono.jpg", alt: "Proyecto solar 20", caption: "Equipo instalado" },
   { src: "/images/proyectos/edit.jpg", alt: "Proyecto solar 21", caption: "Trabajo finalizado" },
 ];
 
