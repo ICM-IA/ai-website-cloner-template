@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { Phone, MessageCircle, Clock } from "lucide-react";
 import dynamic from "next/dynamic";
 
@@ -33,6 +34,26 @@ const infoCards = [
 ];
 
 export default function ContactSection() {
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [mensaje, setMensaje] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const whatsappNumber = "541152282070";
+    const whatsappMessage = `Hola, me gustaría consultar sobre instalación solar.\n\nNombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nMensaje: ${mensaje}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappUrl, "_blank");
+
+    setNombre("");
+    setEmail("");
+    setTelefono("");
+    setMensaje("");
+  };
+
   return (
     <section
       id="contacto"
@@ -96,7 +117,7 @@ export default function ContactSection() {
               boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
             }}
           >
-            <form>
+            <form onSubmit={handleSubmit}>
               {/* Nombre */}
               <div style={{ marginBottom: 20 }}>
                 <label
@@ -116,6 +137,9 @@ export default function ContactSection() {
                   name="nombre"
                   type="text"
                   placeholder="Tu nombre"
+                  value={nombre}
+                  onChange={(e) => setNombre(e.target.value)}
+                  required
                   style={{
                     width: "100%",
                     border: "1.5px solid rgb(226, 232, 240)",
@@ -156,6 +180,9 @@ export default function ContactSection() {
                   name="email"
                   type="email"
                   placeholder="tucorreo@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                   style={{
                     width: "100%",
                     border: "1.5px solid rgb(226, 232, 240)",
@@ -196,6 +223,9 @@ export default function ContactSection() {
                   name="telefono"
                   type="tel"
                   placeholder="+54 11 XXXX-XXXX"
+                  value={telefono}
+                  onChange={(e) => setTelefono(e.target.value)}
+                  required
                   style={{
                     width: "100%",
                     border: "1.5px solid rgb(226, 232, 240)",
@@ -236,6 +266,9 @@ export default function ContactSection() {
                   name="mensaje"
                   rows={4}
                   placeholder="Contanos sobre tu proyecto (consumo mensual, tipo de instalación, ubicación...)"
+                  value={mensaje}
+                  onChange={(e) => setMensaje(e.target.value)}
+                  required
                   style={{
                     width: "100%",
                     border: "1.5px solid rgb(226, 232, 240)",
@@ -283,7 +316,7 @@ export default function ContactSection() {
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
-                Solicitar presupuesto gratis →
+                Contactar por WhatsApp →
               </button>
 
               <p
