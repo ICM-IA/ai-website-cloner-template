@@ -15,14 +15,30 @@ export default function HeroSection() {
       className="relative w-full overflow-hidden"
       style={{ minHeight: "100vh" }}
     >
-      {/* Background image */}
-      <Image
-        src="/images/hero-bg.webp"
-        alt="Instalación de paneles solares"
-        fill
-        priority
-        className="object-cover object-center"
-      />
+      {/* Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+        <Image
+          src="/images/hero-bg.webp"
+          alt="Instalación de paneles solares"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+      </video>
 
       {/* Gradient overlay */}
       <div
