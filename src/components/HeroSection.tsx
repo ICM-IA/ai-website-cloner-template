@@ -51,8 +51,8 @@ export default function HeroSection() {
 
       {/* Main content */}
       <div
-        className="relative z-10 flex flex-col items-center justify-center text-center px-6"
-        style={{ minHeight: "100vh", paddingBottom: "120px" }}
+        className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-6"
+        style={{ minHeight: "100vh", paddingBottom: "80px" }}
       >
         {/* Badge */}
         <div
@@ -107,13 +107,13 @@ export default function HeroSection() {
 
         {/* CTA buttons */}
         <div
-          className="flex flex-wrap items-center justify-center animate-fade-up stagger-4 opacity-0"
-          style={{ gap: "16px", marginTop: "36px" }}
+          className="flex flex-col md:flex-row flex-wrap items-center justify-center animate-fade-up stagger-4 opacity-0 w-full md:w-auto"
+          style={{ gap: "12px", marginTop: "36px", paddingBottom: "20px" }}
         >
           {/* Primary CTA */}
           <Link
             href="/#contacto"
-            className="inline-block no-underline transition-all duration-200 hover:scale-[1.02]"
+            className="w-full md:w-auto block no-underline transition-all duration-200 hover:scale-[1.02]"
             style={{
               background: "#f59e0b",
               color: "#0d1b3e",
@@ -122,6 +122,7 @@ export default function HeroSection() {
               borderRadius: "8px",
               fontSize: "16px",
               boxShadow: "0 4px 20px rgba(245,158,11,0.4)",
+              textAlign: "center",
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLAnchorElement).style.background =
@@ -138,7 +139,7 @@ export default function HeroSection() {
           {/* Secondary CTA */}
           <Link
             href="/#galeria"
-            className="inline-block no-underline transition-all duration-200"
+            className="w-full md:w-auto block no-underline transition-all duration-200"
             style={{
               background: "transparent",
               border: "2px solid rgba(255,255,255,0.5)",
@@ -147,6 +148,7 @@ export default function HeroSection() {
               padding: "14px 32px",
               borderRadius: "8px",
               fontSize: "16px",
+              textAlign: "center",
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLAnchorElement;
@@ -172,10 +174,10 @@ export default function HeroSection() {
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
           borderTop: "1px solid rgba(255,255,255,0.12)",
-          padding: "24px 48px",
+          padding: "16px 20px",
         }}
       >
-        <div className="mx-auto flex flex-wrap justify-around md:justify-between items-center gap-6" style={{ maxWidth: "1280px" }}>
+        <div className="mx-auto flex flex-wrap justify-around items-center gap-3 md:gap-6" style={{ maxWidth: "1280px" }}>
           {stats.map((stat, index) => (
             <div key={stat.label} className="flex items-center gap-0">
               {/* Divider before 2nd and 3rd stats on desktop */}
@@ -192,7 +194,7 @@ export default function HeroSection() {
               <div className="text-center">
                 <div
                   style={{
-                    fontSize: "36px",
+                    fontSize: "clamp(24px, 6vw, 36px)",
                     fontWeight: 900,
                     color: "#f59e0b",
                     lineHeight: 1,
@@ -202,12 +204,12 @@ export default function HeroSection() {
                 </div>
                 <div
                   style={{
-                    fontSize: "13px",
+                    fontSize: "clamp(10px, 2vw, 13px)",
                     color: "rgba(255,255,255,0.7)",
                     fontWeight: 500,
                     textTransform: "uppercase",
-                    letterSpacing: "1px",
-                    marginTop: "4px",
+                    letterSpacing: "0.5px",
+                    marginTop: "2px",
                   }}
                 >
                   {stat.label}
