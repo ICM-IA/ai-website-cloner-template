@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import { StatsSection } from "@/components/StatsSection";
 import { ServicesSection } from "@/components/ServicesSection";
-import SavingsCalculator from "@/components/SavingsCalculator";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import GallerySection from "@/components/GallerySection";
 import FaqSection from "@/components/FaqSection";
@@ -18,7 +17,6 @@ export default function Home() {
         <HeroSection />
         <StatsSection />
         <ServicesSection />
-        <SavingsCalculator />
         <TestimonialsSection />
         <GallerySection />
         <FaqSection />

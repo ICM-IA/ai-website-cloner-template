@@ -15,7 +15,6 @@ const serviceLinks = [
 const navLinks = [
   { text: "Inicio", href: "/" },
   { text: "Nosotros", href: "/nosotros" },
-  { text: "Calculadora", href: "/calculadora" },
   { text: "Testimonios", href: "/testimonios" },
   { text: "Contacto", href: "/contacto" },
 ];

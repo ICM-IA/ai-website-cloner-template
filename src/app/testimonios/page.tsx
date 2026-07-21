@@ -192,9 +192,6 @@ export default function TestimoniosPage() {
               <Link href="/contacto" style={{ background: "rgb(13,27,62)", color: "white", fontWeight: 800, fontSize: "16px", padding: "14px 36px", borderRadius: "8px", textDecoration: "none", display: "inline-block" }}>
                 Pedir presupuesto gratis
               </Link>
-              <Link href="/calculadora" style={{ background: "transparent", color: "rgb(13,27,62)", fontWeight: 700, fontSize: "16px", padding: "14px 36px", borderRadius: "8px", textDecoration: "none", display: "inline-block", border: "2px solid rgb(13,27,62)" }}>
-                CalculÃ¡ tu ahorro
-              </Link>
             </div>
           </div>
         </section>
