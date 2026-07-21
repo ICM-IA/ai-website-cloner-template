@@ -142,7 +142,7 @@ export default function Footer() {
                 maxWidth: 240,
               }}
             >
-              Tu empresa de confianza para instalaciones solares en Brandsen y la región de Buenos Aires.
+              Tu empresa de confianza para instalaciones solares. Hacemos instalaciones en todo el país.
             </p>
             {/* Social icons */}
             <div style={{ display: "flex", gap: 16, marginTop: 24 }}>
