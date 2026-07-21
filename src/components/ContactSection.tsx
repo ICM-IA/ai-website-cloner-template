@@ -39,15 +39,15 @@ export default function ContactSection() {
   const [telefono, setTelefono] = useState("");
   const [mensaje, setMensaje] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const handleSubmit = () => {
     const whatsappNumber = "541152282070";
     const whatsappMessage = `Hola, me gustaría consultar sobre instalación solar.\n\nNombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nMensaje: ${mensaje}`;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
+    // Abrir WhatsApp
     window.open(whatsappUrl, "_blank");
 
+    // Limpiar formulario
     setNombre("");
     setEmail("");
     setTelefono("");
@@ -117,7 +117,7 @@ export default function ContactSection() {
               boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
             }}
           >
-            <form onSubmit={handleSubmit}>
+            <form>
               {/* Nombre */}
               <div style={{ marginBottom: 20 }}>
                 <label
@@ -293,7 +293,8 @@ export default function ContactSection() {
 
               {/* Submit */}
               <button
-                type="submit"
+                type="button"
+                onClick={handleSubmit}
                 style={{
                   width: "100%",
                   padding: 16,
