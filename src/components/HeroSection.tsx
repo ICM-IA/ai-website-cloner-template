@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const stats = [
-  { number: "Más de 55", label: "Instalaciones realizadas" },
+  { number: "55+", label: "Instalaciones realizadas" },
   { number: "4", label: "Años de experiencia" },
   { number: "100%", label: "Clientes satisfechos" },
 ];
