@@ -138,6 +138,7 @@ export default function InstagramSection() {
               key={video.id}
               className={index === 2 ? "w-1/2 md:w-auto" : "w-1/2 md:w-auto"}
               style={{
+                position: "relative",
                 borderRadius: "12px",
                 overflow: "hidden",
                 boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
@@ -164,6 +165,27 @@ export default function InstagramSection() {
                 <source src={video.src} type="video/mp4" />
                 Tu navegador no soporta videos.
               </video>
+              {/* Reel badge */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "12px",
+                  left: "12px",
+                  background: "rgba(0,0,0,0.6)",
+                  backdropFilter: "blur(10px)",
+                  padding: "6px 12px",
+                  borderRadius: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  color: "white",
+                }}
+              >
+                <span style={{ fontSize: "14px" }}>📷</span>
+                Reel
+              </div>
             </div>
           ))}
         </div>
