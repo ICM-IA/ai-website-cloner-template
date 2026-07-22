@@ -1,6 +1,5 @@
 "use client";
 import { useState, useRef } from "react";
-import { Camera } from "lucide-react";
 
 export default function InstagramSection() {
   const [activeVideo, setActiveVideo] = useState<number | null>(null);
@@ -190,14 +189,28 @@ export default function InstagramSection() {
                   borderRadius: "14px",
                   display: "flex",
                   alignItems: "center",
-                  gap: "4px",
+                  gap: "5px",
                   fontSize: "11px",
                   fontWeight: 700,
                   color: "white",
                   letterSpacing: "0.2px",
                 }}
               >
-                <Camera size={12} style={{ flexShrink: 0 }} />
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={{ flexShrink: 0, display: "block" }}
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="4.5" ry="4.5" />
+                  <circle cx="12" cy="12" r="3.5" />
+                  <circle cx="18" cy="6" r="1" />
+                </svg>
                 Reel
               </div>
             </div>
