@@ -1,11 +1,38 @@
 "use client";
+import { useState, useRef } from "react";
 
 export default function InstagramSection() {
+  const [activeVideo, setActiveVideo] = useState<number | null>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
   const videos = [
     { id: 1, src: "/videos/instagram-1.mp4" },
     { id: 2, src: "/videos/instagram-2.mov" },
     { id: 3, src: "/videos/instagram-3.mp4" },
   ];
+
+  const handleVideoClick = (videoId: number, index: number) => {
+    // Si hay un video activo, silenciarlo y ponerlo en loop
+    if (activeVideo !== null && activeVideo !== videoId) {
+      const prevIndex = videos.findIndex((v) => v.id === activeVideo);
+      if (videoRefs.current[prevIndex]) {
+        videoRefs.current[prevIndex].muted = true;
+        videoRefs.current[prevIndex].loop = true;
+        videoRefs.current[prevIndex].play();
+      }
+    }
+
+    // Activar el nuevo video
+    const videoEl = videoRefs.current[index];
+    if (videoEl) {
+      videoEl.muted = false;
+      videoEl.loop = false;
+      videoEl.currentTime = 0;
+      videoEl.play();
+    }
+
+    setActiveVideo(videoId);
+  };
 
   return (
     <section style={{ padding: "80px 24px", background: "rgb(248,250,252)" }}>
@@ -95,7 +122,7 @@ export default function InstagramSection() {
             gap: "24px",
           }}
         >
-          {videos.map((video) => (
+          {videos.map((video, index) => (
             <div
               key={video.id}
               style={{
@@ -105,16 +132,11 @@ export default function InstagramSection() {
                 aspectRatio: "9/16",
                 cursor: "pointer",
               }}
+              onClick={() => handleVideoClick(video.id, index)}
             >
               <video
                 ref={(el) => {
-                  if (el) {
-                    el.addEventListener("click", () => {
-                      el.muted = false;
-                      el.currentTime = 0;
-                      el.play();
-                    });
-                  }
+                  videoRefs.current[index] = el;
                 }}
                 style={{
                   width: "100%",
