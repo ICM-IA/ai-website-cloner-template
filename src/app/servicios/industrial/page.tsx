@@ -8,36 +8,36 @@ import Link from "next/link";
 export const metadata = {
   title: "Instalación Solar Industrial",
   description:
-    "Sistemas fotovoltaicos de gran escala para industrias, fábricas y agronegocios en Buenos Aires. Desde 50kW hasta 1MW+.",
+    "Sistemas fotovoltaicos de gran escala para industrias, fábricas y agronegocios en Buenos Aires. Desde 50 kW hasta 1 MW+.",
 };
 
 // ─── Tier card data ───────────────────────────────────────────────────────────
 const tiers = [
   {
     name: "Sistema Mediano",
-    potencia: "50kW – 200kW",
+    potencia: "50 kW – 200 kW",
     ideal: "Pymes industriales, talleres grandes, frigoríficos",
-    paneles: "100 – 400 paneles",
-    superficie: "400 – 1.600 m²",
-    ahorro: "Hasta $3.000.000/mes",
+    paneles: "90 – 360 paneles",
+    superficie: "300 – 1.200 m²",
+    ahorro: "Reducción de costos fijos de red",
     featured: false,
   },
   {
     name: "Sistema Grande",
-    potencia: "200kW – 500kW",
+    potencia: "200 kW – 500 kW",
     ideal: "Plantas industriales medianas, industria alimenticia, metalúrgica",
-    paneles: "400 – 1.000 paneles",
-    superficie: "1.600 – 4.000 m²",
-    ahorro: "Hasta $8.000.000/mes",
+    paneles: "360 – 900 paneles",
+    superficie: "1.200 – 3.000 m²",
+    ahorro: "Optimización de potencia y consumo",
     featured: true,
   },
   {
     name: "Sistema Megawatt",
-    potencia: "500kW – 1MW+",
+    potencia: "500 kW – 1 MW+",
     ideal: "Grandes industrias, parques solares, agronegocios extensivos",
-    paneles: "1.000+ paneles",
-    superficie: "4.000+ m²",
-    ahorro: "Ahorro personalizado",
+    paneles: "900+ paneles",
+    superficie: "3.000+ m²",
+    ahorro: "Solución a medida y autoconsumo",
     featured: false,
   },
 ];
@@ -169,7 +169,7 @@ export default function IndustrialPage() {
                 margin: "0 auto 40px",
               }}
             >
-              Sistemas de 50kW a 1MW+ para fábricas, plantas industriales y agronegocios.
+              Sistemas de 50 kW a 1 MW+ para fábricas, plantas industriales y agronegocios.
               Máximo ahorro energético a escala.
             </p>
 

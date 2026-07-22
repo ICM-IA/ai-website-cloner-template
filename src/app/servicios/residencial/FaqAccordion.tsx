@@ -7,23 +7,23 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     q: "¿Cuántos paneles necesito para mi casa?",
-    a: "Depende del consumo mensual. Para una casa con factura promedio de $15.000 mensuales, generalmente se necesitan entre 6 y 10 paneles de 400W. El dimensionamiento es gratuito y personalizado.",
+    a: "Depende de tu consumo mensual en kilovatios-hora (kWh). Para una vivienda promedio con un consumo mensual de entre 300 kWh y 500 kWh, generalmente se requiere un sistema de 4 a 8 paneles (de 470 W a 620 W cada uno). Realizamos un dimensionamiento gratuito y a medida analizando tu factura eléctrica para garantizar la potencia exacta que necesitás.",
   },
   {
     q: "¿Puedo instalar paneles si tengo un techo de chapa?",
-    a: "Sí, instalamos en todo tipo de techos: chapa, tejas, losa y materiales mixtos. Evaluamos la orientación y la inclinación para maximizar la eficiencia.",
+    a: "¡Sí, totalmente! Instalamos sobre techos de chapa (trapezoidal o sinusoidal), losa y tejas. Utilizamos estructuras de aluminio anodizado con anclajes y sellados de alta calidad técnica que garantizan la máxima resistencia mecánica y la total estanqueidad del techo, evitando cualquier tipo de filtración de agua.",
   },
   {
     q: "¿Necesito permiso municipal para instalar?",
-    a: "En la mayoría de los municipios de la región no se requieren permisos especiales para sistemas residenciales. Nos encargamos de toda la documentación necesaria.",
+    a: "No se requiere un permiso municipal de obra, pero si optás por un sistema conectado a la red (On-Grid) o un sistema Híbrido, gestionamos el trámite de habilitación técnica y medidor bidireccional ante tu distribuidora eléctrica local bajo el marco de la Ley de Generación Distribuida. Nosotros nos encargamos de todo el proceso de certificación.",
   },
   {
     q: "¿Qué pasa si genero más energía de la que consumo?",
-    a: "Con sistemas on-grid conectados a la red, podés inyectar el excedente a la distribuidora. En algunos municipios aplica la ley de generación distribuida (Ley 27.424).",
+    a: "Tanto con un sistema On-Grid (conectado a la red) como con un sistema Híbrido (con baterías de respaldo), tenés la posibilidad de inyectar los excedentes de energía a la red de tu distribuidora eléctrica. En los municipios y provincias donde rige la Ley de Generación Distribuida (Ley 27.424), esos excedentes inyectados se compensan a tu favor en la factura. En el caso del sistema híbrido, el excedente solar primero recarga tus baterías para garantizarte autonomía ante cortes de luz y, una vez completada la carga, el sobrante se inyecta a la red eléctrica.",
   },
   {
     q: "¿Cuánto tarda en pagarse la inversión?",
-    a: "En general, el retorno de inversión es de 3 a 5 años dependiendo del tamaño del sistema y el costo actual de la energía. Después, tenés energía prácticamente gratis por 20+ años.",
+    a: "En general, el retorno de inversión (Payback) se sitúa entre 2 y 7 años, dependiendo de la escala del sistema (potencia en kWp), el perfil de consumo de la vivienda y la tarifa vigente de la energía eléctrica en tu zona. Teniendo en cuenta que los paneles fotovoltaicos tienen una vida útil certificada superior a los 25 años, una vez amortizado el equipo disfrutás de energía limpia y prácticamente gratuita durante más de dos décadas.",
   },
 ];
 

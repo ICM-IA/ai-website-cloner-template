@@ -7,23 +7,23 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     q: "¿Cuál es la potencia mínima para proyectos industriales?",
-    a: "Trabajamos con proyectos desde 50kW. Para instalaciones menores, recomendamos nuestra línea comercial. Sin embargo, cada proyecto se evalúa individualmente.",
+    a: "Diseñamos e instalamos soluciones industriales a partir de 50 kW de potencia nominal. Para demandas menores o establecimientos PyME, contamos con soluciones dentro de nuestra línea comercial. Cada proyecto se analiza de forma personalizada según el perfil de consumo energético y la infraestructura disponible.",
   },
   {
     q: "¿Cuánto tiempo lleva un proyecto industrial?",
-    a: "Desde el relevamiento hasta la puesta en marcha, los proyectos industriales medianos (50-200kW) tardan entre 4 y 8 semanas. Proyectos mayores pueden requerir 3 a 6 meses incluida la gestión de permisos.",
+    a: "El plazo promedio para un proyecto llave en mano varía entre 60 y 120 días, según la escala del sistema (50 kW a 1 MW) y la complejidad del montaje. Esto incluye la ingeniería de detalle, la provisión de equipos de primera línea, el montaje mecánico/eléctrico y la puesta en marcha técnica.",
   },
   {
     q: "¿Trabajan con sistemas en tierra o solo en techo?",
-    a: "Trabajamos con ambas configuraciones. Los sistemas a campo (ground-mounted) son ideales para agronegocios y plantas con espacio disponible. Hacemos el estudio de factibilidad sin costo.",
+    a: "Realizamos instalaciones tanto en cubiertas industriales (con previo análisis de carga estructural) como en suelo mediante estructuras fijas o aleros solares (carports). Seleccionamos la alternativa que garantice el mejor aprovechamiento de la radiación solar y optimice la superficie disponible en el predio.",
   },
   {
     q: "¿Cómo funciona la conexión a la red para industrias?",
-    a: "Los sistemas industriales se conectan como generación distribuida bajo la Ley 27.424. Para grandes consumidores, también existe la figura del autogenerador, con negociación directa con la distribuidora.",
+    a: "Nuestras instalaciones operan bajo el esquema de Generación Distribuida (Ley 27.424 y normativas vigentes). El sistema genera energía en sincronismo con la red eléctrica local: la planta consume prioritariamente la energía solar generada, reduciendo la compra a la red. Si hay excedentes, pueden inyectarse según la regulación del distribuidor eléctrico de la zona.",
   },
   {
     q: "¿Ofrecen financiación para proyectos de esta escala?",
-    a: "Sí, articulamos con bancos y fondos de inversión para proyectos industriales. También existe la opción de PPA (Power Purchase Agreement) donde pagás por la energía generada sin inversión inicial.",
+    a: "Sí. Asesoramos en la gestión de líneas de crédito preferenciales para Eficiencia Energética y Energías Renovables disponibles en el sistema bancario, así como opciones de leasing de equipamiento. Diseñamos la propuesta económica buscando que el ahorro generado en la factura eléctrica contribuya directamente a amortizar la inversión.",
   },
 ];
 

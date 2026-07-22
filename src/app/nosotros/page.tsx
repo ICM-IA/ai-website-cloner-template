@@ -309,7 +309,7 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        {/* Equipo */}
+        {/* Equipo y Trayectoria */}
         <section style={{ background: "white", padding: "96px 24px" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "64px" }}>
@@ -323,17 +323,21 @@ export default function NosotrosPage() {
                   marginBottom: "12px",
                 }}
               >
-                NUESTRO EQUIPO
+                EQUIPO Y TRAYECTORIA
               </p>
               <h2
                 style={{
                   color: "rgb(13,27,62)",
                   fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
                   fontWeight: 800,
+                  marginBottom: "12px",
                 }}
               >
-                Profesionales dedicados a tu proyecto
+                Respaldados por la experiencia técnica e industrial
               </h2>
+              <p style={{ fontSize: "16px", color: "rgb(100,116,139)", lineHeight: 1.8, maxWidth: "700px", margin: "0 auto" }}>
+                En Energía Solar Brandsen no improvisamos. Cada proyecto fotovoltaico o de bombeo solar combina la rigurosidad del diseño de ingeniería, la normativa de seguridad eléctrica más exigente y el conocimiento de la mano de obra local.
+              </p>
               <div
                 style={{
                   width: "60px",
@@ -344,49 +348,116 @@ export default function NosotrosPage() {
                 }}
               />
             </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                gap: "32px",
-              }}
-            >
-              {equipo.map((e) => (
-                <div
-                  key={e.nombre}
-                  style={{
-                    background: "rgb(248,250,252)",
-                    borderRadius: "16px",
-                    padding: "32px",
-                    border: "1px solid rgb(226,232,240)",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: "18px",
-                      fontWeight: 700,
-                      color: "rgb(13,27,62)",
-                      marginBottom: "6px",
-                    }}
-                  >
-                    {e.nombre}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: "13px",
-                      fontWeight: 600,
-                      color: "#f59e0b",
-                      marginBottom: "12px",
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    {e.rol}
+
+            {/* Leadership */}
+            <div style={{ marginBottom: "64px" }}>
+              <h3 style={{ fontSize: "20px", fontWeight: 800, color: "rgb(13,27,62)", marginBottom: "32px" }}>
+                Liderazgo y Dirección Técnica
+              </h3>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+                  gap: "32px",
+                }}
+              >
+                <div style={{ background: "rgb(248,250,252)", borderRadius: "16px", padding: "32px", border: "1px solid rgb(226,232,240)" }}>
+                  <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px" }}>
+                    Emiliano Cortés
+                  </h4>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#f59e0b", marginBottom: "12px", textTransform: "uppercase" }}>
+                    Socio Fundador
                   </p>
-                  <p style={{ fontSize: "14px", color: "rgb(100,116,139)", lineHeight: 1.7 }}>
-                    {e.desc}
+                  <p style={{ fontSize: "14px", color: "rgb(100,116,139)", lineHeight: 1.7, margin: 0 }}>
+                    Técnico Químico y Experto Universitario en Diseño de Plantas Fotovoltaicas certificado por la UTN. Con 15 años de trayectoria en el sector industrial de Coca Cola CICAN SA y FEMSA SA, en áreas de fabricación y control de procesos químicos, aporta la disciplina técnica, el control de calidad y la planificación de cada proyecto.
                   </p>
                 </div>
-              ))}
+                <div style={{ background: "rgb(248,250,252)", borderRadius: "16px", padding: "32px", border: "1px solid rgb(226,232,240)" }}>
+                  <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px" }}>
+                    Javier Peverelli
+                  </h4>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#f59e0b", marginBottom: "12px", textTransform: "uppercase" }}>
+                    Socio Fundador
+                  </p>
+                  <p style={{ fontSize: "14px", color: "rgb(100,116,139)", lineHeight: 1.7, margin: 0 }}>
+                    Docente de la Escuela Técnica N°1 de Brandsen. Cuenta con más de 20 años de experiencia liderando proyectos eléctricos de gran escala (residenciales, comerciales e industriales) y formación electromecánica en entornos de máxima exigencia como la Planta Nuclear Atucha.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Engineering */}
+            <div style={{ marginBottom: "64px" }}>
+              <h3 style={{ fontSize: "20px", fontWeight: 800, color: "rgb(13,27,62)", marginBottom: "32px" }}>
+                Respaldo de Ingeniería y Alianzas Estratégicas
+              </h3>
+              <p style={{ fontSize: "15px", color: "rgb(100,116,139)", lineHeight: 1.8, marginBottom: "24px" }}>
+                Para garantizar proyectos con estándares internacionales, colaboramos estrechamente con un área de ingeniería de primer nivel:
+              </p>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+                  gap: "24px",
+                }}
+              >
+                <div style={{ background: "rgb(248,250,252)", borderRadius: "16px", padding: "24px", border: "1px solid rgb(226,232,240)" }}>
+                  <h4 style={{ fontSize: "16px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px" }}>
+                    Ing. Héctor Natera
+                  </h4>
+                  <p style={{ fontSize: "14px", color: "rgb(100,116,139)", lineHeight: 1.7, margin: 0 }}>
+                    Especialista en energías renovables con 15 años de experiencia y más de 1.000 instalaciones fotovoltaicas diseñadas y ejecutadas.
+                  </p>
+                </div>
+                <div style={{ background: "rgb(248,250,252)", borderRadius: "16px", padding: "24px", border: "1px solid rgb(226,232,240)" }}>
+                  <h4 style={{ fontSize: "16px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px" }}>
+                    Ing. Pablo Canache
+                  </h4>
+                  <p style={{ fontSize: "14px", color: "rgb(100,116,139)", lineHeight: 1.7, margin: 0 }}>
+                    Ingeniero electrónico con más de 300 instalaciones solares ejecutadas en el país.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Mano de obra */}
+            <div style={{ marginBottom: "64px" }}>
+              <h3 style={{ fontSize: "20px", fontWeight: 800, color: "rgb(13,27,62)", marginBottom: "16px" }}>
+                Mano de Obra Calificada Local
+              </h3>
+              <p style={{ fontSize: "15px", color: "rgb(100,116,139)", lineHeight: 1.8, margin: 0 }}>
+                Nuestro equipo de montaje y campo está integrado exclusivamente por técnicos capacitados y egresados de la Escuela Técnica N°1 de Brandsen. Esto nos otorga una identidad local única, velocidad de respuesta y la tranquilidad de que cada tablero eléctrico y estructura se instalan bajo las normas de seguridad más estricta.
+              </p>
+            </div>
+
+            {/* Soluciones */}
+            <div>
+              <h3 style={{ fontSize: "20px", fontWeight: 800, color: "rgb(13,27,62)", marginBottom: "24px" }}>
+                Soluciones Técnicas Especializadas
+              </h3>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                  gap: "24px",
+                }}
+              >
+                {[
+                  { title: "Sistemas Fotovoltaicos", desc: "On-Grid, Off-Grid e Híbridos: Dimensionamiento e ingeniería llave en mano para hogares, comercios, industrias y campos." },
+                  { title: "Bombeo Solar", desc: "Centrífugo, de Superficie y Helicoidal: Venta, asesoramiento e instalación directa con equipos de primera marca para el sector agropecuario." },
+                  { title: "Térmica Solar", desc: "Distribución e instalación de termotanques solares atmosféricos de industria nacional con stock permanente de repuestos." },
+                  { title: "Auditoría y Mantenimiento", desc: "Diagnóstico, reparación y puesta a punto de sistemas solares preexistentes." },
+                ].map((sol) => (
+                  <div key={sol.title} style={{ background: "rgb(248,250,252)", borderRadius: "16px", padding: "24px", border: "1px solid rgb(226,232,240)" }}>
+                    <h4 style={{ fontSize: "16px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "10px" }}>
+                      {sol.title}
+                    </h4>
+                    <p style={{ fontSize: "14px", color: "rgb(100,116,139)", lineHeight: 1.7, margin: 0 }}>
+                      {sol.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
