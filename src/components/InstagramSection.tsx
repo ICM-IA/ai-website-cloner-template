@@ -126,14 +126,7 @@ export default function InstagramSection() {
 
         {/* Videos Grid */}
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "16px",
-            maxWidth: "550px",
-            margin: "0 auto",
-          }}
-          className="md:grid-cols-3 md:max-w-2xl"
+          className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-sm md:max-w-2xl mx-auto"
         >
           {videos.map((video, index) => (
             <div
