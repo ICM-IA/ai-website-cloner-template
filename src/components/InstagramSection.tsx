@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 
 export default function InstagramSection() {
   const [activeVideo, setActiveVideo] = useState<number | null>(null);
+  const [isMuted, setIsMuted] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const videos = [
@@ -12,7 +13,18 @@ export default function InstagramSection() {
   ];
 
   const handleVideoClick = (videoId: number, index: number) => {
-    // Si hay un video activo, silenciarlo y ponerlo en loop
+    const videoEl = videoRefs.current[index];
+    if (!videoEl) return;
+
+    // Si es el mismo video activo, toggle mute
+    if (activeVideo === videoId) {
+      const newMutedState = !isMuted;
+      videoEl.muted = newMutedState;
+      setIsMuted(newMutedState);
+      return;
+    }
+
+    // Si hay un video activo diferente, silenciarlo y ponerlo en loop
     if (activeVideo !== null && activeVideo !== videoId) {
       const prevIndex = videos.findIndex((v) => v.id === activeVideo);
       if (videoRefs.current[prevIndex]) {
@@ -23,15 +35,13 @@ export default function InstagramSection() {
     }
 
     // Activar el nuevo video
-    const videoEl = videoRefs.current[index];
-    if (videoEl) {
-      videoEl.muted = false;
-      videoEl.loop = false;
-      videoEl.currentTime = 0;
-      videoEl.play();
-    }
+    videoEl.muted = false;
+    videoEl.loop = false;
+    videoEl.currentTime = 0;
+    videoEl.play();
 
     setActiveVideo(videoId);
+    setIsMuted(false);
   };
 
   return (
