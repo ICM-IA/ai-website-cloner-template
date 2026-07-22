@@ -1,5 +1,18 @@
 "use client";
+import { useState, useEffect } from "react";
+
 export default function WhatsAppButton() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div
       style={{
@@ -10,6 +23,9 @@ export default function WhatsAppButton() {
         display: "inline-flex",
         alignItems: "center",
         pointerEvents: "auto",
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "scale(1)" : "scale(0.8)",
+        transition: "opacity 0.3s ease, transform 0.3s ease",
       }}
       className="group"
     >
@@ -47,7 +63,7 @@ export default function WhatsAppButton() {
           height: 58,
           borderRadius: "50%",
           background: "linear-gradient(135deg, #22c55e, #16a34a)",
-          boxShadow: "0 4px 20px rgba(34,197,94,0.5)",
+          boxShadow: "0 0 20px rgba(34,197,94,0.8), 0 0 40px rgba(34,197,94,0.6), 0 0 60px rgba(34,197,94,0.4), 0 4px 20px rgba(34,197,94,0.5)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
