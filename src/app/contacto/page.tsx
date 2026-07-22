@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ContactSection from "@/components/ContactSection";
-import ContactPageContent from "@/components/ContactPageContent";
+import ContactoContent from "@/components/ContactoContent";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -67,7 +67,7 @@ export default function ContactoPage() {
           </div>
         </section>
 
-        <ContactPageContent />
+        <ContactoContent />
         <ContactSection />
       </main>
       <Footer />
