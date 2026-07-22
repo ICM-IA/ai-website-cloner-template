@@ -6,8 +6,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contacto",
-  description:
-    "Contactanos para una visita técnica gratuita y presupuesto sin cargo. Estamos en Brandsen, Buenos Aires.",
+  description: "Contactanos para una visita técnica gratuita y presupuesto sin cargo. Estamos en Brandsen, Buenos Aires.",
 };
 
 const infoCards = [
@@ -61,7 +60,6 @@ export default function ContactoPage() {
     <>
       <Navbar />
       <main>
-        {/* Hero */}
         <section
           style={{
             background: "linear-gradient(135deg, rgb(13,27,62) 0%, rgb(22,24,83) 100%)",
@@ -108,13 +106,11 @@ export default function ContactoPage() {
                 lineHeight: 1.7,
               }}
             >
-              Sin compromiso. Un técnico va a tu domicilio, evalúa tu caso y te armamos
-              un presupuesto personalizado.
+              Sin compromiso. Un técnico va a tu domicilio, evalúa tu caso y te armamos un presupuesto personalizado.
             </p>
           </div>
         </section>
 
-        {/* Info cards */}
         <section style={{ background: "rgb(248,250,252)", padding: "64px 24px" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <div
@@ -164,7 +160,6 @@ export default function ContactoPage() {
           </div>
         </section>
 
-        {/* Proceso */}
         <section style={{ background: "white", padding: "96px 24px" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
@@ -244,7 +239,6 @@ export default function ContactoPage() {
           </div>
         </section>
 
-        {/* Formulario */}
         <ContactSection />
       </main>
       <Footer />
