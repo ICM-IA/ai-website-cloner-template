@@ -145,6 +145,8 @@ export default function InstagramSection() {
                 boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
                 aspectRatio: "9/16",
                 cursor: "pointer",
+                transform: "none",
+                transition: "none",
               }}
               className={index === 2 ? "col-span-2 w-1/2 mx-auto md:col-span-1 md:w-auto" : ""}
               onClick={() => handleVideoClick(video.id, index)}
