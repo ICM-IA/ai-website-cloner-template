@@ -118,8 +118,10 @@ export default function InstagramSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "24px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "16px",
+            maxWidth: "700px",
+            margin: "0 auto",
           }}
         >
           {videos.map((video, index) => (
