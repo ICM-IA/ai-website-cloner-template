@@ -3,7 +3,7 @@
 export default function InstagramSection() {
   const videos = [
     { id: 1, src: "/videos/instagram-1.mp4" },
-    { id: 2, src: "/videos/instagram-2.mp4" },
+    { id: 2, src: "/videos/instagram-2.mov" },
     { id: 3, src: "/videos/instagram-3.mp4" },
   ];
 
