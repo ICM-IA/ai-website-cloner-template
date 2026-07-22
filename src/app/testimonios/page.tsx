@@ -9,12 +9,10 @@ import TestimonialsCarousel from "./TestimonialsCarousel";
 
 export const metadata: Metadata = {
   title: "Testimonios",
-  description:
-    "Conocé las experiencias de nuestros clientes. Más de 50 instalaciones exitosas en Brandsen y la región bonaerense.",
+  description: "Conocé las experiencias de nuestros clientes. Más de 50 instalaciones exitosas en Brandsen y la región bonaerense.",
 };
 
 const instalaciones: Instalacion[] = [
-  // Brandsen (10)
   { lat: -35.1719, lng: -58.2353, ciudad: "Brandsen", direccion: "San Martín 450", tipo: "Residencial", potencia: "3 kW" },
   { lat: -35.1752, lng: -58.2289, ciudad: "Brandsen", direccion: "Rivadavia 1240", tipo: "Residencial", potencia: "4.2 kW" },
   { lat: -35.1695, lng: -58.2410, ciudad: "Brandsen", direccion: "Belgrano 320", tipo: "Comercial", potencia: "10 kW" },
@@ -25,30 +23,25 @@ const instalaciones: Instalacion[] = [
   { lat: -35.1640, lng: -58.2360, ciudad: "Brandsen", direccion: "Av. Garibaldi 200", tipo: "Termotanque", potencia: "180 L" },
   { lat: -35.1710, lng: -58.2440, ciudad: "Brandsen", direccion: "Los Pinos 45", tipo: "Residencial", potencia: "6 kW" },
   { lat: -35.1770, lng: -58.2190, ciudad: "Brandsen", direccion: "Colón 980", tipo: "Industrial", potencia: "30 kW" },
-  // La Plata (6)
   { lat: -34.9215, lng: -57.9545, ciudad: "La Plata", direccion: "Calle 7 N°2340", tipo: "Residencial", potencia: "5 kW" },
   { lat: -34.9280, lng: -57.9480, ciudad: "La Plata", direccion: "Av. 44 N°890", tipo: "Comercial", potencia: "12 kW" },
   { lat: -34.9150, lng: -57.9600, ciudad: "La Plata", direccion: "Calle 19 N°1450", tipo: "Residencial", potencia: "4 kW" },
   { lat: -34.9320, lng: -57.9420, ciudad: "La Plata", direccion: "Calle 60 N°320", tipo: "Termotanque", potencia: "300 L" },
   { lat: -34.9250, lng: -57.9700, ciudad: "La Plata", direccion: "Av. 13 N°560", tipo: "Residencial", potencia: "3.5 kW" },
   { lat: -34.9100, lng: -57.9500, ciudad: "La Plata", direccion: "Calle 32 N°1800", tipo: "Comercial", potencia: "20 kW" },
-  // Monte Grande (4)
   { lat: -34.8146, lng: -58.4726, ciudad: "Monte Grande", direccion: "Av. Monteverde 680", tipo: "Residencial", potencia: "4 kW" },
   { lat: -34.8190, lng: -58.4680, ciudad: "Monte Grande", direccion: "Perón 1540", tipo: "Industrial", potencia: "50 kW" },
   { lat: -34.8100, lng: -58.4800, ciudad: "Monte Grande", direccion: "San Lorenzo 340", tipo: "Residencial", potencia: "5 kW" },
   { lat: -34.8220, lng: -58.4750, ciudad: "Monte Grande", direccion: "Rivadavia 890", tipo: "Termotanque", potencia: "180 L" },
-  // Ranchos / Gral. Paz (4)
   { lat: -35.5228, lng: -58.3244, ciudad: "Ranchos", direccion: "Alberdi 95", tipo: "Residencial", potencia: "3.5 kW" },
   { lat: -35.5260, lng: -58.3190, ciudad: "Ranchos", direccion: "Mitre 410", tipo: "Agropecuario", potencia: "20 kW" },
   { lat: -35.5180, lng: -58.3300, ciudad: "Ranchos", direccion: "San Martín 750", tipo: "Residencial", potencia: "4 kW" },
   { lat: -35.5310, lng: -58.3120, ciudad: "Ranchos", direccion: "Ruta 36 Km 96", tipo: "Agropecuario", potencia: "15 kW" },
-  // General Belgrano (4)
   { lat: -35.7668, lng: -58.4970, ciudad: "Gral. Belgrano", direccion: "Av. Libertad 345", tipo: "Residencial", potencia: "4 kW" },
   { lat: -35.7700, lng: -58.5020, ciudad: "Gral. Belgrano", direccion: "Sarmiento 780", tipo: "Termotanque", potencia: "180 L" },
   { lat: -35.7630, lng: -58.4920, ciudad: "Gral. Belgrano", direccion: "Rivadavia 1200", tipo: "Residencial", potencia: "5 kW" },
   { lat: -35.7740, lng: -58.5080, ciudad: "Gral. Belgrano", direccion: "Belgrano 440", tipo: "Comercial", potencia: "8 kW" },
-  // Jeppener (2)
-  { lat: -35.3020, lng: -58.1120, ciudad: "Jeppener", direccion: "Los lamos 89", tipo: "Residencial", potencia: "3 kW" },
+  { lat: -35.3020, lng: -58.1120, ciudad: "Jeppener", direccion: "Los lamos 89", tipo: "Residencial", potencia: "3 kW" },
   { lat: -35.3050, lng: -58.1080, ciudad: "Jeppener", direccion: "Ruta 36 Km 82", tipo: "Agropecuario", potencia: "15 kW" },
 ];
 
@@ -67,7 +60,7 @@ const testimonios = [
   { nombre: "Verónica S.", ubicacion: "Gral. Belgrano", tipo: "Termotanque", stars: 5, texto: "El termotanque solar fue la mejor inversión que hice en el año. No pago más gas para agua caliente y en verano el rendimiento es increíble. El equipo quedó instalado prolijo y sin problemas.", ahorro: "100% agua caliente" },
   { nombre: "Oscar N.", ubicacion: "Jeppener", tipo: "Agropecuario", stars: 5, texto: "Para el campo fue fundamental. El sistema de bombeo solar funciona de maravilla. Ya no dependemos de los cortes de luz y el costo de operación bajó drásticamente.", ahorro: "85% en energía" },
   { nombre: "Fernanda R.", ubicacion: "La Plata", tipo: "Comercial", stars: 5, texto: "Restaurante con alta demanda eléctrica. Instalamos 12kW y en los primeros tres meses ya notamos un ahorro enorme. El servicio postventa también es muy bueno, responden rápido cualquier consulta.", ahorro: "72% de ahorro" },
-  { nombre: "Gustavo M.", ubicacion: "Brandsen", tipo: "Residencial", stars: 5, texto: "Segunda instalación que hago con ellos –” la primera fue hace dos años y quedé tan conforme que llamé para ampliar el sistema. Son serios, puntuales y el trabajo siempre queda impecable.", ahorro: "85% de ahorro" },
+  { nombre: "Gustavo M.", ubicacion: "Brandsen", tipo: "Residencial", stars: 5, texto: "Segunda instalación que hago con ellos. La primera fue hace dos años y quedé tan conforme que llamé para ampliar el sistema. Son serios, puntuales y el trabajo siempre queda impecable.", ahorro: "85% de ahorro" },
   { nombre: "Raquel T.", ubicacion: "Monte Grande", tipo: "Residencial", stars: 5, texto: "El proceso fue muy ordenado. Primero la visita técnica, después el presupuesto detallado y finalmente la instalación en dos días. Pasé de factura de $60.000 a menos de $12.000 mensuales.", ahorro: "80% de ahorro" },
   { nombre: "Martín L.", ubicacion: "Ranchos", tipo: "Agropecuario", stars: 5, texto: "El sistema de riego solar para mis 80 hectáreas fue un cambio total. Cero dependencia de la red eléctrica en temporada. La inversión se paga sola en dos años con lo que ahorramos en energía.", ahorro: "90% en bomba" },
   { nombre: "Sandra K.", ubicacion: "Gral. Belgrano", tipo: "Residencial", stars: 5, texto: "Muy buena atención desde el primer contacto. Me explicaron todo sin apuros, me dieron varias opciones según mi presupuesto y el resultado fue excelente. Totalmente recomendable.", ahorro: "76% de ahorro" },
@@ -85,13 +78,7 @@ export default function TestimoniosPage() {
     <>
       <Navbar />
       <main>
-        {/* Hero */}
-        <section
-          style={{
-            background: "linear-gradient(135deg, rgb(13,27,62) 0%, rgb(22,24,83) 100%)",
-            padding: "140px 24px 96px",
-          }}
-        >
+        <section style={{ background: "linear-gradient(135deg, rgb(13,27,62) 0%, rgb(22,24,83) 100%)", padding: "140px 24px 96px" }}>
           <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
             <p style={{ color: "#f59e0b", fontSize: "13px", fontWeight: 700, letterSpacing: "3px", textTransform: "uppercase", marginBottom: "16px" }}>
               LO QUE DICEN NUESTROS CLIENTES
@@ -109,7 +96,6 @@ export default function TestimoniosPage() {
           </div>
         </section>
 
-        {/* Estadísticas */}
         <section style={{ background: "rgb(248,250,252)", padding: "64px 24px" }}>
           <div style={{ maxWidth: "900px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "32px", textAlign: "center" }}>
             {estadisticas.map((e) => (
@@ -121,7 +107,6 @@ export default function TestimoniosPage() {
           </div>
         </section>
 
-        {/* Mapa de instalaciones */}
         <section style={{ background: "white", padding: "96px 24px" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "48px" }}>
@@ -137,16 +122,9 @@ export default function TestimoniosPage() {
               </p>
             </div>
 
-            <link
-              rel="stylesheet"
-              href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-              integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-              crossOrigin=""
-            />
-
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossOrigin="" />
             <MapWrapper instalaciones={instalaciones} />
 
-            {/* Leyenda */}
             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginTop: "20px", justifyContent: "center" }}>
               {[
                 { label: "Residencial", bg: "#fef3c7", color: "#d97706" },
@@ -163,7 +141,6 @@ export default function TestimoniosPage() {
           </div>
         </section>
 
-        {/* Testimonios carrusel */}
         <section style={{ background: "rgb(248,250,252)", padding: "96px 24px" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
@@ -179,7 +156,6 @@ export default function TestimoniosPage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section style={{ background: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)", padding: "80px 24px", textAlign: "center" }}>
           <div style={{ maxWidth: "700px", margin: "0 auto" }}>
             <h2 style={{ color: "rgb(13,27,62)", fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 900, marginBottom: "16px" }}>
