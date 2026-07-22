@@ -101,7 +101,7 @@ export default function HeroSection() {
             marginTop: "20px",
           }}
         >
-          Instalación profesional, dimensionamiento experto y +55 instalaciones
+          Instalación profesional, dimensionamiento experto y más de 55 instalaciones
           realizadas en toda Argentina.
         </p>
 
