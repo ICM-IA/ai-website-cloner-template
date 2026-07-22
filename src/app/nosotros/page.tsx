@@ -18,7 +18,7 @@ const valores = [
     desc: "Solo trabajamos con equipos certificados de primer nivel: paneles Tier 1, inversores de marcas líderes y estructuras de aluminio marine grade.",
   },
   {
-    icon: "🤝",
+    icon: "🤝",
     title: "Compromiso real",
     desc: "Acompañamos cada proyecto desde la visita técnica hasta la puesta en marcha y el seguimiento post-instalación.",
   },
@@ -28,17 +28,17 @@ const valores = [
     desc: "Creemos en un futuro energético limpio. Cada instalación es un paso concreto hacia la independencia energética y el cuidado del medioambiente.",
   },
   {
-    icon: "ðŸ“",
+    icon: "📏",
     title: "Dimensionamiento preciso",
     desc: "Analizamos tu consumo real y diseñamos el sistema exacto que necesitás, sin sobredimensionar ni quedarte corto.",
   },
   {
-    icon: "ðŸ”§",
+    icon: "🔧",
     title: "Servicio postventa",
     desc: "Contamos con soporte técnico para todo lo que necesites después de la instalación: mantenimiento, monitoreo y garantías.",
   },
   {
-    icon: "ðŸ’¡",
+    icon: "💡",
     title: "Transparencia total",
     desc: "Te explicamos cada paso del proceso, los materiales que usamos y los resultados reales que podés esperar.",
   },
@@ -207,7 +207,7 @@ export default function NosotrosPage() {
                 </h3>
                 {[
                   "Empresa local con conocimiento de la zona",
-                  "Distribuidores directos –” precios de mayorista",
+                  "Distribuidores directos – precios de mayorista",
                   "Financiación disponible en cuotas",
                   "Garantía extendida en equipos e instalación",
                   "Monitoreo remoto incluido",
@@ -225,7 +225,7 @@ export default function NosotrosPage() {
                       color: "rgba(255,255,255,0.9)",
                     }}
                   >
-                    <span style={{ color: "#f59e0b", fontWeight: 700, fontSize: "18px" }}>œ“</span>
+                    <span style={{ color: "#f59e0b", fontWeight: 700, fontSize: "18px" }}>✔</span>
                     {item}
                   </div>
                 ))}
@@ -308,7 +308,7 @@ export default function NosotrosPage() {
 
         {/* Equipo */}
         <section style={{ background: "white", padding: "96px 24px" }}>
-          <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+          <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "64px" }}>
               <p
                 style={{
@@ -329,7 +329,7 @@ export default function NosotrosPage() {
                   fontWeight: 800,
                 }}
               >
-                Profesionales comprometidos con tu proyecto
+                Profesionales dedicados a tu proyecto
               </h2>
               <div
                 style={{
@@ -344,7 +344,7 @@ export default function NosotrosPage() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
                 gap: "32px",
               }}
             >
@@ -352,103 +352,38 @@ export default function NosotrosPage() {
                 <div
                   key={e.nombre}
                   style={{
-                    background: "linear-gradient(135deg, rgb(13,27,62), rgb(22,24,83))",
+                    background: "rgb(248,250,252)",
                     borderRadius: "16px",
-                    padding: "36px 28px",
-                    textAlign: "center",
+                    padding: "32px",
+                    border: "1px solid rgb(226,232,240)",
                   }}
                 >
-                  <div
+                  <h3
                     style={{
-                      width: "64px",
-                      height: "64px",
-                      borderRadius: "50%",
-                      background: "rgba(245,158,11,0.15)",
-                      border: "2px solid rgba(245,158,11,0.4)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      margin: "0 auto 20px",
-                      fontSize: "28px",
+                      fontSize: "18px",
+                      fontWeight: 700,
+                      color: "rgb(13,27,62)",
+                      marginBottom: "6px",
                     }}
                   >
-                    ðŸ‘·
-                  </div>
-                  <h3 style={{ color: "white", fontSize: "17px", fontWeight: 700, marginBottom: "6px" }}>
                     {e.nombre}
                   </h3>
-                  <p style={{ color: "#f59e0b", fontSize: "13px", fontWeight: 600, marginBottom: "14px" }}>
+                  <p
+                    style={{
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      color: "#f59e0b",
+                      marginBottom: "12px",
+                      textTransform: "uppercase",
+                    }}
+                  >
                     {e.rol}
                   </p>
-                  <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "14px", lineHeight: 1.7 }}>
+                  <p style={{ fontSize: "14px", color: "rgb(100,116,139)", lineHeight: 1.7 }}>
                     {e.desc}
                   </p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA final */}
-        <section
-          style={{
-            background: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
-            padding: "80px 24px",
-            textAlign: "center",
-          }}
-        >
-          <div style={{ maxWidth: "700px", margin: "0 auto" }}>
-            <h2
-              style={{
-                color: "rgb(13,27,62)",
-                fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
-                fontWeight: 900,
-                marginBottom: "16px",
-              }}
-            >
-              ¿Listo para dar el paso a la energía solar?
-            </h2>
-            <p
-              style={{
-                color: "rgba(13,27,62,0.8)",
-                fontSize: "17px",
-                marginBottom: "32px",
-              }}
-            >
-              Pedí una visita técnica gratuita y te armamos un presupuesto a medida.
-            </p>
-            <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-              <Link
-                href="/contacto"
-                style={{
-                  background: "rgb(13,27,62)",
-                  color: "white",
-                  fontWeight: 800,
-                  fontSize: "16px",
-                  padding: "14px 36px",
-                  borderRadius: "8px",
-                  textDecoration: "none",
-                  display: "inline-block",
-                }}
-              >
-                Pedir presupuesto gratis
-              </Link>
-              <Link
-                href="/servicios/residencial"
-                style={{
-                  background: "transparent",
-                  color: "rgb(13,27,62)",
-                  fontWeight: 700,
-                  fontSize: "16px",
-                  padding: "14px 36px",
-                  borderRadius: "8px",
-                  textDecoration: "none",
-                  display: "inline-block",
-                  border: "2px solid rgb(13,27,62)",
-                }}
-              >
-                Ver servicios
-              </Link>
             </div>
           </div>
         </section>
