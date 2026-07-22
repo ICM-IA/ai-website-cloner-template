@@ -166,59 +166,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Stats bar */}
-      <div
-        className="absolute bottom-0 left-0 right-0 z-10"
-        style={{
-          background: "rgba(255,255,255,0.06)",
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-          borderTop: "1px solid rgba(255,255,255,0.12)",
-          padding: "16px 20px",
-        }}
-      >
-        <div className="mx-auto flex flex-wrap justify-around items-center gap-3 md:gap-6" style={{ maxWidth: "1280px" }}>
-          {stats.map((stat, index) => (
-            <div key={stat.label} className="flex items-center gap-0">
-              {/* Divider before 2nd and 3rd stats on desktop */}
-              {index > 0 && (
-                <div
-                  className="hidden md:block self-stretch mr-8"
-                  style={{
-                    width: "1px",
-                    background: "rgba(255,255,255,0.15)",
-                    minHeight: "40px",
-                  }}
-                />
-              )}
-              <div className="text-center">
-                <div
-                  style={{
-                    fontSize: "clamp(24px, 6vw, 36px)",
-                    fontWeight: 900,
-                    color: "#f59e0b",
-                    lineHeight: 1,
-                  }}
-                >
-                  {stat.number}
-                </div>
-                <div
-                  style={{
-                    fontSize: "clamp(10px, 2vw, 13px)",
-                    color: "rgba(255,255,255,0.7)",
-                    fontWeight: 500,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.5px",
-                    marginTop: "2px",
-                  }}
-                >
-                  {stat.label}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
