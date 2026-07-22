@@ -32,6 +32,7 @@ const galleryItems = [
   { src: "/images/proyectos/Diseño%20sin%20título%20(13).jpg", alt: "Proyecto solar" },
   { src: "/images/proyectos/Diseño%20sin%20título%20(14).jpg", alt: "Proyecto solar" },
   { src: "/images/proyectos/Diseño%20sin%20título%20(15).jpg", alt: "Proyecto solar" },
+  { src: "/images/proyectos/tec.jpg", alt: "Proyecto solar" },
 ];
 
 export default function GallerySection() {
