@@ -46,46 +46,6 @@ function ServiceHero() {
         }}
       />
 
-      {/* Breadcrumb */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          paddingTop: 96,
-          paddingLeft: 24,
-          paddingRight: 24,
-          zIndex: 2,
-          maxWidth: 1280,
-          margin: "0 auto",
-          width: "100%",
-        }}
-      >
-        {/* We need the breadcrumb positioned within the hero not the page */}
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <nav style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <Link
-              href="/"
-              style={{ color: "rgba(255,255,255,0.6)", fontSize: 13, textDecoration: "none" }}
-            >
-              Inicio
-            </Link>
-            <span style={{ color: "#f59e0b", fontSize: 13 }}>/</span>
-            <Link
-              href="/#servicios"
-              style={{ color: "rgba(255,255,255,0.6)", fontSize: 13, textDecoration: "none" }}
-            >
-              Servicios
-            </Link>
-            <span style={{ color: "#f59e0b", fontSize: 13 }}>/</span>
-            <span style={{ color: "rgba(255,255,255,0.6)", fontSize: 13 }}>
-              Instalación Residencial
-            </span>
-          </nav>
-        </div>
-      </div>
-
       {/* Main content */}
       <div
         style={{
