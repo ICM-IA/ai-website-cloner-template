@@ -13,17 +13,17 @@ export const metadata: Metadata = {
 
 const valores = [
   {
-    icon: "âš¡",
+    icon: "⚡",
     title: "Calidad garantizada",
     desc: "Solo trabajamos con equipos certificados de primer nivel: paneles Tier 1, inversores de marcas líderes y estructuras de aluminio marine grade.",
   },
   {
-    icon: "ðŸ¤",
+    icon: "🤝",
     title: "Compromiso real",
     desc: "Acompañamos cada proyecto desde la visita técnica hasta la puesta en marcha y el seguimiento post-instalación.",
   },
   {
-    icon: "ðŸŒ¿",
+    icon: "🌿",
     title: "Sustentabilidad",
     desc: "Creemos en un futuro energético limpio. Cada instalación es un paso concreto hacia la independencia energética y el cuidado del medioambiente.",
   },
@@ -85,7 +85,7 @@ export default function NosotrosPage() {
                 marginBottom: "16px",
               }}
             >
-              QUI‰NES SOMOS
+              QUIÉNES SOMOS
             </p>
             <h1
               style={{
@@ -207,7 +207,7 @@ export default function NosotrosPage() {
                 </h3>
                 {[
                   "Empresa local con conocimiento de la zona",
-                  "Distribuidores directos â€” precios de mayorista",
+                  "Distribuidores directos –” precios de mayorista",
                   "Financiación disponible en cuotas",
                   "Garantía extendida en equipos e instalación",
                   "Monitoreo remoto incluido",
@@ -225,7 +225,7 @@ export default function NosotrosPage() {
                       color: "rgba(255,255,255,0.9)",
                     }}
                   >
-                    <span style={{ color: "#f59e0b", fontWeight: 700, fontSize: "18px" }}>âœ“</span>
+                    <span style={{ color: "#f59e0b", fontWeight: 700, fontSize: "18px" }}>œ“</span>
                     {item}
                   </div>
                 ))}
