@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
-import { Instagram } from "lucide-react";
+import { Camera } from "lucide-react";
 
 export default function InstagramSection() {
   const [activeVideo, setActiveVideo] = useState<number | null>(null);
@@ -197,7 +197,7 @@ export default function InstagramSection() {
                   letterSpacing: "0.2px",
                 }}
               >
-                <Instagram size={12} style={{ flexShrink: 0 }} />
+                <Camera size={12} style={{ flexShrink: 0 }} />
                 Reel
               </div>
             </div>
