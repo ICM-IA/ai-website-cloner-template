@@ -246,7 +246,7 @@ export default function ComercialPage() {
       <div
         style={{
           background: "rgb(245,158,11)",
-          padding: "32px 24px",
+          padding: "24px 24px",
         }}
       >
         <div
@@ -254,7 +254,7 @@ export default function ComercialPage() {
             maxWidth: 1100,
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
             gap: 16,
             textAlign: "center",
           }}
@@ -263,7 +263,7 @@ export default function ComercialPage() {
             <div key={m.label}>
               <p
                 style={{
-                  fontSize: 28,
+                  fontSize: "clamp(20px, 5vw, 28px)",
                   fontWeight: 900,
                   color: "rgb(13,27,62)",
                   margin: "0 0 4px",
@@ -274,7 +274,7 @@ export default function ComercialPage() {
               </p>
               <p
                 style={{
-                  fontSize: 13,
+                  fontSize: "clamp(11px, 2vw, 13px)",
                   fontWeight: 600,
                   color: "rgba(13,27,62,0.7)",
                   textTransform: "uppercase",
