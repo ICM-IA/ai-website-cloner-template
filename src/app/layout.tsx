@@ -9,7 +9,7 @@ const raleway = Raleway({
   display: "swap",
 });
 
-const SITE_URL = "https://energiasolarbrandsen.com";
+const SITE_URL = "https://energiasolarbrandsen.com"; // Build: v2
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
