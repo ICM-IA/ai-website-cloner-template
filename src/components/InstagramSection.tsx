@@ -103,16 +103,28 @@ export default function InstagramSection() {
                 overflow: "hidden",
                 boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
                 aspectRatio: "9/16",
+                cursor: "pointer",
               }}
             >
               <video
+                ref={(el) => {
+                  if (el) {
+                    el.addEventListener("click", () => {
+                      el.muted = false;
+                      el.currentTime = 0;
+                      el.play();
+                    });
+                  }
+                }}
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
                   display: "block",
                 }}
-                controls
+                autoPlay
+                muted
+                loop
                 playsInline
               >
                 <source src={video.src} type="video/mp4" />
