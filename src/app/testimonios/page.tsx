@@ -78,7 +78,7 @@ export default function TestimoniosPage() {
     <>
       <Navbar />
       <main>
-        <section style={{ background: "linear-gradient(135deg, rgb(13,27,62) 0%, rgb(22,24,83) 100%)", padding: "140px 24px 96px" }}>
+        <section style={{ backgroundImage: `linear-gradient(135deg, rgba(13,27,62,0.85) 0%, rgba(22,24,83,0.85) 100%), url('/images/testimonios-background.jpg')`, backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed", padding: "140px 24px 96px" }}>
           <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
             <p style={{ color: "#f59e0b", fontSize: "13px", fontWeight: 700, letterSpacing: "3px", textTransform: "uppercase", marginBottom: "16px" }}>
               LO QUE DICEN NUESTROS CLIENTES
