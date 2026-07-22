@@ -129,8 +129,8 @@ export default function InstagramSection() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "20px",
-            maxWidth: "700px",
+            gap: "16px",
+            maxWidth: "550px",
             margin: "0 auto",
           }}
           className="md:grid-cols-3"
