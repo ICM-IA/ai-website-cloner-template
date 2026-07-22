@@ -188,7 +188,7 @@ export default function NosotrosPage() {
                 </p>
                 <p style={{ color: "rgb(100,116,139)", fontSize: "16px", lineHeight: 1.8, marginBottom: "16px" }}>
                   Comenzamos instalando sistemas residenciales pequeños y hoy contamos con
-                  más de 50 instalaciones completadas, desde hogares particulares hasta
+                  más de 55 instalaciones completadas, desde hogares particulares hasta
                   comercios, galpones industriales y emprendimientos agropecuarios.
                 </p>
                 <p style={{ color: "rgb(100,116,139)", fontSize: "16px", lineHeight: 1.8 }}>
