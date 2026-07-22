@@ -126,17 +126,26 @@ export default function InstagramSection() {
 
         {/* Videos Grid */}
         <div
-          className="flex flex-wrap justify-center md:grid md:grid-cols-3"
           style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
             gap: "24px",
-            maxWidth: "1280px",
+            maxWidth: "900px",
             margin: "0 auto",
+          }}
+          className="md:grid-cols-3"
+          onMouseEnter={(e) => {
+            const el = e.currentTarget as HTMLDivElement;
+            el.style.gridTemplateColumns = "repeat(auto-fit, minmax(300px, 1fr))";
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget as HTMLDivElement;
+            el.style.gridTemplateColumns = "repeat(2, 1fr)";
           }}
         >
           {videos.map((video, index) => (
             <div
               key={video.id}
-              className={index === 2 ? "w-1/2 md:w-auto" : "w-1/2 md:w-auto"}
               style={{
                 position: "relative",
                 borderRadius: "12px",
@@ -144,7 +153,9 @@ export default function InstagramSection() {
                 boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
                 aspectRatio: "9/16",
                 cursor: "pointer",
+                ...(index === 2 && { gridColumn: "1 / -1", width: "50%", margin: "0 auto" }),
               }}
+              className="md:w-auto"
               onClick={() => handleVideoClick(video.id, index)}
             >
               <video
