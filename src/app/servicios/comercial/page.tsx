@@ -107,7 +107,10 @@ export default function ComercialPage() {
       {/* ── 1. Hero ─────────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: "linear-gradient(135deg, rgb(13,27,62) 0%, rgb(22,24,83) 60%, rgb(30,58,138) 100%)",
+          backgroundImage: `linear-gradient(135deg, rgba(13,27,62,0.85) 0%, rgba(22,24,83,0.85) 60%, rgba(30,58,138,0.85) 100%), url('/images/servicios-background.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
           padding: "120px 24px 80px",
           textAlign: "center",
           position: "relative",
