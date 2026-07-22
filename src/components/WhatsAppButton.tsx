@@ -6,9 +6,10 @@ export default function WhatsAppButton() {
         position: "fixed",
         bottom: 28,
         right: 28,
-        zIndex: 9999,
+        zIndex: 50,
         display: "inline-flex",
         alignItems: "center",
+        pointerEvents: "auto",
       }}
       className="group"
     >
