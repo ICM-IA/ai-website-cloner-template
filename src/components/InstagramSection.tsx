@@ -133,7 +133,7 @@ export default function InstagramSection() {
             maxWidth: "550px",
             margin: "0 auto",
           }}
-          className="md:grid-cols-3 md:!max-w-none"
+          className="md:grid-cols-3 md:max-w-2xl"
         >
           {videos.map((video, index) => (
             <div
