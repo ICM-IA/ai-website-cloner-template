@@ -126,7 +126,7 @@ export default function InstagramSection() {
 
         {/* Videos Grid */}
         <div
-          className="grid grid-cols-2 md:grid-cols-3"
+          className="flex flex-wrap justify-center md:grid md:grid-cols-3"
           style={{
             gap: "24px",
             maxWidth: "1280px",
@@ -136,6 +136,7 @@ export default function InstagramSection() {
           {videos.map((video, index) => (
             <div
               key={video.id}
+              className={index === 2 ? "w-1/2 md:w-auto" : "w-1/2 md:w-auto"}
               style={{
                 borderRadius: "12px",
                 overflow: "hidden",
