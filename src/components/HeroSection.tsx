@@ -101,8 +101,8 @@ export default function HeroSection() {
             marginTop: "20px",
           }}
         >
-          Instalación profesional, dimensionamiento experto y +50 proyectos
-          realizados en la región de Brandsen.
+          Instalación profesional, dimensionamiento experto y +55 instalaciones
+          realizadas en toda Argentina.
         </p>
 
         {/* CTA buttons */}
