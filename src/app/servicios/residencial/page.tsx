@@ -29,7 +29,7 @@ function ServiceHero() {
     >
       {/* Background image */}
       <Image
-        src="/images/residencial-background.jpg"
+        src="/images/residencial-background.webp"
         alt="Instalación de paneles solares en hogar"
         fill
         priority

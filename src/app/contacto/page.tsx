@@ -17,7 +17,7 @@ export default function ContactoPage() {
       <main>
         <section
           style={{
-            backgroundImage: `linear-gradient(135deg, rgba(13,27,62,0.85) 0%, rgba(22,24,83,0.85) 100%), url('/images/contacto-background.jpg')`,
+            backgroundImage: `linear-gradient(135deg, rgba(13,27,62,0.85) 0%, rgba(22,24,83,0.85) 100%), url('/images/contacto-background.webp')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",

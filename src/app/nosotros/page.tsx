@@ -70,7 +70,7 @@ export default function NosotrosPage() {
         {/* Hero */}
         <section
           style={{
-            backgroundImage: `linear-gradient(135deg, rgba(13,27,62,0.85) 0%, rgba(22,24,83,0.85) 100%), url('/images/paneles-background.jpg')`,
+            backgroundImage: `linear-gradient(135deg, rgba(13,27,62,0.85) 0%, rgba(22,24,83,0.85) 100%), url('/images/paneles-background.webp')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",
