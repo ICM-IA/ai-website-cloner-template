@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
+import { Play } from "lucide-react";
 
 export default function InstagramSection() {
   const [activeVideo, setActiveVideo] = useState<number | null>(null);
@@ -182,19 +183,21 @@ export default function InstagramSection() {
                   position: "absolute",
                   top: "12px",
                   left: "12px",
-                  background: "rgba(0,0,0,0.6)",
-                  backdropFilter: "blur(10px)",
-                  padding: "6px 12px",
-                  borderRadius: "20px",
+                  background: "rgba(0,0,0,0.55)",
+                  backdropFilter: "blur(8px)",
+                  WebkitBackdropFilter: "blur(8px)",
+                  padding: "4px 9px",
+                  borderRadius: "14px",
                   display: "flex",
                   alignItems: "center",
-                  gap: "6px",
-                  fontSize: "12px",
-                  fontWeight: 600,
+                  gap: "4px",
+                  fontSize: "11px",
+                  fontWeight: 700,
                   color: "white",
+                  letterSpacing: "0.2px",
                 }}
               >
-                <span style={{ fontSize: "14px" }}>📷</span>
+                <Play size={11} style={{ flexShrink: 0 }} />
                 Reel
               </div>
             </div>
