@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { StatsSection } from "@/components/StatsSection";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -362,7 +363,16 @@ export default function NosotrosPage() {
                 }}
               >
                 <div style={{ background: "rgb(248,250,252)", borderRadius: "16px", padding: "32px", border: "1px solid rgb(226,232,240)" }}>
-                  <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px" }}>
+                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+                    <Image
+                      src="/images/emiliano.jpg"
+                      alt="Emiliano Cortés"
+                      width={120}
+                      height={120}
+                      style={{ borderRadius: "50%", objectFit: "cover" }}
+                    />
+                  </div>
+                  <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px", textAlign: "center" }}>
                     Emiliano Cortés
                   </h4>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "#f59e0b", marginBottom: "12px", textTransform: "uppercase" }}>
@@ -373,7 +383,16 @@ export default function NosotrosPage() {
                   </p>
                 </div>
                 <div style={{ background: "rgb(248,250,252)", borderRadius: "16px", padding: "32px", border: "1px solid rgb(226,232,240)" }}>
-                  <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px" }}>
+                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+                    <Image
+                      src="/images/javier.jpg"
+                      alt="Javier Peverelli"
+                      width={120}
+                      height={120}
+                      style={{ borderRadius: "50%", objectFit: "cover" }}
+                    />
+                  </div>
+                  <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px", textAlign: "center" }}>
                     Javier Peverelli
                   </h4>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "#f59e0b", marginBottom: "12px", textTransform: "uppercase" }}>
