@@ -7,27 +7,27 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     q: "¿Cuánto cuesta instalar un sistema solar fotovoltaico?",
-    a: "El costo depende del tamaño del sistema requerido según tu consumo. Para hogares, los sistemas suelen partir desde $1.500.000. Realizamos un dimensionamiento gratuito y te damos un presupuesto detallado sin compromiso.",
+    a: "El costo de una instalación varía según el tipo de sistema (On-Grid, Off-Grid o Híbrido) y la demanda energética diaria de tu hogar, comercio o campo. Realizamos un dimensionamiento de ingeniería a medida sin costo para entregarte una propuesta optimizada.",
   },
   {
     q: "¿Cuánto tiempo tarda la instalación?",
-    a: "La mayoría de las instalaciones residenciales se completan en 1 a 2 días hábiles. Sistemas comerciales e industriales pueden requerir entre 3 y 7 días, dependiendo del tamaño.",
+    a: "Un sistema residencial estándar se ejecuta habitualmente en 1 a 2 días hábiles. Para proyectos comerciales e industriales, el montaje suele requerir entre 2 y 7 días, según la potencia del campo fotovoltaico. Sistemas de bombeo solar y termotanques solares la instalación se realiza en el día.",
   },
   {
     q: "¿Cuánto puedo ahorrar en mi factura de luz?",
-    a: "En sistemas residenciales, el ahorro promedio es del 70 al 90% de la factura mensual. En sistemas comerciales puede llegar al 85%. El retorno de inversión típico es de 3 a 5 años.",
+    a: "En sistemas residenciales y comerciales podés reducir entre un 70% y un 90% el consumo de la red. En sistemas conectados a la red (On-Grid/Hibridos) bajo la Ley de Generación Distribuida, también podés inyectar y vender los excedentes no consumidos.",
   },
   {
-    q: "¿Qué sucede cuando hay días nublados o lluvia?",
-    a: "Los paneles siguen generando energía con luz difusa, aunque con menor eficiencia. Los sistemas on-grid usan la red eléctrica como respaldo, y los sistemas off-grid incluyen baterías de almacenamiento.",
+    q: "¿Qué sucede cuando hay días nublados o de lluvia?",
+    a: "Los paneles solares continúan generando energía captando la radiación solar difusa, aunque a menor rendimiento. En sistemas On-Grid la red pública compensa automáticamente la diferencia, mientras que en sistemas Híbridos u Off-Grid el suministro está cubierto por el banco de baterías.",
   },
   {
     q: "¿Ofrecen garantía en los equipos y la instalación?",
-    a: "Sí. Los paneles tienen garantía de 25 años en producción de energía y 10 años de garantía de producto. Los inversores tienen 5 años. La instalación tiene 1 año de garantía propia de mano de obra.",
+    a: "Sí, trabajamos con marcas certificadas de primer nivel. Los paneles solares cuentan con hasta 15 años de garantía de fabricación y 25 a 30 años de producción lineal garantizada. Los inversores y baterías incluyen de 5 a 10 años de garantía de fábrica, y nuestra mano de obra e ingeniería cuenta con 1 año de garantía escrita.",
   },
   {
     q: "¿Trabajan en todo el país?",
-    a: "Sí, realizamos instalaciones en todo el país. Podés consultarnos indicando tu ubicación y nos pondremos en contacto para ayudarte con tu proyecto solar.",
+    a: "Sí, realizamos ingeniería, provisión de equipos y montajes en cualquier punto de Argentina. Escribinos con tu ubicación para analizar tu proyecto.",
   },
 ];
 

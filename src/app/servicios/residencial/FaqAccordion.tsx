@@ -7,23 +7,23 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     q: "¿Cuántos paneles necesito para mi casa?",
-    a: "Depende de tu consumo mensual en kilovatios-hora (kWh). Para una vivienda promedio con un consumo mensual de entre 300 kWh y 500 kWh, generalmente se requiere un sistema de 4 a 8 paneles (de 470 W a 620 W cada uno). Realizamos un dimensionamiento gratuito y a medida analizando tu factura eléctrica para garantizar la potencia exacta que necesitás.",
+    a: "Depende de tu consumo mensual en kilovatios-hora (kWh) y del perfil de uso de tu hogar. Para viviendas promedio con consumos de 300 kWh a 800 kWh mensuales, se suelen instalar sistemas de 4 a 16 paneles (de 550 Wp a 620 Wp cada uno). Cada caso es único: realizamos un dimensionamiento personalizado analizando tu factura eléctrica para determinar la potencia exacta (kWp) que necesitás.",
   },
   {
     q: "¿Puedo instalar paneles si tengo un techo de chapa?",
-    a: "¡Sí, totalmente! Instalamos sobre techos de chapa (trapezoidal o sinusoidal), losa y tejas. Utilizamos estructuras de aluminio anodizado con anclajes y sellados de alta calidad técnica que garantizan la máxima resistencia mecánica y la total estanqueidad del techo, evitando cualquier tipo de filtración de agua.",
+    a: "¡Sí, totalmente! Instalamos sobre techos de chapa (trapezoidal o sinusoidal), losa y tejas. Utilizamos estructuras de aluminio anodizado con anclajes y sellados de grado técnico que garantizan la máxima resistencia mecánica frente al viento y la total estanqueidad del techo, evitando cualquier tipo de filtración de agua.",
   },
   {
-    q: "¿Necesito permiso municipal para instalar?",
-    a: "No se requiere un permiso municipal de obra, pero si optás por un sistema conectado a la red (On-Grid) o un sistema Híbrido, gestionamos el trámite de habilitación técnica y medidor bidireccional ante tu distribuidora eléctrica local bajo el marco de la Ley de Generación Distribuida. Nosotros nos encargamos de todo el proceso de certificación.",
+    q: "¿Necesito permiso municipal o medidor bidireccional para instalar?",
+    a: "No se requiere permiso municipal de obra. En cuanto a la conexión eléctrica, cada caso es diferente y se analiza a medida: Si tu objetivo es vender excedentes a la red bajo la Ley de Generación Distribuida (Ley 27.424), te acompañamos y asesoramos en toda la tramitación técnica para la solicitud del medidor bidireccional ante la distribuidora eléctrica. En muchos hogares no es necesario el medidor bidireccional, ya que la prioridad es consumir directamente la energía generada o almacenarla en baterías para respaldo ante cortes, logrando independencia sin trámites complejos.",
   },
   {
     q: "¿Qué pasa si genero más energía de la que consumo?",
-    a: "Tanto con un sistema On-Grid (conectado a la red) como con un sistema Híbrido (con baterías de respaldo), tenés la posibilidad de inyectar los excedentes de energía a la red de tu distribuidora eléctrica. En los municipios y provincias donde rige la Ley de Generación Distribuida (Ley 27.424), esos excedentes inyectados se compensan a tu favor en la factura. En el caso del sistema híbrido, el excedente solar primero recarga tus baterías para garantizarte autonomía ante cortes de luz y, una vez completada la carga, el sobrante se inyecta a la red eléctrica.",
+    a: "Depende del tipo de configuración elegida para tu hogar: Con banco de baterías (Sistema Híbrido o Aislado): La energía excedente se utiliza primero para recargar tus baterías al 100%, asegurando autonomía ante cortes de luz o para consumir de noche. Conectado a la red (Sistema On-Grid): Si contás con medidor bidireccional habilitado, la energía sobrante durante las horas de sol se exporta a la red eléctrica y la distribuidora te la compensa como un crédito a favor en tu factura. Con limitador de inyección: Si no tenés medidor bidireccional, el inversor inteligente autorregula de forma automática la producción para generar únicamente lo que tu casa necesita en ese instante.",
   },
   {
     q: "¿Cuánto tarda en pagarse la inversión?",
-    a: "En general, el retorno de inversión (Payback) se sitúa entre 2 y 7 años, dependiendo de la escala del sistema (potencia en kWp), el perfil de consumo de la vivienda y la tarifa vigente de la energía eléctrica en tu zona. Teniendo en cuenta que los paneles fotovoltaicos tienen una vida útil certificada superior a los 25 años, una vez amortizado el equipo disfrutás de energía limpia y prácticamente gratuita durante más de dos décadas.",
+    a: "El retorno de inversión típico (Payback) para un sistema residencial se sitúa entre 3 y 5 años, dependiendo de la tarifa eléctrica de tu zona, la potencia instalada (kWp) y el nivel de autoconsumo diario. Teniendo en cuenta que los paneles fotovoltaicos cuentan con una degradación mínima de 0,5% anual (garantizando más del 80% de rendimiento a los 25 años y una vida útil superior a los 30 a 35 años), disfrutás de energía limpia a costo prácticamente cero por décadas.",
   },
 ];
 
