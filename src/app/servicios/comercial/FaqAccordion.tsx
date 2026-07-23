@@ -7,23 +7,23 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     q: "¿Puedo financiar la instalación?",
-    a: "Sí, contamos con opciones de financiación en cuotas. También existe la posibilidad de leasing solar donde pagás una cuota mensual menor al ahorro generado, sin inversión inicial.",
+    a: "Te asesoramos y acompañamos en la gestión de créditos bancarios específicos. Existen líneas de 'Financiación Verde' y préstamos sustentables de diversas entidades bancarias con tasas preferenciales y plazos adaptados a proyectos de energía renovable. Te entregamos toda la carpeta de ingeniería y la documentación técnica necesaria (kWp, generación anual en kWh y estudio de impacto) para que presentes en tu banco y accedas a la mejor tasa disponible.",
   },
   {
     q: "¿Cuánto espacio de techo necesito?",
-    a: "Cada kW de paneles requiere aproximadamente 6-8 m² de techo. Para un sistema de 10kW necesitás entre 60 y 80 m² de techo bien orientado.",
+    a: "Cada kWp (kilovatio pico) instalado requiere entre 6 y 8 m² de superficie aprovechable. Por ejemplo, para una instalación comercial típica de 10 kWp se necesitan entre 60 y 80 m² de techo con buena orientación y libre de sombras.",
   },
   {
     q: "¿Funciona en días nublados?",
-    a: "Los paneles generan energía con luz difusa, aunque con menor eficiencia (20-40% de la potencia nominal). Los sistemas on-grid usan la red como respaldo en esos momentos.",
+    a: "Sí. Los paneles fotovoltaicos continúan generando energía captando la radiación solar difusa. En días nublados, la producción se sitúa entre un 15% y 30% de la potencia nominal (kWp). El sistema On-Grid o Híbrido compensa automáticamente esa diferencia tomando la energía restante de la red eléctrica.",
   },
   {
     q: "¿Qué pasa con el excedente de energía?",
-    a: "Podés inyectarlo a la red bajo la Ley 27.424 de Generación Distribuida, obteniendo créditos en tu factura. También podés almacenarlo en baterías para uso nocturno.",
+    a: "Si generás más energía de la que consumís, podés inyectarla a la red eléctrica bajo el marco de la Ley 27.424 de Generación Distribuida, obteniendo un crédito a favor en tu factura (Net-Metering). En sistemas con baterías, la prioridad del excedente es mantener cargado tu banco de reserva.",
   },
   {
     q: "¿Cuánto dura la instalación?",
-    a: "Para la mayoría de los comercios, la instalación se completa en 1 a 5 días hábiles según la complejidad. Coordinamos para minimizar el impacto en tu operación.",
+    a: "El montaje de un sistema comercial se completa habitualmente entre 1 y 5 días hábiles, dependiendo de la potencia del proyecto (kWp) y el tipo de cubierta. Coordinamos los trabajos para no interferir en ningún momento con el horario de atención ni con la operativa de tu negocio.",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function FaqAccordion() {
             margin: 0,
           }}
         >
-          Dudas sobre energía solar comercial
+          Todo lo que necesitás saber
         </h2>
         <div
           style={{

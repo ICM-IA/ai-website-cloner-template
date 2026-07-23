@@ -15,85 +15,85 @@ export const metadata = {
 
 const metrics = [
   { number: "Hasta 90%", label: "Ahorro en energía" },
-  { number: "3-5 años", label: "Retorno de inversión" },
-  { number: "25 años", label: "Garantía de paneles" },
-  { number: "48 hs", label: "Tiempo de instalación" },
+  { number: "2-4 años", label: "Retorno de inversión" },
+  { number: "+30 años", label: "Vida útil estimada" },
+  { number: "24 a 72 hs", label: "Tiempo de instalación" },
 ];
 
 const benefits = [
   {
     icon: "💰",
-    title: "Reducción inmediata de costos",
-    desc: "Los sistemas comerciales generan retorno visible desde el primer mes. Bajá tu factura de energía hasta un 90%.",
+    title: "Reducción inmediata de costos de operación",
+    desc: "Maximizá el autoconsumo de energía durante el horario operativo de tu negocio y reducí el importe de tu factura eléctrica hasta un 90% desde el primer mes de puesta en marcha.",
   },
   {
     icon: "📊",
-    title: "ROI comprobable",
-    desc: "Te presentamos un análisis financiero detallado: inversión, ahorro proyectado y punto de equilibrio mes a mes.",
+    title: "ROI comprobable y análisis financiero",
+    desc: "Te entregamos un estudio de ingeniería y viabilidad económica detallado: inversión inicial, proyección de generación fotovoltaica anual (kWh), estimación de ahorro mensual y el punto de equilibrio (Payback) de tu proyecto.",
   },
   {
-    icon: "⚡",
-    title: "Continuidad operativa",
-    desc: "Con sistemas híbridos o con baterías, tu comercio sigue funcionando durante cortes de luz.",
+    icon: "🔋",
+    title: "Continuidad operativa y respaldo ante cortes",
+    desc: "Protegé la operación de tu negocio. Con un banco de baterías de respaldo, tus cargas críticas (sistemas de cobro, frío, iluminación y servidores) siguen funcionando de forma automática e ininterrumpida ante caídas de la red eléctrica.",
   },
   {
-    icon: "🏆",
-    title: "Imagen sustentable",
-    desc: "Tus clientes valoran el compromiso ambiental. Diferenciarte con energía renovable suma a tu marca.",
+    icon: "🌱",
+    title: "Imagen sustentable y valor de marca",
+    desc: "Posicioná tu comercio o PyME con estándares de sustentabilidad. Tus clientes valoran el compromiso ambiental y la reducción activa de la huella de carbono (CO2) en tus procesos.",
   },
   {
     icon: "🔧",
-    title: "Mantenimiento mínimo",
-    desc: "Los paneles no tienen partes móviles. El mantenimiento es simple y nosotros lo realizamos de forma preventiva.",
+    title: "Mantenimiento mínimo y control desde tu celular",
+    desc: "Al no poseer partes móviles, el desgaste mecánico del sistema es nulo. La limpieza es tan simple que el polvillo habitual se remueve con la misma agua de lluvia, y te enseñamos a monitorear la producción en tiempo real (kWh) desde la App en tu celular.",
   },
   {
-    icon: "📋",
-    title: "Financiación disponible",
-    desc: "Contamos con opciones de financiación para que la inversión no impacte en tu capital de trabajo.",
+    icon: "💼",
+    title: "Esquemas de inversión a medida",
+    desc: "Diseñamos proyectos dimensionados a la medida de la escala de tu negocio y su perfil de consumo energético, buscando optimizar el flujo de caja para que la inversión se amortice en el menor tiempo posible.",
   },
 ];
 
 const casos = [
   {
-    title: "Supermercados y almacenes",
+    title: "Supermercados y autoservicios",
     img: "/images/gallery-1.webp",
-    desc: "Establecimientos con alta demanda de frío y iluminación. Los sistemas de 15kW a 50kW reducen los costos operativos de manera significativa.",
-    stats: "Ahorro promedio: 75-85%",
+    desc: "Establecimientos con demanda constante de refrigeración e iluminación. La energía solar abastece el consumo diurno continuo de bateas y cámaras de frío, reduciendo el costo de la factura eléctrica y aplanando los picos de potencia de la tarifa comercial.",
+    stats: "Sistemas recomendados: 15 a 50 kWp",
   },
   {
-    title: "Talleres y galpones",
+    title: "Talleres, galpones y depósitos",
     img: "/images/gallery-4.webp",
-    desc: "Superficies techadas amplias, ideales para instalaciones de gran potencia. El sistema paga la inversión en 2 a 4 años.",
-    stats: "Sistema típico: 30-100kW",
+    desc: "Instalaciones con amplias cubiertas de chapa ideales para el montaje fotovoltaico. Al concentrar su actividad de herramientas y maquinaria en horario diurno, logran un nivel de autoconsumo superior al 80%, optimizando el uso de la superficie del techo.",
+    stats: "Sistemas recomendados: 20 a 100 kWp",
   },
   {
-    title: "Oficinas y consultorios",
+    title: "Oficinas, locales, consultorios y farmacias",
     img: "/images/product-4.webp",
-    desc: "Consumo concentrado en horario comercial, coincide perfectamente con la generación solar. Ideal para profesionales.",
-    stats: "Retorno en: 3-4 años",
+    desc: "Espacios comerciales con un perfil de consumo 100% diurno (climatización, computadoras e iluminación). La generación solar coincide perfectamente con las horas de mayor actividad del negocio, maximizando el ahorro directo.",
+    stats: "Sistemas recomendados: 5 a 15 kWp",
   },
 ];
 
 const steps = [
   {
     icon: "🔍",
-    title: "Auditoría energética gratuita",
-    desc: "Analizamos tus facturas, equipos y horarios de consumo para diseñar el sistema más eficiente para tu negocio.",
+    title: "Auditoría y diagnóstico energético",
+    desc: "Analizamos tu historial de facturación, la curva de potencia demandada (kW) y los perfiles de consumo para dimensionar la solución más eficiente para tu negocio.",
   },
   {
     icon: "📊",
     title: "Propuesta técnica y financiera",
-    desc: "Recibís un informe completo: plano de instalación, equipos seleccionados, análisis de ROI y opciones de financiación.",
+    desc: "Te entregamos un proyecto completo: ingeniería del sistema (kWp), generación anual estimada (kWh/año), análisis de retorno de inversión (Payback) y especificaciones de los equipos.",
   },
   {
     icon: "⚡",
-    title: "Instalación certificada",
-    desc: "Realizamos la instalación en días hábiles, coordinando para mínimo impacto en tus operaciones.",
+    title: "Instalación profesional sin interrupciones",
+    desc: "Ejecutamos el montaje respetando normativas de seguridad eléctrica y estructural. Coordinamos los trabajos de maniobra para no alterar la rutina ni la venta continua de tu comercio.",
   },
   {
     icon: "📡",
-    title: "Monitoreo y soporte",
-    desc: "Plataforma de monitoreo en tiempo real y soporte técnico posventa. Sabemos que tu negocio no puede parar.",
+    title: "Monitoreo en tiempo real y soporte",
+    desc: "Vinculamos tu sistema a nuestra plataforma de telemetría para que monitorees la producción (kWh) desde tu celular, con el respaldo y asesoramiento posventa de nuestro equipo.",
   },
 ];
 
