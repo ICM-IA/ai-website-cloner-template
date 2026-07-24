@@ -369,7 +369,7 @@ export default function NosotrosPage() {
                       alt="Emiliano Cortés"
                       width={120}
                       height={120}
-                      style={{ width: "120px", height: "120px", borderRadius: "50%", objectFit: "cover" }}
+                      style={{ width: "120px", height: "120px", borderRadius: "50%", objectFit: "cover", objectPosition: "center 15%" }}
                     />
                   </div>
                   <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px", textAlign: "center" }}>
@@ -389,7 +389,7 @@ export default function NosotrosPage() {
                       alt="Javier Peverelli"
                       width={120}
                       height={120}
-                      style={{ width: "120px", height: "120px", borderRadius: "50%", objectFit: "cover" }}
+                      style={{ width: "120px", height: "120px", borderRadius: "50%", objectFit: "cover", objectPosition: "center 15%" }}
                     />
                   </div>
                   <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px", textAlign: "center" }}>
