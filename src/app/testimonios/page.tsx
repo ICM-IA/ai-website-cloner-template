@@ -9,7 +9,7 @@ import TestimonialsCarousel from "./TestimonialsCarousel";
 
 export const metadata: Metadata = {
   title: "Testimonios",
-  description: "Conocé las experiencias de nuestros clientes. Más de 50 instalaciones exitosas en Brandsen y la región bonaerense.",
+  description: "Conocé las experiencias de nuestros clientes. Más de 100 instalaciones exitosas en Brandsen y la región bonaerense.",
 };
 
 const instalaciones: Instalacion[] = [
@@ -67,7 +67,7 @@ const testimonios = [
 ];
 
 const estadisticas = [
-  { num: "50+", label: "Instalaciones completadas" },
+  { num: "100+", label: "Instalaciones completadas" },
   { num: "4+", label: "Años de experiencia" },
   { num: "98%", label: "Clientes satisfechos" },
   { num: "100%", label: "Garantía de instalación" },
@@ -86,7 +86,7 @@ export default function TestimoniosPage() {
             <h1 style={{ color: "white", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 900, lineHeight: 1.15, marginBottom: "24px" }}>
               Más de{" "}
               <span style={{ background: "linear-gradient(135deg, #f59e0b, #fde68a)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                50 familias y empresas
+                100 familias y empresas
               </span>{" "}
               ya ahorran con energía solar
             </h1>
