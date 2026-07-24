@@ -7,23 +7,27 @@ import { cn } from "@/lib/utils";
 const faqs = [
   {
     q: "¿Funciona en invierno?",
-    a: "Sí. Nuestros modelos están diseñados para funcionar en todas las estaciones. En días con poca irradiación solar, el sistema de respaldo eléctrico entra automáticamente para garantizar agua caliente siempre.",
+    a: "Sí, funciona durante todo el año. Los tubos de vacío de borosilicato absorben la radiación sin perder calor por la temperatura exterior. El equipo cubre en promedio el 80% anual de agua caliente. En días invernales de lluvia continua (el 20% restante), el agua entra precalentada y se apoya en tu calefón/termotanque actual o en una resistencia eléctrica auxiliar.",
   },
   {
     q: "¿Cuánta agua caliente produce por día?",
-    a: "El modelo TS18 de 180L produce entre 150 y 180 litros de agua caliente diarios en condiciones normales. El TS30 de 300L, entre 250 y 300 litros, suficiente para familias de 4-6 personas.",
+    a: "Depende del modelo instalado (comercializamos de 100L, 150L, 200L, 250L, 300L y 360L). Calculamos un estándar de 50 Litros de agua caliente diarios por persona. Por ejemplo, un modelo de 200 Litros es el ideal para una familia de 4 integrantes.",
   },
   {
     q: "¿Qué mantenimiento requiere?",
-    a: "El mantenimiento es mínimo: limpieza del colector 2 veces al año y revisión de conexiones. Ofrecemos planes de mantenimiento preventivo anual con visita de técnico incluida.",
+    a: "El mantenimiento es mínimo. Consiste principalmente en la revisión y reemplazo periódico del ánodo de magnesio (protección anticorrosiva contra el sarro), junto con la limpieza de los tubos y control de conexiones.",
   },
   {
-    q: "¿Puedo reemplazar mi termotanque eléctrico actual?",
-    a: "Sí, es la situación más común. Reemplazamos tu termotanque eléctrico actual por el solar, aprovechando parte de la instalación existente. La reconversión generalmente se completa en 1 día.",
+    q: "¿Puedo reemplazar mi termotanque o calefón actual?",
+    a: "Sí, podés reemplazarlo por completo o dejar tu equipo actual conectado en serie como apoyo. De esta forma, el termotanque solar entrega el agua ya caliente y tu equipo a gas/eléctrico solo encenderá si se requiere en días muy nublados.",
   },
   {
     q: "¿Cuánto tiempo tarda la instalación?",
-    a: "La instalación completa de un termotanque solar residencial lleva entre 4 y 8 horas. Al final del día ya tenés agua caliente solar funcionando.",
+    a: "La instalación se completa en el día (entre 4 y 8 horas). Incluye montaje, conexión hidráulica, pruebas de estanqueidad y puesta en marcha.",
+  },
+  {
+    q: "¿Puedo instalar el termotanque solar yo mismo?",
+    a: "¡Sí! Si tenés conocimientos o experiencia en plomería o gasitería, podés realizar la instalación sin problemas. Al adquirir el equipo te entregamos el manual técnico completo de montaje, la guía de conexión hidráulica y contás con nuestro asesoramiento técnico personalizado para resolver cualquier duda durante la puesta en marcha.",
   },
 ];
 

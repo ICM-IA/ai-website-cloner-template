@@ -1,5 +1,5 @@
 "use client";
-import { Home, Building2, Sun, Factory } from "lucide-react";
+import { Home, Building2, Sun, Factory, Droplets } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -17,12 +17,12 @@ const services: ServiceCard[] = [
   {
     icon: Home,
     title: "Instalación Residencial",
-    desc: "Sistemas fotovoltaicos on-grid y off-grid para tu hogar. Dimensionamiento personalizado según tu consumo y mayor ahorro en tu factura.",
+    desc: "Sistemas fotovoltaicos On-Grid, Off-Grid e Híbridos diseñados a la medida de tu consumo familiar para maximizar el ahorro y garantizar respaldo eléctrico.",
     features: [
-      "Sistema on-grid y off-grid",
-      "Paneles de alta eficiencia",
-      "Inversores certificados",
-      "Monitoreo en tiempo real",
+      "Sistemas On-Grid, Off-Grid e Híbridos",
+      "Paneles y baterías de última tecnología",
+      "Inversores inteligentes certificados",
+      "Monitoreo en tiempo real por App",
     ],
     cta: "Ver más →",
     href: "/servicios/residencial",
@@ -30,12 +30,12 @@ const services: ServiceCard[] = [
   {
     icon: Building2,
     title: "Instalación Comercial",
-    desc: "Reducí los costos energéticos de tu empresa hasta un 90%. Diseñamos sistemas para comercios, pymes e industrias de cualquier escala.",
+    desc: "Optimización de costos operativos para comercios y PyMEs. Diseñamos e instalamos sistemas para aplanar picos de consumo y asegurar continuidad operativa.",
     features: [
-      "Auditoría energética gratuita",
-      "Financiación disponible",
-      "Mantenimiento preventivo",
-      "Garantía extendida",
+      "Auditoría y diagnóstico de potencia (kW)",
+      "Asesoramiento en Créditos Verdes bancarios",
+      "Respaldo por baterías de litio (Backup)",
+      "Telemetría y monitoreo de generación (kWh)",
     ],
     cta: "Ver más →",
     href: "/servicios/comercial",
@@ -43,13 +43,13 @@ const services: ServiceCard[] = [
   },
   {
     icon: Sun,
-    title: "Termotanque Solar",
-    desc: "Agua caliente todo el año con energía solar. Modelos de 180L y 300L de acero inoxidable con garantía del fabricante.",
+    title: "Termotanques Solares",
+    desc: "Agua caliente sanitaria durante todo el año mediante colectores solares de tubos de vacío. Reducí hasta un 80% tu consumo de gas o electricidad.",
     features: [
-      "Acero inoxidable calidad premium",
-      "Eficiencia 80-85%",
-      "Vida útil +20 años",
-      "Instalación incluida",
+      "Capacidades de 150 L hasta 300 L",
+      "Tanque interior de acero inoxidable 0.5mm",
+      "Ahorro drástico en gas o electricidad",
+      "Larga vida útil y fácil instalación",
     ],
     cta: "Ver más →",
     href: "/servicios/termotanque-solar",
@@ -57,15 +57,29 @@ const services: ServiceCard[] = [
   {
     icon: Factory,
     title: "Instalación Industrial",
-    desc: "Sistemas de gran escala para fábricas, plantas industriales y agronegocios. Máxima potencia, máximo ahorro energético.",
+    desc: "Ingeniería fotovoltaica de gran escala para industrias, plantas fabriles y agro. Maximizá la eficiencia energética y reducí la huella de carbono.",
     features: [
-      "Sistemas de 50kW a 1MW+",
-      "Monitoreo SCADA",
-      "Análisis de carga industrial",
-      "Mantenimiento programado",
+      "Proyectos de 30 kWp a +1 MWp",
+      "Integración bajo Ley 27.424 (Generación Distribuida)",
+      "Estudios de calidad de energía y cargas",
+      "Monitoreo y telemetría de planta",
     ],
     cta: "Ver más →",
     href: "/servicios/industrial",
+    featured: false,
+  },
+  {
+    icon: Droplets,
+    title: "Bombeo Solar",
+    desc: "Sistemas de bombeo solar sumergible para campo, ganadería y riego. Agua constante sin gastos de combustible ni dependencia de la red eléctrica.",
+    features: [
+      "Bombas sumergibles Handuro de 120 W a 5.500 W",
+      "Caudales de hasta 280.000 L/día para riego y ganadería",
+      "Garantía escrita de 1 año directa de fábrica",
+      "Instalación coordinada con perforación en el día",
+    ],
+    cta: "Ver más →",
+    href: "/servicios/bombeo-solar",
     featured: false,
   },
 ];

@@ -104,8 +104,7 @@ function ServiceHero() {
             margin: "0 auto 36px",
           }}
         >
-          Agua caliente todo el año aprovechando la energía del sol. Modelos de
-          180L y 300L en acero inoxidable con 10 años de garantía.
+          Agua caliente sanitaria todo el año mediante colectores solares de tubos de vacío. Reducí hasta un 80% tu consumo de gas o electricidad.
         </p>
 
         <div
@@ -159,32 +158,73 @@ function ServiceHero() {
 /* ─────────────────────────────────────────────
    MODELS SECTION
 ───────────────────────────────────────────── */
+const specsComunes = {
+  material: "Acero inoxidable SUS 304 (0.5mm)",
+  colector: "Tubos de vacío de borosilicato",
+  eficiencia: "80-85% anual",
+  garantia: "Vida útil +30 años",
+  instalacion: "Incluida",
+  aislamiento: "Poliuretano expandido inyectado de 45mm (72hs de conservación)",
+  tanqueExterior: "Acero inoxidable o galvanizado pintado blanco horneado",
+  proteccion: "Ánodo de magnesio incluido de serie",
+  origen: "Industria Nacional (Marca FAM, Córdoba)",
+  accesorios: "Resistencia eléctrica auxiliar, controlador digital y válvula mezcladora termostática",
+};
+
 const models = [
   {
-    id: "TS18",
-    label: "TS18 • 180 Litros",
+    id: "TS100",
+    label: "100 Litros",
     image: "/images/termotanque-180l.webp",
-    ideal: "Familias de 2 a 4 personas",
-    capacidad: "180 litros",
-    material: "Acero inoxidable grado alimentario",
-    colector: "Panel plano de cobre y vidrio templado",
-    eficiencia: "80-85%",
-    garantia: "10 años de fabricante",
-    instalacion: "Incluida",
+    ideal: "1 a 2 personas",
+    capacidad: "100 litros",
+    ...specsComunes,
     popular: false,
   },
   {
-    id: "TS30",
-    label: "TS30 • 300 Litros",
+    id: "TS150",
+    label: "150 Litros",
+    image: "/images/termotanque-180l.webp",
+    ideal: "2 a 3 personas",
+    capacidad: "150 litros",
+    ...specsComunes,
+    popular: false,
+  },
+  {
+    id: "TS200",
+    label: "200 Litros",
+    image: "/images/termotanque-180l.webp",
+    ideal: "3 a 4 personas",
+    capacidad: "200 litros",
+    ...specsComunes,
+    popular: false,
+  },
+  {
+    id: "TS250",
+    label: "250 Litros",
     image: "/images/termotanque-300l.webp",
-    ideal: "Familias numerosas o uso comercial liviano",
+    ideal: "4 a 5 personas",
+    capacidad: "250 litros",
+    ...specsComunes,
+    popular: false,
+  },
+  {
+    id: "TS300",
+    label: "300 Litros",
+    image: "/images/termotanque-300l.webp",
+    ideal: "5 a 6 personas o uso comercial",
     capacidad: "300 litros",
-    material: "Acero inoxidable grado alimentario",
-    colector: "2 paneles planos de cobre y vidrio templado",
-    eficiencia: "82-88%",
-    garantia: "10 años de fabricante",
-    instalacion: "Incluida",
+    ...specsComunes,
     popular: true,
+  },
+  {
+    id: "TS360",
+    label: "360 Litros",
+    image: "/images/termotanque-300l.webp",
+    ideal: "Familias numerosas o uso comercial",
+    capacidad: "360 litros",
+    ...specsComunes,
+    popular: false,
   },
 ];
 
@@ -197,6 +237,11 @@ function ModelCard({ model }: { model: ModelSpec }) {
     { label: "Material", value: model.material },
     { label: "Colector", value: model.colector },
     { label: "Eficiencia solar", value: model.eficiencia },
+    { label: "Aislamiento térmico", value: model.aislamiento },
+    { label: "Tanque exterior", value: model.tanqueExterior },
+    { label: "Protección anticorrosiva", value: model.proteccion },
+    { label: "Origen", value: model.origen },
+    { label: "Accesorios opcionales", value: model.accesorios },
     { label: "Garantía", value: model.garantia },
     { label: "Instalación", value: model.instalacion },
   ];

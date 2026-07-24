@@ -12,9 +12,9 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { end: 55,   suffix: "+",    label: "Instalaciones realizadas", icon: Zap      },
-  { end: 4,    suffix: " años", label: "En el mercado",           icon: Calendar  },
-  { end: 1000, suffix: "+",    label: "kW instalados",            icon: Sun       },
+  { end: 100,  suffix: "+",    label: "Instalaciones realizadas", icon: Zap      },
+  { end: 5,    suffix: " años", label: "En el mercado",           icon: Calendar  },
+  { end: 1500, suffix: "+",    label: "kWp instalados",           icon: Sun       },
   { end: 100,  suffix: "%",    label: "Clientes satisfechos",     icon: Star      },
 ];
 

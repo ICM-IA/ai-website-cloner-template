@@ -69,9 +69,11 @@ export default function HeroSection() {
               color: "#f59e0b",
               fontSize: "13px",
               fontWeight: 600,
+              textTransform: "uppercase",
+              letterSpacing: "0.5px",
             }}
           >
-            ⚡ Energía Solar Profesional
+            Soluciones Energéticas a Medida
           </span>
         </div>
 
@@ -85,9 +87,9 @@ export default function HeroSection() {
             marginTop: "20px",
           }}
         >
-          Transformá tu hogar con
+          Soluciones de Energía Solar para tu
           <br />
-          <span className="text-gradient-gold">Energía Solar</span>
+          <span className="text-gradient-gold">Hogar, Comercio e Industria</span>
         </h1>
 
         {/* Subtitle */}
@@ -96,13 +98,12 @@ export default function HeroSection() {
           style={{
             color: "rgba(255,255,255,0.75)",
             fontSize: "clamp(1rem, 2vw, 1.2rem)",
-            maxWidth: "560px",
+            maxWidth: "600px",
             lineHeight: 1.7,
             marginTop: "20px",
           }}
         >
-          Instalación profesional, dimensionamiento experto y más de 55 instalaciones
-          realizadas en toda Argentina.
+          Diseño de ingeniería, dimensionamiento experto e instalaciones llave en mano. Llevamos más de 100 proyectos ejecutados brindando autonomía, ahorro y respaldo energético.
         </p>
 
         {/* CTA buttons */}

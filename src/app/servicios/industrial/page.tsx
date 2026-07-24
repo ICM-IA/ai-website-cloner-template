@@ -15,28 +15,28 @@ export const metadata = {
 const tiers = [
   {
     name: "Sistema Mediano",
-    potencia: "50 kW – 200 kW",
+    potencia: "50 kWp – 200 kWp",
     ideal: "Pymes industriales, talleres grandes, frigoríficos",
-    paneles: "90 – 360 paneles",
-    superficie: "300 – 1.200 m²",
+    paneles: "90 – 350 paneles",
+    superficie: "250 – 950 m²",
     ahorro: "Reducción de costos fijos de red",
     featured: false,
   },
   {
     name: "Sistema Grande",
-    potencia: "200 kW – 500 kW",
+    potencia: "200 kWp – 500 kWp",
     ideal: "Plantas industriales medianas, industria alimenticia, metalúrgica",
-    paneles: "360 – 900 paneles",
-    superficie: "1.200 – 3.000 m²",
+    paneles: "350 – 860 paneles",
+    superficie: "950 – 2.400 m²",
     ahorro: "Optimización de potencia y consumo",
-    featured: true,
+    featured: false,
   },
   {
     name: "Sistema Megawatt",
-    potencia: "500 kW – 1 MW+",
+    potencia: "500 kWp – 1 MWp",
     ideal: "Grandes industrias, parques solares, agronegocios extensivos",
-    paneles: "900+ paneles",
-    superficie: "3.000+ m²",
+    paneles: "860 – 1.750 paneles",
+    superficie: "2.400 – 4.800 m²",
     ahorro: "Solución a medida y autoconsumo",
     featured: false,
   },
@@ -46,23 +46,23 @@ const tiers = [
 const benefits = [
   {
     icon: "⚡",
-    title: "Reducción masiva de costos",
-    desc: "Para industrias con facturas de millones de pesos mensuales, la energía solar puede reducir el costo energético un 80-90%, con retorno en 2-4 años.",
+    title: "Reducción directa de costos operativos (OPEX) y recupero acelerado",
+    desc: "Industrias de turno diurno (8:00-18:00 hs) logran 70-90%+ de autoconsumo con Payback de 2,5 a 4 años. Industrias de proceso continuo cubren 30-60% del consumo diurno con retorno de 3 a 6 años según la tarifa.",
   },
   {
     icon: "🔒",
-    title: "Cobertura ante incrementos tarifarios",
-    desc: "Fijás parte de tu costo energético por 25 años, protegiéndote de aumentos de tarifas y brindando previsibilidad financiera.",
+    title: "Previsibilidad energética a muy largo plazo",
+    desc: "Fijás el costo de tu propia energía por décadas. Degradación de solo 0,5% anual garantiza más del 80% de rendimiento a 25 años. Vida útil operativa supera 30-35 años, blindando a tu empresa contra aumentos tarifarios.",
   },
   {
     icon: "📡",
-    title: "Monitoreo SCADA en tiempo real",
-    desc: "Sistema de telemetría industrial con alertas automáticas, reportes de producción y análisis de rendimiento para tu equipo técnico.",
+    title: "Telemetría y monitoreo inteligente en tiempo real",
+    desc: "Plataforma de gestión energética continua con visualización de producción (kWh), alertas automáticas, curvas de demanda (kW) y diagnósticos de rendimiento ideales para el seguimiento de mantenimiento y gerencia.",
   },
   {
     icon: "🌿",
-    title: "Certificación ESG y RSE",
-    desc: "Cumplí con estándares ambientales, obtenés certificaciones verdes y mejorás el perfil ESG de tu empresa ante inversores y clientes.",
+    title: "Sustentabilidad y certificaciones ESG / RSE",
+    desc: "Mitigación directa de huella de carbono (CO2), facilitando cumplimiento de estándares ambientales internacionales, reportes RSE y certificaciones sustentables exigidas por clientes, auditorías e inversores.",
   },
 ];
 
@@ -70,28 +70,23 @@ const benefits = [
 const steps = [
   {
     icon: "🔍",
-    title: "Relevamiento técnico",
-    desc: "Visita técnica para analizar consumo, calidad de red, infraestructura eléctrica, orientación y capacidad estructural del techo o terreno.",
-  },
-  {
-    icon: "📐",
-    title: "Ingeniería del proyecto",
-    desc: "Ingenieros especializados diseñan el sistema, cálculo estructural, diagrama unifilar, simulación de producción anual y análisis financiero.",
+    title: "Relevamiento e Ingeniería Inicial",
+    desc: "Visita de campo, análisis de perfil de carga (kW), infraestructura y estructura de cubiertas.",
   },
   {
     icon: "📋",
-    title: "Gestión de permisos",
-    desc: "Nos encargamos de toda la documentación ante municipio, distribuidora eléctrica y organismos regulatorios correspondientes.",
+    title: "Proyecto Ejecutivo y Adecuación Normativa",
+    desc: "Diseño unifilar, carpeta técnica para la distribuidora eléctrica (Ley de Generación Distribuida) y simulación energética.",
   },
   {
     icon: "🏗️",
-    title: "Instalación y comisionamiento",
-    desc: "Equipo técnico especializado, coordinación con tu área de mantenimiento y puesta en marcha con pruebas de rendimiento certificadas.",
+    title: "Montaje y Puesta en Marcha",
+    desc: "Instalación sin interrupción de la producción industrial, ensayos de aislación, calibración de protecciones y comisionamiento.",
   },
   {
     icon: "📡",
-    title: "Operación y mantenimiento",
-    desc: "Plan de mantenimiento preventivo, monitoreo SCADA 24/7 y soporte técnico prioritario para garantizar la máxima disponibilidad del sistema.",
+    title: "Monitoreo 24/7 y Mantenimiento",
+    desc: "Seguimiento continuo del rendimiento desde la App/Plataforma y soporte técnico especializado.",
   },
 ];
 

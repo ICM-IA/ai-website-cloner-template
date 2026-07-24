@@ -162,33 +162,33 @@ function ServiceHero() {
 const benefits = [
   {
     icon: "💡",
-    title: "Ahorro inmediato",
-    desc: "Reducí tu factura de luz entre un 70% y 90% desde el primer mes de funcionamiento.",
+    title: "Ahorro inmediato en tu factura",
+    desc: "Reducí tu consumo eléctrico y la factura de luz hasta en un 90% desde el primer mes de funcionamiento, transformando tu hogar en una vivienda sustentable y eficiente.",
   },
   {
     icon: "📈",
-    title: "Inversión que se paga sola",
-    desc: "El retorno de inversión típico es de 3 a 5 años. Después, 20+ años de energía prácticamente gratis.",
-  },
-  {
-    icon: "🌱",
-    title: "Contribuís al planeta",
-    desc: "Reducís tu huella de carbono y contribuís a un futuro más sustentable para las próximas generaciones.",
+    title: "Inversión inteligente y duradera",
+    desc: "El retorno de inversión estimado se ubica entre 3 y 5 años (según el cuadro tarifario). A partir de ese momento, generás tu propia energía limpia a costo prácticamente cero por más de 30 años.",
   },
   {
     icon: "🔋",
-    title: "Independencia energética",
-    desc: "Con baterías opcionales, seguís con energía aunque haya cortes. Total autonomía.",
+    title: "Independencia y respaldo ante cortes",
+    desc: "Añadiendo almacenamiento en baterías a tu sistema, tu casa sigue funcionando con total normalidad ante caídas de la red eléctrica o problemas de baja tensión.",
   },
   {
     icon: "🏠",
-    title: "Aumenta el valor de tu propiedad",
-    desc: "Una vivienda con paneles solares vale entre un 10% y 20% más en el mercado inmobiliario.",
+    title: "Revalorización de tu propiedad",
+    desc: "Instalar un sistema fotovoltaico moderno y eficiente incrementa de inmediato el valor patrimonial de tu vivienda en el mercado inmobiliario.",
   },
   {
-    icon: "🛡️",
-    title: "25 años de garantía",
-    desc: "Los paneles tienen garantía de producción de 25 años. Una inversión con seguridad a largo plazo.",
+    icon: "⚡",
+    title: "Rendimiento garantizado a largo plazo",
+    desc: "Módulos fotovoltaicos de primera línea con degradación de solo 0,5% anual, garantizando más del 80% de su rendimiento a los 25 años y una vida útil operativa que supera los 30 a 35 años.",
+  },
+  {
+    icon: "🌱",
+    title: "Compromiso con el medio ambiente",
+    desc: "Reducí de forma directa la huella de carbono de tu hogar, evitando la emisión de toneladas de CO2 al año y colaborando de manera concreta con un futuro más limpio para tu familia.",
   },
 ];
 
@@ -300,25 +300,25 @@ const steps = [
     number: 1,
     icon: "📋",
     title: "Consulta y dimensionamiento",
-    desc: "Analizamos tu consumo eléctrico y diseñamos el sistema exacto que necesitás. Sin compromiso y sin costo.",
+    desc: "Analizamos tu consumo eléctrico mensual (kWh) y la potencia requerida (kW) para diseñar un sistema a la medida exacta de tu hogar. Relevamiento inicial sin costo ni compromiso.",
   },
   {
     number: 2,
     icon: "📄",
-    title: "Propuesta y presupuesto",
-    desc: "Te presentamos un presupuesto detallado con equipos, potencia, ahorro estimado y retorno de inversión.",
+    title: "Propuesta y proyecto técnico",
+    desc: "Te presentamos una propuesta detallada con la selección de equipos (paneles, inversor y baterías opcionales), cálculo de generación fotovoltaica anual, porcentaje de ahorro y estimación del tiempo de recupero.",
   },
   {
     number: 3,
     icon: "🔧",
-    title: "Instalación profesional",
-    desc: "Nuestro equipo certificado realiza la instalación en 1 a 2 días, con mínima interferencia en tu hogar.",
+    title: "Instalación y montaje profesional",
+    desc: "Nuestro equipo técnico especializado realiza el montaje de estructuras, paneles y tableros normados en un plazo habitual de 24 a 48 hs, garantizando la máxima seguridad edilicia y mínima interferencia en tu rutina diaria.",
   },
   {
     number: 4,
     icon: "✅",
     title: "Puesta en marcha y seguimiento",
-    desc: "Verificamos el funcionamiento, te mostramos cómo monitorear la producción y quedamos disponibles para cualquier consulta.",
+    desc: "Verificamos el correcto funcionamiento del sistema, realizamos los ensayos de aislación, te enseñamos a monitorear la producción en tiempo real desde la App en tu celular y quedamos a tu disposición para el soporte posventa.",
   },
 ];
 

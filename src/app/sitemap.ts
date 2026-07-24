@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/servicios/comercial", priority: 0.9 },
     { path: "/servicios/industrial", priority: 0.9 },
     { path: "/servicios/termotanque-solar", priority: 0.9 },
+    { path: "/servicios/bombeo-solar", priority: 0.9 },
     { path: "/contacto", priority: 0.8 },
     { path: "/nosotros", priority: 0.7 },
     { path: "/testimonios", priority: 0.7 },

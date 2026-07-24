@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { StatsSection } from "@/components/StatsSection";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -362,7 +363,16 @@ export default function NosotrosPage() {
                 }}
               >
                 <div style={{ background: "rgb(248,250,252)", borderRadius: "16px", padding: "32px", border: "1px solid rgb(226,232,240)" }}>
-                  <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px" }}>
+                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+                    <Image
+                      src="/images/emiliano.jpg"
+                      alt="Emiliano Cortés"
+                      width={120}
+                      height={120}
+                      style={{ width: "120px", height: "120px", borderRadius: "50%", objectFit: "cover" }}
+                    />
+                  </div>
+                  <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px", textAlign: "center" }}>
                     Emiliano Cortés
                   </h4>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "#f59e0b", marginBottom: "12px", textTransform: "uppercase" }}>
@@ -373,14 +383,23 @@ export default function NosotrosPage() {
                   </p>
                 </div>
                 <div style={{ background: "rgb(248,250,252)", borderRadius: "16px", padding: "32px", border: "1px solid rgb(226,232,240)" }}>
-                  <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px" }}>
+                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+                    <Image
+                      src="/images/javier.jpg"
+                      alt="Javier Peverelli"
+                      width={120}
+                      height={120}
+                      style={{ width: "120px", height: "120px", borderRadius: "50%", objectFit: "cover" }}
+                    />
+                  </div>
+                  <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px", textAlign: "center" }}>
                     Javier Peverelli
                   </h4>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "#f59e0b", marginBottom: "12px", textTransform: "uppercase" }}>
                     Socio Fundador
                   </p>
                   <p style={{ fontSize: "14px", color: "rgb(100,116,139)", lineHeight: 1.7, margin: 0 }}>
-                    Docente de la Escuela Técnica N°1 de Brandsen. Cuenta con más de 20 años de experiencia liderando proyectos eléctricos de gran escala (residenciales, comerciales e industriales) y formación electromecánica en entornos de máxima exigencia como la Planta Nuclear Atucha.
+                    Técnico Electromecánico y Docente de la Escuela Técnica N°1 de Brandsen. Cuenta con más de 20 años de experiencia liderando proyectos eléctricos de gran escala (residenciales, comerciales e industriales) y formación electromecánica en entornos de máxima exigencia como la Planta Nuclear Atucha.
                   </p>
                 </div>
               </div>
@@ -428,6 +447,38 @@ export default function NosotrosPage() {
               <p style={{ fontSize: "15px", color: "rgb(100,116,139)", lineHeight: 1.8, margin: 0 }}>
                 Nuestro equipo de montaje y campo está integrado exclusivamente por técnicos capacitados y egresados de la Escuela Técnica N°1 de Brandsen. Esto nos otorga una identidad local única, velocidad de respuesta y la tranquilidad de que cada tablero eléctrico y estructura se instalan bajo las normas de seguridad más estricta.
               </p>
+            </div>
+
+            {/* Alianza con industria nacional / FAM */}
+            <div style={{ marginBottom: "64px" }}>
+              <h3 style={{ fontSize: "20px", fontWeight: 800, color: "rgb(13,27,62)", marginBottom: "16px" }}>
+                🇦🇷 Alianza Estratégica con Industria Nacional
+              </h3>
+              <p style={{ fontSize: "15px", color: "rgb(100,116,139)", lineHeight: 1.8, marginBottom: "24px" }}>
+                Somos distribuidores e instaladores oficiales vinculados directamente con
+                FAM (Famesa, Córdoba). Esta relación directa con fábrica nos permite
+                ofrecer a nuestros clientes el mejor respaldo técnico del mercado, repuestos
+                originales garantizados y condiciones altamente competitivas para compras
+                al por mayor.
+              </p>
+              <div
+                style={{
+                  background: "linear-gradient(135deg, rgb(13,27,62), rgb(22,24,83))",
+                  borderRadius: "16px",
+                  padding: "32px",
+                  color: "white",
+                }}
+              >
+                <p style={{ fontSize: "16px", fontWeight: 700, color: "#f59e0b", marginBottom: "12px" }}>
+                  🏗️ ¿Sos constructor, desarrollador o querés comprar al por mayor?
+                </p>
+                <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.85)", lineHeight: 1.7, margin: 0 }}>
+                  Gracias a nuestro acuerdo comercial con FAM, accedemos a valores
+                  diferenciales por volumen para desarrollos inmobiliarios, complejos
+                  turísticos, barrios cerrados, loteos y obras de escala. Consultanos por
+                  cotizaciones especiales y asesoramiento técnico de planta.
+                </p>
+              </div>
             </div>
 
             {/* Soluciones */}

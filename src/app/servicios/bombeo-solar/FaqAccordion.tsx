@@ -6,24 +6,16 @@ import { cn } from "@/lib/utils";
 
 const faqs = [
   {
-    q: "¿Puedo financiar la instalación?",
-    a: "Te asesoramos y acompañamos en la gestión de créditos bancarios específicos. Existen líneas de 'Financiación Verde' y préstamos sustentables de diversas entidades bancarias con tasas preferenciales y plazos adaptados a proyectos de energía renovable. Te entregamos toda la carpeta de ingeniería y la documentación técnica necesaria (kWp, generación anual en kWh y estudio de impacto) para que presentes en tu banco y accedas a la mejor tasa disponible.",
+    q: "¿Cómo determinan qué bomba necesita mi campo?",
+    a: "Analizamos las variables hidráulicas de tu establecimiento: la profundidad de la perforación (m), el nivel dinámico del agua, la distancia horizontal hacia los bebederos o tanques (m) y la cantidad de cabezas de ganado o requerimiento de riego (L/día). Con estos datos calculamos la Altura Manométrica Total (MT) y la potencia fotovoltaica (Wp) necesaria.",
   },
   {
-    q: "¿Cuánto espacio de techo necesito?",
-    a: "Cada kWp (kilovatio pico) instalado requiere entre 6 y 8 m² de superficie aprovechable. Por ejemplo, para una instalación comercial típica de 10 kWp se necesitan entre 60 y 80 m² de techo con buena orientación y libre de sombras.",
+    q: "¿Qué pasa si no tengo la perforación realizada?",
+    a: "Trabajamos en conjunto con Perforaciones Beto. Coordinamos la perforación encamisada y la instalación del equipo de bombeo solar para realizar todo el trabajo de manera coordinada y dejar el sistema funcionando en el día.",
   },
   {
-    q: "¿Funciona en días nublados?",
-    a: "Sí. Los paneles fotovoltaicos continúan generando energía captando la radiación solar difusa. En días nublados, la producción se sitúa entre un 15% y 30% de la potencia nominal (kWp). El sistema On-Grid o Híbrido compensa automáticamente esa diferencia tomando la energía restante de la red eléctrica.",
-  },
-  {
-    q: "¿Qué pasa con el excedente de energía?",
-    a: "Si generás más energía de la que consumís, podés inyectarla a la red eléctrica bajo el marco de la Ley 27.424 de Generación Distribuida, obteniendo un crédito a favor en tu factura (Net-Metering). En sistemas con baterías, la prioridad del excedente es mantener cargado tu banco de reserva.",
-  },
-  {
-    q: "¿Cuánto dura la instalación?",
-    a: "El montaje de un sistema comercial se completa habitualmente entre 1 y 5 días hábiles, dependiendo de la potencia del proyecto (kWp) y el tipo de cubierta. Coordinamos los trabajos para no interferir en ningún momento con el horario de atención ni con la operativa de tu negocio.",
+    q: "¿El sistema funciona los días nublados o de noche?",
+    a: "Durante el día, el controlador adapta la velocidad del motor según la radiación disponible, continuando el bombeo aun con nubosidad difusa. Si requerís bombeo nocturno, instalamos un equipo con controlador AC/DC, permitiendo conectar un generador o la red eléctrica de forma alternada y segura mediante su térmica correspondiente durante la noche.",
   },
 ];
 
@@ -58,7 +50,7 @@ export default function FaqAccordion() {
             margin: 0,
           }}
         >
-          Todo lo que necesitás saber
+          Todo sobre el bombeo solar
         </h2>
         <div
           style={{
