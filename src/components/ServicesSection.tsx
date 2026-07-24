@@ -243,9 +243,8 @@ export function ServicesSection() {
 
         {/* Cards grid */}
         <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
             gap: "32px",
             alignItems: "stretch",
           }}
