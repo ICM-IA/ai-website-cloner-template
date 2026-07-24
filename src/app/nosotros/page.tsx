@@ -369,7 +369,7 @@ export default function NosotrosPage() {
                       alt="Emiliano Cortés"
                       width={120}
                       height={120}
-                      style={{ borderRadius: "50%", objectFit: "cover" }}
+                      style={{ width: "120px", height: "120px", borderRadius: "50%", objectFit: "cover" }}
                     />
                   </div>
                   <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px", textAlign: "center" }}>
@@ -389,7 +389,7 @@ export default function NosotrosPage() {
                       alt="Javier Peverelli"
                       width={120}
                       height={120}
-                      style={{ borderRadius: "50%", objectFit: "cover" }}
+                      style={{ width: "120px", height: "120px", borderRadius: "50%", objectFit: "cover" }}
                     />
                   </div>
                   <h4 style={{ fontSize: "18px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px", textAlign: "center" }}>
@@ -399,7 +399,7 @@ export default function NosotrosPage() {
                     Socio Fundador
                   </p>
                   <p style={{ fontSize: "14px", color: "rgb(100,116,139)", lineHeight: 1.7, margin: 0 }}>
-                    Docente de la Escuela Técnica N°1 de Brandsen. Cuenta con más de 20 años de experiencia liderando proyectos eléctricos de gran escala (residenciales, comerciales e industriales) y formación electromecánica en entornos de máxima exigencia como la Planta Nuclear Atucha.
+                    Técnico Electromecánico y Docente de la Escuela Técnica N°1 de Brandsen. Cuenta con más de 20 años de experiencia liderando proyectos eléctricos de gran escala (residenciales, comerciales e industriales) y formación electromecánica en entornos de máxima exigencia como la Planta Nuclear Atucha.
                   </p>
                 </div>
               </div>
