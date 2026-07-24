@@ -1,5 +1,6 @@
 "use client";
-import { Home, Building2, Sun, Factory, Droplets } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Home, Building2, Sun, Factory, Droplets, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -102,6 +103,7 @@ function Card({ service }: { service: ServiceCard }) {
               borderRadius: "16px",
               padding: "40px 32px",
               cursor: "pointer",
+              height: "100%",
             }
           : {
               background: "white",
@@ -109,6 +111,7 @@ function Card({ service }: { service: ServiceCard }) {
               borderRadius: "16px",
               padding: "40px 32px",
               cursor: "pointer",
+              height: "100%",
             }
       }
     >
@@ -191,6 +194,223 @@ function Card({ service }: { service: ServiceCard }) {
   );
 }
 
+const GAP = 32;
+const AUTOPLAY_MS = 2000;
+const N = services.length;
+
+function ArrowButton({
+  direction,
+  onClick,
+}: {
+  direction: "prev" | "next";
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={direction === "prev" ? "Anterior" : "Siguiente"}
+      style={{
+        position: "absolute",
+        top: "50%",
+        [direction === "prev" ? "left" : "right"]: "-8px",
+        transform: "translateY(-50%)",
+        background: "rgb(13,27,62)",
+        color: "#f59e0b",
+        border: "none",
+        borderRadius: "50%",
+        width: "44px",
+        height: "44px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        cursor: "pointer",
+        transition: "all 0.2s",
+        zIndex: 2,
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.background = "#f59e0b";
+        e.currentTarget.style.color = "rgb(13,27,62)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.background = "rgb(13,27,62)";
+        e.currentTarget.style.color = "#f59e0b";
+      }}
+    >
+      {direction === "prev" ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
+    </button>
+  );
+}
+
+function ServicesCarousel() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [itemsPerView, setItemsPerView] = useState(3);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [index, setIndex] = useState(3);
+  const [withTransition, setWithTransition] = useState(true);
+  const [dragDeltaX, setDragDeltaX] = useState(0);
+  const draggingRef = useRef(false);
+  const dragStartXRef = useRef(0);
+  const pausedRef = useRef(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const update = () => {
+      const w = el.offsetWidth;
+      setContainerWidth(w);
+      setItemsPerView(w < 640 ? 1 : w < 900 ? 2 : 3);
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  useEffect(() => {
+    setWithTransition(false);
+    setIndex(itemsPerView);
+    const id = requestAnimationFrame(() => setWithTransition(true));
+    return () => cancelAnimationFrame(id);
+  }, [itemsPerView]);
+
+  const extended = [
+    ...services.slice(-itemsPerView),
+    ...services,
+    ...services.slice(0, itemsPerView),
+  ];
+
+  const next = useCallback(() => setIndex((i) => i + 1), []);
+  const prev = useCallback(() => setIndex((i) => i - 1), []);
+  const goTo = useCallback((i: number) => setIndex(i), []);
+
+  // Snap the clone-zone position back to the equivalent real position once the
+  // slide transition has had time to finish. Timer-based (not transitionend)
+  // so it still resolves if a transition gets interrupted by a new click.
+  useEffect(() => {
+    if (index < itemsPerView || index >= itemsPerView + N) {
+      const id = setTimeout(() => {
+        setWithTransition(false);
+        setIndex((i) => {
+          if (i >= itemsPerView + N) return i - N;
+          if (i < itemsPerView) return i + N;
+          return i;
+        });
+      }, 520);
+      return () => clearTimeout(id);
+    }
+  }, [index, itemsPerView]);
+
+  useEffect(() => {
+    if (!withTransition) {
+      const id = requestAnimationFrame(() => setWithTransition(true));
+      return () => cancelAnimationFrame(id);
+    }
+  }, [withTransition, index]);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      if (!draggingRef.current && !pausedRef.current) next();
+    }, AUTOPLAY_MS);
+    return () => clearInterval(id);
+  }, [next]);
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    draggingRef.current = true;
+    dragStartXRef.current = e.clientX;
+    setWithTransition(false);
+    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+  };
+
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!draggingRef.current) return;
+    setDragDeltaX(e.clientX - dragStartXRef.current);
+  };
+
+  const endDrag = () => {
+    if (!draggingRef.current) return;
+    draggingRef.current = false;
+    const threshold = 50;
+    setWithTransition(true);
+    if (dragDeltaX < -threshold) next();
+    else if (dragDeltaX > threshold) prev();
+    setDragDeltaX(0);
+  };
+
+  const cardWidth =
+    itemsPerView > 0
+      ? Math.max(0, (containerWidth - GAP * (itemsPerView - 1)) / itemsPerView)
+      : 0;
+  const translateX = -(index * (cardWidth + GAP)) + dragDeltaX;
+  const activeDot = ((index - itemsPerView) % N + N) % N;
+
+  return (
+    <div style={{ position: "relative", padding: "0 8px" }}>
+      <div
+        ref={containerRef}
+        style={{ position: "relative", overflow: "hidden" }}
+        onMouseEnter={() => {
+          pausedRef.current = true;
+        }}
+        onMouseLeave={() => {
+          pausedRef.current = false;
+        }}
+      >
+        <div
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={endDrag}
+          onPointerLeave={endDrag}
+          style={{
+            display: "flex",
+            gap: `${GAP}px`,
+            cursor: draggingRef.current ? "grabbing" : "grab",
+            transform: `translateX(${translateX}px)`,
+            transition: withTransition ? "transform 0.5s ease" : "none",
+            touchAction: "pan-y",
+          }}
+        >
+          {extended.map((service, i) => (
+            <div key={i} style={{ flex: `0 0 ${cardWidth}px` }}>
+              <Card service={service} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <ArrowButton direction="prev" onClick={prev} />
+      <ArrowButton direction="next" onClick={next} />
+
+      {/* Dots */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "8px",
+          marginTop: "32px",
+        }}
+      >
+        {services.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goTo(itemsPerView + i)}
+            aria-label={`Ir al servicio ${i + 1}`}
+            style={{
+              width: activeDot === i ? "28px" : "10px",
+              height: "10px",
+              borderRadius: "5px",
+              border: "none",
+              background: activeDot === i ? "#f59e0b" : "rgb(226,232,240)",
+              cursor: "pointer",
+              padding: 0,
+              transition: "all 0.3s",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function ServicesSection() {
   return (
     <section
@@ -241,18 +461,7 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* Cards grid */}
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-          style={{
-            gap: "32px",
-            alignItems: "stretch",
-          }}
-        >
-          {services.map((service) => (
-            <Card key={service.title} service={service} />
-          ))}
-        </div>
+        <ServicesCarousel />
       </div>
     </section>
   );
