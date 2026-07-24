@@ -449,6 +449,38 @@ export default function NosotrosPage() {
               </p>
             </div>
 
+            {/* Alianza con industria nacional / FAM */}
+            <div style={{ marginBottom: "64px" }}>
+              <h3 style={{ fontSize: "20px", fontWeight: 800, color: "rgb(13,27,62)", marginBottom: "16px" }}>
+                🇦🇷 Alianza Estratégica con Industria Nacional
+              </h3>
+              <p style={{ fontSize: "15px", color: "rgb(100,116,139)", lineHeight: 1.8, marginBottom: "24px" }}>
+                Somos distribuidores e instaladores oficiales vinculados directamente con
+                FAM (Famesa, Córdoba). Esta relación directa con fábrica nos permite
+                ofrecer a nuestros clientes el mejor respaldo técnico del mercado, repuestos
+                originales garantizados y condiciones altamente competitivas para compras
+                al por mayor.
+              </p>
+              <div
+                style={{
+                  background: "linear-gradient(135deg, rgb(13,27,62), rgb(22,24,83))",
+                  borderRadius: "16px",
+                  padding: "32px",
+                  color: "white",
+                }}
+              >
+                <p style={{ fontSize: "16px", fontWeight: 700, color: "#f59e0b", marginBottom: "12px" }}>
+                  🏗️ ¿Sos constructor, desarrollador o querés comprar al por mayor?
+                </p>
+                <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.85)", lineHeight: 1.7, margin: 0 }}>
+                  Gracias a nuestro acuerdo comercial con FAM, accedemos a valores
+                  diferenciales por volumen para desarrollos inmobiliarios, complejos
+                  turísticos, barrios cerrados, loteos y obras de escala. Consultanos por
+                  cotizaciones especiales y asesoramiento técnico de planta.
+                </p>
+              </div>
+            </div>
+
             {/* Soluciones */}
             <div>
               <h3 style={{ fontSize: "20px", fontWeight: 800, color: "rgb(13,27,62)", marginBottom: "24px" }}>

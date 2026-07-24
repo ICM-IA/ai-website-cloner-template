@@ -10,6 +10,7 @@ const serviceLinks = [
   { text: "Instalación Comercial", href: "/servicios/comercial", icon: "🏢" },
   { text: "Instalación Industrial", href: "/servicios/industrial", icon: "🏭" },
   { text: "Termotanque Solar", href: "/servicios/termotanque-solar", icon: "☀️" },
+  { text: "Bombeo Solar", href: "/servicios/bombeo-solar", icon: "💧" },
 ];
 
 const navLinks = [

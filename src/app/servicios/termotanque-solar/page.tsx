@@ -158,6 +158,19 @@ function ServiceHero() {
 /* ─────────────────────────────────────────────
    MODELS SECTION
 ───────────────────────────────────────────── */
+const specsComunes = {
+  material: "Acero inoxidable SUS 304 (0.5mm)",
+  colector: "Tubos de vacío de borosilicato",
+  eficiencia: "80-85% anual",
+  garantia: "Vida útil +30 años",
+  instalacion: "Incluida",
+  aislamiento: "Poliuretano expandido inyectado de 45mm (72hs de conservación)",
+  tanqueExterior: "Acero inoxidable o galvanizado pintado blanco horneado",
+  proteccion: "Ánodo de magnesio incluido de serie",
+  origen: "Industria Nacional (Marca FAM, Córdoba)",
+  accesorios: "Resistencia eléctrica auxiliar, controlador digital y válvula mezcladora termostática",
+};
+
 const models = [
   {
     id: "TS100",
@@ -165,11 +178,7 @@ const models = [
     image: "/images/termotanque-180l.webp",
     ideal: "1 a 2 personas",
     capacidad: "100 litros",
-    material: "Acero inoxidable SUS 304 (0.5mm)",
-    colector: "Tubos de vacío de borosilicato",
-    eficiencia: "80-85% anual",
-    garantia: "Vida útil +30 años",
-    instalacion: "Incluida",
+    ...specsComunes,
     popular: false,
   },
   {
@@ -178,11 +187,7 @@ const models = [
     image: "/images/termotanque-180l.webp",
     ideal: "2 a 3 personas",
     capacidad: "150 litros",
-    material: "Acero inoxidable SUS 304 (0.5mm)",
-    colector: "Tubos de vacío de borosilicato",
-    eficiencia: "80-85% anual",
-    garantia: "Vida útil +30 años",
-    instalacion: "Incluida",
+    ...specsComunes,
     popular: false,
   },
   {
@@ -191,11 +196,7 @@ const models = [
     image: "/images/termotanque-180l.webp",
     ideal: "3 a 4 personas",
     capacidad: "200 litros",
-    material: "Acero inoxidable SUS 304 (0.5mm)",
-    colector: "Tubos de vacío de borosilicato",
-    eficiencia: "80-85% anual",
-    garantia: "Vida útil +30 años",
-    instalacion: "Incluida",
+    ...specsComunes,
     popular: false,
   },
   {
@@ -204,11 +205,7 @@ const models = [
     image: "/images/termotanque-300l.webp",
     ideal: "4 a 5 personas",
     capacidad: "250 litros",
-    material: "Acero inoxidable SUS 304 (0.5mm)",
-    colector: "Tubos de vacío de borosilicato",
-    eficiencia: "80-85% anual",
-    garantia: "Vida útil +30 años",
-    instalacion: "Incluida",
+    ...specsComunes,
     popular: false,
   },
   {
@@ -217,11 +214,7 @@ const models = [
     image: "/images/termotanque-300l.webp",
     ideal: "5 a 6 personas o uso comercial",
     capacidad: "300 litros",
-    material: "Acero inoxidable SUS 304 (0.5mm)",
-    colector: "Tubos de vacío de borosilicato",
-    eficiencia: "80-85% anual",
-    garantia: "Vida útil +30 años",
-    instalacion: "Incluida",
+    ...specsComunes,
     popular: true,
   },
   {
@@ -230,11 +223,7 @@ const models = [
     image: "/images/termotanque-300l.webp",
     ideal: "Familias numerosas o uso comercial",
     capacidad: "360 litros",
-    material: "Acero inoxidable SUS 304 (0.5mm)",
-    colector: "Tubos de vacío de borosilicato",
-    eficiencia: "80-85% anual",
-    garantia: "Vida útil +30 años",
-    instalacion: "Incluida",
+    ...specsComunes,
     popular: false,
   },
 ];
@@ -248,6 +237,11 @@ function ModelCard({ model }: { model: ModelSpec }) {
     { label: "Material", value: model.material },
     { label: "Colector", value: model.colector },
     { label: "Eficiencia solar", value: model.eficiencia },
+    { label: "Aislamiento térmico", value: model.aislamiento },
+    { label: "Tanque exterior", value: model.tanqueExterior },
+    { label: "Protección anticorrosiva", value: model.proteccion },
+    { label: "Origen", value: model.origen },
+    { label: "Accesorios opcionales", value: model.accesorios },
     { label: "Garantía", value: model.garantia },
     { label: "Instalación", value: model.instalacion },
   ];

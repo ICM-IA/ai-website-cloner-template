@@ -1,5 +1,5 @@
 "use client";
-import { Home, Building2, Sun, Factory } from "lucide-react";
+import { Home, Building2, Sun, Factory, Droplets } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -66,6 +66,20 @@ const services: ServiceCard[] = [
     ],
     cta: "Ver más →",
     href: "/servicios/industrial",
+    featured: false,
+  },
+  {
+    icon: Droplets,
+    title: "Bombeo Solar",
+    desc: "Sistemas de bombeo solar sumergible para campo, ganadería y riego. Agua constante sin gastos de combustible ni dependencia de la red eléctrica.",
+    features: [
+      "Bombas sumergibles Handuro de 120 W a 5.500 W",
+      "Caudales de hasta 280.000 L/día para riego y ganadería",
+      "Garantía escrita de 1 año directa de fábrica",
+      "Instalación coordinada con perforación en el día",
+    ],
+    cta: "Ver más →",
+    href: "/servicios/bombeo-solar",
     featured: false,
   },
 ];
