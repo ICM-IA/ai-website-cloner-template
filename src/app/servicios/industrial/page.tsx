@@ -419,11 +419,10 @@ export default function IndustrialPage() {
               />
             </div>
 
-            {/* 2x2 grid */}
+            {/* Benefits grid */}
             <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
                 gap: 28,
               }}
             >

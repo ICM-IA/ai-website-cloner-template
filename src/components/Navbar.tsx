@@ -13,11 +13,14 @@ const serviceLinks = [
   { text: "Bombeo Solar", href: "/servicios/bombeo-solar", icon: "💧" },
 ];
 
-const navLinks = [
-  { text: "Inicio", href: "/" },
-  { text: "Nosotros", href: "/nosotros" },
-  { text: "Testimonios", href: "/testimonios" },
-  { text: "Contacto", href: "/contacto" },
+type NavItem = { type: "link"; text: string; href: string } | { type: "services" };
+
+const navOrder: NavItem[] = [
+  { type: "link", text: "Inicio", href: "/" },
+  { type: "services" },
+  { type: "link", text: "Testimonios", href: "/testimonios" },
+  { type: "link", text: "Nosotros", href: "/nosotros" },
+  { type: "link", text: "Contacto", href: "/contacto" },
 ];
 
 export function Navbar() {
@@ -68,101 +71,106 @@ export function Navbar() {
 
         {/* Desktop nav links */}
         <ul className="hidden md:flex items-center list-none m-0 p-0 gap-1">
-          {/* Servicios with dropdown */}
-          <li
-            style={{ position: "relative" }}
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
-            <button
-              className="flex items-center gap-1 px-3 py-2 transition-colors duration-200 hover:text-white hover:underline underline-offset-4"
-              style={{
-                fontSize: "14px",
-                fontWeight: 600,
-                color: "rgba(255,255,255,0.85)",
-                letterSpacing: "0.3px",
-                background: "transparent",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              Servicios
-              <ChevronDown
-                size={14}
-                style={{
-                  transition: "transform 0.2s",
-                  transform: servicesOpen ? "rotate(180deg)" : "rotate(0deg)",
-                }}
-              />
-            </button>
-
-            {servicesOpen && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: "100%",
-                  left: 0,
-                  background: "rgb(13, 27, 62)",
-                  borderRadius: "0 0 12px 12px",
-                  boxShadow: "0 12px 32px rgba(0,0,0,0.4)",
-                  minWidth: "240px",
-                  padding: "8px 0",
-                  zIndex: 100,
-                }}
-              >
-                {serviceLinks.map((item) => (
+          {navOrder.map((item) => {
+            if (item.type === "link") {
+              return (
+                <li key={item.href}>
                   <Link
-                    key={item.href}
                     href={item.href}
-                    className="no-underline"
+                    className="block px-3 py-2 no-underline transition-colors duration-200 hover:text-white hover:underline underline-offset-4"
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "12px",
-                      padding: "12px 20px",
-                      color: "rgba(255,255,255,0.8)",
                       fontSize: "14px",
-                      fontWeight: 500,
-                      transition: "background 0.15s, color 0.15s",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.background =
-                        "rgba(255,255,255,0.06)";
-                      (e.currentTarget as HTMLAnchorElement).style.color =
-                        "white";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLAnchorElement).style.background =
-                        "transparent";
-                      (e.currentTarget as HTMLAnchorElement).style.color =
-                        "rgba(255,255,255,0.8)";
+                      fontWeight: 600,
+                      color: "rgba(255,255,255,0.85)",
+                      letterSpacing: "0.3px",
                     }}
                   >
-                    <span style={{ fontSize: "16px" }}>{item.icon}</span>
                     {item.text}
                   </Link>
-                ))}
-              </div>
-            )}
-          </li>
+                </li>
+              );
+            }
 
-          {/* Remaining links */}
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="block px-3 py-2 no-underline transition-colors duration-200 hover:text-white hover:underline underline-offset-4"
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                  color: "rgba(255,255,255,0.85)",
-                  letterSpacing: "0.3px",
-                }}
+            return (
+              <li
+                key="services"
+                style={{ position: "relative" }}
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
               >
-                {link.text}
-              </Link>
-            </li>
-          ))}
+                <button
+                  className="flex items-center gap-1 px-3 py-2 transition-colors duration-200 hover:text-white hover:underline underline-offset-4"
+                  style={{
+                    fontSize: "14px",
+                    fontWeight: 600,
+                    color: "rgba(255,255,255,0.85)",
+                    letterSpacing: "0.3px",
+                    background: "transparent",
+                    border: "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  Servicios
+                  <ChevronDown
+                    size={14}
+                    style={{
+                      transition: "transform 0.2s",
+                      transform: servicesOpen ? "rotate(180deg)" : "rotate(0deg)",
+                    }}
+                  />
+                </button>
+
+                {servicesOpen && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "100%",
+                      left: 0,
+                      background: "rgb(13, 27, 62)",
+                      borderRadius: "0 0 12px 12px",
+                      boxShadow: "0 12px 32px rgba(0,0,0,0.4)",
+                      minWidth: "240px",
+                      padding: "8px 0",
+                      zIndex: 100,
+                    }}
+                  >
+                    {serviceLinks.map((service) => (
+                      <Link
+                        key={service.href}
+                        href={service.href}
+                        className="no-underline"
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "12px",
+                          padding: "12px 20px",
+                          color: "rgba(255,255,255,0.8)",
+                          fontSize: "14px",
+                          fontWeight: 500,
+                          transition: "background 0.15s, color 0.15s",
+                        }}
+                        onMouseEnter={(e) => {
+                          (e.currentTarget as HTMLAnchorElement).style.background =
+                            "rgba(255,255,255,0.06)";
+                          (e.currentTarget as HTMLAnchorElement).style.color =
+                            "white";
+                        }}
+                        onMouseLeave={(e) => {
+                          (e.currentTarget as HTMLAnchorElement).style.background =
+                            "transparent";
+                          (e.currentTarget as HTMLAnchorElement).style.color =
+                            "rgba(255,255,255,0.8)";
+                        }}
+                      >
+                        <span style={{ fontSize: "16px" }}>{service.icon}</span>
+                        {service.text}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </li>
+            );
+          })}
         </ul>
 
         {/* Desktop CTA */}
@@ -223,80 +231,84 @@ export function Navbar() {
           style={{ background: "rgb(22, 24, 83)" }}
         >
           <ul className="list-none m-0 py-3 px-0">
-            {/* Servicios expandable */}
-            <li>
-              <button
-                onClick={() => setServicesOpen((prev) => !prev)}
-                className="flex items-center justify-between w-full px-6 py-3 transition-colors duration-200 hover:text-white"
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                  color: "rgba(255,255,255,0.85)",
-                  letterSpacing: "0.3px",
-                  background: "transparent",
-                  border: "none",
-                  cursor: "pointer",
-                }}
-              >
-                Servicios
-                <ChevronDown
-                  size={14}
-                  style={{
-                    transition: "transform 0.2s",
-                    transform: servicesOpen ? "rotate(180deg)" : "rotate(0deg)",
-                    marginRight: "0",
-                  }}
-                />
-              </button>
+            {navOrder.map((item) => {
+              if (item.type === "link") {
+                return (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="block w-full px-6 py-3 no-underline transition-colors duration-200 hover:text-white hover:underline underline-offset-4"
+                      style={{
+                        fontSize: "14px",
+                        fontWeight: 600,
+                        color: "rgba(255,255,255,0.85)",
+                        letterSpacing: "0.3px",
+                      }}
+                    >
+                      {item.text}
+                    </Link>
+                  </li>
+                );
+              }
 
-              {servicesOpen && (
-                <ul className="list-none m-0 p-0">
-                  {serviceLinks.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        onClick={() => {
-                          setMobileOpen(false);
-                          setServicesOpen(false);
-                        }}
-                        className="flex items-center gap-2 no-underline transition-colors duration-200 hover:text-white"
-                        style={{
-                          paddingLeft: "24px",
-                          paddingRight: "24px",
-                          paddingTop: "10px",
-                          paddingBottom: "10px",
-                          fontSize: "13px",
-                          fontWeight: 500,
-                          color: "rgba(255,255,255,0.7)",
-                        }}
-                      >
-                        <span style={{ fontSize: "14px" }}>{item.icon}</span>
-                        {item.text}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
+              return (
+                <li key="services">
+                  <button
+                    onClick={() => setServicesOpen((prev) => !prev)}
+                    className="flex items-center justify-between w-full px-6 py-3 transition-colors duration-200 hover:text-white"
+                    style={{
+                      fontSize: "14px",
+                      fontWeight: 600,
+                      color: "rgba(255,255,255,0.85)",
+                      letterSpacing: "0.3px",
+                      background: "transparent",
+                      border: "none",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Servicios
+                    <ChevronDown
+                      size={14}
+                      style={{
+                        transition: "transform 0.2s",
+                        transform: servicesOpen ? "rotate(180deg)" : "rotate(0deg)",
+                        marginRight: "0",
+                      }}
+                    />
+                  </button>
 
-            {/* Remaining nav links */}
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block w-full px-6 py-3 no-underline transition-colors duration-200 hover:text-white hover:underline underline-offset-4"
-                  style={{
-                    fontSize: "14px",
-                    fontWeight: 600,
-                    color: "rgba(255,255,255,0.85)",
-                    letterSpacing: "0.3px",
-                  }}
-                >
-                  {link.text}
-                </Link>
-              </li>
-            ))}
+                  {servicesOpen && (
+                    <ul className="list-none m-0 p-0">
+                      {serviceLinks.map((service) => (
+                        <li key={service.href}>
+                          <Link
+                            href={service.href}
+                            onClick={() => {
+                              setMobileOpen(false);
+                              setServicesOpen(false);
+                            }}
+                            className="flex items-center gap-2 no-underline transition-colors duration-200 hover:text-white"
+                            style={{
+                              paddingLeft: "24px",
+                              paddingRight: "24px",
+                              paddingTop: "10px",
+                              paddingBottom: "10px",
+                              fontSize: "13px",
+                              fontWeight: 500,
+                              color: "rgba(255,255,255,0.7)",
+                            }}
+                          >
+                            <span style={{ fontSize: "14px" }}>{service.icon}</span>
+                            {service.text}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
           </ul>
           <div className="px-6 pb-5">
             <Link
