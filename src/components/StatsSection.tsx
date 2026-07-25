@@ -166,7 +166,7 @@ export function StatsSection() {
           lineHeight: 1.75,
         }}
       >
-        Más de 4 años trabajando junto a hogares, comercios e industrias de la
+        Más de 5 años trabajando junto a hogares, comercios e industrias de la
         región. Somos especialistas en dimensionamiento, instalación llave en
         mano y mantenimiento de sistemas fotovoltaicos.
       </p>

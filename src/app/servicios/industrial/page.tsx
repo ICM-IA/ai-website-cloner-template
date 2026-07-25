@@ -98,7 +98,7 @@ export default function IndustrialPage() {
         {/* ── 1. HERO ────────────────────────────────────────────────────── */}
         <section
           style={{
-            backgroundImage: `linear-gradient(135deg, rgba(13,27,62,0.85) 0%, rgba(22,24,83,0.85) 60%, rgba(13,27,62,0.85) 100%), url('/images/industrial-background.webp')`,
+            backgroundImage: `linear-gradient(135deg, rgba(13,27,62,0.85) 0%, rgba(22,24,83,0.85) 60%, rgba(30,58,138,0.85) 100%), url('/images/servicios-background.webp')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",

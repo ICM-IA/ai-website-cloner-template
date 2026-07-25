@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Nosotros",
   description:
-    "Conocé nuestra historia, equipo y valores. Más de 4 años instalando energía solar en Brandsen y la región.",
+    "Conocé nuestra historia, equipo y valores. Más de 5 años instalando energía solar en Brandsen y la región.",
 };
 
 const valores = [
@@ -108,7 +108,7 @@ export default function NosotrosPage() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                4 años
+                5 años
               </span>{" "}
               transformando hogares y empresas con energía solar
             </h1>
@@ -182,7 +182,7 @@ export default function NosotrosPage() {
                   Nacimos en Brandsen para servir a la región
                 </h2>
                 <p style={{ color: "rgb(100,116,139)", fontSize: "16px", lineHeight: 1.8, marginBottom: "16px" }}>
-                  Energia Solar Brandsen nació hace más de cuatro años con una misión clara:
+                  Energia Solar Brandsen nació hace más de cinco años con una misión clara:
                   llevar soluciones de energía renovable a los hogares y empresas del partido
                   de Brandsen y la región bonaerense, con la misma calidad que cualquier
                   empresa de capital federal.
