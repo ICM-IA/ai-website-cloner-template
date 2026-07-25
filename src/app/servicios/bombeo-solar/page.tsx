@@ -29,7 +29,7 @@ function ServiceHero() {
     >
       {/* Background image */}
       <Image
-        src="/images/industrial-background.webp"
+        src="/images/bombeo-solar-background.jpg"
         alt="Bombeo solar para campo y ganadería"
         fill
         priority
