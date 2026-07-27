@@ -68,7 +68,7 @@ const testimonios = [
 
 const estadisticas = [
   { num: "100+", label: "Instalaciones completadas" },
-  { num: "4+", label: "Años de experiencia" },
+  { num: "5+", label: "Años de experiencia" },
   { num: "98%", label: "Clientes satisfechos" },
   { num: "100%", label: "Garantía de instalación" },
 ];

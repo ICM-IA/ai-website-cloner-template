@@ -56,19 +56,19 @@ const benefits = [
 const casos = [
   {
     title: "Supermercados y autoservicios",
-    img: "/images/gallery-1.webp",
+    img: "/images/comercial-supermercado.webp",
     desc: "Establecimientos con demanda constante de refrigeración e iluminación. La energía solar abastece el consumo diurno continuo de bateas y cámaras de frío, reduciendo el costo de la factura eléctrica y aplanando los picos de potencia de la tarifa comercial.",
     stats: "Sistemas recomendados: 15 a 50 kWp",
   },
   {
     title: "Talleres, galpones y depósitos",
-    img: "/images/gallery-4.webp",
+    img: "/images/comercial-galpones.webp",
     desc: "Instalaciones con amplias cubiertas de chapa ideales para el montaje fotovoltaico. Al concentrar su actividad de herramientas y maquinaria en horario diurno, logran un nivel de autoconsumo superior al 80%, optimizando el uso de la superficie del techo.",
     stats: "Sistemas recomendados: 20 a 100 kWp",
   },
   {
     title: "Oficinas, locales, consultorios y farmacias",
-    img: "/images/product-4.webp",
+    img: "/images/comercial-locales.webp",
     desc: "Espacios comerciales con un perfil de consumo 100% diurno (climatización, computadoras e iluminación). La generación solar coincide perfectamente con las horas de mayor actividad del negocio, maximizando el ahorro directo.",
     stats: "Sistemas recomendados: 5 a 15 kWp",
   },
