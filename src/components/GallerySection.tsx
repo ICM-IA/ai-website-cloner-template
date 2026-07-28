@@ -2,92 +2,258 @@
 
 import Image from "next/image";
 import { useState, useCallback } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, MapPin } from "lucide-react";
 
-const galleryItems = [
-  { src: "/images/proyectos/6.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/124325.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/12.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/1445.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/1.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/2.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/3.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/4.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/5.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/7.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/8.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/9.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/10.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/11.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/123.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/2134.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/23412345.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/Diseño%20sin%20título%20(8).jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/Diseño%20sin%20título%20(9).jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/edit%20mono.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/edit.jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/Diseño%20sin%20título%20(10).jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/Diseño%20sin%20título%20(11).jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/Diseño%20sin%20título%20(12).jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/Diseño%20sin%20título%20(13).jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/Diseño%20sin%20título%20(14).jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/Diseño%20sin%20título%20(15).jpg", alt: "Proyecto solar" },
-  { src: "/images/proyectos/tec.jpg", alt: "Proyecto solar" },
+type Badge = "CONECTADO A RED" | "SISTEMA OFFGRID" | "BOMBEO SOLAR";
+
+interface Proyecto {
+  id: string;
+  cliente: string;
+  ubicacion: string;
+  kwp: string;
+  badge: Badge;
+  categoria: string;
+  foto: string;
+}
+
+const proyectos: Proyecto[] = [
+  {
+    id: "eduardo-guyet",
+    cliente: "Eduardo Guyet",
+    ubicacion: "Las Malvinas, Buenos Aires",
+    kwp: "10.44",
+    badge: "CONECTADO A RED",
+    categoria: "Residencial",
+    foto: "/images/proyectos-clientes/eduardo-guyet-malvinas.jpg",
+  },
+  {
+    id: "mayorista-andell",
+    cliente: "Mayorista Andell",
+    ubicacion: "Jeppener, Buenos Aires",
+    kwp: "55.68",
+    badge: "CONECTADO A RED",
+    categoria: "Comercial",
+    foto: "/images/proyectos-clientes/mayorista-andell.jpg",
+  },
+  {
+    id: "supermercado-el-mono",
+    cliente: "Supermercado El Mono",
+    ubicacion: "Jeppener, Buenos Aires",
+    kwp: "44.08",
+    badge: "CONECTADO A RED",
+    categoria: "Comercial",
+    foto: "/images/proyectos-clientes/supermercado-el-mono.jpg",
+  },
+  {
+    id: "estancia-la-victoria",
+    cliente: "Estancia La Victoria",
+    ubicacion: "Zona rural, Brandsen",
+    kwp: "13.92",
+    badge: "CONECTADO A RED",
+    categoria: "Rural / Agro",
+    foto: "/images/proyectos-clientes/estancia-la-victoria.jpg",
+  },
+  {
+    id: "heladeria-grido",
+    cliente: "Heladería Grido",
+    ubicacion: "Glew, Buenos Aires",
+    kwp: "13.44",
+    badge: "CONECTADO A RED",
+    categoria: "Comercial",
+    foto: "/images/proyectos-clientes/heladeria-grido-glew.jpg",
+  },
+  {
+    id: "fincas-manzana-48",
+    cliente: "Fincas Manzana 48",
+    ubicacion: "San Vicente, Buenos Aires",
+    kwp: "9.99",
+    badge: "CONECTADO A RED",
+    categoria: "Residencial",
+    foto: "/images/proyectos-clientes/fincas-manzana-48.jpg",
+  },
+  {
+    id: "emiliano-cortes",
+    cliente: "Emiliano Cortés",
+    ubicacion: "Brandsen, Buenos Aires",
+    kwp: "9.28",
+    badge: "CONECTADO A RED",
+    categoria: "Residencial",
+    foto: "/images/proyectos-clientes/emiliano-cortes-esb.jpg",
+  },
+  {
+    id: "judith-san-vicente",
+    cliente: "Judith",
+    ubicacion: "San Vicente, Buenos Aires",
+    kwp: "6",
+    badge: "CONECTADO A RED",
+    categoria: "Residencial",
+    foto: "/images/proyectos-clientes/judith-san-vicente.jpg",
+  },
+  {
+    id: "hugo-ghilini",
+    cliente: "Hugo Ghilini",
+    ubicacion: "Ranchos, Buenos Aires",
+    kwp: "4.64",
+    badge: "CONECTADO A RED",
+    categoria: "Residencial",
+    foto: "/images/proyectos-clientes/hugo-ghilini.jpg",
+  },
+  {
+    id: "mirta-jeppener",
+    cliente: "Mirta",
+    ubicacion: "Jeppener, Buenos Aires",
+    kwp: "4.64",
+    badge: "SISTEMA OFFGRID",
+    categoria: "Residencial",
+    foto: "/images/proyectos-clientes/mirta-jeppener.jpg",
+  },
+  {
+    id: "alfredo-ferreti",
+    cliente: "Alfredo Ferreti",
+    ubicacion: "Glew, Buenos Aires",
+    kwp: "4.44",
+    badge: "CONECTADO A RED",
+    categoria: "Residencial",
+    foto: "/images/proyectos-clientes/alfredo-ferreti-glew.jpg",
+  },
+  {
+    id: "escuela-tecnica",
+    cliente: "Escuela Técnica N°1",
+    ubicacion: "Brandsen, Buenos Aires",
+    kwp: "4.44",
+    badge: "SISTEMA OFFGRID",
+    categoria: "Institucional",
+    foto: "/images/proyectos-clientes/escuela-tecnica.jpg",
+  },
+  {
+    id: "ruben-las-acacias",
+    cliente: "Rubén - Las Acacias",
+    ubicacion: "Brandsen, Buenos Aires",
+    kwp: "4.4",
+    badge: "SISTEMA OFFGRID",
+    categoria: "Residencial",
+    foto: "/images/proyectos-clientes/ruben-las-acacias.jpg",
+  },
+  {
+    id: "yety-entre-rios",
+    cliente: "Yety S.A.",
+    ubicacion: "Entre Ríos, Argentina",
+    kwp: "4.14",
+    badge: "BOMBEO SOLAR",
+    categoria: "Rural / Agro",
+    foto: "/images/proyectos-clientes/yety-entre-rios.jpg",
+  },
+  {
+    id: "tosquera-domselaar",
+    cliente: "Tosquera Domselaar",
+    ubicacion: "Domselaar, Buenos Aires",
+    kwp: "2.3",
+    badge: "SISTEMA OFFGRID",
+    categoria: "Residencial",
+    foto: "/images/proyectos-clientes/tosquera-domselaar.jpg",
+  },
+  {
+    id: "julian-udaondo",
+    cliente: "Julián Udaondo",
+    ubicacion: "Zona rural, Buenos Aires",
+    kwp: "2.68",
+    badge: "BOMBEO SOLAR",
+    categoria: "Rural / Agro",
+    foto: "/images/proyectos-clientes/julian-udaondo.jpg",
+  },
+  {
+    id: "hernan-mannarino",
+    cliente: "Hernán Mannarino",
+    ubicacion: "San Vicente, Buenos Aires",
+    kwp: "0.94",
+    badge: "BOMBEO SOLAR",
+    categoria: "Rural / Agro",
+    foto: "/images/proyectos-clientes/hernan-mannarino.jpg",
+  },
+  {
+    id: "nicolas-monaco",
+    cliente: "Nicolás Monaco",
+    ubicacion: "Zona rural, San Vicente",
+    kwp: "0.94",
+    badge: "BOMBEO SOLAR",
+    categoria: "Rural / Agro",
+    foto: "/images/proyectos-clientes/nicolas-monaco.jpg",
+  },
 ];
 
+const INITIAL_COUNT = 9;
+
 export default function GallerySection() {
-  const [current, setCurrent] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const itemsPerView = 4;
-  const totalPages = Math.ceil(galleryItems.length / itemsPerView);
+  const [showAll, setShowAll] = useState(false);
 
-  const prev = useCallback(() => {
-    setCurrent((c) => (c - 1 + totalPages) % totalPages);
-  }, [totalPages]);
-
-  const next = useCallback(() => {
-    setCurrent((c) => (c + 1) % totalPages);
-  }, [totalPages]);
-
-  const visibleItems = galleryItems.slice(current * itemsPerView, current * itemsPerView + itemsPerView);
+  const visibleProyectos = showAll ? proyectos : proyectos.slice(0, INITIAL_COUNT);
 
   const nextImage = useCallback(() => {
-    if (selectedIndex !== null) {
-      setSelectedIndex((i) => (i! + 1) % galleryItems.length);
-    }
-  }, [selectedIndex]);
+    setSelectedIndex((i) => (i === null ? null : (i + 1) % proyectos.length));
+  }, []);
 
   const prevImage = useCallback(() => {
-    if (selectedIndex !== null) {
-      setSelectedIndex((i) => (i! - 1 + galleryItems.length) % galleryItems.length);
-    }
-  }, [selectedIndex]);
+    setSelectedIndex((i) => (i === null ? null : (i - 1 + proyectos.length) % proyectos.length));
+  }, []);
 
   return (
     <>
       <style>{`
-        .gallery-item {
+        .proyecto-card {
           position: relative;
           overflow: hidden;
-          border-radius: 12px;
-          height: 240px;
+          border-radius: 16px;
+          aspect-ratio: 3 / 4;
           cursor: pointer;
+          background: rgb(13,27,62);
         }
-        .gallery-img {
+        .proyecto-img {
           transition: transform 0.5s ease;
         }
-        .gallery-item:hover .gallery-img {
-          transform: scale(1.1);
+        .proyecto-card:hover .proyecto-img {
+          transform: scale(1.08);
         }
-        .gallery-overlay {
+        .proyecto-gradient {
           position: absolute;
           inset: 0;
-          background: rgba(13, 27, 62, 0.3);
-          opacity: 0;
-          transition: opacity 0.3s ease;
+          background: linear-gradient(to top, rgba(6,12,28,0.96) 0%, rgba(6,12,28,0.75) 32%, rgba(6,12,28,0.15) 62%, rgba(6,12,28,0) 80%);
         }
-        .gallery-item:hover .gallery-overlay {
-          opacity: 1;
+        .proyecto-badge {
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: rgba(6,12,28,0.82);
+          backdrop-filter: blur(4px);
+          padding: 6px 12px;
+          border-radius: 999px;
+        }
+        .proyecto-badge-dot {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: #f59e0b;
+          flex-shrink: 0;
+        }
+        .proyecto-content {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: 20px;
+        }
+        .proyecto-pill {
+          display: inline-block;
+          margin-top: 12px;
+          padding: 4px 14px;
+          border-radius: 999px;
+          border: 1px solid rgba(255,255,255,0.55);
+          color: white;
+          font-size: 12px;
+          font-weight: 600;
         }
         .modal-backdrop {
           position: fixed;
@@ -104,19 +270,21 @@ export default function GallerySection() {
           max-width: 90vw;
           max-height: 90vh;
           display: flex;
+          flex-direction: column;
           align-items: center;
           justify-content: center;
         }
         .modal-img {
-          width: 100%;
+          width: auto;
           height: auto;
           border-radius: 8px;
-          max-height: 85vh;
+          max-height: 78vh;
+          max-width: 90vw;
           object-fit: contain;
         }
         .modal-nav-button {
           position: absolute;
-          top: 50%;
+          top: 45%;
           transform: translateY(-50%);
           background: rgba(245, 158, 11, 0.8);
           color: white;
@@ -136,10 +304,10 @@ export default function GallerySection() {
           transform: translateY(-50%) scale(1.1);
         }
         .modal-nav-button.prev {
-          left: 16px;
+          left: -8px;
         }
         .modal-nav-button.next {
-          right: 16px;
+          right: -8px;
         }
         .modal-close {
           position: absolute;
@@ -162,9 +330,6 @@ export default function GallerySection() {
           transform: scale(1.1);
         }
         @media (max-width: 768px) {
-          .gallery-item {
-            height: 160px;
-          }
           .modal-nav-button {
             width: 40px;
             height: 40px;
@@ -228,146 +393,135 @@ export default function GallerySection() {
           />
         </div>
 
-        {/* Carousel container */}
-        <div style={{ maxWidth: "1400px", margin: "0 auto", position: "relative", paddingBottom: "32px" }}>
-          {/* Gallery grid - responsive */}
+        <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(clamp(140px, 40vw, 300px), 1fr))",
-              gap: "clamp(12px, 3vw, 20px)",
-              marginBottom: "32px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "24px",
             }}
           >
-            {visibleItems.map((item, idx) => {
-              const globalIdx = current * itemsPerView + idx;
+            {visibleProyectos.map((p) => {
+              const globalIdx = proyectos.findIndex((x) => x.id === p.id);
               return (
                 <div
-                  key={item.src}
-                  className="gallery-item"
+                  key={p.id}
+                  className="proyecto-card"
                   onClick={() => setSelectedIndex(globalIdx)}
                 >
                   <Image
-                    src={item.src}
-                    alt={item.alt}
+                    src={p.foto}
+                    alt={`Instalación solar - ${p.cliente}`}
                     fill
-                    sizes="(max-width: 480px) 45vw, (max-width: 768px) 45vw, 23vw"
-                    className="gallery-img"
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 30vw"
+                    className="proyecto-img"
                     style={{ objectFit: "cover" }}
                   />
-                  <div className="gallery-overlay" />
+                  <div className="proyecto-gradient" />
+
+                  <div className="proyecto-badge">
+                    <span className="proyecto-badge-dot" />
+                    <span
+                      style={{
+                        color: "white",
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        letterSpacing: "1px",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {p.badge}
+                    </span>
+                  </div>
+
+                  <div className="proyecto-content">
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
+                        color: "rgb(203,213,225)",
+                        fontSize: "12px",
+                        fontWeight: 600,
+                        letterSpacing: "1.2px",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      <MapPin size={13} strokeWidth={2.5} />
+                      {p.ubicacion}
+                    </div>
+
+                    <h3
+                      style={{
+                        color: "white",
+                        fontSize: "clamp(1.2rem, 2.2vw, 1.5rem)",
+                        fontWeight: 800,
+                        margin: "6px 0 10px",
+                        lineHeight: 1.15,
+                      }}
+                    >
+                      {p.cliente}
+                    </h3>
+
+                    <div style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
+                      <span
+                        style={{
+                          color: "#f59e0b",
+                          fontSize: "clamp(1.6rem, 3vw, 2.1rem)",
+                          fontWeight: 800,
+                          lineHeight: 1,
+                        }}
+                      >
+                        {p.kwp} kWp
+                      </span>
+                      <span
+                        style={{
+                          color: "rgb(203,213,225)",
+                          fontSize: "12px",
+                          fontWeight: 700,
+                          letterSpacing: "1.5px",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        Potencia
+                      </span>
+                    </div>
+
+                    <span className="proyecto-pill">{p.categoria}</span>
+                  </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Navigation arrows - hidden on mobile */}
-          <button
-            onClick={prev}
-            style={{
-              position: "absolute",
-              left: "-60px",
-              top: "50%",
-              transform: "translateY(-50%)",
-              background: "rgb(13,27,62)",
-              color: "#f59e0b",
-              border: "none",
-              borderRadius: "50%",
-              width: "48px",
-              height: "48px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              transition: "all 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#f59e0b";
-              e.currentTarget.style.color = "rgb(13,27,62)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "rgb(13,27,62)";
-              e.currentTarget.style.color = "#f59e0b";
-            }}
-            className="hidden md:flex"
-            aria-label="Anterior"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          <button
-            onClick={next}
-            style={{
-              position: "absolute",
-              right: "-60px",
-              top: "50%",
-              transform: "translateY(-50%)",
-              background: "rgb(13,27,62)",
-              color: "#f59e0b",
-              border: "none",
-              borderRadius: "50%",
-              width: "48px",
-              height: "48px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              transition: "all 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#f59e0b";
-              e.currentTarget.style.color = "rgb(13,27,62)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "rgb(13,27,62)";
-              e.currentTarget.style.color = "#f59e0b";
-            }}
-            className="hidden md:flex"
-            aria-label="Siguiente"
-          >
-            <ChevronRight size={24} />
-          </button>
-
-          {/* Dots navigation */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              gap: "8px",
-              flexWrap: "wrap",
-              marginTop: "24px",
-            }}
-          >
-            {Array.from({ length: totalPages }).map((_, idx) => (
+          {proyectos.length > INITIAL_COUNT && (
+            <div style={{ textAlign: "center", marginTop: "40px" }}>
               <button
-                key={idx}
-                onClick={() => setCurrent(idx)}
+                onClick={() => setShowAll((v) => !v)}
                 style={{
-                  width: current === idx ? "32px" : "12px",
-                  height: "12px",
-                  borderRadius: "6px",
-                  background: current === idx ? "#f59e0b" : "rgb(226,232,240)",
+                  background: "rgb(13,27,62)",
+                  color: "#f59e0b",
                   border: "none",
+                  borderRadius: "999px",
+                  padding: "14px 32px",
+                  fontSize: "15px",
+                  fontWeight: 700,
                   cursor: "pointer",
-                  transition: "all 0.3s",
+                  transition: "all 0.2s",
                 }}
-                aria-label={`Ir a página ${idx + 1}`}
-              />
-            ))}
-          </div>
-
-          {/* Counter */}
-          <p
-            style={{
-              textAlign: "center",
-              color: "rgb(100,116,139)",
-              fontSize: "14px",
-              marginTop: "12px",
-              margin: 0,
-            }}
-          >
-            {current + 1} / {totalPages}
-          </p>
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#f59e0b";
+                  e.currentTarget.style.color = "rgb(13,27,62)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "rgb(13,27,62)";
+                  e.currentTarget.style.color = "#f59e0b";
+                }}
+              >
+                {showAll ? "Ver menos proyectos" : `Ver los ${proyectos.length} proyectos`}
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -383,50 +537,45 @@ export default function GallerySection() {
               <X size={24} />
             </button>
 
-            {/* Prev button */}
             <button
               className="modal-nav-button prev"
               onClick={prevImage}
-              aria-label="Imagen anterior"
+              aria-label="Proyecto anterior"
             >
               <ChevronLeft size={24} />
             </button>
 
-            {/* Image */}
             <Image
-              src={galleryItems[selectedIndex].src}
-              alt={galleryItems[selectedIndex].alt}
+              src={proyectos[selectedIndex].foto}
+              alt={`Instalación solar - ${proyectos[selectedIndex].cliente}`}
               width={1200}
               height={900}
               className="modal-img"
               priority
             />
 
-            {/* Next button */}
             <button
               className="modal-nav-button next"
               onClick={nextImage}
-              aria-label="Siguiente imagen"
+              aria-label="Siguiente proyecto"
             >
               <ChevronRight size={24} />
             </button>
 
-            {/* Counter */}
             <div
               style={{
-                position: "absolute",
-                bottom: "16px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                background: "rgba(0, 0, 0, 0.6)",
+                marginTop: "16px",
+                textAlign: "center",
                 color: "white",
-                padding: "8px 16px",
-                borderRadius: "20px",
-                fontSize: "14px",
-                fontWeight: 600,
               }}
             >
-              {selectedIndex + 1} / {galleryItems.length}
+              <p style={{ fontWeight: 700, fontSize: "16px", margin: 0 }}>
+                {proyectos[selectedIndex].cliente} — {proyectos[selectedIndex].ubicacion}
+              </p>
+              <p style={{ color: "rgb(203,213,225)", fontSize: "14px", margin: "4px 0 0" }}>
+                {proyectos[selectedIndex].kwp} kWp · {proyectos[selectedIndex].categoria} ·{" "}
+                {selectedIndex + 1} / {proyectos.length}
+              </p>
             </div>
           </div>
         </div>
