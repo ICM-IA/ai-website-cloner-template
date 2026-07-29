@@ -179,6 +179,24 @@ const proyectos: Proyecto[] = [
     categoria: "Rural / Agro",
     foto: "/images/proyectos-clientes/nicolas-monaco.jpg",
   },
+  {
+    id: "haras-de-oroite",
+    cliente: "Haras de Oroite",
+    ubicacion: "Zona rural, Brandsen",
+    kwp: "1.38",
+    badge: "BOMBEO SOLAR",
+    categoria: "Rural / Agro",
+    foto: "/images/proyectos-clientes/haras-de-oroite.jpg",
+  },
+  {
+    id: "laura-la-victoria-bomba",
+    cliente: "Estancia La Victoria - Bombeo",
+    ubicacion: "Zona rural, Brandsen",
+    kwp: "1.74",
+    badge: "BOMBEO SOLAR",
+    categoria: "Rural / Agro",
+    foto: "/images/proyectos-clientes/laura-la-victoria-bomba.jpg",
+  },
 ];
 
 const INITIAL_COUNT = 9;
