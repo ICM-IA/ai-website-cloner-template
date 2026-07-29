@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useCallback } from "react";
 import { ChevronLeft, ChevronRight, X, MapPin } from "lucide-react";
 
-type Badge = "CONECTADO A RED" | "SISTEMA OFFGRID" | "BOMBEO SOLAR";
+type Badge = "CONECTADO A RED" | "SISTEMA OFFGRID" | "BOMBEO SOLAR" | "TERMOTANQUE SOLAR";
 
 interface Proyecto {
   id: string;
@@ -14,6 +14,7 @@ interface Proyecto {
   badge: Badge;
   categoria: string;
   foto: string;
+  detalle?: string;
 }
 
 const proyectos: Proyecto[] = [
@@ -196,6 +197,26 @@ const proyectos: Proyecto[] = [
     badge: "BOMBEO SOLAR",
     categoria: "Rural / Agro",
     foto: "/images/proyectos-clientes/laura-la-victoria-bomba.jpg",
+  },
+  {
+    id: "dario-pugliese-termotanque",
+    cliente: "Darío Pugliese",
+    ubicacion: "Buenos Aires, Argentina",
+    kwp: "",
+    badge: "TERMOTANQUE SOLAR",
+    categoria: "Residencial",
+    foto: "/images/proyectos-clientes/dario-pugliese-termotanque.jpg",
+    detalle: "Termotanque solar de tubos al vacío",
+  },
+  {
+    id: "club-mandarinas-termotanque",
+    cliente: "Club Mandarinas",
+    ubicacion: "Coronel Brandsen, Buenos Aires",
+    kwp: "",
+    badge: "TERMOTANQUE SOLAR",
+    categoria: "Institucional",
+    foto: "/images/proyectos-clientes/club-mandarinas-termotanque.jpg",
+    detalle: "Termotanque solar de tubos al vacío",
   },
 ];
 
@@ -481,29 +502,42 @@ export default function GallerySection() {
                       {p.cliente}
                     </h3>
 
-                    <div style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
-                      <span
+                    {p.detalle ? (
+                      <div
                         style={{
                           color: "#f59e0b",
-                          fontSize: "clamp(1.6rem, 3vw, 2.1rem)",
-                          fontWeight: 800,
-                          lineHeight: 1,
-                        }}
-                      >
-                        {p.kwp} kWp
-                      </span>
-                      <span
-                        style={{
-                          color: "rgb(203,213,225)",
-                          fontSize: "12px",
+                          fontSize: "clamp(1rem, 2vw, 1.25rem)",
                           fontWeight: 700,
-                          letterSpacing: "1.5px",
-                          textTransform: "uppercase",
+                          lineHeight: 1.2,
                         }}
                       >
-                        Potencia
-                      </span>
-                    </div>
+                        {p.detalle}
+                      </div>
+                    ) : (
+                      <div style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
+                        <span
+                          style={{
+                            color: "#f59e0b",
+                            fontSize: "clamp(1.6rem, 3vw, 2.1rem)",
+                            fontWeight: 800,
+                            lineHeight: 1,
+                          }}
+                        >
+                          {p.kwp} kWp
+                        </span>
+                        <span
+                          style={{
+                            color: "rgb(203,213,225)",
+                            fontSize: "12px",
+                            fontWeight: 700,
+                            letterSpacing: "1.5px",
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          Potencia
+                        </span>
+                      </div>
+                    )}
 
                     <span className="proyecto-pill">{p.categoria}</span>
                   </div>
@@ -591,7 +625,10 @@ export default function GallerySection() {
                 {proyectos[selectedIndex].cliente} — {proyectos[selectedIndex].ubicacion}
               </p>
               <p style={{ color: "rgb(203,213,225)", fontSize: "14px", margin: "4px 0 0" }}>
-                {proyectos[selectedIndex].kwp} kWp · {proyectos[selectedIndex].categoria} ·{" "}
+                {proyectos[selectedIndex].detalle
+                  ? proyectos[selectedIndex].detalle
+                  : `${proyectos[selectedIndex].kwp} kWp`}{" "}
+                · {proyectos[selectedIndex].categoria} ·{" "}
                 {selectedIndex + 1} / {proyectos.length}
               </p>
             </div>
