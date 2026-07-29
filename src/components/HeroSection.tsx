@@ -51,7 +51,7 @@ export default function HeroSection() {
 
       {/* Main content */}
       <div
-        className="relative z-10 flex flex-col items-center justify-center text-center px-4 md:px-6"
+        className="relative z-10 flex flex-col items-center justify-start md:justify-center text-center px-4 md:px-6 pt-[110px] md:pt-0"
         style={{ minHeight: "100vh", paddingBottom: "80px" }}
       >
         {/* Badge */}
