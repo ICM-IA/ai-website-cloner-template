@@ -356,7 +356,7 @@ export default function ContactSection() {
             <ContactMap height={220} />
           </div>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Ruta+29+1572+Coronel+Brandsen+Buenos+Aires"
+            href="https://www.google.com/maps/search/?api=1&query=-35.1744282,-58.2287713"
             target="_blank"
             rel="noopener noreferrer"
             style={{
