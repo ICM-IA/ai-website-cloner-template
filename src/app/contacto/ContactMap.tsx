@@ -53,7 +53,7 @@ export default function ContactMap({ height = 400 }: { height?: number }) {
           <div style="font-family:Raleway,sans-serif;padding:4px 0;min-width:200px">
             <div style="font-weight:800;font-size:15px;color:#0d1b3e;margin-bottom:4px">Energia Solar Brandsen</div>
             <div style="font-size:13px;color:#64748b;margin-bottom:8px">Ruta 29 N° 1572, Coronel Brandsen<br>Buenos Aires</div>
-            <a href="https://www.google.com/maps/search/?api=1&query=-35.1744282,-58.2287713"
+            <a href="https://www.google.com/maps/search/?api=1&query=Energia+Solar+Brandsen"
                target="_blank" rel="noopener noreferrer"
                style="font-size:12px;font-weight:700;color:#f59e0b;text-decoration:none">
               Ver en Google Maps →

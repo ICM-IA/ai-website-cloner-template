@@ -356,7 +356,7 @@ export default function ContactSection() {
             <ContactMap height={220} />
           </div>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=-35.1744282,-58.2287713"
+            href="https://www.google.com/maps/search/?api=1&query=Energia+Solar+Brandsen"
             target="_blank"
             rel="noopener noreferrer"
             style={{
