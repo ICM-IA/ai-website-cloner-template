@@ -253,6 +253,36 @@ const proyectos: Proyecto[] = [
     foto: "/images/proyectos-clientes/club-mandarinas-termotanque.jpg",
     detalle: "Termotanque atmosférico de 200 L, donado al club",
   },
+  {
+    id: "liliana-jeppener-bomba",
+    cliente: "Liliana Jeppener",
+    ubicacion: "Jeppener, Buenos Aires",
+    kwp: "",
+    badge: "BOMBEO SOLAR",
+    categoria: "Rural / Agro",
+    foto: "/images/proyectos-clientes/liliana-jeppener-bombeo.jpg",
+    detalle: "550 W · Pozo de 12 m · Riego",
+  },
+  {
+    id: "mariano-merino-los-merinos",
+    cliente: "Mariano Merino - Los Merinos",
+    ubicacion: "Zona rural, Buenos Aires",
+    kwp: "",
+    badge: "BOMBEO SOLAR",
+    categoria: "Rural / Agro",
+    foto: "/images/proyectos-clientes/mariano-merino-los-merinos-bombeo.jpg",
+    detalle: "750 W · Pozo de 12 m · Provisión de agua para hacienda",
+  },
+  {
+    id: "la-favorita-bomba",
+    cliente: "Estancia La Favorita",
+    ubicacion: "Zona rural, Buenos Aires",
+    kwp: "",
+    badge: "BOMBEO SOLAR",
+    categoria: "Rural / Agro",
+    foto: "/images/proyectos-clientes/la-favorita-bombeo.jpg",
+    detalle: "300 W · Pozo de 12 m · Abastecimiento para hacienda",
+  },
 ];
 
 const PAGE_SIZE = 8;

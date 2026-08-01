@@ -51,6 +51,8 @@ const instalaciones: Instalacion[] = [
   { lat: -35.008988, lng: -58.12275, ciudad: "Matías – Ruta 2", direccion: "Bomba solar sumergida a 12 m para agua de ganado", tipo: "Agropecuario", potencia: "300 W" },
   { lat: -35.211034, lng: -58.48572, ciudad: "Echaire", direccion: "Bomba solar sumergida a 12 m para agua de ganado", tipo: "Agropecuario", potencia: "600 W" },
   { lat: -35.4123, lng: -59.098, ciudad: "Roque Pérez", direccion: "Instalación fotovoltaica on-grid de 80 kW (trabajo tercerizado)", tipo: "Comercial", potencia: "80 kW" },
+  { lat: -35.1598508, lng: -58.2385427, ciudad: "Club Mandarinas", direccion: "Termotanque solar atmosférico donado al club", tipo: "Termotanque", potencia: "200 L" },
+  { lat: -35.178408, lng: -58.233485, ciudad: "Darío Pugliese", direccion: "Termotanque solar inoxidable", tipo: "Termotanque", potencia: "200 L" },
 ];
 
 const testimonios = [
