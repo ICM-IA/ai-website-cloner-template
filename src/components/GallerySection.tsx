@@ -206,7 +206,7 @@ const proyectos: Proyecto[] = [
     badge: "TERMOTANQUE SOLAR",
     categoria: "Residencial",
     foto: "/images/proyectos-clientes/dario-pugliese-termotanque.jpg",
-    detalle: "Termotanque solar de tubos al vacío",
+    detalle: "Termotanque inoxidable de 200 L",
   },
   {
     id: "club-mandarinas-termotanque",
@@ -216,7 +216,7 @@ const proyectos: Proyecto[] = [
     badge: "TERMOTANQUE SOLAR",
     categoria: "Institucional",
     foto: "/images/proyectos-clientes/club-mandarinas-termotanque.jpg",
-    detalle: "Termotanque solar de tubos al vacío",
+    detalle: "Termotanque atmosférico de 200 L, donado al club",
   },
 ];
 
