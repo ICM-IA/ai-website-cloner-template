@@ -447,46 +447,131 @@ function ProcessSection() {
 }
 
 /* ─────────────────────────────────────────────
-   GALLERY STRIP
+   RESIDENTIAL PROJECTS
 ───────────────────────────────────────────── */
-const galleryImages = [
-  { src: "/images/gallery-1.webp", alt: "Instalación solar residencial 1" },
-  { src: "/images/hero-bg.webp", alt: "Paneles solares en techo" },
-  { src: "/images/gallery-2.webp", alt: "Instalación solar residencial 2" },
-  { src: "/images/gallery-3.webp", alt: "Instalación solar residencial 3" },
+const residentialProjects = [
+  {
+    src: "/images/proyectos-clientes/eduardo-guyet-malvinas.jpg",
+    cliente: "Eduardo Guyet",
+    ubicacion: "Las Malvinas, Buenos Aires",
+    kwp: "10.44 kWp",
+  },
+  {
+    src: "/images/proyectos-clientes/fincas-manzana-48.jpg",
+    cliente: "Fincas Manzana 48",
+    ubicacion: "San Vicente, Buenos Aires",
+    kwp: "9.99 kWp",
+  },
+  {
+    src: "/images/proyectos-clientes/alfredo-ferreti-glew.jpg",
+    cliente: "Alfredo Ferreti",
+    ubicacion: "Glew, Buenos Aires",
+    kwp: "4.44 kWp",
+  },
 ];
 
-function GalleryStrip() {
+function ResidentialProjectsSection() {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        height: 280,
-        overflow: "hidden",
-      }}
-    >
-      {galleryImages.map((img) => (
-        <div
-          key={img.src}
-          style={{
-            position: "relative",
-            overflow: "hidden",
-            cursor: "pointer",
-          }}
-        >
-          <Image
-            src={img.src}
-            alt={img.alt}
-            fill
+    <section style={{ background: "white", padding: "96px 24px" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+        {/* Header */}
+        <div style={{ textAlign: "center" }}>
+          <p
             style={{
-              objectFit: "cover",
-              transition: "transform 0.4s ease",
+              color: "#f59e0b",
+              fontSize: 13,
+              fontWeight: 700,
+              letterSpacing: 3,
+              textTransform: "uppercase",
+              margin: "0 0 12px 0",
+            }}
+          >
+            PROYECTOS REALIZADOS
+          </p>
+          <h2
+            style={{
+              color: "rgb(13, 27, 62)",
+              fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+              fontWeight: 800,
+              margin: 0,
+            }}
+          >
+            Instalaciones residenciales reales
+          </h2>
+          <div
+            style={{
+              width: 60,
+              height: 4,
+              background: "linear-gradient(90deg, #f59e0b, #fde68a)",
+              borderRadius: 2,
+              margin: "16px auto 64px",
             }}
           />
         </div>
-      ))}
-    </div>
+
+        {/* Grid */}
+        <div
+          className="grid grid-cols-1 sm:grid-cols-3"
+          style={{ gap: 24 }}
+        >
+          {residentialProjects.map((project) => (
+            <div
+              key={project.cliente}
+              style={{
+                position: "relative",
+                borderRadius: 16,
+                overflow: "hidden",
+                border: "1px solid rgb(226, 232, 240)",
+                aspectRatio: "4 / 3",
+              }}
+            >
+              <Image
+                src={project.src}
+                alt={`Instalación solar residencial en ${project.ubicacion}`}
+                fill
+                style={{ objectFit: "cover" }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "linear-gradient(to top, rgba(13,27,62,0.9) 0%, rgba(13,27,62,0) 55%)",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  left: 20,
+                  right: 20,
+                  bottom: 18,
+                }}
+              >
+                <p
+                  style={{
+                    color: "white",
+                    fontWeight: 700,
+                    fontSize: 16,
+                    margin: "0 0 2px",
+                  }}
+                >
+                  {project.cliente}
+                </p>
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.75)",
+                    fontSize: 13,
+                    margin: 0,
+                  }}
+                >
+                  {project.ubicacion} · {project.kwp}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -583,7 +668,7 @@ export default function ResidencialPage() {
         <ServiceHero />
         <BenefitsSection />
         <ProcessSection />
-        <GalleryStrip />
+        <ResidentialProjectsSection />
         <FaqAccordion />
         <CtaSection />
       </main>
