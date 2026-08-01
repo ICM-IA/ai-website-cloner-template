@@ -46,10 +46,11 @@ const instalaciones: Instalacion[] = [
   { lat: -35.081594, lng: -58.293534, ciudad: "Tosquera – Domselaar", direccion: "Sistema fotovoltaico off-grid para puesto móvil", tipo: "Industrial", potencia: "5 kW" },
   { lat: -35.03444, lng: -58.44123, ciudad: "Fincas 48", direccion: "Sistema fotovoltaico híbrido trifásico amurado sobre bloques (sin perforar losa)", tipo: "Agropecuario", potencia: "10 kW" },
   { lat: -35.0021737, lng: -58.4690324, ciudad: "Judhit – San Vicente", direccion: "Sistema híbrido de respaldo sin paneles solares (baterías de litio)", tipo: "Residencial", potencia: "6 kW" },
-  { lat: -35.27319, lng: -58.470241, ciudad: "Mariano Merino", direccion: "Bomba solar sumergida a 12 m para agua de ganado", tipo: "Agropecuario", potencia: "750 W" },
-  { lat: -35.245125, lng: -58.453151, ciudad: "La Favorita", direccion: "Bomba solar sumergida a 12 m para agua de ganado", tipo: "Agropecuario", potencia: "300 W" },
+  { lat: -35.27319, lng: -58.470241, ciudad: "Mariano Merino – Los Merinos", direccion: "Bomba solar sumergida a 12 m para agua de ganado. Mismo cliente: 2° bomba en La Favorita.", tipo: "Agropecuario", potencia: "750 W" },
+  { lat: -35.245125, lng: -58.453151, ciudad: "Mariano Merino – La Favorita", direccion: "Bomba solar sumergida a 12 m para agua de ganado. Mismo cliente: 1° bomba en Los Merinos.", tipo: "Agropecuario", potencia: "300 W" },
   { lat: -35.008988, lng: -58.12275, ciudad: "Matías – Ruta 2", direccion: "Bomba solar sumergida a 12 m para agua de ganado", tipo: "Agropecuario", potencia: "300 W" },
   { lat: -35.211034, lng: -58.48572, ciudad: "Echaire", direccion: "Bomba solar sumergida a 12 m para agua de ganado", tipo: "Agropecuario", potencia: "600 W" },
+  { lat: -35.4123, lng: -59.098, ciudad: "Roque Pérez", direccion: "Instalación fotovoltaica on-grid de 80 kW (trabajo tercerizado)", tipo: "Comercial", potencia: "80 kW" },
 ];
 
 const testimonios = [
