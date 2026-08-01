@@ -136,6 +136,15 @@ const proyectos: Proyecto[] = [
     foto: "/images/proyectos-clientes/ruben-las-acacias.jpg",
   },
   {
+    id: "miguel-gambarte",
+    cliente: "Miguel Gambarte",
+    ubicacion: "San Vicente, Buenos Aires",
+    kwp: "10",
+    badge: "SISTEMA OFFGRID",
+    categoria: "Residencial",
+    foto: "/images/proyectos-clientes/miguel-gambarte.jpg",
+  },
+  {
     id: "yety-entre-rios",
     cliente: "Yety S.A.",
     ubicacion: "Entre Ríos, Argentina",
