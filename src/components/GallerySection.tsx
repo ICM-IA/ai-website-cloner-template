@@ -361,6 +361,16 @@ const proyectos: Proyecto[] = [
     categoria: "Residencial",
     foto: "/images/proyectos-clientes/graciela-huerdo-offgrid.jpg",
   },
+  {
+    id: "matias-ruta2",
+    cliente: "Matías - Ruta 2",
+    ubicacion: "Zona rural, Buenos Aires",
+    kwp: "",
+    badge: "BOMBEO SOLAR",
+    categoria: "Rural / Agro",
+    foto: "/images/proyectos-clientes/matias-ruta2-bombeo.jpg",
+    detalle: "300 W · Pozo de 12 m · 16.000 L/día en verano",
+  },
 ];
 
 const PAGE_SIZE = 8;
