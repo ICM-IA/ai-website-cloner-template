@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     locale: "es_AR",
     url: SITE_URL,
     siteName: "Energia Solar Brandsen",
-    title: "Energia Solar Brandsen | Ahorrá hasta un 85% en tu factura de luz",
+    title: "Energía Solar Brandsen | Ingeniería Fotovoltaica y Térmica",
     description:
-      "Instalación de paneles solares y termotanques solares en Brandsen, La Plata y zona. Visita técnica y presupuesto gratis.",
+      "Expertos en sistemas fotovoltaicos on-grid, híbridos y off-grid para hogares, comercios e industrias. Instalación de bombeo solar agropecuario y termotanques solares atmosféricos. Solicitá tu visita técnica sin cargo.",
     images: [
       {
         url: "/seo/og-image.png",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Energia Solar Brandsen | Ahorrá hasta un 85% en tu factura de luz",
+    title: "Energía Solar Brandsen | Ingeniería Fotovoltaica y Térmica",
     description:
-      "Instalación de paneles solares y termotanques solares en Brandsen, La Plata y zona. Presupuesto gratis.",
+      "Expertos en sistemas fotovoltaicos on-grid, híbridos y off-grid para hogares, comercios e industrias. Instalación de bombeo solar agropecuario y termotanques solares atmosféricos. Solicitá tu visita técnica sin cargo.",
     images: ["/seo/og-image.png"],
   },
   robots: {
