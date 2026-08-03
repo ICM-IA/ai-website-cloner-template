@@ -14,11 +14,11 @@ const SITE_URL = "https://energiasolarbrandsen.com"; // Build: v2
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Energia Solar Brandsen | Paneles Solares en Brandsen, Buenos Aires",
+    default: "Energía Solar Brandsen | Ingeniería Fotovoltaica y Térmica",
     template: "%s | Energia Solar Brandsen",
   },
   description:
-    "Instalación de paneles solares y termotanques solares en Brandsen, La Plata y zona. Ahorrá hasta un 85% en tu factura de luz. Visita técnica y presupuesto gratis.",
+    "Expertos en sistemas fotovoltaicos on-grid, híbridos y off-grid para hogares, comercios e industrias. Instalación de bombeo solar agropecuario y termotanques solares atmosféricos. Solicitá tu visita técnica sin cargo.",
   keywords: [
     "energía solar",
     "paneles solares",
