@@ -70,6 +70,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "-jQIZBn0aJA_dEJm3YvKpHhIbxbco_Us_nWbpmUstn0",
+  },
 };
 
 const localBusinessJsonLd = {
