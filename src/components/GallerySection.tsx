@@ -40,7 +40,7 @@ const proyectos: Proyecto[] = [
     id: "supermercado-el-mono",
     cliente: "Supermercado El Mono",
     ubicacion: "Jeppener, Buenos Aires",
-    kwp: "44.08",
+    kwp: "41.76",
     badge: "CONECTADO A RED",
     categoria: "Comercial",
     foto: "/images/proyectos-clientes/supermercado-el-mono.jpg",
@@ -265,13 +265,12 @@ const proyectos: Proyecto[] = [
   },
   {
     id: "liliana-jeppener-reefer",
-    cliente: "Liliana Jeppener - Carnes Don Ramón",
+    cliente: "Carnes Don Ramón",
     ubicacion: "Jeppener, Buenos Aires",
     kwp: "24.8",
     badge: "CONECTADO A RED",
     categoria: "Comercial",
     foto: "/images/proyectos-clientes/liliana-jeppener-reefer.jpg",
-    detalle: "Inversor trifásico 20 kW · Baterías de litio 20 kWh",
   },
   {
     id: "liliana-jeppener-casa",
