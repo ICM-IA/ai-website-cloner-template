@@ -29,7 +29,7 @@ function ServiceHero() {
     >
       {/* Background image */}
       <Image
-        src="/images/termotanque-background.webp"
+        src="/images/termotanque-background.jpg"
         alt="Termotanque solar instalado"
         fill
         priority
