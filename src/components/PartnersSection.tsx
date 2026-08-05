@@ -27,6 +27,7 @@ const proveedores: Logo[] = [
   { src: "/images/logos/proveedores/trina-solar.svg", alt: "Trina Solar" },
   { src: "/images/logos/proveedores/ultracell.png", alt: "Ultracell" },
   { src: "/images/logos/proveedores/victron-energy.png", alt: "Victron Energy" },
+  { src: "/images/logos/proveedores/fam.jpeg", alt: "FAM" },
 ];
 
 const socios: Logo[] = [
@@ -34,6 +35,7 @@ const socios: Logo[] = [
   { src: "/images/logos/aliados/multiradio.png", alt: "Multiradio" },
   { src: "/images/logos/aliados/multisolar.png", alt: "Multisolar" },
   { src: "/images/logos/aliados/susplify.png", alt: "Susplify" },
+  { src: "/images/logos/aliados/fam.jpeg", alt: "FAM" },
 ];
 
 function LogoItem({ logo }: { logo: Logo }) {
