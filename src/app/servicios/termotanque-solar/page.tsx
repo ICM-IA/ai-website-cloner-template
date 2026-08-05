@@ -685,7 +685,7 @@ function InstallationSection() {
           {/* Right: image */}
           <div style={{ position: "relative", height: 360 }}>
             <Image
-              src="/images/gallery-1.webp"
+              src="/images/termotanque-controlador.jpg"
               alt="Instalación de termotanque solar"
               fill
               style={{
