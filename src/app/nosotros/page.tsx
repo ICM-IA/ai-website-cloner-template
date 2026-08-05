@@ -421,7 +421,16 @@ export default function NosotrosPage() {
                 }}
               >
                 <div style={{ background: "rgb(248,250,252)", borderRadius: "16px", padding: "24px", border: "1px solid rgb(226,232,240)" }}>
-                  <h4 style={{ fontSize: "16px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px" }}>
+                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+                    <Image
+                      src="/images/ing-hector-natera.jpg"
+                      alt="Ing. Héctor Natera"
+                      width={96}
+                      height={96}
+                      style={{ width: "96px", height: "96px", borderRadius: "50%", objectFit: "cover", objectPosition: "center" }}
+                    />
+                  </div>
+                  <h4 style={{ fontSize: "16px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px", textAlign: "center" }}>
                     Ing. Héctor Natera
                   </h4>
                   <p style={{ fontSize: "14px", color: "rgb(100,116,139)", lineHeight: 1.7, margin: 0 }}>
@@ -429,7 +438,16 @@ export default function NosotrosPage() {
                   </p>
                 </div>
                 <div style={{ background: "rgb(248,250,252)", borderRadius: "16px", padding: "24px", border: "1px solid rgb(226,232,240)" }}>
-                  <h4 style={{ fontSize: "16px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px" }}>
+                  <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
+                    <Image
+                      src="/images/ing-pablo-canache.jpg"
+                      alt="Ing. Pablo Canache"
+                      width={96}
+                      height={96}
+                      style={{ width: "96px", height: "96px", borderRadius: "50%", objectFit: "cover", objectPosition: "center 15%" }}
+                    />
+                  </div>
+                  <h4 style={{ fontSize: "16px", fontWeight: 700, color: "rgb(13,27,62)", marginBottom: "8px", textAlign: "center" }}>
                     Ing. Pablo Canache
                   </h4>
                   <p style={{ fontSize: "14px", color: "rgb(100,116,139)", lineHeight: 1.7, margin: 0 }}>
