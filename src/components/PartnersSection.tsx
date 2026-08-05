@@ -127,7 +127,7 @@ export function PartnersSection() {
         </div>
 
         <MarqueeRow label="Proveedores" logos={proveedores} direction="left" duration="45s" />
-        <MarqueeRow label="Socios estratégicos" logos={socios} direction="right" duration="30s" />
+        <MarqueeRow label="Socios estratégicos" logos={socios} direction="right" duration="14s" />
       </div>
     </section>
   );
