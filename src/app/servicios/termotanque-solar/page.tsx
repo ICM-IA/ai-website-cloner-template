@@ -479,8 +479,8 @@ const benefits = [
   },
   {
     icon: "🛡️",
-    title: "10 años de garantía",
-    desc: "Todos nuestros modelos cuentan con garantía del fabricante de 10 años sobre el tanque inoxidable y el colector solar.",
+    title: "12 meses de garantía",
+    desc: "Todos nuestros modelos cuentan con garantía del fabricante de 12 meses sobre el tanque inoxidable y el colector solar.",
   },
 ];
 
