@@ -248,8 +248,23 @@ export default function Footer() {
           <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 13 }}>
             © 2025 Energia Solar Brandsen. Todos los derechos reservados.
           </span>
-          <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 13 }}>
-            Diseñada por ICM-IA
+          <span
+            style={{
+              color: "rgba(255,255,255,0.35)",
+              fontSize: 13,
+              display: "flex",
+              alignItems: "center",
+              gap: 6,
+            }}
+          >
+            Diseñada por
+            <Image
+              src="/images/icm-ia-logo.png"
+              alt="ICM-IA"
+              width={53}
+              height={16}
+              style={{ objectFit: "contain" }}
+            />
           </span>
         </div>
       </div>
