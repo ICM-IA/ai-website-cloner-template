@@ -245,13 +245,22 @@ export default function Footer() {
           <p style={{ fontSize: "13px", color: "#374151", margin: "0" }}>
             © 2026 ICM-IA. Todos los derechos reservados.
           </p>
-          <Link
-            href="/politica-de-privacidad"
-            style={{ fontSize: "13px", color: "#374151", textDecoration: "none", transition: "color 0.2s" }}
-            className="footer-nav-link"
-          >
-            Política de Privacidad
-          </Link>
+          <div style={{ display: "flex", gap: "24px" }}>
+            <Link
+              href="/politica-de-privacidad"
+              style={{ fontSize: "13px", color: "#374151", textDecoration: "none", transition: "color 0.2s" }}
+              className="footer-nav-link"
+            >
+              Política de Privacidad
+            </Link>
+            <Link
+              href="/terminos"
+              style={{ fontSize: "13px", color: "#374151", textDecoration: "none", transition: "color 0.2s" }}
+              className="footer-nav-link"
+            >
+              Términos y Condiciones
+            </Link>
+          </div>
         </div>
       </div>
 
