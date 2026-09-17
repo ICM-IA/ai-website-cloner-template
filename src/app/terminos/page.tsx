@@ -39,7 +39,7 @@ export default function TerminosPage() {
           </p>
           <ul style={{ marginTop: "12px", paddingLeft: "20px", lineHeight: 2 }}>
             <li><strong>Nombre:</strong> Santiago De La Canal</li>
-            <li><strong>DNI:</strong> 41.999.488</li>
+            <li><strong>CUIL:</strong> 20-41999488-0</li>
             <li><strong>Correo electrónico:</strong> icm.marketingyconsultoria@gmail.com</li>
           </ul>
         </Section>
