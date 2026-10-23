@@ -18,6 +18,7 @@ type NavItem = { type: "link"; text: string; href: string } | { type: "services"
 const navOrder: NavItem[] = [
   { type: "link", text: "Inicio", href: "/" },
   { type: "services" },
+  { type: "link", text: "Calculadora", href: "/calculadora-energia-solar" },
   { type: "link", text: "Testimonios", href: "/testimonios" },
   { type: "link", text: "Nosotros", href: "/nosotros" },
   { type: "link", text: "Contacto", href: "/contacto" },
