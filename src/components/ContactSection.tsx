@@ -329,7 +329,14 @@ export default function ContactSection() {
                   marginBottom: 0,
                 }}
               >
-                Al enviar aceptás nuestra política de privacidad.
+                Al enviar aceptás nuestra{" "}
+                <a
+                  href="/politica-de-privacidad"
+                  style={{ color: "inherit", textDecoration: "underline" }}
+                >
+                  política de privacidad
+                </a>
+                .
               </p>
             </form>
           </div>
