@@ -246,7 +246,13 @@ export default function Footer() {
           }}
         >
           <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 13 }}>
-            © 2025 Energia Solar Brandsen. Todos los derechos reservados.
+            © 2025 Energia Solar Brandsen. Todos los derechos reservados.{" "}
+            <Link
+              href="/politica-de-privacidad"
+              style={{ color: "rgba(255,255,255,0.55)", textDecoration: "underline" }}
+            >
+              Política de privacidad
+            </Link>
           </span>
           <span
             style={{
